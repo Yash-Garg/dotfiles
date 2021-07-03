@@ -1,0 +1,13 @@
+[user]
+	name = Yash-Garg
+	email = yash.garg@outlook.in
+[color]
+	ui = auto
+[core]
+	editor = nano
+	autocrlf = false
+[commit]
+  	gpgsign = true
+[url "git@github.com:"]
+  	insteadOf = https://github.com/
+  	insteadOf = git://github.com/
