@@ -1,3 +1,5 @@
+source ~/functions.sh
+
 export ZSH="/home/yash/.oh-my-zsh"
 
 ZSH_THEME="honukai"
