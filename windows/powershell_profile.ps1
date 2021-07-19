@@ -6,6 +6,17 @@ function touch ([string] $fileName) {
     if (!(Test-Path $fileName)) {
         Write-Host "Creating $fileName"
         New-Item -Path . -Name $fileName -ItemType File
+    } else {
+        Write-Host "File '$fileName' already exists"
+    }
+}
+
+function mkdir ([string] $dirName) {
+    if (!(Test-Path $dirName)) {
+        Write-Host "Creating $dirName"
+        New-Item -Path . -Name $dirName -ItemType Directory
+    } else {
+        Write-Host "Directory '$dirName' already exists"
     }
 }
 
@@ -33,14 +44,22 @@ function lg ([int] $logSize) {
     git log --oneline -n $logSize
 }
 
-# List all files inside current working directory
-function ls { Get-Item * }
-
 # Push changes to github repository
-function push { git push }
+function push([string] $arg) {
+    if ($arg -eq "f") {
+        Write-Host "Force pushing.."
+        git push --force
+    } else {
+        Write-Host "Pushing.."
+        git push
+    }
+}
 
-# Force Push changes to github repository
-function fpush { git push -f }
+# Stage all file changes to git
+function add { git add --all }
+
+# List all files in the specified directory
+function ls { Get-Item * }
 
 # Show the status of files in the current working directory
 function st { git status }
