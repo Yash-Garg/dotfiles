@@ -1,0 +1,133 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "code-runner.runInTerminal": true,
+  "explorer.confirmDelete": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontFamily": "'Cascadia Mono', 'Courier New', monospace",
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "go.autocompleteUnimportedPackages": true,
+  "python.languageServer": "Pylance",
+  "python.pythonPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "remote.SSH.remotePlatform": {
+    "skybox": "linux"
+  },
+  "editor.suggestSelection": "first",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.activityBar.visible": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "settingsSync.ignoredSettings": [
+    "-C_Cpp.clang_format_fallbackStyle"
+  ],
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "dart.flutterSdkPath": "E:\\Android\\Flutter",
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": true,
+  "svg.preview.mode": "img",
+  "go.toolsManagement.autoUpdate": true,
+  "dart.debugExternalLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "debug.console.fontSize": 13,
+  "settingsSync.ignoredExtensions": [
+    "eyhn.vscode-vibrancy"
+  ],
+  "dart.showInspectorNotificationsForWidgetErrors": false,
+  "markdown.preview.typographer": true,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.fontFamily": "Cascadia Mono",
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.tokenColorCustomizations": {
+    "[Horizon Italic]": {
+      "functions": "#00c3ffe7",
+      "keywords": "#d400ffe7",
+      "types": "#ffbb00ee",
+      "variables": "#ff5151"
+    }
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "dart.warnWhenEditingFilesOutsideWorkspace": false,
+  "editor.linkedEditing": true,
+  "editor.suggest.preview": true,
+  "workbench.colorTheme": "Horizon Italic",
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "editor.minimap.enabled": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "dart.warnWhenEditingFilesInPubCache": false,
+  "files.autoSave": "afterDelay",
+  "editor.cursorStyle": "block",
+  "[kotlin]": {
+    "editor.defaultFormatter": "fwcd.kotlin"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.scrollbar.verticalScrollbarSize": 10,
+  "editor.scrollbar.horizontalScrollbarSize": 10,
+  "editor.tabSize": 3,
+  "files.insertFinalNewline": true,
+  "python.defaultInterpreterPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  "terminal.integrated.fontWeightBold": "normal"
+}
