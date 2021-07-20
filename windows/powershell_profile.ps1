@@ -45,13 +45,22 @@ function lg ([int] $logSize) {
 }
 
 # Push changes to github repository
-function push([string] $arg) {
+function push ([string] $arg) {
     if ($arg -eq "f") {
         Write-Host "Force pushing.."
         git push --force
     } else {
         Write-Host "Pushing.."
         git push
+    }
+}
+
+# Rebase given number of commits on current branch
+function rebase ([int] $num) {
+    if ($num -eq 0) {
+        Write-Host "Bruh! How many number of commits?"
+    } else {
+        git rebase -i HEAD~$num
     }
 }
 
