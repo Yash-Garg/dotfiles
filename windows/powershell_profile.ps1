@@ -25,10 +25,10 @@ function mkdir ([string] $dirName) {
 function mkcd ([string] $dirName) {
     if (!(Test-Path $dirName)) {
         mkdir($dirName)
-        cd $dirName
+        Set-Location $dirName
     } else {
         Write-Host "Directory '$dirName' already exists! Moving into the directory."
-        cd $dirName
+        Set-Location $dirName
     }
 }
 
