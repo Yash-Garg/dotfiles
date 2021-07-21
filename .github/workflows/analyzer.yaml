@@ -1,0 +1,10 @@
+name: Powershell Script Analyzer
+on: push
+
+jobs:
+  package-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: PS-Check
+        uses: SleepySysadmin/github-action-pscheck@v0.4.2
