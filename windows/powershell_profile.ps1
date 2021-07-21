@@ -11,6 +11,7 @@ function touch ([string] $fileName) {
     }
 }
 
+# Create a directory in the current working directory
 function mkdir ([string] $dirName) {
     if (!(Test-Path $dirName)) {
         Write-Host "Creating $dirName"
@@ -18,12 +19,6 @@ function mkdir ([string] $dirName) {
     } else {
         Write-Host "Directory '$dirName' already exists"
     }
-}
-
-# Reload powershell profile
-function reload {
-    . $PROFILE
-    & $PROFILE
 }
 
 # Create a signed commit with given message
@@ -62,6 +57,12 @@ function rebase ([int] $num) {
     } else {
         git rebase -i HEAD~$num
     }
+}
+
+# Reload powershell profile
+function reload {
+    . $PROFILE
+    & $PROFILE
 }
 
 # Stage all file changes to git
