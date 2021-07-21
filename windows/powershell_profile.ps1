@@ -21,6 +21,30 @@ function mkdir ([string] $dirName) {
     }
 }
 
+# Create and move into the directory
+function mkcd ([string] $dirName) {
+    if (!(Test-Path $dirName)) {
+        mkdir($dirName)
+        cd $dirName
+    } else {
+        Write-Host "Directory '$dirName' already exists! Moving into the directory."
+        cd $dirName
+    }
+}
+
+# Clone the repository at the specified URL with specified branch
+function clone ([string] $repo, [string] $branch) {
+    if ($repo -ne "") {
+        if ($branch -ne "") {
+            git clone git@github.com:$repo -b $branch
+        } else {
+            git clone git@github.com:$repo
+        }
+    } else {
+        Write-Host "You must specify a repository URL!"
+    }
+}
+
 # Create a signed commit with given message
 function commit ([string] $commitMessage) {
     if ($commitMessage -ne "") {
