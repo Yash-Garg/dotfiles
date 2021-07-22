@@ -57,10 +57,11 @@ function commit ([string] $commitMessage) {
 # Show oneline log of commits of given size
 function lg ([int] $logSize) {
     if ($logSize -le 0) {
-        $logSize = 10
-        Write-Host "Using default log size of $logSize"
+        Write-Host "Using default log size of 10"
+        git log --oneline -n 10
+    } else {
+        git log --oneline -n $logSize
     }
-    git log --oneline -n $logSize
 }
 
 # Push changes to github repository
