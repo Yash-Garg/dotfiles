@@ -90,6 +90,9 @@ function reload {
     & $PROFILE
 }
 
+# Open scrcpy with the given options
+function device { scrcpy --always-on-top -w }
+
 # Modify the most recent commit
 function amend { git commit --amend -S }
 
