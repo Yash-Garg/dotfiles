@@ -99,6 +99,9 @@ function amend { git commit --amend -S }
 # Stage all file changes to git
 function add { git add --all }
 
+# Pull all changes from the remote repository
+function pull { git pull }
+
 # List all files in the specified directory
 function ls { Get-Item * }
 
