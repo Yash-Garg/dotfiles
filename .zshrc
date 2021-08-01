@@ -1,6 +1,7 @@
 source ~/functions.sh
 
 export ZSH="/home/yash/.oh-my-zsh"
+export CHROME_EXECUTABLE="/opt/google/chrome/google-chrome"
 
 ZSH_THEME="honukai"
 
