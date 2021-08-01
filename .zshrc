@@ -12,6 +12,10 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
 
-export EDITOR='nano'
+export EDITOR=nano
+
+export PATH=~/Android/Sdk/platform-tools/:$PATH
 
 export GPG_TTY=$(tty)
+
+COMPLETION_WAITING_DOTS="true"
