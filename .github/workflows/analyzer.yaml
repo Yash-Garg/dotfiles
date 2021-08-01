@@ -3,6 +3,7 @@ on: push
 
 jobs:
   package-analysis:
+    if: "contains(github.event.head_commit.message, 'pwsh')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
