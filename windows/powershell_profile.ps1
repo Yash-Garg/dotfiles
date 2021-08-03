@@ -90,6 +90,11 @@ function reload {
     & $PROFILE
 }
 
+# Run flutter build_runner for packages
+function buildRunner {
+    flutter packages pub run build_runner build --delete-conflicting-outputs
+}
+
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w }
 
