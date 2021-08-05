@@ -1,14 +1,16 @@
 [user]
 	name = Yash-Garg
 	email = yash.garg@outlook.in
-	signingkey = 3EC3B28E1802133E
+	signingkey = 033B22FE30189031
 [color]
-	ui = auto
+	ui = true
 [core]
 	editor = nano
 	autocrlf = false
 [commit]
-  	gpgsign = true
+	gpgsign = true
+[format]
+	signoff = true
 [url "git@github.com:"]
-  	insteadOf = https://github.com/
-  	insteadOf = git://github.com/
+	insteadOf = https://github.com/
+	insteadOf = git://github.com/

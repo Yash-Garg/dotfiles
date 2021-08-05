@@ -18,14 +18,19 @@ function ghclone {
     fi
 }
 
-function reload {
-    source ~/.zshrc
-}
-
 function weather {
     if [ "$(tput cols)" -lt 125 ]; then # 125 is min size for correct display
         curl "wttr.in/~${1:-Ghaziabad}?0"
     else
         curl "wttr.in/~${1:-Ghaziabad}"
+    fi
+}
+
+function device {
+    if [ -z ${1} ]; then
+        echo "Invalid Input - Supply a device name and port"
+        return
+    else
+        scrcpy -s $1 --always-on-top -w
     fi
 }

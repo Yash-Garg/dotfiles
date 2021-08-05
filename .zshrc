@@ -1,5 +1,4 @@
-source ~/functions.sh
-
+# Exports
 export ZSH="/home/yash/.oh-my-zsh"
 export PATH=~/Android/Sdk/platform-tools/:/home/linuxbrew/.linuxbrew/bin:$PATH
 export LANG=en_US.UTF-8
@@ -8,7 +7,21 @@ export GPG_TTY=$(tty)
 export UPDATE_ZSH_DAYS=7
 export GRADLE_USER_HOME=~/.gradle
 
+# Aliases
+alias push='git push'
+alias fpush='git push --force'
+alias reload='source ~/.zshrc'
+alias amend='git commit --amend -S'
+alias add='git add --all'
+alias pull='git pull'
+alias st='git status'
+alias cls='clear'
+
+# Misc.
 ZSH_THEME="honukai"
 plugins=(git)
 COMPLETION_WAITING_DOTS="true"
+
+# Source
 source $ZSH/oh-my-zsh.sh
+source ~/functions.sh
