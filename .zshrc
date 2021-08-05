@@ -16,6 +16,8 @@ alias add='git add --all'
 alias pull='git pull'
 alias st='git status'
 alias cls='clear'
+alias tu='sudo tailscale up'
+alias td='sudo tailscale down'
 
 # Misc.
 ZSH_THEME="honukai"
