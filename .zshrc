@@ -18,6 +18,7 @@ alias st='git status'
 alias cls='clear'
 alias tu='sudo tailscale up'
 alias td='sudo tailscale down'
+alias dev='scrcpy -m800 -b2M --always-on-top -w'
 
 # Misc.
 ZSH_THEME="honukai"
