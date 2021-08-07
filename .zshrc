@@ -1,6 +1,6 @@
 # Exports
 export ZSH="/home/yash/.oh-my-zsh"
-export PATH=~/Android/Sdk/platform-tools/:/home/linuxbrew/.linuxbrew/bin:$PATH
+export PATH=~/Android/Sdk/platform-tools/:~/Android/flutter/bin:$PATH
 export LANG=en_US.UTF-8
 export EDITOR=nano
 export GPG_TTY=$(tty)
