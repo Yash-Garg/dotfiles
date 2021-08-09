@@ -4,10 +4,10 @@ add_newline = false
 success_symbol = "[➜](bold green) "
 error_symbol = "[✗](bold red) "
 
-[git branch]
+[git_branch]
 always_show_remote = true
 
 [git_status]
 ahead = "${count}"
-diverged = " ${ahead_count} ${behind_count}"
+diverged = "${ahead_count}${behind_count}"
 behind = "${count}"
