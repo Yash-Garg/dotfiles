@@ -1,5 +1,6 @@
 # Set oh-my-posh theme to zash
-Set-PoshPrompt -Theme zash
+# Set-PoshPrompt -Theme zash
+Invoke-Expression (&starship init powershell)
 
 # Create a new empty file in the current working directory
 function touch ([string] $fileName) {
@@ -48,7 +49,7 @@ function clone ([string] $repo, [string] $branch) {
 # Create a signed commit with given message
 function commit ([string] $commitMessage) {
     if ($commitMessage -ne "") {
-        git commit --all -S -s -am $commitMessage
+        git commit --all -S -am $commitMessage
     } else {
         Write-Host "Aborting! No commit message provided."
     }
@@ -90,10 +91,12 @@ function reload {
     & $PROFILE
 }
 
-# Run flutter build_runner for packages
-function buildRunner {
-    flutter packages pub run build_runner build --delete-conflicting-outputs
-}
+# Flutter Stuff
+function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
+
+function spbuild { flutter build apk -t .\lib\main_debug.dart --release --split-per-abi }
+
+function build { flutter build -t .\lib\main_debug.dart --release }
 
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w }
