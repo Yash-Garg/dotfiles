@@ -22,12 +22,14 @@ alias tu='sudo tailscale up'
 alias td='sudo tailscale down'
 alias dev='scrcpy -m800 -b2M --always-on-top -w'
 alias reset='git reset'
+alias log='git log --oneline'
 
 # Misc.
 ZSH_THEME="honukai"
 plugins=(
     git
     zsh-autosuggestions
+    fast-syntax-highlighting
 )
 COMPLETION_WAITING_DOTS="true"
 
@@ -35,4 +37,3 @@ COMPLETION_WAITING_DOTS="true"
 # eval "$(starship init zsh)"
 source $ZSH/oh-my-zsh.sh
 source ~/functions.sh
-
