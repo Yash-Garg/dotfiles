@@ -112,8 +112,5 @@ function add { git add --all }
 # Pull all changes from the remote repository
 function pull { git pull }
 
-# List all files in the specified directory
-function ls { Get-Item * }
-
 # Show the status of files in the current working directory
 function st { git status }
