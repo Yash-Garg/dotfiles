@@ -96,7 +96,9 @@ function runner { flutter packages pub run build_runner build --delete-conflicti
 
 function spbuild { flutter build apk -t .\lib\main_debug.dart --release --split-per-abi }
 
-function build { flutter build -t .\lib\main_debug.dart --release }
+function build { flutter build apk -t .\lib\main_debug.dart --release }
+
+function run { flutter run -t .\lib\main_debug.dart --debug }
 
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w }
