@@ -101,7 +101,7 @@ function build { flutter build apk -t .\lib\main_debug.dart --release }
 function run { flutter run -t .\lib\main_debug.dart --debug }
 
 # Open scrcpy with the given options
-function device { scrcpy --always-on-top -w }
+function device { scrcpy --always-on-top -w -b2M -m800 }
 
 # Modify the most recent commit
 function amend { git commit --amend -S }
