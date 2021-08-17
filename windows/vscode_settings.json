@@ -3,7 +3,7 @@
   "code-runner.runInTerminal": true,
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "newUntitledFile",
-  "editor.fontFamily": "'Cascadia Mono', monospace",
+  "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', monospace",
   "editor.fontWeight": "400",
   "editor.fontLigatures": "'calt', 'ss01'",
   "go.autocompleteUnimportedPackages": true,
@@ -81,30 +81,9 @@
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "editor.cursorSmoothCaretAnimation": true,
-  "editor.tokenColorCustomizations": {
-    "[Horizon Italic]": {
-      "functions": "#00c3ffe7",
-      "keywords": "#d400ffe7",
-      "types": "#ffbb00ee",
-      "variables": "#ff5151"
-    }
-  },
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]"
-  ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
   "editor.linkedEditing": true,
   "editor.suggest.preview": true,
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
-  },
   "editor.minimap.enabled": false,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "dart.warnWhenEditingFilesInPubCache": false,
@@ -125,29 +104,43 @@
     "*": true,
     "yaml": true,
     "plaintext": false,
-    "markdown": false,
+    "markdown": true,
     "dart": true
   },
   "terminal.integrated.fontWeightBold": "normal",
-  "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
-  "powershell.codeFormatting.autoCorrectAliases": true,
-  "powershell.codeFormatting.useConstantStrings": true,
-  "powershell.codeFormatting.useCorrectCasing": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Horizon Italic",
+  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "redhat.telemetry.enabled": true,
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.inlayHints.fontFamily": "'JetBrains Mono', 'Courier New', monospace",
+  "editor.inlayHints.fontFamily": "'Cascadia Code', 'JetBrains Mono', monospace",
   "diffEditor.codeLens": true,
-  "editor.inlayHints.fontSize": 12
+  "editor.inlayHints.fontSize": 12,
+  "editor.fontSize": 15,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.colorCustomizations": {
+    "sideBar.border": "#202020",
+    "editorLineNumber.activeForeground": "#faf8f8",
+    "editor.lineHighlightBackground": "#252525"
+  },
+  "editor.tokenColorCustomizations": {
+    "[Horizon Italic]": {
+      "functions": "#00c3ffe7",
+      "keywords": "#d400ffe7",
+      "types": "#ffbb00ee",
+      "variables": "#ff5151"
+    },
+    "[Community Material Theme Darker High Contrast]": {
+      "keywords": "#ff5959",
+      "types": "#fcce78",
+      "functions": "#74b0ff"
+    }
+  }
 }
