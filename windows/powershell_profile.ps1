@@ -49,7 +49,7 @@ function clone ([string] $repo, [string] $branch) {
 # Create a signed commit with given message
 function commit ([string] $commitMessage) {
     if ($commitMessage -ne "") {
-        git commit --all -S -am $commitMessage
+        git commit --all -S -m $commitMessage
     } else {
         Write-Host "Aborting! No commit message provided."
     }
