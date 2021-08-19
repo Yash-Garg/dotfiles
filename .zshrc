@@ -16,13 +16,13 @@ alias amend='git commit --amend -S'
 alias add='git add --all'
 alias pull='git pull'
 alias st='git status'
-alias commit='git commit --all -s -S -am'
+alias commit='git commit --all -s -S -m'
 alias cls='clear'
 alias tu='sudo tailscale up'
 alias td='sudo tailscale down'
 alias dev='scrcpy -m800 -b2M --always-on-top -w'
-alias reset='git reset'
-alias log='git log --oneline'
+alias rs='git reset'
+alias lg='git log --oneline'
 
 # Misc.
 ZSH_THEME="honukai"
