@@ -36,4 +36,5 @@ COMPLETION_WAITING_DOTS="true"
 # Source
 # eval "$(starship init zsh)"
 source $ZSH/oh-my-zsh.sh
+source $HOME/.cargo/env
 source ~/functions.sh
