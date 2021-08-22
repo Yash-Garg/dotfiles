@@ -84,7 +84,6 @@
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
   "editor.linkedEditing": true,
   "editor.suggest.preview": true,
-  "editor.minimap.enabled": false,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "dart.warnWhenEditingFilesInPubCache": false,
   "editor.cursorStyle": "block",
@@ -103,9 +102,10 @@
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
-    "plaintext": false,
+    "plaintext": true,
     "markdown": true,
-    "dart": true
+    "dart": false,
+    "rust": false
   },
   "terminal.integrated.fontWeightBold": "normal",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -128,7 +128,7 @@
   "workbench.colorCustomizations": {
     "sideBar.border": "#202020",
     "editorLineNumber.activeForeground": "#faf8f8",
-    "editor.lineHighlightBackground": "#252525"
+    "editor.lineHighlightBackground": "#252525",
   },
   "editor.tokenColorCustomizations": {
     "[Horizon Italic]": {
@@ -142,5 +142,9 @@
       "types": "#fcce78",
       "functions": "#74b0ff"
     }
+  },
+  "editor.minimap.enabled": false,
+  "[rust]": {
+    "editor.defaultFormatter": "statiolake.vscode-rustfmt"
   }
 }
