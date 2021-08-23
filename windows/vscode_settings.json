@@ -77,7 +77,7 @@
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "markdown.preview.typographer": true,
   "terminal.integrated.tabs.enabled": true,
-  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "editor.cursorSmoothCaretAnimation": true,
@@ -113,7 +113,7 @@
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
@@ -126,9 +126,7 @@
   "editor.fontSize": 15,
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.colorCustomizations": {
-    "sideBar.border": "#202020",
-    "editorLineNumber.activeForeground": "#faf8f8",
-    "editor.lineHighlightBackground": "#252525",
+    "editorLineNumber.activeForeground": "#faf8f8"
   },
   "editor.tokenColorCustomizations": {
     "[Horizon Italic]": {
@@ -143,8 +141,9 @@
       "functions": "#74b0ff"
     }
   },
-  "editor.minimap.enabled": false,
   "[rust]": {
     "editor.defaultFormatter": "statiolake.vscode-rustfmt"
-  }
+  },
+  "editor.minimap.enabled": false,
+  "terminal.integrated.fontSize": 15
 }
