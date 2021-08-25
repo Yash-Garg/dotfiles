@@ -1,7 +1,7 @@
 # Exports
-export ZSH="/home/yash/.oh-my-zsh"
 # export STARSHIP_CONFIG=~/.starship/config.toml
-export PATH=~/Android/Sdk/platform-tools/:~/Android/flutter/bin:$PATH
+export ZSH="/home/yash/.oh-my-zsh"
+export PATH=~/Android/Sdk/platform-tools/:~/Android/flutter/bin:~/bin:$PATH
 export LANG=en_US.UTF-8
 export EDITOR=nano
 export GPG_TTY=$(tty)
