@@ -34,3 +34,12 @@ function device {
         scrcpy -s $1 --always-on-top -w
     fi
 }
+
+function lfconv {
+	if [ -z ${1} ]; then
+        echo "Invalid path specified"
+        return
+    else
+    	find $1 -type f -print0 | xargs -0 dos2unix --
+    fi
+}
