@@ -21,7 +21,8 @@ alias cls='clear'
 alias tu='sudo tailscale up'
 alias td='sudo tailscale down'
 alias dev='scrcpy -m800 -b2M --always-on-top -w'
-alias rs='git reset'
+alias reset='git reset'
+alias restore='git restore *'
 alias lg='git log --oneline'
 
 # Misc.
