@@ -6,7 +6,7 @@
 
 # Clone dotfiles and cd into it
 git clone https://github.com/Yash-Garg/dotfiles -b stable ~/dotfiles
-cd ~/dotfiles
+cd ~/dotfiles || exit
 
 # Setup custom packages key & repos
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add -
@@ -40,12 +40,13 @@ chsh -s /usr/bin/zsh
 # Setup plugin and themes from in zsh directory
 cp .oh-my-zsh/custom/themes/honukai.zsh-theme ~/.oh-my-zsh/custom/themes
 git clone https://github.com/zsh-users/zsh-autosuggestions \
-    ${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    "${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
 git clone https://github.com/zdharma/fast-syntax-highlighting \
-    ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+    "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/fast-syntax-highlighting
 
 # Copy config files from dotfiles to root
 cp {.imwheelrc,.zshrc,.nanorc,.gitconfig,functions.sh} ~/
 
 # Reload zshrc
-source ~/.zshrc
+# shellcheck disable=SC1091
+source "$HOME"/.zshrc

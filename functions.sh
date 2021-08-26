@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
 function mkcd {
-    if [ -z ${1} ]; then
+    if [ -z "${1}" ]; then
         echo "Invalid Input - Supply a folder name"
         return
     else
-        mkdir -p $1 && cd $1
+        mkdir -p "$1" && cd "$1" || exit
     fi
 }
 
 function ghclone {
-    if [ -z ${1} ]; then
+    if [ -z "${1}" ]; then
         echo "Invalid Input - Supply a repository name dumb"
         return
     else
-        git clone git@github.com:$1
+        git clone git@github.com:"$1"
     fi
 }
 
@@ -27,19 +27,19 @@ function weather {
 }
 
 function device {
-    if [ -z ${1} ]; then
+    if [ -z "${1}" ]; then
         echo "Invalid Input - Supply a device name and port"
         return
     else
-        scrcpy -s $1 --always-on-top -w
+        scrcpy -s "$1" --always-on-top -w
     fi
 }
 
 function lfconv {
-	if [ -z ${1} ]; then
+	if [ -z "${1}" ]; then
         echo "Invalid path specified"
         return
     else
-    	find $1 -type f -print0 | xargs -0 dos2unix --
+    	find "$1" -type f -print0 | xargs -0 dos2unix --
     fi
 }

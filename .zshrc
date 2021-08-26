@@ -1,3 +1,5 @@
+# shellcheck disable=SC1000-SC9999
+
 # Exports
 # export STARSHIP_CONFIG=~/.starship/config.toml
 export ZSH="/home/yash/.oh-my-zsh"
@@ -24,6 +26,7 @@ alias dev='scrcpy -m800 -b2M --always-on-top -w'
 alias reset='git reset'
 alias restore='git restore *'
 alias lg='git log --oneline'
+alias update='sudo apt-get -y update && sudo apt-get -y upgrade'
 
 # Misc.
 ZSH_THEME="honukai"

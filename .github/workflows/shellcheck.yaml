@@ -1,0 +1,12 @@
+name: Shellcheck Analyzer
+on: push
+
+jobs:
+  shellcheck:
+    name: Shellcheck
+    if: "contains(github.event.head_commit.message, 'shell')"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@master
