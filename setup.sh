@@ -32,7 +32,7 @@ sudo apt-get -y upgrade
 sudo apt install -y zsh git htop neofetch aria2 curl \
     zip unzip p7zip-full speedtest imwheel pavucontrol \
     pkg-config make cmake scrcpy xclip tailscale ckb-next \
-    telegram-desktop clang code apt-transport-https windscribe-cli
+    telegram-desktop clang code apt-transport-https windscribe-cli samba
 
 # Setup Flutter
 git clone https://github.com/flutter/flutter -b stable ~/Android/flutter
