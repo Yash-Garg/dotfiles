@@ -5,6 +5,7 @@
 #
 
 # Clone dotfiles and cd into it
+sudo apt install -y git
 git clone https://github.com/Yash-Garg/dotfiles -b stable ~/dotfiles
 cd ~/dotfiles || exit
 
@@ -29,28 +30,29 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # Install packages
-sudo apt install -y zsh git htop neofetch aria2 curl \
+sudo apt install -y zsh htop neofetch aria2 curl \
     zip unzip p7zip-full speedtest imwheel pavucontrol \
     pkg-config make cmake scrcpy xclip tailscale ckb-next \
-    telegram-desktop clang code apt-transport-https windscribe-cli samba
+    telegram-desktop clang code apt-transport-https windscribe-cli \
+    samba ninja-build fonts-noto-color-emoji libgtk-3-dev
 
 # Setup Flutter
 git clone https://github.com/flutter/flutter -b stable ~/Android/flutter
 
 # Install Oh-My-ZSH & switch to zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-chsh -s /usr/bin/zsh
 
 # Setup plugin and themes from in zsh directory
 cp .oh-my-zsh/custom/themes/honukai.zsh-theme ~/.oh-my-zsh/custom/themes
 git clone https://github.com/zsh-users/zsh-autosuggestions \
-    "${ZSH_CUSTOM:$HOME/.oh-my-zsh/custom}"/plugins/zsh-autosuggestions
+    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zdharma/fast-syntax-highlighting \
-    "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/plugins/fast-syntax-highlighting
+    ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 
 # Copy config files from dotfiles to root
 cp {.imwheelrc,.zshrc,.nanorc,.gitconfig,functions.sh} ~/
 
 # Reload zshrc
-# shellcheck disable=SC1091
-source "$HOME"/.zshrc
+chsh -s /usr/bin/zsh
+# shellcheck disable=SC1090
+source ~/.zshrc
