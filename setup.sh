@@ -42,6 +42,11 @@ git clone https://github.com/flutter/flutter -b stable ~/Android/flutter
 # Install Oh-My-ZSH & switch to zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Download and install chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+
 # Set hardware video decoding arguments to chrome
 sudo sed -i -r '0,/^Exec.*/s//Exec=\/usr\/bin\/google-chrome-stable %U --enable-features=VaapiVideoDecoder --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy/' /usr/share/applications/google-chrome.desktop
 
