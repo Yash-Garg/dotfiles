@@ -8,6 +8,7 @@
     editor = nano
     autocrlf = false
     sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+    excludesfile = C:\\Users\\Yashg\\.gitignore_global
 [commit]
     gpgsign = true
 [format]

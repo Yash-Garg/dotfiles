@@ -7,6 +7,7 @@
 [core]
     editor = nano
     autocrlf = false
+    excludesfile = ~/.gitignore_global
 [commit]
     gpgsign = true
 [format]
