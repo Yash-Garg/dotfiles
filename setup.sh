@@ -42,6 +42,9 @@ git clone https://github.com/flutter/flutter -b stable ~/Android/flutter
 # Install Oh-My-ZSH & switch to zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Set hardware video decoding arguments to chrome
+sudo sed -i -r '0,/^Exec.*/s//Exec=\/usr\/bin\/google-chrome-stable %U --enable-features=VaapiVideoDecoder --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy/' /usr/share/applications/google-chrome.desktop
+
 # Setup plugin and themes from in zsh directory
 cp .oh-my-zsh/custom/themes/honukai.zsh-theme ~/.oh-my-zsh/custom/themes
 git clone https://github.com/zsh-users/zsh-autosuggestions \
