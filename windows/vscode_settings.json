@@ -53,9 +53,6 @@
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
-  "settingsSync.ignoredSettings": [
-    "-C_Cpp.clang_format_fallbackStyle"
-  ],
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -113,7 +110,6 @@
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "One Dark Pro Darker",
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
@@ -123,12 +119,26 @@
   "editor.inlayHints.fontFamily": "'Cascadia Code', 'JetBrains Mono', monospace",
   "diffEditor.codeLens": true,
   "editor.inlayHints.fontSize": 12,
-  "editor.fontSize": 15,
-  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.fontSize": 16,
   "workbench.colorCustomizations": {
     "editorLineNumber.activeForeground": "#faf8f8"
   },
   "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "entity.name.type.class",
+          "keyword",
+          "constant",
+          "storage.modifier",
+          "storage.type.class"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ],
     "[Horizon Italic]": {
       "functions": "#00c3ffe7",
       "keywords": "#d400ffe7",
@@ -145,5 +155,7 @@
     "editor.defaultFormatter": "statiolake.vscode-rustfmt"
   },
   "editor.minimap.enabled": false,
-  "terminal.integrated.fontSize": 15
+  "terminal.integrated.fontSize": 15,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.colorTheme": "One Dark Pro Darker"
 }
