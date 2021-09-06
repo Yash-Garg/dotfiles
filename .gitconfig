@@ -17,3 +17,5 @@
     insteadOf = git://github.com/
 [pull]
     rebase = false
+[diff]
+    submodule = log

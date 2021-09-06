@@ -25,7 +25,7 @@ alias td='sudo tailscale down'
 alias dev='scrcpy -m800 -b2M --always-on-top -w'
 alias reset='git reset'
 alias restore='git restore *'
-alias lg='git log --oneline'
+alias lg='git log --oneline --decorate --graph --all'
 alias update='sudo apt-get -y update && sudo apt-get -y upgrade'
 
 # Misc.

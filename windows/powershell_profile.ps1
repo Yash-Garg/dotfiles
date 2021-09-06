@@ -65,9 +65,9 @@ function commit ([string] $commitMessage) {
 function lg ([int] $logSize) {
     if ($logSize -le 0) {
         Write-Host "Using default log size of 10"
-        git log --oneline -n 10
+        git log --oneline --decorate --graph --all -n 10
     } else {
-        git log --oneline -n $logSize
+        git log --oneline --decorate --graph --all -n $logSize
     }
 }
 

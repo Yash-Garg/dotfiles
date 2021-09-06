@@ -20,3 +20,5 @@
     rebase = false
 [gpg]
     program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
+[diff]
+    submodule = log
