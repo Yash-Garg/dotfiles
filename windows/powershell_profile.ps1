@@ -5,6 +5,9 @@ Set-PoshPrompt -Theme zash
 # Set terminal icons module
 Import-Module -Name Terminal-Icons
 
+# Set alias for winfetch
+Set-Alias neofetch winfetch.ps1
+
 # Create a new empty file in the current working directory
 function touch ([string] $fileName) {
     if (!(Test-Path $fileName)) {
