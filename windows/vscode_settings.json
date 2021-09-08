@@ -153,8 +153,9 @@
   "[rust]": {
     "editor.defaultFormatter": "statiolake.vscode-rustfmt"
   },
-  "editor.minimap.enabled": false,
   "terminal.integrated.fontSize": 15,
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "One Dark Pro Darker"
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true
 }
