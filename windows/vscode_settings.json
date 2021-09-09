@@ -65,7 +65,6 @@
   "editor.formatOnSave": true,
   "svg.preview.mode": "img",
   "go.toolsManagement.autoUpdate": true,
-  "dart.debugExternalLibraries": false,
   "dart.debugSdkLibraries": false,
   "debug.console.fontSize": 13,
   "settingsSync.ignoredExtensions": [
@@ -157,5 +156,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.colorTheme": "One Dark Pro Darker",
   "editor.minimap.enabled": false,
-  "editor.bracketPairColorization.enabled": true
+  "editor.bracketPairColorization.enabled": true,
+  "C_Cpp.autocompleteAddParentheses": true,
+  "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
 }
