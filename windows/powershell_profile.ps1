@@ -100,11 +100,11 @@ function reload {
 # Flutter Stuff
 function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
 
-function spbuild { flutter build apk -t .\lib\main_debug.dart --release --split-per-abi }
+function spbuild { flutter build apk --release --split-per-abi }
 
-function build { flutter build apk -t .\lib\main_debug.dart --release }
+function build { flutter build apk --release }
 
-function run { flutter run -t .\lib\main_debug.dart --debug }
+function run { flutter run }
 
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w -b2M -m800 }
