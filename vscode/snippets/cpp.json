@@ -1,0 +1,15 @@
+{
+    "Boilerplate": {
+        "prefix": "bp",
+        "body": [
+            "#include <iostream>",
+            "using namespace std;",
+            "\nint main() {",
+            "\t/* Code Here */",
+            "\t$1",
+            "\treturn 0;",
+            "}\n"
+        ],
+        "description": "Add basic C++ boilerplate"
+    }
+}
