@@ -98,13 +98,13 @@ function reload {
 }
 
 # Flutter Stuff
-function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
+function runner { fvm flutter packages pub run build_runner build --delete-conflicting-outputs }
 
-function spbuild { flutter build apk --release --split-per-abi }
+function spbuild { fvm flutter build apk --release --split-per-abi }
 
-function build { flutter build apk --release }
+function build { fvm flutter build apk --release }
 
-function run { flutter run }
+function run { fvm flutter run }
 
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w -b2M -m800 }
