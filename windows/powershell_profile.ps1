@@ -71,17 +71,6 @@ function lg ([int] $logSize) {
     }
 }
 
-# Push changes to github repository
-function push ([string] $arg) {
-    if ($arg -eq "f") {
-        Write-Host "Force pushing.."
-        git push --force
-    } else {
-        Write-Host "Pushing.."
-        git push
-    }
-}
-
 # Rebase given number of commits on current branch
 function rebase ([int] $num) {
     if ($num -eq 0) {
@@ -117,6 +106,12 @@ function add { git add --all }
 
 # Pull all changes from the remote repository
 function pull { git pull }
+
+# Push changes to remote repository
+function push { git push }
+
+# Force push changes to remote repository
+function fpush { git push --force }
 
 # Show the status of files in the current working directory
 function st { git status }
