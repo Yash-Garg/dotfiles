@@ -160,10 +160,11 @@
   "C_Cpp.autocompleteAddParentheses": true,
   "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
   "livePreview.notifyOnOpenLooseFile": false,
-  "editor.minimap.enabled": false,
   "editor.renderControlCharacters": true,
   "dart.flutterSdkPaths": [
     "E:/Android/fvm/versions"
   ],
-  "bloc.checkForUpdates": false
+  "bloc.checkForUpdates": false,
+  "editor.minimap.enabled": false,
+  "workbench.editor.enablePreview": false
 }
