@@ -34,7 +34,10 @@ sudo apt install -y zsh htop neofetch aria2 curl \
     zip unzip p7zip-full speedtest imwheel pavucontrol \
     pkg-config make cmake scrcpy xclip tailscale ckb-next \
     telegram-desktop clang code apt-transport-https windscribe-cli \
-    samba ninja-build fonts-noto-color-emoji libgtk-3-dev
+    samba ninja-build fonts-noto-color-emoji libgtk-3-dev build-essential
+
+# Install Rust
+curl https://sh.rustup.rs -sSf | sh
 
 # Setup Flutter
 git clone https://github.com/flutter/flutter -b stable ~/Android/flutter
