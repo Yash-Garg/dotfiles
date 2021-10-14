@@ -103,6 +103,9 @@ function device { scrcpy --always-on-top -w -b2M -m800 }
 # Modify the most recent commit
 function amend { git commit --amend -S }
 
+# Restore all files back from git history
+function restore { git restore * }
+
 # Stage all file changes to git
 function add { git add --all }
 
