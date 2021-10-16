@@ -32,6 +32,7 @@ alias run='fvm flutter run'
 
 ## Misc
 alias cls='clear'
+alias cf='cloudflared tunnel'
 alias tu='sudo tailscale up'
 alias td='sudo tailscale down'
 alias dev='scrcpy -m800 -b2M --always-on-top -w'
