@@ -96,7 +96,7 @@
     "jupyter-notebook": "left"
   },
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "yaml": true,
     "plaintext": true,
     "markdown": true,
