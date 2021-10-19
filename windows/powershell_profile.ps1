@@ -95,7 +95,7 @@ function build { fvm flutter build apk --release }
 
 function run { fvm flutter run }
 
-function pub { fvm flutter pub get }
+function get { fvm flutter pub get }
 
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w -b2M -m800 }
