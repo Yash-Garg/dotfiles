@@ -43,3 +43,12 @@ function lfconv {
     	find "$1" -type f -print0 | xargs -0 dos2unix --
     fi
 }
+
+function wgetf {
+    if [ -z "${1}" ]; then
+        echo "Please input a valid URL!"
+        return
+    else
+        wget -nd -r -np -R "index.html*" "$1"
+    fi
+}

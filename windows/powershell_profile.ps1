@@ -80,6 +80,15 @@ function rebase ([int] $num) {
     }
 }
 
+# Download a folder with wget incl. parameters
+function wgetf ([string] $url) {
+    if ($url -ne "") {
+        Write-Host "Please input a valid URL!"
+    } else {
+        wget -nd -r -np -R "index.html*" "$url"
+    }
+}
+
 # Reload powershell profile
 function reload {
     . $PROFILE
@@ -88,13 +97,9 @@ function reload {
 
 # Flutter Stuff
 function runner { fvm flutter packages pub run build_runner build --delete-conflicting-outputs }
-
 function spbuild { fvm flutter build apk --release --split-per-abi }
-
 function build { fvm flutter build apk --release }
-
 function run { fvm flutter run }
-
 function get { fvm flutter pub get }
 
 # Open scrcpy with the given options
