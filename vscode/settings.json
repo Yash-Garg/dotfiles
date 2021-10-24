@@ -164,12 +164,14 @@
   ],
   "bloc.checkForUpdates": false,
   "editor.minimap.enabled": false,
-  "workbench.editor.enablePreview": false,
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
   "window.zoomLevel": 0,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
-  "editor.fontSize": 16
+  "editor.fontSize": 16,
+  "editor.wordWrap": "on",
+  "workbench.editor.enablePreview": false,
+  "editor.foldingImportsByDefault": true
 }
