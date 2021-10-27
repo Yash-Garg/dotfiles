@@ -81,11 +81,12 @@ function rebase ([int] $num) {
 }
 
 # Download a folder with wget incl. parameters
-function wgetf ([string] $url) {
-    if ($url -ne "") {
+function dlf ([string] $url) {
+    if ($url -eq "") {
         Write-Host "Please input a valid URL!"
     } else {
-        wget -nd -r -np -R "index.html*" "$url"
+        Write-Host $url
+        wget -nd -r -np -R "index.html*" $url
     }
 }
 
@@ -127,4 +128,4 @@ function fpush { git push --force }
 function st { git status }
 
 # Open commands history log in notepad
-function history { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
+function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
