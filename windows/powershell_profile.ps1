@@ -125,3 +125,6 @@ function fpush { git push --force }
 
 # Show the status of files in the current working directory
 function st { git status }
+
+# Open commands history log in notepad
+function history { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
