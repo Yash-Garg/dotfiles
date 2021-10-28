@@ -44,7 +44,7 @@ function lfconv {
     fi
 }
 
-function wgetf {
+function dlf {
     if [ -z "${1}" ]; then
         echo "Please input a valid URL!"
         return
