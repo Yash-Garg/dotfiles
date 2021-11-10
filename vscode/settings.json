@@ -24,7 +24,7 @@
     "editor.defaultFormatter": "ms-python.python"
   },
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -47,7 +47,7 @@
     "editor.defaultFormatter": "Dart-Code.dart-code"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "workbench.activityBar.visible": true,
   "[cpp]": {
@@ -167,11 +167,19 @@
   "[vue]": {
     "editor.defaultFormatter": "octref.vetur"
   },
-  "window.zoomLevel": 0,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "editor.fontSize": 16,
   "editor.wordWrap": "on",
   "workbench.editor.enablePreview": false,
-  "editor.foldingImportsByDefault": true
+  "editor.foldingImportsByDefault": true,
+  "dart.checkForSdkUpdates": false,
+  "[solidity]": {
+    "editor.defaultFormatter": "JuanBlanco.solidity"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "editor.hideCursorInOverviewRuler": true,
+  "C_Cpp.default.cppStandard": "c++17"
 }
