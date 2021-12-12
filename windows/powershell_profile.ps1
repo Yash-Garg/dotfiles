@@ -1,3 +1,7 @@
+# For partial history mapping
+Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Chord DownArrow -Function HistorySearchForward
+
 # Set oh-my-posh theme to zash
 Set-PoshPrompt -Theme zash
 # Invoke-Expression (&starship init powershell)
