@@ -1,0 +1,15 @@
+command_timeout = 1000
+
+[username]
+disabled = false
+show_always = true
+format = "[$user]($style) in "
+
+[memory_usage]
+disabled = true
+threshold = -1
+format = "using [${ram_pct} RAM]($style) "
+style = "bold dimmed purple"
+
+[git_branch]
+always_show_remote = true
