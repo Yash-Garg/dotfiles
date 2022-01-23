@@ -27,7 +27,7 @@
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
     "editor.defaultFormatter": "aeschli.vscode-css-formatter"
@@ -63,7 +63,7 @@
   "workbench.productIconTheme": "fluent-icons",
   "files.trimTrailingWhitespace": true,
   "editor.formatOnSave": true,
-  "svg.preview.mode": "img",
+  "svg.preview.mode": "svg",
   "go.toolsManagement.autoUpdate": true,
   "dart.debugSdkLibraries": false,
   "debug.console.fontSize": 13,
@@ -72,7 +72,7 @@
   ],
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "markdown.preview.typographer": true,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "editor.cursorSmoothCaretAnimation": true,
@@ -187,6 +187,14 @@
   "cmake.generator": "MinGW Makefiles",
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
+},
+  "git.confirmSync": false,
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
   },
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
