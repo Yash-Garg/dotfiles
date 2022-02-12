@@ -8,7 +8,6 @@
   "editor.fontLigatures": "'calt', 'ss01'",
   "go.autocompleteUnimportedPackages": true,
   "python.languageServer": "Pylance",
-  "python.pythonPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
   "remote.SSH.remotePlatform": {
     "skybox": "linux"
   },
@@ -19,7 +18,6 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "C_Cpp.updateChannel": "Insiders",
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
@@ -72,7 +70,6 @@
   ],
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "markdown.preview.typographer": true,
-  "terminal.integrated.fontFamily": "JetBrains Mono",
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "editor.cursorSmoothCaretAnimation": true,
@@ -81,7 +78,6 @@
   "editor.suggest.preview": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "dart.warnWhenEditingFilesInPubCache": false,
-  "editor.cursorStyle": "block",
   "[kotlin]": {
     "editor.defaultFormatter": "esafirm.kotlin-formatter"
   },
@@ -100,7 +96,7 @@
     "markdown": true,
     "dart": false,
     "rust": false,
-    "cpp": true
+    "cpp": false
   },
   "terminal.integrated.fontWeightBold": "normal",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -162,9 +158,6 @@
   ],
   "bloc.checkForUpdates": false,
   "editor.minimap.enabled": false,
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
-  },
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "editor.fontSize": 16,
@@ -180,21 +173,23 @@
   },
   "editor.hideCursorInOverviewRuler": true,
   "C_Cpp.default.cppStandard": "c++17",
-  "cmake.configureOnOpen": true,
-  "cmake.mingwSearchDirs": [
-    "C:\\mingw64\\bin"
-  ],
-  "cmake.generator": "MinGW Makefiles",
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
-},
+  },
   "git.confirmSync": false,
   "gitlens.advanced.messages": {
     "suppressGitMissingWarning": true
   },
-  "window.zoomLevel": 0,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.cursorStyle": "block",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.currentLine.enabled": false,
+  "cmake.configureOnOpen": true,
+  "window.zoomLevel": 0,
+  "workbench.editor.closeOnFileDelete": true
 }
