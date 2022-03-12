@@ -1,6 +1,6 @@
 eval "$(starship init zsh)"
 
-export PATH="$PATH:$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/.pub-cache/bin:$HOME/bin:$HOME/Library/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/.pub-cache/bin:$HOME/bin:$HOME/Library/Android/sdk/platform-tools:/opt/homebrew/opt/openjdk@11/bin"
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export STARSHIP_CONFIG=$HOME/.starship/config.toml
