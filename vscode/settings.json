@@ -3,8 +3,8 @@
   "code-runner.runInTerminal": true,
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "newUntitledFile",
-  "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', monospace",
-  "editor.fontWeight": "400",
+  "editor.fontFamily": "'JetBrains Mono', monospace",
+  "editor.fontWeight": "600",
   "editor.fontLigatures": "'calt', 'ss01'",
   "go.autocompleteUnimportedPackages": true,
   "python.languageServer": "Pylance",
@@ -55,7 +55,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "dart.flutterSdkPath": "E:\\Android\\Flutter",
+  "dart.flutterSdkPath": "/Users/yashgarg/flutter",
   "dart.previewFlutterUiGuides": true,
   "dart.previewFlutterUiGuidesCustomTracking": true,
   "workbench.productIconTheme": "fluent-icons",
@@ -84,7 +84,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.scrollbar.verticalScrollbarSize": 10,
   "editor.scrollbar.horizontalScrollbarSize": 10,
-  "python.defaultInterpreterPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+  "python.defaultInterpreterPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
@@ -110,9 +110,9 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.inlayHints.fontFamily": "'Cascadia Code', 'JetBrains Mono', monospace",
+  "editor.inlayHints.fontFamily": "'JetBrains Mono', monospace",
   "diffEditor.codeLens": true,
-  "editor.inlayHints.fontSize": 12,
+  "editor.inlayHints.fontSize": 14,
   "workbench.colorCustomizations": {
     "editorLineNumber.activeForeground": "#faf8f8"
   },
@@ -153,9 +153,6 @@
   "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
   "livePreview.notifyOnOpenLooseFile": false,
   "editor.renderControlCharacters": true,
-  "dart.flutterSdkPaths": [
-    "E:/Android/fvm/versions"
-  ],
   "bloc.checkForUpdates": false,
   "editor.minimap.enabled": false,
   "editor.bracketPairColorization.enabled": true,
@@ -188,8 +185,11 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "gitlens.showWhatsNewAfterUpgrades": false,
-  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.enabled": true,
   "cmake.configureOnOpen": true,
   "window.zoomLevel": 0,
-  "workbench.editor.closeOnFileDelete": true
+  "workbench.editor.closeOnFileDelete": true,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.editor.historyBasedLanguageDetection": true,
+  "dart.debugExternalPackageLibraries": true
 }
