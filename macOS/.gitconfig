@@ -20,3 +20,5 @@
     submodule = log
 [gpg]
     program = gpg
+[includeIf "gitdir:~/Documents/Work/"]
+    path = .gitconfig-vauld
