@@ -1,6 +1,5 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "code-runner.runInTerminal": true,
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "newUntitledFile",
   "editor.fontFamily": "'JetBrains Mono', monospace",
@@ -27,9 +26,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[css]": {
-    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
-  },
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
@@ -55,13 +51,12 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "dart.flutterSdkPath": "/Users/yashgarg/flutter",
+  "dart.flutterSdkPath": "E:\\Android\\Flutter",
   "dart.previewFlutterUiGuides": true,
   "dart.previewFlutterUiGuidesCustomTracking": true,
   "workbench.productIconTheme": "fluent-icons",
   "files.trimTrailingWhitespace": true,
   "editor.formatOnSave": true,
-  "svg.preview.mode": "svg",
   "go.toolsManagement.autoUpdate": true,
   "dart.debugSdkLibraries": false,
   "debug.console.fontSize": 13,
@@ -78,31 +73,16 @@
   "editor.suggest.preview": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "dart.warnWhenEditingFilesInPubCache": false,
-  "[kotlin]": {
-    "editor.defaultFormatter": "esafirm.kotlin-formatter"
-  },
   "editor.inlineSuggest.enabled": true,
   "editor.scrollbar.verticalScrollbarSize": 10,
   "editor.scrollbar.horizontalScrollbarSize": 10,
-  "python.defaultInterpreterPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "python.defaultInterpreterPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "github.copilot.enable": {
-    "*": false,
-    "yaml": true,
-    "plaintext": true,
-    "markdown": true,
-    "dart": false,
-    "rust": false,
-    "cpp": false
-  },
   "terminal.integrated.fontWeightBold": "normal",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[xml]": {
-    "editor.defaultFormatter": "DotJoshJohnson.xml"
-  },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[go]": {
     "editor.defaultFormatter": "golang.go"
@@ -153,6 +133,9 @@
   "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
   "livePreview.notifyOnOpenLooseFile": false,
   "editor.renderControlCharacters": true,
+  "dart.flutterSdkPaths": [
+    "E:/Android/fvm/versions"
+  ],
   "bloc.checkForUpdates": false,
   "editor.minimap.enabled": false,
   "editor.bracketPairColorization.enabled": true,
@@ -162,12 +145,6 @@
   "workbench.editor.enablePreview": false,
   "editor.foldingImportsByDefault": true,
   "dart.checkForSdkUpdates": false,
-  "[solidity]": {
-    "editor.defaultFormatter": "JuanBlanco.solidity"
-  },
-  "[svg]": {
-    "editor.defaultFormatter": "jock.svg"
-  },
   "editor.hideCursorInOverviewRuler": true,
   "C_Cpp.default.cppStandard": "c++17",
   "[c]": {
@@ -187,7 +164,6 @@
   "gitlens.showWhatsNewAfterUpgrades": false,
   "gitlens.currentLine.enabled": true,
   "cmake.configureOnOpen": true,
-  "window.zoomLevel": 0,
   "workbench.editor.closeOnFileDelete": true,
   "explorer.confirmDragAndDrop": false,
   "workbench.editor.historyBasedLanguageDetection": true,
