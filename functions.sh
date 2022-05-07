@@ -52,3 +52,12 @@ function dlf {
         wget -nd -r -np -R "index.html*" "$1"
     fi
 }
+
+# Usage: `katbin "$(<log.txt)"`
+function katbin {
+    url="https://katb.in"
+    response=$(curl -X POST https://katb.in/api/paste -s --data-binary "paste[content]=$1")
+    id=$(grep -o '"id":"[^"]*' <<< $response | grep -o '[^"]*$')
+    echo "$url/$id"
+}
+
