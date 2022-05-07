@@ -1,3 +1,5 @@
+# shellcheck disable=SC1000-SC9999
+
 eval "$(starship init zsh)"
 
 export PATH="$PATH:$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/.pub-cache/bin:$HOME/bin:$HOME/Library/Android/sdk/platform-tools:/opt/homebrew/opt/openjdk@11/bin"
