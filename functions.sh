@@ -57,7 +57,6 @@ function dlf {
 function katbin {
     url="https://katb.in"
     response=$(curl -X POST https://katb.in/api/paste -s --data-binary "paste[content]=$1")
-    id=$(grep -o '"id":"[^"]*' <<< $response | grep -o '[^"]*$')
+    id=$(grep -o '"id":"[^"]*' <<< "$response" | grep -o '[^"]*$')
     echo "$url/$id"
 }
-
