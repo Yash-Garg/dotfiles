@@ -1,11 +1,6 @@
 server {
     listen 80;
     server_name localhost;
-}
-
-server {
-    listen 3030;
-    server_name localhost;
     index /_h5ai/public/index.php;
     root /home/ubuntu/Downloads;
     location / {
