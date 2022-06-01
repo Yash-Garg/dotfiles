@@ -1,4 +1,4 @@
-command_timeout = 1000
+command_timeout = 10000
 
 [username]
 disabled = false
@@ -12,4 +12,7 @@ format = "using [${ram_pct} RAM]($style) "
 style = "bold dimmed purple"
 
 [git_branch]
-always_show_remote = true
+always_show_remote = false
+
+[dart]
+detect_folders = []
