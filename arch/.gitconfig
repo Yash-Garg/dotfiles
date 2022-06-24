@@ -1,0 +1,21 @@
+[user]
+    name = Yash-Garg
+    email = yash.garg@outlook.in
+    signingkey = D240666450439606
+[color]
+    ui = true
+[core]
+    editor = nano
+    autocrlf = false
+    excludesfile = ~/.gitignore_global
+[commit]
+    gpgsign = true
+[format]
+    signoff = true
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+    insteadOf = git://github.com/
+[pull]
+    rebase = false
+[diff]
+    submodule = log

@@ -1,0 +1,9 @@
+add_newline = true
+
+[username]
+disabled = false
+show_always = true
+format = "[$user]($style) in "
+
+[git_branch]
+always_show_remote = false
