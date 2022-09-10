@@ -1,0 +1,19 @@
+version: "3.8"
+
+volumes:
+    h5ai_data: {}
+
+services:
+    h5ai:
+        image: awesometic/h5ai
+        container_name: h5ai
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Asia/Kolkata
+        ports:
+            - 80:80/tcp
+        volumes:
+            - h5ai_data:/config
+            - /home/ubuntu/Downloads:/h5ai
+        restart: always

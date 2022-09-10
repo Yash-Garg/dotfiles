@@ -1,0 +1,65 @@
+version: "3.8"
+
+networks:
+    tier:
+        driver: bridge
+
+volumes:
+    prometheus_data: {}
+    grafana_data: {}
+
+services:
+    prometheus:
+        image: prom/prometheus:latest
+        container_name: prometheus
+        ports:
+            - 9090:9090
+        networks:
+            - tier
+        volumes:
+            - /etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+        restart: unless-stopped
+        command:
+            - "--config.file=/etc/prometheus/prometheus.yml"
+
+    node_exporter:
+        image: quay.io/prometheus/node-exporter:latest
+        container_name: node_exporter
+        command:
+            - "--path.rootfs=/host"
+        ports:
+            - 9100:9100
+        networks:
+            - tier
+        pid: host
+        restart: unless-stopped
+        volumes:
+            - "/:/host:ro,rslave"
+
+    cadvisor:
+        image: zcube/cadvisor:latest
+        container_name: cadvisor
+        volumes:
+            - /:/rootfs:ro
+            - /var/run:/var/run:rw
+            - /sys:/sys:ro
+            - /var/lib/docker/:/var/lib/docker:ro
+        ports:
+            - 8080:8080
+        networks:
+            - tier
+        privileged: true
+        restart: unless-stopped
+
+    grafana:
+        image: grafana/grafana
+        container_name: grafana
+        environment:
+            - GF_AUTH_ANONYMOUS_ENABLED=true
+        volumes:
+            - grafana_data:/var/lib/grafana
+        ports:
+            - 3000:3000
+        networks:
+            - tier
+        restart: unless-stopped
