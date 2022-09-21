@@ -1,8 +1,8 @@
 version: "3.8"
 
 networks:
-    tier:
-        driver: bridge
+    web:
+        external: true
 
 volumes:
     prometheus_data: {}
@@ -15,7 +15,7 @@ services:
         ports:
             - 9090:9090
         networks:
-            - tier
+            - web
         volumes:
             - /etc/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
         restart: unless-stopped
@@ -30,7 +30,7 @@ services:
         ports:
             - 9100:9100
         networks:
-            - tier
+            - web
         pid: host
         restart: unless-stopped
         volumes:
@@ -47,7 +47,7 @@ services:
         ports:
             - 8080:8080
         networks:
-            - tier
+            - web
         privileged: true
         restart: unless-stopped
 
@@ -61,5 +61,5 @@ services:
         ports:
             - 3000:3000
         networks:
-            - tier
+            - web
         restart: unless-stopped

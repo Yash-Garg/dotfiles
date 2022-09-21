@@ -1,7 +1,12 @@
 version: "3.8"
 
 volumes:
-    h5ai_data: {}
+    h5ai:
+        external: true
+
+networks:
+    web:
+        external: true
 
 services:
     h5ai:
@@ -11,9 +16,11 @@ services:
             - PUID=1000
             - PGID=1000
             - TZ=Asia/Kolkata
+        networks:
+            - web
         ports:
             - 80:80/tcp
         volumes:
-            - h5ai_data:/config
+            - h5ai:/config
             - /home/ubuntu/Downloads:/h5ai
         restart: always

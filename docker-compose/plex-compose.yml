@@ -1,21 +1,28 @@
 version: "3.8"
 
 volumes:
-    plex_data: {}
+    plex:
+        external: true
+
+networks:
+    web:
+        external: true
 
 services:
     plex:
         image: lscr.io/linuxserver/plex:latest
         container_name: plex
+        networks:
+            - web
         ports:
             - 32400:32400
         environment:
             - PUID=1000
             - PGID=1000
             - VERSION=docker
-            - PLEX_CLAIM= # optional
+            - PLEX_CLAIM= # Optional
         volumes:
-            - plex_data:/config
+            - plex:/config
             - /mnt/Plex/Anime:/anime
             - /mnt/Plex/Movies:/movies
             - /mnt/Plex/Shows:/shows

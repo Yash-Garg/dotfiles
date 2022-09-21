@@ -2,6 +2,11 @@ version: "3.8"
 
 volumes:
     overseerr_data: {}
+
+networks:
+    web:
+        external: true
+
 services:
     overseerr:
         image: sctx/overseerr:latest
@@ -9,6 +14,8 @@ services:
         environment:
             - LOG_LEVEL=debug
             - TZ=Asia/Kolkata
+        networks:
+            - web
         ports:
             - 5055:5055
         volumes:
