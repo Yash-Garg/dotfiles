@@ -1,3 +1,5 @@
+# shellcheck disable=SC1000-SC9999
+
 eval "$(starship init zsh)"
 
 export ZSH="$HOME/.oh-my-zsh"
