@@ -1,13 +1,5 @@
-# For partial history mapping
-Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Chord DownArrow -Function HistorySearchForward
-
-# Set oh-my-posh theme to zash
-Set-PoshPrompt -Theme zash
-# Invoke-Expression (&starship init powershell)
-
-# Set terminal icons module
-Import-Module -Name Terminal-Icons
+Invoke-Expression (&starship init powershell)
+$ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
 
 # Set alias for winfetch
 Set-Alias neofetch winfetch.ps1
@@ -59,9 +51,9 @@ function clone ([string] $repo, [string] $branch) {
 # Create a signed commit with given message
 function commit ([string] $commitMessage) {
     if ($commitMessage -ne "") {
-        git commit --all -S -m $commitMessage
+        git commit -S -m $commitMessage
     } else {
-        Write-Host "Aborting! No commit message provided."
+        git commit -S
     }
 }
 
