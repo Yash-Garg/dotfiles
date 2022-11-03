@@ -53,7 +53,7 @@ function commit ([string] $commitMessage) {
     if ($commitMessage -ne "") {
         git commit -S -m $commitMessage
     } else {
-        git commit -S
+        git commit -S @args
     }
 }
 
@@ -70,7 +70,7 @@ function lg ([int] $logSize) {
 # Rebase given number of commits on current branch
 function rebase ([int] $num) {
     if ($num -eq 0) {
-        Write-Host "Bruh! How many number of commits?"
+        Write-Host "How many number of commits?"
     } else {
         git rebase -i HEAD~$num
     }
@@ -100,7 +100,7 @@ function run { flutter run }
 function get { flutter pub get }
 
 # Open scrcpy with the given options
-function device { scrcpy --always-on-top -w -b2M -m800 }
+function device { scrcpy --always-on-top -w -b2M -m800 @args }
 
 # Modify the most recent commit
 function amend { git commit --amend -S }
@@ -125,3 +125,9 @@ function st { git status }
 
 # Open commands history log in notepad
 function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
+
+function mcommit { git -c user.email=yashgarg@murena.io commit -s }
+
+function a2 { aria2c @args }
+
+cls
