@@ -25,3 +25,5 @@
     submodule = log
 [gpg "ssh"]
 	allowedSignersFile = %USERPROFILE%/allowed_signers
+[includeIf "gitdir/i:E:/Projects/Work/"]
+    path = .gitconfig-work
