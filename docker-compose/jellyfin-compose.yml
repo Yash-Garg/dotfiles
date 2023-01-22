@@ -1,0 +1,28 @@
+version: "3.8"
+
+volumes:
+  jellyfin:
+    external: true
+
+networks:
+  web:
+    external: true
+
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    networks:
+      - web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - jellyfin:/config
+      - /mnt/Plex/Anime:/anime
+      - /mnt/Plex/Movies:/movies
+      - /mnt/Plex/Shows:/shows
+    ports:
+      - 8096:8096
+    restart: unless-stopped
