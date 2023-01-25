@@ -4,6 +4,8 @@ $ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
 # Set alias for winfetch
 Set-Alias neofetch winfetch.ps1
 
+Set-Alias ls lsd
+
 # Create a new empty file in the current working directory
 function touch ([string] $fileName) {
     if (!(Test-Path $fileName)) {
@@ -21,17 +23,6 @@ function mkdir ([string] $dirName) {
         New-Item -Path . -Name $dirName -ItemType Directory
     } else {
         Write-Host "Directory '$dirName' already exists"
-    }
-}
-
-# Create and move into the directory
-function mkcd ([string] $dirName) {
-    if (!(Test-Path $dirName)) {
-        mkdir($dirName)
-        Set-Location $dirName
-    } else {
-        Write-Host "Directory '$dirName' already exists! Moving into the directory."
-        Set-Location $dirName
     }
 }
 
@@ -86,12 +77,6 @@ function dlf ([string] $url) {
     }
 }
 
-# Reload powershell profile
-function reload {
-    . $PROFILE
-    & $PROFILE
-}
-
 # Flutter Stuff
 function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
 function spbuild { flutter build apk --release --split-per-abi }
@@ -126,8 +111,7 @@ function st { git status }
 # Open commands history log in notepad
 function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
 
-function mcommit { git -c user.email=yashgarg@murena.io commit -s }
-
+# Download file using aria2c
 function a2 { aria2c @args }
 
 cls
