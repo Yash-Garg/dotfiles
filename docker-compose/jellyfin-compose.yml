@@ -20,9 +20,8 @@ services:
       - TZ=Asia/Kolkata
     volumes:
       - jellyfin:/config
-      - /mnt/Plex/Anime:/anime
-      - /mnt/Plex/Movies:/movies
-      - /mnt/Plex/Shows:/shows
+      - /mnt/Plex/Movies_4K:/movies
+      - /mnt/Plex/Shows_4K:/shows
     ports:
       - 8096:8096
     restart: unless-stopped
