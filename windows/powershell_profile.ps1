@@ -1,10 +1,10 @@
 Invoke-Expression (&starship init powershell)
 $ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
 
-# Set alias for winfetch
+# Aliases
 Set-Alias neofetch winfetch.ps1
-
 Set-Alias ls lsd
+Set-Alias a2 aria2c
 
 # Create a new empty file in the current working directory
 function touch ([string] $fileName) {
@@ -79,10 +79,8 @@ function dlf ([string] $url) {
 
 # Flutter Stuff
 function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
-function spbuild { flutter build apk --release --split-per-abi }
-function build { flutter build apk --release }
-function run { flutter run }
-function get { flutter pub get }
+function build { flutter build apk --release @args }
+function run { flutter run @args }
 
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w -b2M -m800 @args }
@@ -91,7 +89,7 @@ function device { scrcpy --always-on-top -w -b2M -m800 @args }
 function amend { git commit --amend -S }
 
 # Restore all files back from git history
-function restore { git restore * }
+function rst { git reset; git restore * }
 
 # Stage all file changes to git
 function add { git add --all }
@@ -110,8 +108,5 @@ function st { git status }
 
 # Open commands history log in notepad
 function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
-
-# Download file using aria2c
-function a2 { aria2c @args }
 
 cls
