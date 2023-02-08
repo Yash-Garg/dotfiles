@@ -8,6 +8,20 @@
     homeDirectory = "/home/yashgarg";
   };
 
+  fonts.fontconfig.enable = true;
+
+  targets.genericLinux.enable = true;
+
+  home.file.".imwheelrc".text = ''
+    ".*"
+    None,      Up,   Button4, 2
+    None,      Down, Button5, 2
+    Control_L, Up,   Control_L|Button4
+    Control_L, Down, Control_L|Button5
+    Shift_L,   Up,   Shift_L|Button4
+    Shift_L,   Down, Shift_L|Button5
+  '';
+
   programs = {
     aria2 = {enable = true;};
 
@@ -59,15 +73,45 @@
         };
       };
     };
+
+    vscode = {enable = true;};
+  };
+
+  systemd.user.services.imwheel = {
+    Unit = {
+      Description = "systemd service for imwheel";
+      Wants = "display-manager.service";
+      After = "display-manager.service";
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.imwheel}/bin/imwheel -d";
+      ExecStop = "/usr/bin/pkill imwheel";
+      RemainAfterExit = "yes";
+      Restart = "on-failure";
+      RestartSec = 3;
+    };
+    Install = {WantedBy = ["default.target"];};
   };
 
   home.packages = with pkgs; [
     alejandra
     curl
     fd
+    flutter
+    htop
+    imwheel
+    jdk17
     neofetch
+    (nerdfonts.override {
+      fonts = ["CascadiaCode" "JetBrainsMono"];
+    })
     ookla-speedtest
+    openrgb
+    scrcpy
+    tailscale
     unzip
+    xclip
     zip
   ];
 
