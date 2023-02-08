@@ -1,0 +1,19 @@
+name: Nix Check
+on: push
+
+jobs:
+    nix-check:
+        name: Build homeConfiguration
+        if: "contains(github.event.head_commit.message, 'nix')"
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./nixos
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+            - name: Install Nix
+              uses: cachix/install-nix-action@v19
+            - name: Run build check
+              shell: bash
+              run: nix build .#homeConfigurations.intelbox.activationPackage

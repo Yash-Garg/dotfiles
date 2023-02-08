@@ -24,5 +24,14 @@
       };
       modules = [./server-configuration.nix];
     };
+    homeConfigurations.intelbox = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {
+        config = {
+          allowUnfree = true;
+        };
+        system = "x86_64-linux";
+      };
+      modules = [./intelbox-configuration.nix];
+    };
   };
 }
