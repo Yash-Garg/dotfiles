@@ -66,6 +66,7 @@
     curl
     fd
     neofetch
+    ookla-speedtest
     unzip
     zip
   ];
