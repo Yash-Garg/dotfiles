@@ -96,7 +96,10 @@
 
   home.packages = with pkgs; [
     alejandra
+    apktool
+    bitwarden
     curl
+    dnscontrol
     fd
     flutter
     htop
@@ -111,6 +114,7 @@
     scrcpy
     tailscale
     unzip
+    vscode
     xclip
     zip
   ];
