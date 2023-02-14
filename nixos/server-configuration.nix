@@ -67,6 +67,7 @@
     fd
     neofetch
     ookla-speedtest
+    ripgrep
     unzip
     zip
   ];

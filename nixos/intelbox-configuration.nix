@@ -111,6 +111,7 @@
     })
     ookla-speedtest
     openrgb
+    ripgrep
     scrcpy
     tailscale
     unzip

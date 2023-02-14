@@ -16,6 +16,7 @@ A backup of my personal configuration files made over the years, for different o
 -   [less](https://github.com/jftuga/less-Windows): GNU [less](https://www.greenwoodsoftware.com/less/) compiled for Windows.
 -   [lsd](https://github.com/Peltoche/lsd): The next gen ls command
 -   [nano](https://www.nano-editor.org/): GNU nano is a small editor for on the terminal.
+-   [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern while respecting your gitignore.
 -   [scrcpy](https://github.com/Genymobile/scrcpy): Display and control your Android device
 -   [starship](https://starship.rs/): The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 -   [wget](https://www.gnu.org/software/wget/): A free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols.
