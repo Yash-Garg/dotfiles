@@ -109,4 +109,8 @@ function st { git status }
 # Open commands history log in notepad
 function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
 
+function cherry { git cherry-pick @args }
+
+function gdiff { git diff HEAD @args | bat  }
+
 cls
