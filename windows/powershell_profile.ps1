@@ -86,31 +86,31 @@ function run { flutter run @args }
 function device { scrcpy --always-on-top -w -b2M -m800 @args }
 
 # Modify the most recent commit
-function amend { git commit --amend -S }
+function amend { git commit --amend -S @args }
 
 # Restore all files back from git history
 function rst { git reset; git restore * }
 
 # Stage all file changes to git
-function add { git add --all }
+function add { git add --all @args }
 
 # Pull all changes from the remote repository
-function pull { git pull }
+function pull { git pull @args }
 
 # Push changes to remote repository
-function push { git push }
+function push { git push @args }
 
 # Force push changes to remote repository
-function fpush { git push --force }
+function fpush { git push --force @args }
 
 # Show the status of files in the current working directory
-function st { git status }
+function st { git status @args }
 
 # Open commands history log in notepad
 function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
 
 function cherry { git cherry-pick @args }
 
-function gdiff { git diff HEAD @args | bat  }
+function gdiff { git diff HEAD @args | bat --pager=never }
 
 cls
