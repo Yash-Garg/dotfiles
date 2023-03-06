@@ -1,7 +1,10 @@
 [user]
     name = Yash-Garg
     email = yash.garg@outlook.in
-	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz yash.garg@outlook.in
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz
+[push]
+	autoSetupRemote = true
+	default = current
 [color]
     ui = true
 [core]
