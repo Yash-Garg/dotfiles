@@ -5,6 +5,7 @@ $ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
 Set-Alias neofetch winfetch.ps1
 Set-Alias ls lsd
 Set-Alias a2 aria2c
+Set-Alias exi iex.bat
 
 # Create a new empty file in the current working directory
 function touch ([string] $fileName) {
@@ -109,8 +110,14 @@ function st { git status @args }
 # Open commands history log in notepad
 function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
 
-function cherry { git cherry-pick @args }
+function gcp { git cherry-pick @args }
+
+function dtags { git tag | foreach-object -process { git tag -d $_ } }
 
 function gdiff { git diff HEAD @args | bat --pager=never }
+
+function dbranch { git for-each-ref --format '%(refname:short)' refs/heads | ForEach-Object {git branch $_ -D}  }
+
+function la { ls -a }
 
 cls
