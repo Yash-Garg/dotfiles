@@ -1,6 +1,6 @@
 Invoke-Expression (&starship init powershell)
 $ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
-$ENV:FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+$ENV:FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 $ENV:FZF_DEFAULT_OPTS=@"
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
@@ -123,6 +123,13 @@ function dtags { git tag | foreach-object -process { git tag -d $_ } }
 function gdiff { git diff HEAD @args | bat --pager=never }
 
 function dbranch { git for-each-ref --format '%(refname:short)' refs/heads | ForEach-Object {git branch $_ -D}  }
+
+function v {
+    $file = fzf @args
+    if ($file) {
+        bat --pager=never $file
+    }
+}
 
 function la { ls -a }
 

@@ -16,6 +16,7 @@ A backup of my personal configuration files made over the years, for different o
 -   [curlie](https://github.com/rs/curlie): The power of curl, the ease of use of httpie.
 -   [dnscontrol](https://github.com/StackExchange/dnscontrol): Synchronize DNS to multiple providers using a simple DSL
 -   [fd](https://github.com/sharkdp/fd): A simple, fast and user-friendly alternative to 'find'
+-   [fzf](https://github.com/junegunn/fzf): A command-line fuzzy finder.
 -   [less](https://github.com/jftuga/less-Windows): GNU [less](https://www.greenwoodsoftware.com/less/) compiled for Windows.
 -   [lsd](https://github.com/Peltoche/lsd): The next gen ls command
 -   [nano](https://www.nano-editor.org/): GNU nano is a small editor for on the terminal.
