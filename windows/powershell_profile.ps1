@@ -1,4 +1,6 @@
 Invoke-Expression (&starship init powershell)
+
+# Environment variables
 $ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
 $ENV:FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 $ENV:FZF_DEFAULT_OPTS=@"
@@ -11,7 +13,6 @@ $ENV:FZF_DEFAULT_OPTS=@"
 Set-Alias neofetch winfetch.ps1
 Set-Alias ls lsd
 Set-Alias a2 aria2c
-Set-Alias exi iex.bat
 
 # Create a new empty file in the current working directory
 function touch ([string] $fileName) {
@@ -30,19 +31,6 @@ function mkdir ([string] $dirName) {
         New-Item -Path . -Name $dirName -ItemType Directory
     } else {
         Write-Host "Directory '$dirName' already exists"
-    }
-}
-
-# Clone the repository at the specified URL with specified branch
-function clone ([string] $repo, [string] $branch) {
-    if ($repo -ne "") {
-        if ($branch -ne "") {
-            git clone git@github.com:$repo -b $branch
-        } else {
-            git clone git@github.com:$repo
-        }
-    } else {
-        Write-Host "You must specify a repository URL!"
     }
 }
 
@@ -74,20 +62,22 @@ function rebase ([int] $num) {
     }
 }
 
-# Download a folder with wget incl. parameters
-function dlf ([string] $url) {
-    if ($url -eq "") {
-        Write-Host "Please input a valid URL!"
-    } else {
-        Write-Host $url
-        wget -nd -r -np -R "index.html*" $url
+# Move up the given number of directories
+function up ([int] $count) {
+    if ($count -eq " ") {
+        $count = 1
     }
+
+    foreach ($i in 1..$count) { cd .. }
 }
 
-# Flutter Stuff
-function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
-function build { flutter build apk --release @args }
-function run { flutter run @args }
+# Open fzf and show the selected file in bat
+function v {
+    $file = fzf @args
+    if ($file) {
+        bat $file
+    }
+}
 
 # Open scrcpy with the given options
 function device { scrcpy --always-on-top -w -b2M -m800 @args }
@@ -116,21 +106,29 @@ function st { git status @args }
 # Open commands history log in notepad
 function cmds { notepad (Get-PSReadLineOption | select -ExpandProperty HistorySavePath) }
 
+# Cherry pick the given commit
 function gcp { git cherry-pick @args }
 
+# Delete all tags in the current repository
 function dtags { git tag | foreach-object -process { git tag -d $_ } }
 
-function gdiff { git diff HEAD @args | bat --pager=never }
-
+# Delete all local branches in the current repository
 function dbranch { git for-each-ref --format '%(refname:short)' refs/heads | ForEach-Object {git branch $_ -D}  }
 
-function v {
-    $file = fzf @args
-    if ($file) {
-        bat --pager=never $file
-    }
-}
+# Diff between HEAD and current changes in the current repository
+function gdiff { git diff HEAD @args | bat --pager=never }
 
+# List all files in the current working directory
 function la { ls -a }
+
+# Run flutter code generator
+function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
+
+# Compute file hashes - useful for checking successful downloads
+function md5 { Get-FileHash -Algorithm MD5 $args }
+
+function sha1 { Get-FileHash -Algorithm SHA1 $args }
+
+function sha256 { Get-FileHash -Algorithm SHA256 $args }
 
 cls
