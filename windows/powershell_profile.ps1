@@ -54,12 +54,11 @@ function commit ([string] $commitMessage) {
 # Show oneline log of commits of given size
 function lg ([int] $logSize) {
     if ($logSize -le 0) {
-        Write-Host "Using default log size of 10"
-        git log --oneline --decorate --graph --all -n 10
+        $logSize = 10
     }
-    else {
-        git log --oneline --decorate --graph --all -n $logSize
-    }
+
+    git log --oneline --decorate --graph --all -n $logSize
+
 }
 
 # Rebase given number of commits on current branch
@@ -111,7 +110,7 @@ function cmds { notepad (Get-PSReadLineOption | Select-Object -ExpandProperty Hi
 function gcp { git cherry-pick @args }
 
 # Delete all tags in the current repository
-function dtags { git tag | foreach-object -process { git tag -d $_ } }
+function dtags { git tag | ForEach-Object -process { git tag -d $_ } }
 
 # Delete all local branches in the current repository
 function dbranch { git for-each-ref --format '%(refname:short)' refs/heads | ForEach-Object { git branch $_ -D } }
@@ -131,5 +130,12 @@ function md5 { Get-FileHash -Algorithm MD5 $args }
 function sha1 { Get-FileHash -Algorithm SHA1 $args }
 
 function sha256 { Get-FileHash -Algorithm SHA256 $args }
+
+Invoke-Expression (
+    & {
+        $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+        (zoxide init --hook $hook powershell | Out-String)
+    }
+)
 
 Clear-Host
