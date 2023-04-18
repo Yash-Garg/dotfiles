@@ -1,4 +1,10 @@
 Invoke-Expression (&starship init powershell)
+Invoke-Expression (
+    & {
+        $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+        (zoxide init --hook $hook powershell | Out-String)
+    }
+)
 
 # Environment variables
 $ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
@@ -10,9 +16,10 @@ $ENV:FZF_DEFAULT_OPTS = @"
 "@
 
 # Aliases
-Set-Alias neofetch winfetch.ps1
-Set-Alias ls lsd
-Set-Alias a2 aria2c
+Set-Alias -Name neofetch -Value winfetch.ps1 -Option AllScope
+Set-Alias -Name ls -Value lsd -Option AllScope
+Set-Alias -Name a2 -Value aria2c -Option AllScope
+Set-Alias -Name cd -Value z -Option AllScope
 
 # To find where is the given command called from
 function which($name) {
@@ -130,12 +137,5 @@ function md5 { Get-FileHash -Algorithm MD5 $args }
 function sha1 { Get-FileHash -Algorithm SHA1 $args }
 
 function sha256 { Get-FileHash -Algorithm SHA256 $args }
-
-Invoke-Expression (
-    & {
-        $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-        (zoxide init --hook $hook powershell | Out-String)
-    }
-)
 
 Clear-Host
