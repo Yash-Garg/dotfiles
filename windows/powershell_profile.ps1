@@ -138,4 +138,12 @@ function sha1 { Get-FileHash -Algorithm SHA1 $args }
 
 function sha256 { Get-FileHash -Algorithm SHA256 $args }
 
+function pkill($name) {
+    Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
+}
+
+function pgrep($name) {
+    Get-Process $name
+}
+
 Clear-Host
