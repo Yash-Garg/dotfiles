@@ -1,15 +1,9 @@
 {
-  "workbench.iconTheme": "material-icon-theme",
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "newUntitledFile",
-  "editor.fontFamily": "'JetBrains Mono', monospace",
+  "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
   "editor.fontWeight": "600",
-  "editor.fontLigatures": "'calt', 'ss01'",
-  "go.autocompleteUnimportedPackages": true,
-  "python.languageServer": "Pylance",
-  "remote.SSH.remotePlatform": {
-    "skybox": "linux"
-  },
+  "editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on",
   "editor.suggestSelection": "first",
   "files.exclude": {
     "**/.classpath": true,
@@ -17,14 +11,11 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -44,12 +35,8 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "workbench.activityBar.visible": true,
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "dart.flutterSdkPath": "E:\\Android\\Flutter",
   "dart.previewFlutterUiGuides": true,
@@ -57,17 +44,14 @@
   "workbench.productIconTheme": "fluent-icons",
   "files.trimTrailingWhitespace": true,
   "editor.formatOnSave": true,
-  "go.toolsManagement.autoUpdate": true,
   "dart.debugSdkLibraries": false,
   "debug.console.fontSize": 13,
-  "settingsSync.ignoredExtensions": [
-    "eyhn.vscode-vibrancy"
-  ],
+  "settingsSync.ignoredExtensions": ["eyhn.vscode-vibrancy"],
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "markdown.preview.typographer": true,
-  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.fontWeight": "600",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
   "editor.linkedEditing": true,
   "editor.suggest.preview": true,
@@ -76,23 +60,19 @@
   "editor.inlineSuggest.enabled": true,
   "editor.scrollbar.verticalScrollbarSize": 10,
   "editor.scrollbar.horizontalScrollbarSize": 10,
-  "python.defaultInterpreterPath": "C:\\Users\\Yashg\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.fontWeightBold": "600",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.inlayHints.fontFamily": "'JetBrains Mono', monospace",
+  "editor.inlayHints.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
   "diffEditor.codeLens": true,
-  "editor.inlayHints.fontSize": 14,
+  "editor.inlayHints.fontSize": 17,
   "workbench.colorCustomizations": {
     "editorLineNumber.activeForeground": "#faf8f8"
   },
@@ -117,27 +97,18 @@
       "types": "#ffbb00ee",
       "variables": "#ff5151"
     },
+    "[Monokai Pro]": {},
     "[Community Material Theme Darker High Contrast]": {
       "keywords": "#ff5959",
       "types": "#fcce78",
       "functions": "#74b0ff"
     }
   },
-  "[rust]": {
-    "editor.defaultFormatter": "statiolake.vscode-rustfmt"
-  },
-  "terminal.integrated.fontSize": 15,
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.colorTheme": "One Dark Pro Darker",
-  "C_Cpp.autocompleteAddParentheses": true,
-  "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
   "livePreview.notifyOnOpenLooseFile": false,
   "editor.renderControlCharacters": true,
-  "dart.flutterSdkPaths": [
-    "E:/Android/fvm/versions"
-  ],
+  "dart.flutterSdkPaths": ["E:/Android/fvm/versions"],
   "bloc.checkForUpdates": false,
-  "editor.minimap.enabled": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "editor.fontSize": 16,
@@ -146,26 +117,57 @@
   "editor.foldingImportsByDefault": true,
   "dart.checkForSdkUpdates": false,
   "editor.hideCursorInOverviewRuler": true,
-  "C_Cpp.default.cppStandard": "c++17",
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
   "git.confirmSync": false,
-  "gitlens.advanced.messages": {
-    "suppressGitMissingWarning": true
-  },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.cursorStyle": "block",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "gitlens.showWhatsNewAfterUpgrades": false,
-  "gitlens.currentLine.enabled": true,
-  "cmake.configureOnOpen": true,
   "workbench.editor.closeOnFileDelete": true,
   "explorer.confirmDragAndDrop": false,
   "workbench.editor.historyBasedLanguageDetection": true,
-  "dart.debugExternalPackageLibraries": true
+  "dart.debugExternalPackageLibraries": true,
+  "redhat.telemetry.enabled": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true,
+    "dart": true
+  },
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
+  "remote.SSH.remotePlatform": {
+    "angerycat": "linux",
+    "codebin": "linux"
+  },
+  "editor.accessibilitySupport": "off",
+  "kotlin.languageServer.enabled": false,
+  "kotlin.debugAdapter.enabled": false,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "[nix]": {},
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "terminal.integrated.fontSize": 16,
+  "git.openRepositoryInParentFolders": "never",
+  "extensions.ignoreRecommendations": true,
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
+  },
+  "editor.minimap.enabled": false,
+  "files.autoSave": "afterDelay"
 }
