@@ -1,42 +1,46 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   home.username = "yash";
   home.homeDirectory = "/home/yash";
   targets.genericLinux.enable = true;
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nano";
+    ".nanorc".text = ''
+      set tabsize 4
+      set autoindent
+      set softwrap
+      set nonewlines
+      set smarthome
+    '';
   };
 
   nix = {
     package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    settings = {
+      extra-substituters = [
+        "https://devenv.cachix.org"
+        "https://nix-community.cachix.org"
+      ];
+      trusted-public-keys = [
+        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      ];
+    };
+    extraOptions = "experimental-features = nix-command flakes";
   };
 
   programs = {
     bash = {
       enable = true;
       enableCompletion = true;
+      historySize = 10000;
+      historyFile = "${config.home.homeDirectory}/.bash_history";
+      historyControl = ["ignorespace" "erasedups"];
       shellAliases = {
         cd = "z";
         cls = "clear";
@@ -49,12 +53,13 @@
         amend = "git commit --amend";
         commit = "git commit --all";
         rst = "git reset; git restore *";
+        hs = "home-manager switch";
       };
       initExtra = ''
         v() {
           file=$(fzf)
 
-          if [ -n $${file} ]; then
+          if [ -n "$file" ]; then
             bat $file
           fi
         }
@@ -62,7 +67,7 @@
         lg() {
           count=$1
 
-          if [ -z $${count} ]; then
+          if [ -z "$count" ]; then
             count=10
           fi
 
@@ -131,8 +136,15 @@
           min_time = 0;
         };
 
+        hostname = {
+          disabled = false;
+          ssh_only = false;
+          format = " at [$hostname](bold red) in ";
+        };
+
         username = {
           show_always = true;
+          format = "[$user]($style)";
         };
       };
     };
@@ -145,10 +157,13 @@
 
   home.packages = with pkgs; [
     alejandra
+    btop
+    cachix
     curl
     fd
-    htop
+    inputs.devenv.packages.${pkgs.system}.devenv
     neofetch
+    ookla-speedtest
     ripgrep
   ];
 
