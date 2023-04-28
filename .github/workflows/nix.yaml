@@ -3,7 +3,7 @@ on: push
 
 jobs:
     nix-check:
-        name: Build homeConfiguration
+        name: Build homeConfigurations
         if: "contains(github.event.head_commit.message, 'nix')"
         runs-on: ubuntu-latest
         defaults:
@@ -14,6 +14,9 @@ jobs:
               uses: actions/checkout@v3
             - name: Install Nix
               uses: cachix/install-nix-action@v19
-            - name: Run build check
+            - name: Run intelbox check
               shell: bash
-              run: nix build .#homeConfigurations.intelbox.activationPackage
+              run:  nix build .#homeConfigurations.intelbox.activationPackage
+            - name: Run wsl check
+              shell: bash
+              run:  nix build .#homeConfigurations.wsl.activationPackage

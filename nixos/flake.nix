@@ -33,5 +33,14 @@
       };
       modules = [./intelbox-configuration.nix];
     };
+    homeConfigurations.wsl = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {
+        config = {
+          allowUnfree = true;
+        };
+        system = "x86_64-linux";
+      };
+      modules = [./wsl-configuration.nix];
+    };
   };
 }
