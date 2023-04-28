@@ -1,6 +1,0 @@
-include "/usr/share/nano/*.nanorc"
-
-set tabsize 4
-set softwrap
-set nonewlines
-set smarthome
