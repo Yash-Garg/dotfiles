@@ -42,6 +42,7 @@
       historyFile = "${config.home.homeDirectory}/.bash_history";
       historyControl = ["ignorespace" "erasedups"];
       shellAliases = {
+        cat = "bat";
         cd = "z";
         cls = "clear";
         push = "git push";
@@ -81,6 +82,13 @@
       config = {
         theme = "Dracula";
         pager = "never";
+      };
+    };
+
+    btop = {
+      enable = true;
+      settings = {
+        theme_background = false;
       };
     };
 
@@ -142,6 +150,10 @@
           format = " at [$hostname](bold red) in ";
         };
 
+        nix_shell = {
+          symbol = "";
+        };
+
         username = {
           show_always = true;
           format = "[$user]($style)";
@@ -157,10 +169,11 @@
 
   home.packages = with pkgs; [
     alejandra
-    btop
     cachix
     curl
+    direnv
     fd
+    httpie
     inputs.devenv.packages.${pkgs.system}.devenv
     neofetch
     ookla-speedtest
