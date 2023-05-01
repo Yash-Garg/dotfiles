@@ -12,6 +12,16 @@
 
   targets.genericLinux.enable = true;
 
+  home.file = {
+    ".nanorc".text = ''
+      set tabsize 4
+      set autoindent
+      set softwrap
+      set nonewlines
+      set smarthome
+    '';
+  };
+
   home.file.".imwheelrc".text = ''
     ".*"
     None,      Up,   Button4, 2
@@ -48,12 +58,18 @@
       enable = true;
       config = {
         theme = "Dracula";
+        pager = "never";
+      };
+    };
+
+    btop = {
+      enable = true;
+      settings = {
+        theme_background = false;
       };
     };
 
     home-manager = {enable = true;};
-
-    htop = {enable = true;};
 
     git = {enable = true;};
 
@@ -62,14 +78,25 @@
       enableBashIntegration = true;
       settings = {
         add_newline = true;
-        command_timeout = 1000;
+        command_timeout = 10000;
 
         cmd_duration = {
           min_time = 0;
         };
 
+        hostname = {
+          disabled = false;
+          ssh_only = false;
+          format = " at [$hostname](bold red) in ";
+        };
+
+        nix_shell = {
+          symbol = "";
+        };
+
         username = {
           show_always = true;
+          format = "[$user]($style)";
         };
       };
     };
@@ -102,7 +129,7 @@
     dnscontrol
     fd
     flutter
-    htop
+    httpie
     imwheel
     jdk17
     neofetch
