@@ -1,173 +1,178 @@
 {
-  "explorer.confirmDelete": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
-  "editor.fontWeight": "600",
-  "editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on",
-  "editor.suggestSelection": "first",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
+    "editor.fontWeight": "bold",
+    "editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on",
     "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false,
-    "editor.defaultFormatter": "Dart-Code.dart-code"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "workbench.activityBar.visible": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "dart.flutterSdkPath": "E:\\Android\\Flutter",
-  "dart.previewFlutterUiGuides": true,
-  "dart.previewFlutterUiGuidesCustomTracking": true,
-  "workbench.productIconTheme": "fluent-icons",
-  "files.trimTrailingWhitespace": true,
-  "editor.formatOnSave": true,
-  "dart.debugSdkLibraries": false,
-  "debug.console.fontSize": 13,
-  "settingsSync.ignoredExtensions": ["eyhn.vscode-vibrancy"],
-  "dart.showInspectorNotificationsForWidgetErrors": false,
-  "markdown.preview.typographer": true,
-  "terminal.integrated.fontWeight": "600",
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "dart.warnWhenEditingFilesOutsideWorkspace": false,
-  "editor.linkedEditing": true,
-  "editor.suggest.preview": true,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-  "dart.warnWhenEditingFilesInPubCache": false,
-  "editor.inlineSuggest.enabled": true,
-  "editor.scrollbar.verticalScrollbarSize": 10,
-  "editor.scrollbar.horizontalScrollbarSize": 10,
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
-  },
-  "terminal.integrated.fontWeightBold": "600",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.inlayHints.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
-  "diffEditor.codeLens": true,
-  "editor.inlayHints.fontSize": 17,
-  "workbench.colorCustomizations": {
-    "editorLineNumber.activeForeground": "#faf8f8"
-  },
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": [
-          "comment",
-          "keyword",
-          "constant",
-          "storage.modifier",
-          "storage.type.class"
-        ],
-        "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ],
-    "[Horizon Italic]": {
-      "functions": "#00c3ffe7",
-      "keywords": "#d400ffe7",
-      "types": "#ffbb00ee",
-      "variables": "#ff5151"
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
     },
-    "[Monokai Pro]": {},
-    "[Community Material Theme Darker High Contrast]": {
-      "keywords": "#ff5959",
-      "types": "#fcce78",
-      "functions": "#74b0ff"
-    }
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-  "livePreview.notifyOnOpenLooseFile": false,
-  "editor.renderControlCharacters": true,
-  "dart.flutterSdkPaths": ["E:/Android/fvm/versions"],
-  "bloc.checkForUpdates": false,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-  "editor.fontSize": 16,
-  "editor.wordWrap": "on",
-  "workbench.editor.enablePreview": false,
-  "editor.foldingImportsByDefault": true,
-  "dart.checkForSdkUpdates": false,
-  "editor.hideCursorInOverviewRuler": true,
-  "git.confirmSync": false,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "editor.cursorStyle": "block",
-  "terminal.integrated.cursorBlinking": true,
-  "workbench.editor.closeOnFileDelete": true,
-  "explorer.confirmDragAndDrop": false,
-  "workbench.editor.historyBasedLanguageDetection": true,
-  "dart.debugExternalPackageLibraries": true,
-  "redhat.telemetry.enabled": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": true,
-    "plaintext": true,
-    "markdown": true,
-    "dart": true
-  },
-  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
-  "remote.SSH.remotePlatform": {
-    "angerycat": "linux",
-    "codebin": "linux"
-  },
-  "editor.accessibilitySupport": "off",
-  "kotlin.languageServer.enabled": false,
-  "kotlin.debugAdapter.enabled": false,
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "[nix]": {},
-  "[elixir]": {
-    "editor.defaultFormatter": "JakeBecker.elixir-ls"
-  },
-  "terminal.integrated.fontSize": 16,
-  "git.openRepositoryInParentFolders": "never",
-  "extensions.ignoreRecommendations": true,
-  "[powershell]": {
-    "editor.defaultFormatter": "ms-vscode.powershell"
-  },
-  "editor.minimap.enabled": false,
-  "files.autoSave": "afterDelay"
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false,
+        "editor.defaultFormatter": "Dart-Code.dart-code"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.activityBar.visible": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "dart.flutterSdkPath": "E:\\Android\\Flutter",
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "workbench.productIconTheme": "fluent-icons",
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "dart.debugSdkLibraries": false,
+    "debug.console.fontSize": 13,
+    "settingsSync.ignoredExtensions": [
+        "eyhn.vscode-vibrancy"
+    ],
+    "dart.showInspectorNotificationsForWidgetErrors": false,
+    "markdown.preview.typographer": true,
+    "terminal.integrated.fontWeight": "600",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "dart.warnWhenEditingFilesOutsideWorkspace": false,
+    "editor.linkedEditing": true,
+    "editor.suggest.preview": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+    "dart.warnWhenEditingFilesInPubCache": false,
+    "editor.inlineSuggest.enabled": true,
+    "editor.scrollbar.verticalScrollbarSize": 10,
+    "editor.scrollbar.horizontalScrollbarSize": 10,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "terminal.integrated.fontWeightBold": "600",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.inlayHints.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
+    "diffEditor.codeLens": true,
+    "editor.inlayHints.fontSize": 17,
+    "workbench.colorCustomizations": {
+        "editorLineNumber.activeForeground": "#faf8f8"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment",
+                    "keyword",
+                    "constant",
+                    "storage.modifier",
+                    "storage.type.class"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ],
+        "[Horizon Italic]": {
+            "functions": "#00c3ffe7",
+            "keywords": "#d400ffe7",
+            "types": "#ffbb00ee",
+            "variables": "#ff5151"
+        },
+        "[Monokai Pro]": {},
+        "[Community Material Theme Darker High Contrast]": {
+            "keywords": "#ff5959",
+            "types": "#fcce78",
+            "functions": "#74b0ff"
+        }
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "livePreview.notifyOnOpenLooseFile": false,
+    "editor.renderControlCharacters": true,
+    "dart.flutterSdkPaths": [
+        "E:/Android/fvm/versions"
+    ],
+    "bloc.checkForUpdates": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.fontSize": 16,
+    "editor.wordWrap": "on",
+    "workbench.editor.enablePreview": false,
+    "editor.foldingImportsByDefault": true,
+    "dart.checkForSdkUpdates": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "git.confirmSync": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.cursorStyle": "block",
+    "terminal.integrated.cursorBlinking": true,
+    "workbench.editor.closeOnFileDelete": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.historyBasedLanguageDetection": true,
+    "dart.debugExternalPackageLibraries": true,
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": true,
+        "dart": true
+    },
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', monospace",
+    "remote.SSH.remotePlatform": {
+        "angerycat": "linux",
+        "codebin": "linux"
+    },
+    "editor.accessibilitySupport": "off",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "[nix]": {},
+    "[elixir]": {
+        "editor.defaultFormatter": "JakeBecker.elixir-ls"
+    },
+    "terminal.integrated.fontSize": 16,
+    "git.openRepositoryInParentFolders": "never",
+    "extensions.ignoreRecommendations": true,
+    "[powershell]": {
+        "editor.defaultFormatter": "ms-vscode.powershell"
+    },
+    "editor.minimap.enabled": false,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "terminal.integrated.customGlyphs": false
 }

@@ -24,7 +24,7 @@
         system = "aarch64-linux";
       };
 
-      modules = [./server-configuration.nix];
+      modules = [./nixos/server-configuration.nix];
     };
 
     homeConfigurations.intelbox = home-manager.lib.homeManagerConfiguration {
@@ -33,7 +33,7 @@
         system = "x86_64-linux";
       };
 
-      modules = [./intelbox-configuration.nix];
+      modules = [./nixos/intelbox-configuration.nix];
     };
 
     homeConfigurations.wsl = home-manager.lib.homeManagerConfiguration {
@@ -44,7 +44,7 @@
 
       extraSpecialArgs = {inherit inputs;};
 
-      modules = [./wsl-configuration.nix];
+      modules = [./nixos/wsl-configuration.nix];
     };
   };
 }

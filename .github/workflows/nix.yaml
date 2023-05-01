@@ -1,6 +1,8 @@
 name: Nix Build
 
-on: push
+on:
+    push:
+    workflow_dispatch:
 
 concurrency:
     group: ${{ github.ref }}
@@ -26,9 +28,6 @@ jobs:
     intelbox-check:
         needs: [file-changes]
         runs-on: ubuntu-22.04
-        defaults:
-            run:
-                working-directory: ./nixos
         if: needs.file-changes.outputs.any == 'true'
         steps:
             - name: Checkout repository
@@ -44,9 +43,6 @@ jobs:
     wsl-check:
         needs: [file-changes]
         runs-on: ubuntu-22.04
-        defaults:
-            run:
-                working-directory: ./nixos
         if: needs.file-changes.outputs.any == 'true'
         steps:
             - name: Checkout repository
