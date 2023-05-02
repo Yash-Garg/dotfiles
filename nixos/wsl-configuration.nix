@@ -87,6 +87,7 @@
     btop = {
       enable = true;
       settings = {
+        color_theme = "${pkgs.btop}/share/btop/themes/dracula.theme";
         theme_background = false;
       };
     };
@@ -119,8 +120,6 @@
     };
 
     home-manager = {enable = true;};
-
-    htop = {enable = true;};
 
     jq = {enable = true;};
 
@@ -170,7 +169,6 @@
     alejandra
     cachix
     curl
-    cloc
     fd
     httpie
     neofetch
