@@ -161,18 +161,33 @@
     "editor.accessibilitySupport": "off",
     "workbench.colorTheme": "Catppuccin Mocha",
     "[nix]": {},
-    "[elixir]": {
-        "editor.defaultFormatter": "JakeBecker.elixir-ls"
-    },
     "terminal.integrated.fontSize": 16,
     "git.openRepositoryInParentFolders": "never",
     "extensions.ignoreRecommendations": true,
     "[powershell]": {
         "editor.defaultFormatter": "ms-vscode.powershell"
     },
-    "editor.minimap.enabled": false,
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "terminal.integrated.customGlyphs": false
+    "terminal.integrated.gpuAcceleration": "auto",
+    "terminal.integrated.customGlyphs": true,
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<tab>": false,
+        "<C-d>": true,
+        "<C-a>": false,
+        "<C-s>": false,
+        "<C-v>": false,
+        "<C-x>": false,
+        "<C-c>": false,
+        "<C-y>": false,
+        "<C-f>": false,
+        "<C-z>": false
+    }
 }

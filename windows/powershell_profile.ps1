@@ -20,6 +20,7 @@ Set-Alias -Name neofetch -Value winfetch.ps1 -Option AllScope
 Set-Alias -Name ls -Value lsd -Option AllScope
 Set-Alias -Name a2 -Value aria2c -Option AllScope
 Set-Alias -Name cd -Value z -Option AllScope
+Set-Alias -Name cat -Value bat -Option AllScope
 
 # To find where is the given command called from
 function which($name) {
@@ -49,13 +50,8 @@ function mkdir ([string] $dirName) {
 }
 
 # Create a signed commit with given message
-function commit ([string] $commitMessage) {
-    if ($commitMessage -ne "") {
-        git commit -S -m $commitMessage
-    }
-    else {
-        git commit -S @args
-    }
+function commit ([string] $msg) {
+    git commit -S -am $msg
 }
 
 # Show oneline log of commits of given size
@@ -123,7 +119,13 @@ function dtags { git tag | ForEach-Object -process { git tag -d $_ } }
 function dbranch { git for-each-ref --format '%(refname:short)' refs/heads | ForEach-Object { git branch $_ -D } }
 
 # Diff between HEAD and current changes in the current repository
-function gdiff { git diff HEAD @args | bat --pager=never }
+function gdiff ([string] $sha) {
+    if (!$sha) {
+        $sha = "HEAD"
+    }
+
+    git diff -w $sha @args | bat --pager=never
+}
 
 # List all files in the current working directory
 function la { ls -a }
