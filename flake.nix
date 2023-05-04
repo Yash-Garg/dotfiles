@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     devenv = {
-      url = "github:cachix/devenv/latest";
+      url = "github:cachix/devenv";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {

@@ -53,7 +53,7 @@
         st = "git status";
         gcp = "git cherry-pick";
         amend = "git commit --amend";
-        commit = "git commit --all";
+        commit = "git commit --all -m";
         rst = "git reset; git restore *";
         hs = "home-manager switch";
       };
@@ -75,6 +75,16 @@
 
           git log --oneline --decorate --graph --all -n $count
         }
+
+        gdiff() {
+          sha=$1
+
+          if [ -z "$sha" ]; then
+            sha="HEAD"
+          fi
+
+          git diff -w $sha | bat --pager=never
+        }
       '';
     };
 
@@ -93,6 +103,8 @@
         theme_background = false;
       };
     };
+
+    direnv.enable = true;
 
     fzf = {
       enable = true;
@@ -172,7 +184,6 @@
     cachix
     curl
     difftastic
-    direnv
     fd
     httpie
     inputs.devenv.packages.${pkgs.system}.devenv
