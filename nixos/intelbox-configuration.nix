@@ -126,6 +126,7 @@
     apktool
     bitwarden
     curl
+    difftastic
     dnscontrol
     fd
     flutter

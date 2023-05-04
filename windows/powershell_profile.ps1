@@ -124,7 +124,7 @@ function gdiff ([string] $sha) {
         $sha = "HEAD"
     }
 
-    git diff -w $sha @args | bat --pager=never
+    git dft $sha @args
 }
 
 # List all files in the current working directory

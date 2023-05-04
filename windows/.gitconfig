@@ -11,6 +11,7 @@
     editor = nano
     autocrlf = false
     sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
+	whitespace = trailing-space
 [commit]
     gpgsign = true
 [format]
@@ -26,7 +27,16 @@
 	gpgsign = true
 [diff]
     submodule = log
+    tool = difftastic
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft --display inline "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true
+[alias]
+    dft = difftool
 [gpg "ssh"]
 	allowedSignersFile = %USERPROFILE%/allowed_signers
 [includeIf "gitdir/i:E:/Projects/Work/"]
-    path = .gitconfig-work
+  path = .gitconfig-work

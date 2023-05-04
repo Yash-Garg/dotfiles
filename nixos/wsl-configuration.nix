@@ -171,6 +171,7 @@
     alejandra
     cachix
     curl
+    difftastic
     direnv
     fd
     httpie
