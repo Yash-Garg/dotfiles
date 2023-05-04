@@ -73,38 +73,14 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.inlayHints.fontFamily": "'JetBrains Mono', 'Cascadia Code', monospace",
+    "editor.inlayHints.padding": true,
     "diffEditor.codeLens": true,
-    "editor.inlayHints.fontSize": 17,
+    "editor.inlayHints.fontSize": 16,
     "workbench.colorCustomizations": {
-        "editorLineNumber.activeForeground": "#faf8f8"
-    },
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": [
-                    "comment",
-                    "keyword",
-                    "constant",
-                    "storage.modifier",
-                    "storage.type.class"
-                ],
-                "settings": {
-                    "fontStyle": "italic"
-                }
-            }
-        ],
-        "[Horizon Italic]": {
-            "functions": "#00c3ffe7",
-            "keywords": "#d400ffe7",
-            "types": "#ffbb00ee",
-            "variables": "#ff5151"
-        },
-        "[Monokai Pro]": {},
-        "[Community Material Theme Darker High Contrast]": {
-            "keywords": "#ff5959",
-            "types": "#fcce78",
-            "functions": "#74b0ff"
-        }
+        "editor.foldBackground": "#37374ece",
+        "editorInlayHint.background": "#252538",
+        "editorInlayHint.typeBackground": "#252538",
+        "editorInlayHint.parameterBackground": "#252538"
     },
     "security.workspace.trust.untrustedFiles": "open",
     "livePreview.notifyOnOpenLooseFile": false,
@@ -164,9 +140,6 @@
     "terminal.integrated.fontSize": 16,
     "git.openRepositoryInParentFolders": "never",
     "extensions.ignoreRecommendations": true,
-    "[powershell]": {
-        "editor.defaultFormatter": "ms-vscode.powershell"
-    },
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
@@ -189,5 +162,7 @@
         "<C-y>": false,
         "<C-f>": false,
         "<C-z>": false
-    }
+    },
+    "direnv.restart.automatic": true,
+    "direnv.status.showChangesCount": false
 }
