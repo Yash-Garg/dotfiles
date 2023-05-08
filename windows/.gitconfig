@@ -48,8 +48,8 @@
     syntax-theme = Dracula
     light = false
     line-numbers = true
-    plus-style = brightgreen bold
-    minus-style = brightred bold
+    plus-style = "#50fa7b" bold
+    minus-style = "#ff5555" bold
 
 [delta "decorations"]
     file-style = bold yellow ul
@@ -59,8 +59,8 @@
 [delta "line-numbers"]
 line-numbers-left-format = "{nm:>4} :"
 line-numbers-right-format = "{np:>4} "
-line-numbers-minus-style = brightred bold
-line-numbers-plus-style = brightgreen bold
+line-numbers-minus-style = "#ff5555" bold
+line-numbers-plus-style = "#50fa7b" bold
 
 [diff]
     submodule = log
