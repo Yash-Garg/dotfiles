@@ -57,10 +57,10 @@
     hunk-header-decoration-style = white box
 
 [delta "line-numbers"]
-line-numbers-left-format = "{nm:>4} :"
-line-numbers-right-format = "{np:>4} "
-line-numbers-minus-style = "#ff5555" bold
-line-numbers-plus-style = "#50fa7b" bold
+    line-numbers-left-format = "{nm:>4}:"
+    line-numbers-right-format = "{np:<4} "
+    line-numbers-minus-style = "#ff5555" bold
+    line-numbers-plus-style = "#50fa7b" bold
 
 [diff]
     submodule = log

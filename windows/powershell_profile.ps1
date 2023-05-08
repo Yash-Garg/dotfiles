@@ -51,7 +51,13 @@ function mkdir ([string] $dirName) {
 
 # Create a signed commit with given message
 function commit ([string] $msg) {
-    git commit -S -am $msg
+    if (!$msg) {
+        git commit -S
+    }
+
+    else {
+        git commit -S -am $msg
+    }
 }
 
 # Show oneline log of commits of given size
@@ -79,6 +85,14 @@ function v {
     $file = fzf @args
     if ($file) {
         bat $file
+    }
+}
+
+# Open fzf and show the selected file in vscode
+function cv {
+    $file = fzf --preview 'bat --color=always --style=numbers {}' @args
+    if ($file) {
+        code $file
     }
 }
 
@@ -124,7 +138,7 @@ function gdiff ([string] $sha) {
         $sha = "HEAD"
     }
 
-    git dft $sha @args
+    git diff $sha @args
 }
 
 # List all files in the current working directory
