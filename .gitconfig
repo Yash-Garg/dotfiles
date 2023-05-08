@@ -14,7 +14,6 @@
     editor = nano
     autocrlf = false
     sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
-	whitespace = trailing-space
     pager = delta
 
 [interactive]
@@ -67,7 +66,7 @@
     colorMoved = default
 
 [gpg "ssh"]
-	allowedSignersFile = %USERPROFILE%/allowed_signers
+	allowedSignersFile = allowed_signers
 
 [includeIf "gitdir/i:E:/Projects/Work/"]
   path = .gitconfig-work
