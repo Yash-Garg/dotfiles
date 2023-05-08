@@ -2,41 +2,57 @@
     name = Yash-Garg
     email = yash.garg@outlook.in
 	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz
+
 [push]
 	autoSetupRemote = true
 	default = current
+
 [color]
     ui = true
+
 [core]
     editor = nano
     autocrlf = false
     sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
 	whitespace = trailing-space
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
 [commit]
     gpgsign = true
+
 [format]
     signoff = true
+
 [url "git@github.com:"]
     insteadOf = https://github.com/
     insteadOf = git://github.com/
+
 [pull]
     rebase = false
+
 [gpg]
 	format = ssh
+
 [tag]
 	gpgsign = true
+
+[merge]
+    conflictstyle = diff3
+
+[delta]
+    navigate = false
+    light = false
+    line-numbers = true
+
 [diff]
     submodule = log
-    tool = difftastic
-[difftool]
-    prompt = false
-[difftool "difftastic"]
-    cmd = difft --display inline "$LOCAL" "$REMOTE"
-[pager]
-    difftool = true
-[alias]
-    dft = difftool
+    colorMoved = default
+
 [gpg "ssh"]
 	allowedSignersFile = %USERPROFILE%/allowed_signers
+
 [includeIf "gitdir/i:E:/Projects/Work/"]
   path = .gitconfig-work

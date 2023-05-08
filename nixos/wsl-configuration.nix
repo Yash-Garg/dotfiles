@@ -104,8 +104,6 @@
       };
     };
 
-    direnv.enable = true;
-
     fzf = {
       enable = true;
       enableBashIntegration = true;
@@ -151,6 +149,7 @@
       settings = {
         add_newline = true;
         command_timeout = 10000;
+        format = "[╭╴](white)$env_var$all[╰─](white)$character";
 
         cmd_duration = {
           min_time = 0;
@@ -170,6 +169,10 @@
           show_always = true;
           format = "[$user]($style)";
         };
+
+        gradle.disabled = true;
+        java.disabled = true;
+        kotlin.disabled = true;
       };
     };
 
@@ -183,7 +186,8 @@
     alejandra
     cachix
     curl
-    difftastic
+    delta
+    direnv
     fd
     httpie
     inputs.devenv.packages.${pkgs.system}.devenv
