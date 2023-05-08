@@ -83,7 +83,7 @@
             sha="HEAD"
           fi
 
-          git diff -w $sha | bat --pager=never
+          git diff -w $sha
         }
       '';
     };
