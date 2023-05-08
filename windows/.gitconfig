@@ -43,9 +43,24 @@
     conflictstyle = diff3
 
 [delta]
+    features = line-numbers decorations
     navigate = false
+    syntax-theme = Dracula
     light = false
     line-numbers = true
+    plus-style = brightgreen bold
+    minus-style = brightred bold
+
+[delta "decorations"]
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = white box
+
+[delta "line-numbers"]
+line-numbers-left-format = "{nm:>4} :"
+line-numbers-right-format = "{np:>4} "
+line-numbers-minus-style = brightred bold
+line-numbers-plus-style = brightgreen bold
 
 [diff]
     submodule = log
