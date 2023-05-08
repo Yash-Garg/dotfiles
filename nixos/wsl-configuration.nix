@@ -57,6 +57,9 @@
         rst = "git reset; git restore *";
         hs = "home-manager switch";
       };
+      profileExtra = ''
+        eval `keychain --eval --agents ssh git-ssh`
+      '';
       initExtra = ''
         v() {
           file=$(fzf)
@@ -190,6 +193,7 @@
     direnv
     fd
     httpie
+    keychain
     inputs.devenv.packages.${pkgs.system}.devenv
     neofetch
     ookla-speedtest
