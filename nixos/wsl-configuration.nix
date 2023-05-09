@@ -193,9 +193,10 @@
     direnv
     fd
     httpie
-    keychain
     inputs.devenv.packages.${pkgs.system}.devenv
+    keychain
     neofetch
+    neovim
     ookla-speedtest
     ripgrep
   ];
