@@ -23,7 +23,7 @@
                 "split": "right",
                 "splitMode": "duplicate"
             },
-            "keys": "alt+pgup"
+            "keys": "ctrl+h"
         }
     ],
     "alwaysShowTabs": true,
@@ -72,17 +72,17 @@
                 "elevate": false,
                 "font": {
                     "face": "JetBrainsMono Nerd Font Mono",
-                    "size": 11.0,
+                    "size": 13.0,
                     "weight": "bold"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
-                "opacity": 90,
-                "padding": "10",
-                "scrollbarState": "visible",
+                "opacity": 100,
+                "padding": "25, 0, 25, 0",
+                "scrollbarState": "hidden",
                 "source": "Windows.Terminal.PowershellCore",
-                "useAcrylic": true,
+                "useAcrylic": false,
                 "useAtlasEngine": true
             },
             {
@@ -96,13 +96,15 @@
                 "cursorShape": "vintage",
                 "font": {
                     "face": "JetBrainsMono Nerd Font Mono",
-                    "size": 11.0,
+                    "size": 13.0,
                     "weight": "bold"
                 },
+                "opacity": 100,
+                "padding": "25, 0, 25, 0",
+                "scrollbarState": "hidden",
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "opacity": 90,
                 "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc",
                 "useAcrylic": true
             }
@@ -367,5 +369,5 @@
     "tabWidthMode": "equal",
     "theme": "system",
     "themes": [],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }
