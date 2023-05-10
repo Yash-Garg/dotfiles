@@ -1,3 +1,5 @@
+Import-Module PSReadLine
+
 Invoke-Expression (&starship init powershell)
 Invoke-Expression (
     & {
@@ -5,6 +7,11 @@ Invoke-Expression (
         (zoxide init --hook $hook powershell | Out-String)
     }
 )
+
+Set-PSReadLineKeyHandler -Key Tab -Function Complete
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # Environment variables
 $ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
@@ -80,16 +87,8 @@ function rebase ([int] $num) {
     }
 }
 
-# Open fzf and show the selected file in bat
-function v {
-    $file = fzf @args
-    if ($file) {
-        bat $file
-    }
-}
-
 # Open fzf and show the selected file in vscode
-function cv {
+function v {
     $file = fzf --preview 'bat --color=always --style=numbers {}' @args
     if ($file) {
         code $file
@@ -142,7 +141,9 @@ function gdiff ([string] $sha) {
 }
 
 # List all files in the current working directory
-function la { ls -a }
+function la { lsd -a }
+
+function ll { lsd -l }
 
 # Run flutter code generator
 function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
