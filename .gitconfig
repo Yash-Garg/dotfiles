@@ -48,7 +48,9 @@
     light = false
     line-numbers = true
     plus-style = "#50fa7b" bold
+    plus-emph-style = "#50fa7b" bold normal
     minus-style = "#ff5555" bold
+    minus-emph-style = "#ff5555" bold normal
 
 [delta "decorations"]
     file-style = bold yellow ul
