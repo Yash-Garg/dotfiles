@@ -14,6 +14,7 @@
     editor = nano
     autocrlf = false
     sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
+	whitespace = trailing-space
     pager = delta
 
 [interactive]
@@ -44,13 +45,13 @@
 [delta]
     features = line-numbers decorations
     navigate = false
-    syntax-theme = Dracula
+    syntax-theme = Catppuccin-mocha
     light = false
     line-numbers = true
-    plus-style = "#50fa7b" bold
-    plus-emph-style = "#50fa7b" bold normal
-    minus-style = "#ff5555" bold
-    minus-emph-style = "#ff5555" bold normal
+    plus-style = green bold
+    plus-emph-style = green bold normal
+    minus-style = red bold
+    minus-emph-style = red bold normal
 
 [delta "decorations"]
     file-style = bold yellow ul
@@ -60,8 +61,8 @@
 [delta "line-numbers"]
     line-numbers-left-format = "{nm:>4}:"
     line-numbers-right-format = "{np:<4} "
-    line-numbers-minus-style = "#ff5555" bold
-    line-numbers-plus-style = "#50fa7b" bold
+    line-numbers-minus-style = red bold
+    line-numbers-plus-style = green bold
 
 [diff]
     submodule = log

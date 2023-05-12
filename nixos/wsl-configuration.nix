@@ -94,7 +94,7 @@
     bat = {
       enable = true;
       config = {
-        theme = "Dracula";
+        theme = "Catppuccin-mocha";
         pager = "never";
       };
     };
