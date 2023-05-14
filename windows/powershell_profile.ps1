@@ -140,6 +140,22 @@ function gdiff ([string] $sha) {
     git diff $sha @args
 }
 
+function cmb ([int] $logSize) {
+    if ($logSize -le 0) {
+        $logSize = 20
+    }
+
+    $selectedCommit = $(
+        git log -n $logSize --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" $args |
+        fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort |
+        ForEach-Object { $_ -match '^\*\s+([a-f0-9]+)' | Out-Null; $matches[1] }
+    )
+
+    if ($selectedCommit) {
+        git show --color=always $selectedCommit | less -R
+    }
+}
+
 # List all files in the current working directory
 function la { lsd -a }
 
