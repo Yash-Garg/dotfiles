@@ -61,33 +61,7 @@
         eval `keychain --eval --agents ssh git-ssh`
       '';
       initExtra = ''
-        v() {
-          file=$(fzf)
-
-          if [ -n "$file" ]; then
-            bat $file
-          fi
-        }
-
-        lg() {
-          count=$1
-
-          if [ -z "$count" ]; then
-            count=10
-          fi
-
-          git log --oneline --decorate --graph --all -n $count
-        }
-
-        gdiff() {
-          sha=$1
-
-          if [ -z "$sha" ]; then
-            sha="HEAD"
-          fi
-
-          git diff -w $sha
-        }
+        source ${config.home.homeDirectory}/functions.sh
       '';
     };
 
@@ -152,7 +126,6 @@
       settings = {
         add_newline = true;
         command_timeout = 10000;
-        format = "[╭╴](white)$env_var$all[╰─](white)$character";
 
         cmd_duration = {
           min_time = 0;
