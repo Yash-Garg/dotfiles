@@ -152,7 +152,7 @@ function cmb ([int] $logSize) {
     )
 
     if ($selectedCommit) {
-        git show --color=always $selectedCommit | less -R
+        git show -w $selectedCommit
     }
 }
 
