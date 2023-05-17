@@ -1,4 +1,4 @@
-v() {
+function v() {
     file=$(fzf --preview 'bat --color=always --style=numbers {}')
 
     if [ -n "$file" ]; then
@@ -6,7 +6,7 @@ v() {
     fi
 }
 
-lg() {
+function lg() {
     count=$1
 
     if [ -z "$count" ]; then
@@ -16,7 +16,7 @@ lg() {
     git log --oneline --decorate --graph --all -n $count
 }
 
-gdiff() {
+function gdiff() {
     sha=$1
 
     if [ -z "$sha" ]; then

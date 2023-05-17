@@ -45,9 +45,9 @@ conflictstyle = diff3
 [delta]
 features = line-numbers decorations
 navigate = false
-syntax-theme = Catppuccin-mocha
+syntax-theme = none
 light = false
-line-numbers = false
+line-numbers = true
 plus-style = green bold
 plus-emph-style = green bold normal
 minus-style = red bold
