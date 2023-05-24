@@ -29,8 +29,18 @@ Set-Alias -Name a2 -Value aria2c -Option AllScope
 Set-Alias -Name cd -Value z -Option AllScope
 Set-Alias -Name cat -Value bat -Option AllScope
 
+function gw {
+    if (Test-Path ./gradlew) {
+        ./gradlew @args
+    }
+    else {
+        Write-Error "not a gradle project"
+        return
+    }
+}
+
 # To find where is the given command called from
-function which($name) {
+function which ([string] $name) {
     Get-Command $name | Select-Object -ExpandProperty Definition
 }
 
@@ -146,13 +156,13 @@ function cmb ([int] $logSize) {
     }
 
     $selectedCommit = $(
-        git log -n $logSize --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" $args |
+        git log -n $logSize --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" @args |
         fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort |
         ForEach-Object { $_ -match '^\*\s+([a-f0-9]+)' | Out-Null; $matches[1] }
     )
 
     if ($selectedCommit) {
-        git show -w $selectedCommit
+        git show -w --color=always $selectedCommit
     }
 }
 
@@ -165,11 +175,11 @@ function ll { lsd -l }
 function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
 
 # Compute file hashes - useful for checking successful downloads
-function md5 { Get-FileHash -Algorithm MD5 $args }
+function md5 { Get-FileHash -Algorithm MD5 @args }
 
-function sha1 { Get-FileHash -Algorithm SHA1 $args }
+function sha1 { Get-FileHash -Algorithm SHA1 @args }
 
-function sha256 { Get-FileHash -Algorithm SHA256 $args }
+function sha256 { Get-FileHash -Algorithm SHA256 @args }
 
 function pkill($name) {
     Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
