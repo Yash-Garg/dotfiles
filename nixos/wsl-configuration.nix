@@ -55,6 +55,7 @@
         amend = "git commit --amend";
         commit = "git commit --all -m";
         rst = "git reset; git restore *";
+        nu = "cd $HOME/.config/home-manager; nix flake update";
         hs = "home-manager switch";
       };
       profileExtra = ''
@@ -143,7 +144,8 @@
         };
 
         nix_shell = {
-          symbol = "";
+          symbol = "nix";
+          format = "via [$symbol-$state]($style) ";
         };
 
         username = {
