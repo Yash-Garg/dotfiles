@@ -10,12 +10,20 @@ default = current
 [color]
 ui = true
 
+[alias]
+c = clone
+diff = diff -w
+
 [core]
 editor = nano
 autocrlf = false
 sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
-whitespace = trailing-space
-pager = delta
+pager = less
+
+[color "diff"]
+meta = blue
+old = red
+new = green
 
 [interactive]
 diffFilter = delta --color-only
@@ -31,7 +39,7 @@ insteadOf = https://github.com/
 insteadOf = git://github.com/
 
 [pull]
-rebase = false
+rebase = true
 
 [gpg]
 format = ssh
@@ -71,5 +79,8 @@ colorMoved = default
 [gpg "ssh"]
 allowedSignersFile = allowed_signers
 
-[includeIf "gitdir/i:E:/Projects/Work/"]
-path = .gitconfig-work
+[includeIf "gitdir/i:E:/Projects/Work/Murena/"]
+path = .gitconfig-murena
+
+[includeIf "gitdir/i:E:/Projects/Work/Others/"]
+path = .gitconfig-others

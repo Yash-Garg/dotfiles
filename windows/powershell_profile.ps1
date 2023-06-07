@@ -151,6 +151,11 @@ function gdiff ([string] $sha) {
 }
 
 function cmb ([int] $logSize) {
+    if (!(Test-Path .git)) {
+        Write-Error "not a git repository"
+        return
+    }
+
     if ($logSize -le 0) {
         $logSize = 20
     }
@@ -163,6 +168,12 @@ function cmb ([int] $logSize) {
 
     if ($selectedCommit) {
         git show -w --color=always $selectedCommit
+    }
+}
+
+function wvhd ([string] $distro) {
+    if ($distro) {
+        (Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object { $_.GetValue("DistributionName") -eq $distro }).GetValue("BasePath") + "\ext4.vhdx"
     }
 }
 
