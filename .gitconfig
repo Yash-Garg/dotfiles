@@ -18,7 +18,7 @@ diff = diff -w
 editor = nano
 autocrlf = false
 sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
-pager = less
+pager = delta
 
 [color "diff"]
 meta = blue

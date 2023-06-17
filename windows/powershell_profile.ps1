@@ -183,7 +183,9 @@ function la { lsd -a }
 function ll { lsd -l }
 
 # Run flutter code generator
-function runner { flutter packages pub run build_runner build --delete-conflicting-outputs }
+function runner { dart run build_runner build --delete-conflicting-outputs }
+
+function fbuild { flutter build apk --release --split-per-abi }
 
 # Compute file hashes - useful for checking successful downloads
 function md5 { Get-FileHash -Algorithm MD5 @args }
