@@ -21,7 +21,7 @@
   nix = {
     package = pkgs.nixFlakes;
     settings = {
-      substituters = [
+      trusted-substituters = [
         "https://devenv.cachix.org"
         "https://nix-community.cachix.org"
         "https://cache.nixos.org"
@@ -189,5 +189,5 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
 }
