@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  mc-server:
+    container_name: mc-server
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: FABRIC
+      MEMORY: 12G
+      MOTD: Welcome to the server!
+      SEED: 7599824378187852
+      DIFFICULTY: EASY
+      ENFORCE_WHITELIST: "TRUE"
+      ONLINE_MODE: "FALSE"
+      MAX_PLAYERS: 10
+      WHITELIST_FILE: /extra/whitelist.json
+      OPS_FILE: /extra/ops.json
+      RCON_CMDS_STARTUP: /gamerule keepInventory true
+    volumes:
+      - ./data:/data
+      - ./mods:/data/mods
+      - ./extra:/extra
