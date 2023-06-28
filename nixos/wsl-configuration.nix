@@ -82,11 +82,6 @@
       };
     };
 
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
     fzf = {
       enable = true;
       enableBashIntegration = true;
@@ -179,6 +174,8 @@
     neovim
     ookla-speedtest
     ripgrep
+    unzip
+    zip
   ];
 
   # This value determines the Home Manager release that your
