@@ -1,0 +1,27 @@
+repos:
+    - owner: sharkdp
+      name: fd
+    - owner: sharkdp
+      name: hyperfine
+    - owner: sharkdp
+      name: bat
+    - owner: lsd-rs
+      name: lsd
+    - owner: jqlang
+      name: jq
+    - owner: StackExchange
+      name: dnscontrol
+    - owner: junegunn
+      name: fzf
+    - owner: dandavison
+      name: delta
+    - owner: Genymobile
+      name: scrcpy
+    - owner: BurntSushi
+      name: ripgrep
+    - owner: SphericalKat
+      name: katbin-cli
+    - owner: webfolderio
+      name: wget-windows
+    - owner: aria2
+      name: aria2
