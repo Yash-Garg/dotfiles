@@ -23,11 +23,13 @@ $ENV:FZF_DEFAULT_OPTS = @"
 "@
 
 # Aliases
-Set-Alias -Name neofetch -Value winfetch.ps1 -Option AllScope
+Set-Alias -Name neofetch -Value winfetch -Option AllScope
 Set-Alias -Name ls -Value lsd -Option AllScope
 Set-Alias -Name a2 -Value aria2c -Option AllScope
 Set-Alias -Name cd -Value z -Option AllScope
 Set-Alias -Name cat -Value bat -Option AllScope
+Set-Alias -Name firebase -Value firebase-win -Option AllScope
+Set-Alias -Name e -Value explorer -Option AllScope
 
 function gw {
     if (Test-Path ./gradlew) {
@@ -171,9 +173,37 @@ function cmb ([int] $logSize) {
     }
 }
 
-function wvhd ([string] $distro) {
-    if ($distro) {
-        (Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object { $_.GetValue("DistributionName") -eq $distro }).GetValue("BasePath") + "\ext4.vhdx"
+function a {
+    $totalLines = ((adb devices) | Measure-Object -Line).Lines
+    $devicesConnected = $totalLines - 1
+
+    if ($args -notlike "*-s *" -and $devicesConnected -gt 1) {
+        $devices = ((adb devices) | Select-Object -Skip 1 | Select-Object -SkipLast 1).Split("`n") | ForEach-Object { $_.Split()[0] }
+
+        $devicesText = ""
+
+        foreach ($device in $devices) {
+            $vendor = (adb -s $device shell getprop ro.product.manufacturer).Trim()
+            $model = (adb -s $device shell getprop ro.product.model).Trim()
+
+            $devicesText += "$device - $model ($vendor)`n"
+        }
+
+        $selection = $devicesText | fzf
+        if (!$selection) {
+            return
+        }
+
+        $deviceId = $selection.Split()[0]
+
+        $Green = [ConsoleColor]::Green
+        Write-Host "Device Selected: $selection" -ForegroundColor $Green
+
+        adb -s $deviceId @args
+    }
+    else {
+        adb @args
+        return
     }
 }
 
@@ -183,9 +213,9 @@ function la { lsd -a }
 function ll { lsd -l }
 
 # Run flutter code generator
-function runner { dart run build_runner build --delete-conflicting-outputs }
+function runner { dart run build_runner build --delete-conflicting-outputs @args }
 
-function fbuild { flutter build apk --release --split-per-abi }
+function fbuild { flutter build apk --release --split-per-abi @args }
 
 # Compute file hashes - useful for checking successful downloads
 function md5 { Get-FileHash -Algorithm MD5 @args }
