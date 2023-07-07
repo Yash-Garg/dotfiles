@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }: {
   home.username = "yash";
@@ -22,12 +21,10 @@
     package = pkgs.nixFlakes;
     settings = {
       trusted-substituters = [
-        "https://devenv.cachix.org"
         "https://nix-community.cachix.org"
         "https://cache.nixos.org"
       ];
       trusted-public-keys = [
-        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       ];
@@ -63,6 +60,7 @@
       '';
       initExtra = ''
         source ${config.home.homeDirectory}/functions.sh
+        export PATH=$PATH:${config.home.homeDirectory}/.cargo/bin
       '';
     };
 
@@ -80,11 +78,6 @@
         color_theme = "${pkgs.btop}/share/btop/themes/dracula.theme";
         theme_background = false;
       };
-    };
-
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
     };
 
     fzf = {
@@ -193,7 +186,6 @@
     direnv
     fd
     httpie
-    inputs.devenv.packages.${pkgs.system}.devenv
     keychain
     neofetch
     neovim
