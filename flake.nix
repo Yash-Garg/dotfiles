@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     devshell-rust = {
-      url = "path:./nixos/shell-configs/rust";
+      url = "github:Yash-Garg/dotfiles/?dir=nixos/shell-configs/rust";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -16,30 +16,14 @@
   outputs = {
     nixpkgs,
     home-manager,
+    systems,
     ...
   } @ inputs: let
+    eachSystem = nixpkgs.lib.genAttrs (import systems);
     config = {
       allowUnfree = true;
     };
   in {
-    homeConfigurations.server = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit config;
-        system = "aarch64-linux";
-      };
-
-      modules = [./nixos/server-configuration.nix];
-    };
-
-    homeConfigurations.intelbox = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit config;
-        system = "x86_64-linux";
-      };
-
-      modules = [./nixos/intelbox-configuration.nix];
-    };
-
     homeConfigurations.wsl = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         inherit config;
@@ -51,8 +35,8 @@
       modules = [./nixos/wsl-configuration.nix];
     };
 
-    devShells.x86_64-linux = {
-      rust = inputs.devshell-rust.devShells.x86_64-linux.default;
-    };
+    devShells = eachSystem (system: {
+      rust = inputs.devshell-rust.devShells.${system}.default;
+    });
   };
 }
