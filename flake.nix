@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devshell-rust = {
+      url = "path:./nixos/shell-configs/rust";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -45,6 +49,10 @@
       extraSpecialArgs = {inherit inputs;};
 
       modules = [./nixos/wsl-configuration.nix];
+    };
+
+    devShells.x86_64-linux = {
+      rust = inputs.devshell-rust.devShells.x86_64-linux.default;
     };
   };
 }
