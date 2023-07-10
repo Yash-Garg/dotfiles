@@ -8,8 +8,8 @@ Invoke-Expression (
     }
 )
 
-Set-PSReadLineKeyHandler -Key Tab -Function Complete
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+Set-PSReadLineKeyHandler -Key Tab -Function Complete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
@@ -153,8 +153,9 @@ function gdiff ([string] $sha) {
 }
 
 function cmb ([int] $logSize) {
-    if (!(Test-Path .git)) {
-        Write-Error "not a git repository"
+    $gitOutput = git rev-parse --is-inside-work-tree
+
+    if ($gitOutput -ne "true") {
         return
     }
 
@@ -170,40 +171,6 @@ function cmb ([int] $logSize) {
 
     if ($selectedCommit) {
         git show -w --color=always $selectedCommit
-    }
-}
-
-function a {
-    $totalLines = ((adb devices) | Measure-Object -Line).Lines
-    $devicesConnected = $totalLines - 1
-
-    if ($args -notlike "*-s *" -and $devicesConnected -gt 1) {
-        $devices = ((adb devices) | Select-Object -Skip 1 | Select-Object -SkipLast 1).Split("`n") | ForEach-Object { $_.Split()[0] }
-
-        $devicesText = ""
-
-        foreach ($device in $devices) {
-            $vendor = (adb -s $device shell getprop ro.product.manufacturer).Trim()
-            $model = (adb -s $device shell getprop ro.product.model).Trim()
-
-            $devicesText += "$device - $model ($vendor)`n"
-        }
-
-        $selection = $devicesText | fzf
-        if (!$selection) {
-            return
-        }
-
-        $deviceId = $selection.Split()[0]
-
-        $Green = [ConsoleColor]::Green
-        Write-Host "Device Selected: $selection" -ForegroundColor $Green
-
-        adb -s $deviceId @args
-    }
-    else {
-        adb @args
-        return
     }
 }
 
