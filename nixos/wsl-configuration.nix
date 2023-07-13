@@ -184,13 +184,16 @@
     curl
     delta
     direnv
+    erdtree
     fd
     httpie
+    hyperfine
     keychain
     neofetch
     neovim
     ookla-speedtest
     ripgrep
+    scc
     unzip
     zip
   ];
