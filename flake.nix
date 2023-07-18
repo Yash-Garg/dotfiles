@@ -35,6 +35,17 @@
       modules = [./nixos/wsl-configuration.nix];
     };
 
+    homeConfigurations.intelbox = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs {
+        inherit config;
+        system = "x86_64-linux";
+      };
+
+      extraSpecialArgs = {inherit inputs;};
+
+      modules = [./nixos/intelbox-configuration.nix];
+    };
+
     devShells = eachSystem (system: {
       rust = inputs.devshell-rust.devShells.${system}.default;
     });

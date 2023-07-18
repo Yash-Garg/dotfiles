@@ -42,3 +42,18 @@ jobs:
             - name: Run nix check
               shell: bash
               run: nix build .#homeConfigurations.wsl.activationPackage
+
+    intelbox-check:
+        needs: [file-changes]
+        runs-on: ubuntu-22.04
+        if: needs.file-changes.outputs.any == 'true'
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Install Nix
+              uses: cachix/install-nix-action@v19
+
+            - name: Run nix check
+              shell: bash
+              run: nix build .#homeConfigurations.intelbox.activationPackage
