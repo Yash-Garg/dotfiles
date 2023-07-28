@@ -1,13 +1,5 @@
 Import-Module PSReadLine
 
-Invoke-Expression (&starship init powershell)
-Invoke-Expression (
-    & {
-        $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-        (zoxide init --hook $hook powershell | Out-String)
-    }
-)
-
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadLineKeyHandler -Key Tab -Function Complete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -149,7 +141,7 @@ function gdiff ([string] $sha) {
         $sha = "HEAD"
     }
 
-    git diff $sha @args
+    git diff $sha -w @args
 }
 
 function cmb ([int] $logSize) {
@@ -199,4 +191,11 @@ function pgrep($name) {
     Get-Process $name
 }
 
+Invoke-Expression (&starship init powershell)
+Invoke-Expression (
+    & {
+        $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+        (zoxide init --hook $hook powershell | Out-String)
+    }
+)
 Clear-Host
