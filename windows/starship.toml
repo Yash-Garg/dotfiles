@@ -1,13 +1,9 @@
 add_newline = true
 command_timeout = 10000
 
-format = """
-[╭╴](white)$env_var\
-$all[╰─](white)$character"""
-
 [username]
 show_always = true
-format = "[$user]($style)"
+format = "[yash]($style)"
 
 [cmd_duration]
 min_time = 0
@@ -16,6 +12,9 @@ min_time = 0
 disabled = false
 ssh_only = false
 format = ' at [$hostname](bold red) in '
+
+[gradle]
+format = "via [gradle-$version]($style) "
 
 [aws]
 disabled = true
@@ -65,9 +64,6 @@ disabled = true
 [gcloud]
 disabled = true
 
-[gradle]
-disabled = true
-
 [haskell]
 disabled = true
 
@@ -98,6 +94,9 @@ disabled = true
 [nim]
 disabled = true
 
+[nodejs]
+disabled = true
+
 [ocaml]
 disabled = true
 
@@ -117,6 +116,9 @@ disabled = true
 disabled = true
 
 [purescript]
+disabled = true
+
+[python]
 disabled = true
 
 [rlang]
