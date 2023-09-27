@@ -2,7 +2,7 @@ function v() {
     file=$(fzf --preview 'bat --color=always --style=numbers {}')
 
     if [ -n "$file" ]; then
-        nvim $file
+        ${VISUAL:-${EDITOR:-nano}} $file
     fi
 }
 
