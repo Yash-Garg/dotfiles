@@ -11,6 +11,27 @@
       set nonewlines
       set smarthome
     '';
+
+    ".gitconfig".source =
+      pkgs.fetchFromGitHub {
+        owner = "Yash-Garg";
+        repo = "dotfiles";
+        rev = "b298edde1266edad3a8125ef147904ba5505ce73";
+        sha256 = "sha256-tuIeZlPb97wAN71i+JfQ5EohniiNMcuI/enzrkY+mAI=";
+      }
+      + "/.gitconfig";
+
+    "functions.sh" = {
+      executable = true;
+      source =
+        pkgs.fetchFromGitHub {
+          owner = "Yash-Garg";
+          repo = "dotfiles";
+          rev = "b298edde1266edad3a8125ef147904ba5505ce73";
+          sha256 = "sha256-tuIeZlPb97wAN71i+JfQ5EohniiNMcuI/enzrkY+mAI=";
+        }
+        + "/functions.sh";
+    };
   };
 
   nix = {
@@ -33,7 +54,7 @@
       enable = true;
       enableCompletion = true;
       historySize = 10000;
-      historyFile = "${config.home.homeDirectory}/.bash_history";
+      historyFile = "$HOME/.bash_history";
       historyControl = ["ignorespace" "erasedups"];
       shellAliases = {
         cat = "bat";
@@ -48,11 +69,11 @@
         amend = "git commit --amend";
         commit = "git commit --all -m";
         rst = "git reset; git restore *";
-        nu = "cd $HOME/.config/home-manager; nix flake update";
+        nu = "cd $HOME/.config/home-manager; nix flake update; cd $HOME";
         hs = "home-manager switch";
       };
       initExtra = ''
-        source ${config.home.homeDirectory}/functions.sh
+        . $HOME/functions.sh
       '';
     };
 
@@ -83,6 +104,12 @@
       };
     };
 
+    # direnv = {
+    #   enable = true;
+    #   enableBashIntegration = true;
+    #   nix-direnv.enable = true;
+    # };
+
     fzf = {
       enable = true;
       enableBashIntegration = true;
@@ -106,7 +133,7 @@
     git = {
       enable = true;
       includes = [
-        {path = "${config.home.homeDirectory}/.gitconfig";}
+        {path = "$HOME/.gitconfig";}
       ];
     };
 
