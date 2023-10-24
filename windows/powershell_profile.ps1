@@ -23,6 +23,10 @@ Set-Alias -Name cat -Value bat -Option AllScope
 Set-Alias -Name firebase -Value firebase-win -Option AllScope
 Set-Alias -Name e -Value explorer -Option AllScope
 
+function dig { dog -n 1.1.1.1 @args }
+
+function update { scoop update && scoop status }
+
 function gw {
     if (Test-Path ./gradlew) {
         ./gradlew @args
@@ -77,7 +81,7 @@ function lg ([int] $logSize) {
         $logSize = 10
     }
 
-    git log --oneline --decorate --graph --all -n $logSize
+    git log --oneline --decorate --graph -n $logSize @args
 
 }
 
