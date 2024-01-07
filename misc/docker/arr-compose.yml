@@ -1,0 +1,130 @@
+version: "2.1"
+
+volumes:
+    h5ai:
+    jackett:
+    jellyfin:
+    qbit:
+    lidarr:
+    radarr:
+    sonarr:
+
+services:
+    h5ai:
+        image: awesometic/h5ai
+        container_name: h5ai
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Asia/Kolkata
+        ports:
+            - 80:80/tcp
+        volumes:
+            - h5ai:/config
+            - /home/ubuntu/Downloads:/h5ai
+        restart: unless-stopped
+
+    homarr:
+        container_name: homarr
+        image: ghcr.io/ajnart/homarr:latest
+        restart: unless-stopped
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./homarr/configs:/app/data/configs
+            - ./homarr/icons:/app/public/icons
+            - ./homarr/data:/data
+        ports:
+            - "7575:7575"
+
+    jackett:
+        image: lscr.io/linuxserver/jackett:latest
+        container_name: jackett
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Asia/Kolkata
+            - AUTO_UPDATE=true
+        volumes:
+            - jackett:/config
+            - /home/ubuntu/Downloads:/h5ai
+        ports:
+            - 9117:9117
+        restart: unless-stopped
+
+    jellyfin:
+        image: lscr.io/linuxserver/jellyfin:latest
+        container_name: jellyfin
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Asia/Kolkata
+        volumes:
+            - jellyfin:/config
+            - /mnt/Media/Anime:/anime
+            - /mnt/Media/Movies:/movies
+            - /mnt/Media/Shows:/shows
+        ports:
+            - 8096:8096
+        restart: unless-stopped
+
+    lidarr:
+        image: lscr.io/linuxserver/lidarr:latest
+        container_name: lidarr
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Etc/UTC
+        volumes:
+            - lidarr:/config
+            # - /path/to/music:/music
+            - /home/ubuntu/downloads:/downloads
+        ports:
+            - 8686:8686
+        restart: unless-stopped
+
+    radarr:
+        image: lscr.io/linuxserver/radarr:latest
+        container_name: radarr
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Etc/UTC
+        volumes:
+            - radarr:/config
+            - /mnt/Media/Movies:/movies
+            - /home/ubuntu/downloads:/downloads
+        ports:
+            - 7878:7878
+        restart: unless-stopped
+
+    sonarr:
+        image: lscr.io/linuxserver/sonarr:latest
+        container_name: sonarr
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Etc/UTC
+        volumes:
+            - sonarr:/config
+            - /mnt/Media/Shows:/shows
+            - /home/ubuntu/downloads:/downloads
+        ports:
+            - 8989:8989
+        restart: unless-stopped
+
+    qbittorrent:
+        image: lscr.io/linuxserver/qbittorrent:latest
+        container_name: qbittorrent
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Asia/Kolkata
+            - WEBUI_PORT=3000
+        volumes:
+            - qbit:/config
+            - /home/ubuntu/Downloads:/downloads
+        ports:
+            - 3000:3000
+            - 6881:6881
+            - 6881:6881/udp
+        restart: unless-stopped
