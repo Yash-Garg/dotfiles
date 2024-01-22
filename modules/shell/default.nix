@@ -2,7 +2,14 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  dots = pkgs.fetchFromGitHub {
+    owner = "Yash-Garg";
+    repo = "dotfiles";
+    rev = "b4f01ac43ae8d648d89a358e705fcb62b895d0de";
+    sha256 = "sha256-IduhAcVSsNSNhGVxVagXvS+uJ8FUxlDvZb4cU9jQ16k=";
+  };
+in {
   home.packages = with pkgs; [
     alejandra
     cachix
@@ -32,25 +39,11 @@
       set smarthome
     '';
 
-    ".gitconfig".source =
-      pkgs.fetchFromGitHub {
-        owner = "Yash-Garg";
-        repo = "dotfiles";
-        rev = "b298edde1266edad3a8125ef147904ba5505ce73";
-        sha256 = "sha256-tuIeZlPb97wAN71i+JfQ5EohniiNMcuI/enzrkY+mAI=";
-      }
-      + "/.gitconfig";
+    ".gitconfig".source = "${dots}/.gitconfig";
 
-    "functions.sh" = {
+    "functions" = {
       executable = true;
-      source =
-        pkgs.fetchFromGitHub {
-          owner = "Yash-Garg";
-          repo = "dotfiles";
-          rev = "b298edde1266edad3a8125ef147904ba5505ce73";
-          sha256 = "sha256-tuIeZlPb97wAN71i+JfQ5EohniiNMcuI/enzrkY+mAI=";
-        }
-        + "/functions.sh";
+      source = "${dots}/scripts/functions";
     };
   };
 }

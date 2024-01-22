@@ -26,7 +26,7 @@
       hs = "home-manager switch";
     };
     initExtra = ''
-      . $HOME/functions.sh
+      source $HOME/functions
     '';
   };
 }

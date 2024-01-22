@@ -1,9 +1,11 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
+    ../modules/nix
     ../modules/programs
     ../modules/shell
   ];

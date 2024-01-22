@@ -25,8 +25,8 @@ jobs:
               with:
                   files: |
                       flake.nix
-                      nixos/*.nix
-                      nixos/**/*.nix
+                      *.nix
+                      **/*.nix
 
     wsl-check:
         needs: [file-changes]
