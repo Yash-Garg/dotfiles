@@ -1,9 +1,0 @@
-[Unit]
-Description=Plex Drive Mount
-
-[Service]
-User=ubuntu
-ExecStart=/home/ubuntu/bin/plexdrive mount -c /home/ubuntu/.plexdrive/ --drive-id=0ALiWpFxKC0QrUk9PVA -o allow_other /home/ubuntu/Plex/ --verbosity 3
-
-[Install]
-WantedBy=multi-user.target

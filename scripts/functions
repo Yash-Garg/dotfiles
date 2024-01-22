@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 function v() {
     file=$(fzf --preview 'bat --color=always --style=numbers {}')
 
