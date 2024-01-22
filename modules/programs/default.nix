@@ -7,5 +7,6 @@
     ./common.nix
     ./bash
     ./starship
+    ./tmux
   ];
 }

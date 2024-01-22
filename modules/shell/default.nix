@@ -25,7 +25,6 @@ in {
     ookla-speedtest
     ripgrep
     scc
-    tmux
     unzip
     zip
   ];
