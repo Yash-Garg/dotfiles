@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     devshell-rust = {
-      url = "github:Yash-Garg/dotfiles/?dir=nixos/shell-configs/rust";
+      url = "github:Yash-Garg/dotfiles/?dir=shell-configs/rust";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -32,7 +32,10 @@
 
       extraSpecialArgs = {inherit inputs;};
 
-      modules = [./nixos/wsl-configuration.nix];
+      modules = [
+        ./hosts/wsl/configuration.nix
+        ./hosts/user.nix
+      ];
     };
 
     homeConfigurations.intelbox = home-manager.lib.homeManagerConfiguration {
@@ -43,7 +46,10 @@
 
       extraSpecialArgs = {inherit inputs;};
 
-      modules = [./nixos/intelbox-configuration.nix];
+      modules = [
+        ./hosts/intelbox/configuration.nix
+        ./hosts/user.nix
+      ];
     };
 
     devShells = eachSystem (system: {

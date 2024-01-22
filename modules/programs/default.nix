@@ -3,36 +3,10 @@
   pkgs,
   ...
 }: {
-  home.file = {
-    ".nanorc".text = ''
-      set tabsize 4
-      set autoindent
-      set softwrap
-      set nonewlines
-      set smarthome
-    '';
-
-    ".gitconfig".source =
-      pkgs.fetchFromGitHub {
-        owner = "Yash-Garg";
-        repo = "dotfiles";
-        rev = "b298edde1266edad3a8125ef147904ba5505ce73";
-        sha256 = "sha256-tuIeZlPb97wAN71i+JfQ5EohniiNMcuI/enzrkY+mAI=";
-      }
-      + "/.gitconfig";
-
-    "functions.sh" = {
-      executable = true;
-      source =
-        pkgs.fetchFromGitHub {
-          owner = "Yash-Garg";
-          repo = "dotfiles";
-          rev = "b298edde1266edad3a8125ef147904ba5505ce73";
-          sha256 = "sha256-tuIeZlPb97wAN71i+JfQ5EohniiNMcuI/enzrkY+mAI=";
-        }
-        + "/functions.sh";
-    };
-  };
+  imports = [
+    ./bash
+    ./starship
+  ];
 
   nix = {
     package = pkgs.nixFlakes;
@@ -50,33 +24,6 @@
   };
 
   programs = {
-    bash = {
-      enable = true;
-      enableCompletion = true;
-      historySize = 10000;
-      historyFile = "$HOME/.bash_history";
-      historyControl = ["ignorespace" "erasedups"];
-      shellAliases = {
-        cat = "bat";
-        cd = "z";
-        cls = "clear";
-        push = "git push";
-        fpush = "git push --force";
-        add = "git add --all";
-        pull = "git pull --rebase";
-        st = "git status";
-        gcp = "git cherry-pick";
-        amend = "git commit --amend";
-        commit = "git commit --all -m";
-        rst = "git reset; git restore *";
-        nu = "cd $HOME/.config/home-manager; nix flake update; cd $HOME";
-        hs = "home-manager switch";
-      };
-      initExtra = ''
-        . $HOME/functions.sh
-      '';
-    };
-
     bat = {
       enable = true;
       themes = {
@@ -143,39 +90,6 @@
       };
     };
 
-    starship = {
-      enable = true;
-      enableBashIntegration = true;
-      settings = {
-        add_newline = true;
-        command_timeout = 10000;
-
-        cmd_duration = {
-          min_time = 0;
-        };
-
-        hostname = {
-          disabled = false;
-          ssh_only = false;
-          format = " at [$hostname](bold red) in ";
-        };
-
-        nix_shell = {
-          symbol = "nix";
-          format = "via [$symbol-$state]($style) ";
-        };
-
-        username = {
-          show_always = true;
-          format = "[$user]($style)";
-        };
-
-        gradle.disabled = true;
-        java.disabled = true;
-        kotlin.disabled = true;
-      };
-    };
-
     zoxide = {
       enable = true;
       enableBashIntegration = true;
@@ -201,18 +115,4 @@
     Timer.OnCalendar = "weekly";
     Install.WantedBy = ["timers.target"];
   };
-
-  home.packages = with pkgs; [
-    alejandra
-    cachix
-    curl
-    delta
-    direnv
-    fd
-    httpie
-    neofetch
-    ripgrep
-    unzip
-    zip
-  ];
 }
