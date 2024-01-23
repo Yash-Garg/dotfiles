@@ -9,6 +9,7 @@
     historySize = 10000;
     historyFile = "$HOME/.bash_history";
     historyControl = ["ignorespace" "erasedups"];
+    initExtra = "source $HOME/functions";
     shellAliases = {
       cat = "bat";
       cd = "z";
@@ -22,11 +23,7 @@
       amend = "git commit --amend";
       commit = "git commit --all -m";
       rst = "git reset; git restore *";
-      nu = "cd $HOME/.config/home-manager; nix flake update; cd $HOME";
       hs = "home-manager switch";
     };
-    initExtra = ''
-      source $HOME/functions
-    '';
   };
 }
