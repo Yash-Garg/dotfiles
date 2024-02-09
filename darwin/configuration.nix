@@ -12,8 +12,19 @@
     LANG = "en_US.UTF-8";
   };
 
-  fonts = {
-    fontDir.enable = true;
+  fonts.fontDir.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+
+  homebrew = {
+    enable = true;
+    brews = [
+      "cocoapods"
+      "gnu-sed"
+      "ruby"
+    ];
+    casks = ["flutter"];
+    taps = [];
   };
 
   nix = {
@@ -31,7 +42,6 @@
     };
     extraOptions = ''
       experimental-features = nix-command flakes repl-flake
-      max-jobs = auto
       ssl-cert-file = /private/etc/ssl/cert.pem
       extra-nix-path = nixpkgs=flake:nixpkgs
     '';
@@ -42,6 +52,20 @@
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
+
+  # Add ability to used TouchID for sudo authentication
+  security.pam.enableSudoTouchIdAuth = true;
+
+  environment.systemPackages = with pkgs; [
+    discord
+    iina
+    iterm2
+    raycast
+    rectangle
+    slack
+    spotify
+    vscode
+  ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog

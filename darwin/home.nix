@@ -141,7 +141,7 @@ in {
         path = "$HOME/.zsh_history";
         ignoreDups = true;
       };
-      # initExtra = "source $HOME/functions";
+      initExtra = "source $HOME/functions";
       shellAliases = {
         cat = "bat";
         cd = "z";
@@ -155,7 +155,6 @@ in {
         amend = "git commit --amend";
         commit = "git commit --all -m";
         rst = "git reset; git restore *";
-        hs = "home-manager switch";
       };
     };
   };

@@ -20,8 +20,6 @@
     nixpkgs,
     ...
   } @ inputs: {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Yashs-MacBook-Pro
     darwinConfigurations."Yashs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
 
@@ -30,10 +28,10 @@
       modules = [
         ./configuration.nix
         home-manager.darwinModules.home-manager
-        ({lib, ...}: {
+        {
           home-manager.useGlobalPkgs = true;
           home-manager.users.yash = import ./home.nix;
-        })
+        }
       ];
     };
 
