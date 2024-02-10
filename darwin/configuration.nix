@@ -12,6 +12,10 @@
     LANG = "en_US.UTF-8";
   };
 
+  environment.pathsToLink = [
+    "/share/zsh"
+  ];
+
   fonts.fontDir.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -25,6 +29,11 @@
     ];
     casks = ["flutter"];
     taps = [];
+    masApps = {
+      "Adguard for Safari" = 1440147259;
+      "Prime Video" = 545519333;
+      "Telegram" = 747648890;
+    };
   };
 
   nix = {

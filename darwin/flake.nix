@@ -20,7 +20,7 @@
     nixpkgs,
     ...
   } @ inputs: {
-    darwinConfigurations."Yashs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations.trinity = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
 
       specialArgs = {inherit inputs;};
@@ -36,6 +36,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."Yashs-MacBook-Pro".pkgs;
+    darwinPackages = self.darwinConfigurations.trinity.pkgs;
   };
 }

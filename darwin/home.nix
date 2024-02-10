@@ -58,7 +58,7 @@ in {
 
     fzf = {
       enable = true;
-      enableBashIntegration = true;
+      enableZshIntegration = true;
       defaultCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
       colors = {
         bg = "#1e1e2e";
@@ -97,7 +97,7 @@ in {
 
     starship = {
       enable = true;
-      enableBashIntegration = true;
+      enableZshIntegration = true;
       settings = {
         add_newline = true;
         command_timeout = 10000;
@@ -130,12 +130,13 @@ in {
 
     zoxide = {
       enable = true;
-      enableBashIntegration = true;
+      enableZshIntegration = true;
     };
 
     zsh = {
       enable = true;
       enableCompletion = true;
+      enableAutosuggestions = true;
       history = {
         size = 10000;
         path = "$HOME/.zsh_history";
@@ -155,6 +156,7 @@ in {
         amend = "git commit --amend";
         commit = "git commit --all -m";
         rst = "git reset; git restore *";
+        gw = "./gradlew";
       };
     };
   };
