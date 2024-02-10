@@ -137,6 +137,7 @@ in {
       enable = true;
       enableCompletion = true;
       enableAutosuggestions = true;
+      syntaxHighlighting.enable = true;
       history = {
         size = 10000;
         path = "$HOME/.zsh_history";
