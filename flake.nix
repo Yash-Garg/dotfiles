@@ -67,11 +67,11 @@
       specialArgs = {inherit inputs;};
 
       modules = [
-        ./darwin
+        ./hosts/trinity
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
-          home-manager.users.yash = import ./darwin/home.nix;
+          home-manager.users.yash = import ./hosts/trinity/home.nix;
         }
       ];
     };

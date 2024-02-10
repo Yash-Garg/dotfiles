@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  imports = [../modules/nix];
+  imports = [../../modules/nix];
 
   users.users.yash = {
     name = "yash";
