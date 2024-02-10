@@ -3,6 +3,8 @@
   inputs,
   ...
 }: {
+  imports = [../modules/nix];
+
   users.users.yash = {
     name = "yash";
     home = "/Users/yash";
@@ -34,26 +36,6 @@
       "Prime Video" = 545519333;
       "Telegram" = 747648890;
     };
-  };
-
-  nix = {
-    package = pkgs.nixFlakes;
-    settings = {
-      trusted-substituters = [
-        "https://nix-community.cachix.org"
-        "https://cache.nixos.org"
-      ];
-      trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      ];
-      trusted-users = ["yash" "root"];
-    };
-    extraOptions = ''
-      experimental-features = nix-command flakes repl-flake
-      ssl-cert-file = /private/etc/ssl/cert.pem
-      extra-nix-path = nixpkgs=flake:nixpkgs
-    '';
   };
 
   # Auto upgrade nix package and the daemon service.
