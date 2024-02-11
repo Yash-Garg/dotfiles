@@ -42,10 +42,14 @@ in {
       "gnu-sed"
       "ruby"
     ];
-    casks = ["flutter"];
+    casks = [
+      "flutter"
+    ];
     taps = [];
     masApps = {
       "Adguard for Safari" = 1440147259;
+      "Amphetamine" = 937984704;
+      "Pandan" = 1569600264;
       "Prime Video" = 545519333;
       "Telegram" = 747648890;
     };
@@ -61,9 +65,11 @@ in {
   security.pam.enableSudoTouchIdAuth = true;
 
   environment.systemPackages = with pkgs; [
+    alt-tab-macos
     discord
     iina
     iterm2
+    maccy
     raycast
     rectangle
     slack
