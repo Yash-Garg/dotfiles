@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  nur,
   ...
 }: let
   fetchTarballFromGitHub = {

@@ -42,7 +42,7 @@
       extraSpecialArgs = {inherit inputs;};
 
       modules = [
-        ./hosts/wsl/configuration.nix
+        ./hosts/wsl
         ./hosts/user.nix
       ];
     };
@@ -56,7 +56,7 @@
       extraSpecialArgs = {inherit inputs;};
 
       modules = [
-        ./hosts/intelbox/configuration.nix
+        ./hosts/intelbox
         ./hosts/user.nix
       ];
     };
