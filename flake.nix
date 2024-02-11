@@ -1,5 +1,5 @@
 {
-  description = "Home Manager Configurations";
+  description = "Nix Configurations";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -63,6 +63,11 @@
 
     darwinConfigurations.trinity = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
+
+      pkgs = import nixpkgs {
+        inherit config;
+        system = "aarch64-darwin";
+      };
 
       specialArgs = {inherit inputs;};
 
