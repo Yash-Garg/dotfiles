@@ -4,9 +4,10 @@
   ...
 }: {
   imports = [
-    ./common.nix
     ./bash
+    ./common
     ./starship
     ./tmux
+    ./zsh
   ];
 }

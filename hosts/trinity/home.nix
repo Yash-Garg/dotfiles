@@ -2,15 +2,17 @@
   config,
   pkgs,
   ...
-}: let
-  modules = [
+}: {
+  imports = [
+    ../../modules/nix
+    ../../modules/programs
     ../../modules/shell
-    ../../modules/programs/common.nix
-    ../../modules/programs/starship
-    ../../modules/programs/zsh
   ];
-in {
-  imports = modules;
+
+  shells = {
+    bash.enable = false;
+    zsh.enable = true;
+  };
 
   programs = {
     starship = {

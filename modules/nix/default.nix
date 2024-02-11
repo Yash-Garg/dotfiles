@@ -4,7 +4,7 @@
   ...
 }: {
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.lib.mkDefault pkgs.nixFlakes;
     settings = {
       trusted-substituters = [
         "https://cache.garnix.io"

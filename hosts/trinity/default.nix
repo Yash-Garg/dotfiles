@@ -21,20 +21,17 @@
     sha256 = "sha256:134k789wq2ard19y7grwqmqbk888j30qa9d4wz27jrlnk650yzzj";
   }) {inherit pkgs;};
 in {
-  imports = [../../modules/nix];
-
   users.users.yash = {
     name = "yash";
     home = "/Users/yash";
   };
 
-  environment.variables = {
-    LANG = "en_US.UTF-8";
+  environment = {
+    pathsToLink = ["/share/zsh"];
+    variables = {
+      LANG = "en_US.UTF-8";
+    };
   };
-
-  environment.pathsToLink = [
-    "/share/zsh"
-  ];
 
   fonts.fontDir.enable = true;
 
