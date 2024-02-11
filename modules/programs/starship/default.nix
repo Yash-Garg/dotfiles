@@ -1,11 +1,13 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableBashIntegration = lib.mkDefault true;
+    enableZshIntegration = lib.mkDefault false;
     settings = {
       add_newline = true;
       command_timeout = 10000;

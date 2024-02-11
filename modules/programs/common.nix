@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   programs = {
@@ -33,7 +34,8 @@
 
     fzf = {
       enable = true;
-      enableBashIntegration = true;
+      enableBashIntegration = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault false;
       defaultCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
       colors = {
         bg = "#1e1e2e";
@@ -72,7 +74,8 @@
 
     zoxide = {
       enable = true;
-      enableBashIntegration = true;
+      enableBashIntegration = lib.mkDefault true;
+      enableZshIntegration = lib.mkDefault false;
     };
   };
 }
