@@ -55,11 +55,11 @@
       },
       "locked": {
         "dir": "shell-configs/rust",
-        "lastModified": 1707589097,
-        "narHash": "sha256-YBVw8dLVQbJQydqz2YwlaMBzrrKvjxUaFB9SmorSKyg=",
+        "lastModified": 1707591352,
+        "narHash": "sha256-WFFqFWzJxWYzXz7CdiZIlYS60M8MV5hz8s3Ms0PhO0A=",
         "owner": "Yash-Garg",
         "repo": "dotfiles",
-        "rev": "2d3036ba9628306697166a2752add57dccc94c5c",
+        "rev": "e9853f1f156bd6209eff9df1ad9c73d498206b61",
         "type": "github"
       },
       "original": {
@@ -134,11 +134,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1707467182,
-        "narHash": "sha256-/Bw/xgCXfj4nXDd8Xq+r1kaorfsYkkomMf5w5MpsDyA=",
+        "lastModified": 1707607386,
+        "narHash": "sha256-hj/RgQMTvCWQVInkZwiMMieumkfOjHXhtWhfuXHop/8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5b9156fa9a8b8beba917b8f9adbfd27bf63e16af",
+        "rev": "bfd0ae29a86eff4603098683b516c67e22184511",
         "type": "github"
       },
       "original": {
