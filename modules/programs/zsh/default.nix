@@ -25,7 +25,7 @@ in {
         path = "$HOME/.zsh_history";
         ignoreDups = true;
       };
-      initExtra = "source $HOME/functions";
+      initExtra = "source $HOME/.functions";
       shellAliases = {
         cat = "bat";
         cd = "z";

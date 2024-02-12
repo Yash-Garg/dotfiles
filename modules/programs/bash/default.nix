@@ -17,7 +17,7 @@ in {
       historySize = 10000;
       historyFile = "$HOME/.bash_history";
       historyControl = ["ignorespace" "erasedups"];
-      initExtra = "source $HOME/functions";
+      initExtra = "source $HOME/.functions";
       shellAliases = {
         cat = "bat";
         cd = "z";

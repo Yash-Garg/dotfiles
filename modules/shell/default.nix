@@ -40,7 +40,7 @@ in {
 
     ".gitconfig".source = "${dots}/.gitconfig";
 
-    "functions" = {
+    ".functions" = {
       executable = true;
       source = "${dots}/scripts/functions";
     };
