@@ -55,11 +55,11 @@
       },
       "locked": {
         "dir": "shell-configs/rust",
-        "lastModified": 1707746361,
-        "narHash": "sha256-tjoGONQj+ijaaCI6wh6/PFf9h/QjVHkTQS79xXDAPKM=",
+        "lastModified": 1707837391,
+        "narHash": "sha256-q03LM9LCFPWQuujrk0dNsYMIU+iAqOSBGHKGBqbtT6o=",
         "owner": "Yash-Garg",
         "repo": "dotfiles",
-        "rev": "576c496a5d8b31dc6ea9851625956080b17d1067",
+        "rev": "703abc59f3dad5e2a1453d75dfe489cb42238842",
         "type": "github"
       },
       "original": {
