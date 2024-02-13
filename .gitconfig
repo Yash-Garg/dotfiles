@@ -1,6 +1,6 @@
 [user]
 name = Yash-Garg
-email = yash.garg@outlook.in
+email = me@yashgarg.dev
 signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz
 
 [push]
@@ -13,6 +13,9 @@ ui = true
 [alias]
 c = clone
 diff = diff -w
+cpa = cherry-pick --abort
+cpc = cherry-pick --continue
+su = submodule update --init --recursive
 
 [core]
 editor = nano
@@ -78,9 +81,3 @@ colorMoved = default
 
 [gpg "ssh"]
 allowedSignersFile = allowed_signers
-
-# [includeIf "gitdir/i:E:/Projects/Work/Murena/"]
-# path = .gitconfig-murena
-
-# [includeIf "gitdir/i:E:/Projects/Work/Others/"]
-# path = .gitconfig-others
