@@ -25,7 +25,10 @@ in {
         path = "$HOME/.zsh_history";
         ignoreDups = true;
       };
-      initExtra = "source $HOME/.functions";
+      initExtra = ''
+        source $HOME/.functions
+        source "$HOME/.sdkman/bin/sdkman-init.sh"
+      '';
       shellAliases = {
         cat = "bat";
         cd = "z";

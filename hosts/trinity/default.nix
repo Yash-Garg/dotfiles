@@ -63,19 +63,7 @@ in {
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
-  environment.systemPackages = with pkgs; [
-    alt-tab-macos
-    discord
-    iina
-    iterm2
-    maccy
-    raycast
-    rectangle
-    slack
-    spotify
-    nur-pkgs.transmission-bin
-    vscode
-  ];
+  environment.systemPackages = with pkgs; [];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
