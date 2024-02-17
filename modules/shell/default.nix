@@ -6,8 +6,8 @@
   dots = pkgs.fetchFromGitHub {
     owner = "Yash-Garg";
     repo = "dotfiles";
-    rev = "703abc59f3dad5e2a1453d75dfe489cb42238842";
-    sha256 = "sha256-q03LM9LCFPWQuujrk0dNsYMIU+iAqOSBGHKGBqbtT6o=";
+    rev = "f53fcb560b69dfca21e882c12e28e72b633c728a";
+    sha256 = "sha256-n+lxqiltWf6G8vmptuvODJXY4XPzcuIuFYz3dS4WIyY=";
   };
 in {
   home.packages = with pkgs; [
@@ -44,6 +44,11 @@ in {
     ".functions" = {
       executable = true;
       source = "${dots}/scripts/functions";
+    };
+
+    ".aliases" = {
+      executable = true;
+      source = "${dots}/scripts/aliases";
     };
   };
 }
