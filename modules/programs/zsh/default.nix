@@ -27,23 +27,9 @@ in {
       };
       initExtra = ''
         source $HOME/.functions
-        source "$HOME/.sdkman/bin/sdkman-init.sh"
+        source $HOME/.aliases
+        source $HOME/.sdkman/bin/sdkman-init.sh
       '';
-      shellAliases = {
-        cat = "bat";
-        cd = "z";
-        cls = "clear";
-        push = "git push";
-        fpush = "git push --force";
-        add = "git add --all";
-        pull = "git pull --rebase";
-        st = "git status";
-        gcp = "git cherry-pick";
-        amend = "git commit --amend";
-        commit = "git commit --all -m";
-        rst = "git reset; git restore *";
-        gw = "./gradlew";
-      };
     };
   };
 }
