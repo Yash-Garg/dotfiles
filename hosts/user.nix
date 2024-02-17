@@ -10,6 +10,11 @@
     ../modules/shell
   ];
 
+  shells = {
+    bash.enable = true;
+    zsh.enable = false;
+  };
+
   home = {
     username = "yash";
     homeDirectory = "/home/yash";
