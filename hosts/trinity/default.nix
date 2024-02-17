@@ -2,25 +2,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  fetchTarballFromGitHub = {
-    repo,
-    owner,
-    rev,
-    sha256,
-  }:
-    fetchTarball {
-      url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
-      inherit sha256;
-    };
-
-  nur-pkgs = import (fetchTarballFromGitHub {
-    owner = "nrabulinski";
-    repo = "nur-packages";
-    rev = "b19fe09dd3f325ff2731b83f230e2573b67db4aa";
-    sha256 = "sha256:134k789wq2ard19y7grwqmqbk888j30qa9d4wz27jrlnk650yzzj";
-  }) {inherit pkgs;};
-in {
+}: {
   users.users.yash = {
     name = "yash";
     home = "/Users/yash";
@@ -63,7 +45,7 @@ in {
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = [];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog

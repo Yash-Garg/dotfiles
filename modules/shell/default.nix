@@ -19,6 +19,7 @@ in {
     dnscontrol
     erdtree
     fd
+    gh
     httpie
     hyperfine
     neofetch
