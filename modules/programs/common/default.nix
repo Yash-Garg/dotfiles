@@ -19,7 +19,7 @@
         };
       };
       config = {
-        theme = "catppuccin-mocha";
+        theme = "Dracula";
         pager = "never";
       };
     };
@@ -38,18 +38,18 @@
       enableZshIntegration = lib.mkDefault false;
       defaultCommand = "fd --type f --strip-cwd-prefix --hidden --follow --exclude .git";
       colors = {
-        bg = "#1e1e2e";
-        "bg+" = "#313244";
-        fg = "#cdd6f4";
-        "fg+" = "#cdd6f4";
-        hl = "#f38ba8";
-        "hl+" = "#f38ba8";
-        header = "#f38ba8";
-        info = "#cba6f7";
-        marker = "#f5e0dc";
-        pointer = "#f5e0dc";
-        prompt = "#cba6f7";
-        spinner = "#f5e0dc";
+        bg = "#282a36";
+        "bg+" = "#44475a";
+        fg = "#f8f8f2";
+        "fg+" = "#f8f8f2";
+        hl = "#bd93f9";
+        "hl+" = "#bd93f9";
+        info = "#ffb86c";
+        prompt = "#50fa7b";
+        pointer = "#ff79c6";
+        marker = "#ff79c6";
+        spinner = "#ffb86c";
+        header = "#6272a4";
       };
     };
 
