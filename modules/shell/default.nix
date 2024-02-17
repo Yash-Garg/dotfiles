@@ -6,8 +6,8 @@
   dots = pkgs.fetchFromGitHub {
     owner = "Yash-Garg";
     repo = "dotfiles";
-    rev = "7c4dbebaaa56178cd4524db03e7c1d992f47e4e5";
-    sha256 = "sha256-9EXYwXxbbS9khECCCMfkKH5ATqr84oZewL/bATTyq6s=";
+    rev = "130eec298069c126392fc06005e36c06e07a9d9d";
+    sha256 = "sha256-Tx258ojxC8/GC1oHUwdBhUTHGqKPcbjuOYKCbnTiFvc=";
   };
 in {
   home.packages = with pkgs; [
