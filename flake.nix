@@ -1,24 +1,16 @@
 {
-  description = "Nix Configurations";
+  description = "NixOS and Home Manager Configurations";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  inputs.home-manager.url = "github:nix-community/home-manager";
+  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    devshell-rust = {
-      url = "github:Yash-Garg/dotfiles/?dir=shell-configs/rust";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  inputs.devshell-rust.url = "github:Yash-Garg/dotfiles/?dir=shell-configs/rust";
+  inputs.devshell-rust.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
+  inputs.nix-darwin.url = "github:LnL7/nix-darwin";
+  inputs.nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = {
     self,
@@ -74,10 +66,6 @@
       modules = [
         ./hosts/trinity
         home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.users.yash = import ./hosts/trinity/home.nix;
-        }
       ];
     };
 

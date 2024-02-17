@@ -12,6 +12,7 @@ if type zoxide &> /dev/null; then
 fi
 
 if type git &> /dev/null; then
+    alias amend='git commit --amend'
     alias add='git add --all'
     alias st='git status'
     alias push='git push'

@@ -17,6 +17,9 @@
 
   fonts.fontDir.enable = true;
 
+  home-manager.useGlobalPkgs = true;
+  home-manager.users.yash = import ./home.nix;
+
   homebrew = {
     enable = true;
     brews = [
