@@ -53,6 +53,9 @@ gpgsign = true
 [merge]
 conflictstyle = diff3
 
+[init]
+defaultBranch = develop
+
 [delta]
 features = line-numbers decorations
 navigate = false
@@ -76,8 +79,15 @@ line-numbers-minus-style = red bold
 line-numbers-plus-style = green bold
 
 [diff]
+algorithm = histogram
 submodule = log
 colorMoved = default
+
+[submodule]
+recurse = true
+
+[status]
+submoduleSummary = true
 
 [gpg "ssh"]
 allowedSignersFile = allowed_signers
