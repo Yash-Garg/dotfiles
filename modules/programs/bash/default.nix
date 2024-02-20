@@ -17,10 +17,7 @@ in {
       historySize = 10000;
       historyFile = "$HOME/.bash_history";
       historyControl = ["ignorespace" "erasedups"];
-      initExtra = ''
-        source $HOME/.functions
-        source $HOME/.aliases
-      '';
+      initExtra = "source $HOME/.shell-init";
     };
   };
 }

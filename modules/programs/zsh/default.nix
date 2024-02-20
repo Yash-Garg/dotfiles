@@ -25,11 +25,7 @@ in {
         path = "$HOME/.zsh_history";
         ignoreDups = true;
       };
-      initExtra = ''
-        source $HOME/.functions
-        source $HOME/.aliases
-        source $HOME/.sdkman/bin/sdkman-init.sh
-      '';
+      initExtra = "source $HOME/.shell-init";
     };
   };
 }

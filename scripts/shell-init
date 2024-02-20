@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [ -f $HOME/.functions ]; then
+    source $HOME/.functions
+fi
+
+if [ -f $HOME/.aliases ]; then
+    source $HOME/.aliases
+fi
+
+if [ -d $HOME/.sdkman ]; then
+    source $HOME/.sdkman/bin/sdkman-init.sh
+fi

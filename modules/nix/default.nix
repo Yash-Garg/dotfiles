@@ -18,10 +18,6 @@
       ];
       trusted-users = ["yash" "root"];
     };
-    extraOptions = ''
-      experimental-features = nix-command flakes repl-flake
-      ssl-cert-file = /private/etc/ssl/cert.pem
-      extra-nix-path = nixpkgs=flake:nixpkgs
-    '';
+    extraOptions = "experimental-features = nix-command flakes repl-flake";
   };
 }

@@ -50,5 +50,11 @@ in {
       executable = true;
       source = "${dots}/scripts/aliases";
     };
+
+
+    ".shell-init" = {
+      executable = true;
+      source = "${dots}/scripts/shell-init";
+    };
   };
 }
