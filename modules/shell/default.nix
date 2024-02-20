@@ -6,8 +6,8 @@
   dots = pkgs.fetchFromGitHub {
     owner = "Yash-Garg";
     repo = "dotfiles";
-    rev = "6005c4e74e801743b1a81bc9c2bd0ad6510c4bc1";
-    sha256 = "sha256-5wFk7KXTkRY3qvvfG3EQGlZAtvxPtHzHbb23VW5p0Xs=";
+    rev = "56c157a8c51749203f207c981830e6b693aa8872";
+    sha256 = "sha256-uWvrdUEjzo1Gg6ILB3uzbdUA7ptco8twpKSlGCVyksA=";
   };
 in {
   home.packages = with pkgs; [
@@ -50,7 +50,6 @@ in {
       executable = true;
       source = "${dots}/scripts/aliases";
     };
-
 
     ".shell-init" = {
       executable = true;
