@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ../../modules/nix
     ../../modules/programs
     ../../modules/shell
   ];
