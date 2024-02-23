@@ -22,6 +22,7 @@ editor = nano
 autocrlf = false
 # sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
 pager = delta
+compression = 9
 
 [color "diff"]
 meta = blue
@@ -50,11 +51,11 @@ format = ssh
 [tag]
 gpgsign = true
 
-[merge]
-conflictstyle = diff3
-
 [init]
 defaultBranch = develop
+
+[merge]
+conflictstyle = diff3
 
 [delta]
 features = line-numbers decorations
