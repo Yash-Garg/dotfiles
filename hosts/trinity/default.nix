@@ -36,6 +36,7 @@
       "Pandan" = 1569600264;
       "Prime Video" = 545519333;
       "Telegram" = 747648890;
+      "WhatsApp" = 310633997;
     };
   };
 

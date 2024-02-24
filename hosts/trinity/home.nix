@@ -35,6 +35,7 @@
     (nerdfonts.override {
       fonts = ["CascadiaCode" "JetBrainsMono"];
     })
+    ollama
     scrcpy
   ];
 
