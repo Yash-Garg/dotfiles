@@ -1,9 +1,23 @@
 _: {
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes repl-flake
-    ssl-cert-file = /private/etc/ssl/cert.pem
-    extra-nix-path = nixpkgs=flake:nixpkgs
-  '';
+  nix = {
+    settings = {
+      trusted-substituters = [
+        "https://cache.garnix.io"
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org"
+      ];
+      trusted-public-keys = [
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      ];
+      trusted-users = ["yash" "root"];
+    };
+    extraOptions = ''
+      ssl-cert-file = /private/etc/ssl/cert.pem
+      extra-nix-path = nixpkgs=flake:nixpkgs
+    '';
+  };
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;

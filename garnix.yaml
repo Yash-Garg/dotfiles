@@ -1,0 +1,4 @@
+builds:
+    include:
+        - homeConfigurations.*
+        - packages.aarch64-darwin.*

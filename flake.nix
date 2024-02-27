@@ -10,27 +10,28 @@
     devshell-rust.url = "github:Yash-Garg/dotfiles/?dir=shell-configs/rust";
     devshell-rust.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-utils.url = "github:numtide/flake-utils";
+
+    flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
+    flake-utils-plus.inputs.flake-utils.follows = "flake-utils";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    snowfall-lib.url = "github:snowfallorg/lib";
+    snowfall-lib.url = "github:snowfallorg/lib/dev";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
+    snowfall-lib.inputs.flake-utils-plus.follows = "flake-utils-plus";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    nix-index-database,
-    snowfall-lib,
-    systems,
-    ...
-  } @ inputs: let
-    eachSystem = nixpkgs.lib.genAttrs (import systems);
-    lib = snowfall-lib.mkLib {
+  outputs = inputs: let
+    eachSystem = inputs.nixpkgs.lib.genAttrs (import inputs.systems);
+    lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
       src = ./.;
       snowfall = {
@@ -56,7 +57,7 @@
       deploy = lib.mkDeploy {inherit (inputs) self;};
     }
     // {
-      darwinPackages = self.darwinConfigurations.trinity.pkgs;
+      packages.aarch64-darwin.macbook = inputs.self.darwinConfigurations.trinity.system;
 
       devShells = eachSystem (system: {
         rust = inputs.devshell-rust.devShells.${system}.default;
