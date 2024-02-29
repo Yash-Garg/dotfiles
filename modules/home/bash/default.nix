@@ -6,7 +6,11 @@
   cfg = config.shells;
 in {
   options.shells.bash = {
-    enable = lib.mkEnableOption "bash shell";
+    enable = lib.mkOption {
+      default = false;
+      type = lib.types.bool;
+      description = "Enable bash";
+    };
   };
 
   config = lib.mkIf cfg.bash.enable {

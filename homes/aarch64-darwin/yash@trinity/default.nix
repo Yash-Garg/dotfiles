@@ -4,17 +4,13 @@
     name = "yash";
   };
 
-  shells = {
-    bash.enable = false;
-    zsh.enable = true;
-  };
+  shells.zsh.enable = true;
 
   home.packages = with pkgs; [
     apktool
     (nerdfonts.override {
       fonts = ["CascadiaCode" "JetBrainsMono"];
     })
-    ollama
     scrcpy
   ];
 

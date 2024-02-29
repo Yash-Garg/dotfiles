@@ -4,10 +4,7 @@
     name = "yash";
   };
 
-  shells = {
-    bash.enable = true;
-    zsh.enable = false;
-  };
+  shells.bash.enable = true;
 
   home.packages = with pkgs; [
     apktool
