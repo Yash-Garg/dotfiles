@@ -1,8 +1,8 @@
-{lib, ...}: {
+{pkgs, ...}: {
   programs.starship = {
     enable = true;
-    enableBashIntegration = lib.mkDefault true;
-    enableZshIntegration = lib.mkDefault false;
+    enableBashIntegration = !pkgs.stdenv.isDarwin;
+    enableZshIntegration = pkgs.stdenv.isDarwin;
     settings = {
       add_newline = true;
       command_timeout = 10000;

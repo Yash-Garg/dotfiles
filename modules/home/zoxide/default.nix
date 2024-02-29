@@ -1,7 +1,7 @@
-{lib, ...}: {
+{pkgs, ...}: {
   programs.zoxide = {
     enable = true;
-    enableBashIntegration = lib.mkDefault true;
-    enableZshIntegration = lib.mkDefault false;
+    enableBashIntegration = !pkgs.stdenv.isDarwin;
+    enableZshIntegration = pkgs.stdenv.isDarwin;
   };
 }

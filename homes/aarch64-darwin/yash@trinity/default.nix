@@ -4,23 +4,6 @@
     name = "yash";
   };
 
-  programs = {
-    starship = {
-      enableBashIntegration = false;
-      enableZshIntegration = true;
-    };
-
-    fzf = {
-      enableBashIntegration = false;
-      enableZshIntegration = true;
-    };
-
-    zoxide = {
-      enableBashIntegration = false;
-      enableZshIntegration = true;
-    };
-  };
-
   shells = {
     bash.enable = false;
     zsh.enable = true;
