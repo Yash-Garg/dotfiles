@@ -17,7 +17,7 @@ if type git &> /dev/null; then
     alias st='git status'
     alias push='git push'
     alias fpush='git push --force'
-    alias pull='git pull --rebase'
+    alias pull='git pull'
     alias commit='git commit --all -m'
-    alias rst='git reset; git restore *'
+    alias rst='git reset; git restore .'
 fi
