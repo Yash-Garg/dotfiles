@@ -15,7 +15,7 @@
     };
   };
 
-  # Add ability to used TouchID for sudo authentication
+  # Add ability to use TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
