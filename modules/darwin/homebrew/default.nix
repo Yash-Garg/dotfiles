@@ -5,6 +5,7 @@ _: {
       "cocoapods"
       "gnu-sed"
       "ruby"
+      "xcode-kotlin"
     ];
     casks = [
       "flutter"
