@@ -7,12 +7,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    devshell-rust.url = "github:Yash-Garg/dotfiles/?dir=shell-configs/rust";
-    devshell-rust.inputs.nixpkgs.follows = "nixpkgs";
-
-    devshell-go.url = "github:Yash-Garg/dotfiles/?dir=shell-configs/go";
-    devshell-go.inputs.nixpkgs.follows = "nixpkgs";
-
     deploy-rs.url = "github:serokell/deploy-rs";
     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -61,10 +55,5 @@
     }
     // {
       packages.aarch64-darwin.macbook = inputs.self.darwinConfigurations.trinity.system;
-
-      devShells = eachSystem (system: {
-        go = inputs.devshell-go.devShells.${system}.default;
-        rust = inputs.devshell-rust.devShells.${system}.default;
-      });
     };
 }

@@ -1,4 +1,6 @@
 {
+  description = "devshell for a C++ project";
+
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
   inputs.devshell.url = "github:numtide/devshell";
@@ -19,7 +21,6 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
         overlays = [devshell.overlays.default];
       };
     in {
@@ -34,13 +35,12 @@
         ];
 
         packages = with pkgs; [
-          go-outline
-          go_1_22
-          golangci-lint
-          golangci-lint-langserver
-          gopls
-          gotools
-          govulncheck
+          clang_13
+          clang-tools
+          cmake
+          just
+          lld_13
+          pkg-config
         ];
       };
     });

@@ -1,4 +1,6 @@
 {
+  description = "devshell for a Rust project";
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
@@ -72,8 +74,9 @@
 
         packages = with pkgs; [
           gcc
-          rustStable
+          just
           libressl
+          rustStable
         ];
       };
     });
