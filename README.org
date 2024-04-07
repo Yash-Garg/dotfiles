@@ -4,4 +4,4 @@ A list of all hosts currently in use by me.
 
 - =trinity= :: Main work machine, company provided Macbook Pro M3 Pro.
 - =nebula= :: WSL2 on Windows 11, used for development and testing.
-- =intelbox= :: Main home machine running Ubuntu 22.04 LTS.
+- =nova= :: Main home machine running NixOS 24.05.
