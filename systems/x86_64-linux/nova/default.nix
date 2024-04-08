@@ -4,10 +4,11 @@
   ...
 }: let
   guiPkgs = with pkgs; [
-    ddccontrol
+    androidStudioPackages.beta
+    androidStudioPackages.canary
+    androidStudioPackages.dev
     discord
     google-chrome
-    jetbrains-toolbox
     telegram-desktop
     vscode
   ];

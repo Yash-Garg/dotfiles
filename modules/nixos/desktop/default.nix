@@ -46,6 +46,8 @@ in {
       networkmanager.enable = true;
     };
 
+    programs.adb.enable = true;
+
     services = {
       # Enable the OpenSSH daemon.
       openssh.enable = true;

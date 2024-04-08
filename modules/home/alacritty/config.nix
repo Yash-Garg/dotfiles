@@ -58,8 +58,8 @@
 
   window = {
     dimensions = {
-      columns = 140;
-      lines = 40;
+      columns = 160;
+      lines = 45;
     };
 
     padding = {
