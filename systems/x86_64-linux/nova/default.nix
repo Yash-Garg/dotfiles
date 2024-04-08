@@ -4,11 +4,10 @@
   ...
 }: let
   guiPkgs = with pkgs; [
-    androidStudioPackages.beta
-    androidStudioPackages.canary
     androidStudioPackages.dev
     discord
     google-chrome
+    qbittorrent
     telegram-desktop
     vscode
   ];
@@ -32,10 +31,11 @@ in {
         apktool
         flutter
         imwheel
-        jdk17
+        maestro
         (nerdfonts.override {
           fonts = ["CascadiaCode" "JetBrainsMono"];
         })
+        openjdk21
         scrcpy
         xclip
       ]
