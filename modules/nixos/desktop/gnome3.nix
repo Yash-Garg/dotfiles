@@ -14,6 +14,8 @@ in {
     services = {
       gnome.gnome-keyring.enable = true;
 
+      udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+
       xserver = {
         # Enable the GNOME Desktop Environment.
         displayManager.gdm.enable = true;
@@ -22,6 +24,55 @@ in {
         # Enable automatic login for the user.
         displayManager.autoLogin.enable = true;
         displayManager.autoLogin.user = "yash";
+      };
+    };
+
+    users.users.yash.packages = with pkgs;
+      [
+        gnome3.gnome-tweaks
+      ]
+      ++ (with pkgs.gnomeExtensions; [
+        appindicator
+        arcmenu
+        pop-shell
+        unmess
+        user-themes
+      ]);
+
+    snowfallorg.users.yash.home.config = {
+      gtk = {
+        enable = true;
+        theme = {
+          name = "adw-gtk3-dark";
+          package = pkgs.adw-gtk3;
+        };
+      };
+
+      dconf = {
+        enable = true;
+        settings = {
+          "org/gnome/shell" = {
+            disable-user-extensions = false;
+            enabled-extensions = [
+              "appindicatorsupport@rgcjonas.gmail.com"
+              "arcmenu@arcmenu.com"
+              "pop-shell@system76.com"
+              "unmess@ezix.org"
+              "user-theme@gnome-shell-extensions.gcampax.github.com"
+            ];
+          };
+          "org/gnome/desktop/wm/preferences" = {
+            resize-with-right-button = true;
+            mouse-button-modifier = "<Alt>";
+          };
+          "org/gnome/shell/extensions/user-theme" = {
+            name = "adw-gtk3-dark";
+          };
+          "org/gnome/desktop/interface" = {
+            gtk-theme = "adw-gtk3-dark";
+            color-scheme = "prefer-dark";
+          };
+        };
       };
     };
 
