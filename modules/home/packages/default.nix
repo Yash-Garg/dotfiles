@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     alejandra
     cachix
+    # charm-freeze
     curl
     delta
     direnv
@@ -11,6 +12,7 @@
     gh
     httpie
     hyperfine
+    just
     neofetch
     ollama
     ookla-speedtest
