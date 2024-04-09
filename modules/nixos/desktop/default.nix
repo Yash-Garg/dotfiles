@@ -6,7 +6,10 @@
 }: let
   cfg = config.profiles.desktop;
 in {
-  imports = [./gnome3.nix];
+  imports = [
+    ./gnome3.nix
+    ./ssh.nix
+  ];
 
   options.profiles.desktop = with lib; {
     enable = mkEnableOption "Profile for desktop machines";

@@ -18,6 +18,7 @@ in {
 
   profiles.desktop.enable = true;
   profiles.desktop.gnome3.enable = true;
+  profiles.desktop.ssh.enable = false;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
