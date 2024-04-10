@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     alejandra
     cachix
-    # charm-freeze
+    charm-freeze
     curl
     delta
     direnv
