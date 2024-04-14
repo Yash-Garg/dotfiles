@@ -12,7 +12,9 @@
     gh
     httpie
     hyperfine
+    ijq
     just
+    jq
     neofetch
     ollama
     ookla-speedtest
