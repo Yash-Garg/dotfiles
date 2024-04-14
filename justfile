@@ -20,3 +20,6 @@ clean:
 gc:
   # garbage collect all unused nix store entries
   sudo nix-collect-garbage --delete-old
+
+darwin:
+  nix run nix-darwin -- switch --flake .
