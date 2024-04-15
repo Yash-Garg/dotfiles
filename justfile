@@ -23,3 +23,12 @@ gc:
 
 darwin:
   nix run nix-darwin -- switch --flake .
+
+topology sys:
+  nix build .#topology.{{sys}}.config.output
+
+eval conf:
+  nix eval .#{{conf}} --apply builtins.attrNames --json
+
+template name:
+  nix run github:Yash-Garg/dotfiles?dir=templates/{{name}}
