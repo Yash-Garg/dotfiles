@@ -16,6 +16,8 @@ in {
     ./hardware-configuration.nix
   ];
 
+  topology.self.name = "Desktop";
+
   profiles.desktop.enable = true;
   profiles.desktop.gnome3.enable = true;
   profiles.desktop.ssh.enable = false;
