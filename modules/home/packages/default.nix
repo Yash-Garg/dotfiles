@@ -8,6 +8,7 @@
     direnv
     dnscontrol
     erdtree
+    eza
     fd
     gh
     httpie

@@ -21,3 +21,11 @@ if type git &> /dev/null; then
     alias commit='git commit --all -m'
     alias rst='git reset; git restore .'
 fi
+
+if type eza &> /dev/null; then
+    alias ls='eza'
+    alias ll='eza -l'
+    alias la='eza -la'
+    alias lla='eza -la'
+    alias lt='eza --tree'
+fi
