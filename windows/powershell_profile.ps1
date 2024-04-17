@@ -16,7 +16,8 @@ $ENV:FZF_DEFAULT_OPTS = @"
 
 # Aliases
 Set-Alias -Name neofetch -Value winfetch -Option AllScope
-Set-Alias -Name ls -Value lsd -Option AllScope
+Set-Alias -Name du -Value dust -Option AllScope
+Set-Alias -Name ls -Value eza -Option AllScope
 Set-Alias -Name a2 -Value aria2c -Option AllScope
 Set-Alias -Name cd -Value z -Option AllScope
 Set-Alias -Name cat -Value bat -Option AllScope
@@ -171,9 +172,13 @@ function cmb ([int] $logSize) {
 }
 
 # List all files in the current working directory
-function la { lsd -a }
+function la { eza -a @args }
 
-function ll { lsd -l }
+function ll { eza -l @args }
+
+function lt { eza --tree @args }
+
+function lla { eza -la @args }
 
 # Run flutter code generator
 function runner { dart run build_runner build --delete-conflicting-outputs @args }
