@@ -1,14 +1,14 @@
 {
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    devshell = {
-      url = "github:numtide/devshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  inputs.devshell.url = "github:numtide/devshell";
+  inputs.devshell.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.devshell.inputs.flake-utils.follows = "flake-utils";
 
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+
+  inputs.flake-compat.url = "github:nix-community/flake-compat";
+  inputs.flake-compat.flake = false;
 
   outputs = {
     nixpkgs,

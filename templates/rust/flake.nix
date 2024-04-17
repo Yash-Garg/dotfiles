@@ -1,29 +1,23 @@
 {
   description = "devshell for a Rust project";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    crane = {
-      url = "github:ipetkov/crane";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
+  inputs.devshell.url = "github:numtide/devshell";
+  inputs.devshell.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.devshell.inputs.flake-utils.follows = "flake-utils";
 
-    devshell = {
-      url = "github:numtide/devshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  inputs.flake-utils.url = "github:numtide/flake-utils";
 
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  inputs.flake-compat.url = "github:nix-community/flake-compat";
+  inputs.flake-compat.flake = false;
 
-    flake-utils.url = "github:numtide/flake-utils";
-  };
+  inputs.fenix.url = "github:nix-community/fenix";
+  inputs.fenix.inputs.nixpkgs.follows = "nixpkgs";
+
+  inputs.crane.url = "github:ipetkov/crane";
+  inputs.crane.inputs.flake-utils.follows = "flake-utils";
+  inputs.crane.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = {
     self,

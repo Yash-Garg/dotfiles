@@ -17,8 +17,10 @@
     devshell.inputs.nixpkgs.follows = "nixpkgs";
     devshell.inputs.flake-utils.follows = "flake-utils";
 
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-compat.url = "github:nix-community/flake-compat";
+    flake-compat.flake = false;
 
+    flake-utils.url = "github:numtide/flake-utils";
     flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
     flake-utils-plus.inputs.flake-utils.follows = "flake-utils";
 
