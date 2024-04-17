@@ -3,15 +3,15 @@
 alias cls='clear'
 alias gw='./gradlew'
 
-if type bat &> /dev/null; then
+if type bat &>/dev/null; then
     alias cat='bat'
 fi
 
-if type zoxide &> /dev/null; then
+if type zoxide &>/dev/null; then
     alias cd='z'
 fi
 
-if type git &> /dev/null; then
+if type git &>/dev/null; then
     alias amend='git commit --amend'
     alias add='git add --all'
     alias st='git status'
@@ -22,10 +22,6 @@ if type git &> /dev/null; then
     alias rst='git reset; git restore .'
 fi
 
-if type eza &> /dev/null; then
-    alias ls='eza'
-    alias ll='eza -l'
-    alias la='eza -la'
-    alias lla='eza -la'
-    alias lt='eza --tree'
+if type dust &>/dev/null; then
+    alias du='dust'
 fi

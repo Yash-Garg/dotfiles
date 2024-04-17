@@ -7,8 +7,8 @@
     delta
     direnv
     dnscontrol
+    du-dust
     erdtree
-    eza
     fd
     gh
     httpie
