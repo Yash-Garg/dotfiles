@@ -92,6 +92,11 @@
           path = ./templates/go;
         };
 
+        node = {
+          description = "devshell for a Node.js project";
+          path = ./templates/node;
+        };
+
         rust = {
           description = "devshell for a Rust project";
           path = ./templates/rust;
