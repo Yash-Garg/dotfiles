@@ -13,6 +13,6 @@ _: {
       ];
       trusted-users = ["yash" "root"];
     };
-    extraOptions = "experimental-features = nix-command flakes repl-flake";
+    extraOptions = "experimental-features = nix-command flakes";
   };
 }

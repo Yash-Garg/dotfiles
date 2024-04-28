@@ -44,7 +44,6 @@
         "flakes"
         "nix-command"
         "recursive-nix"
-        "repl-flake"
       ];
       flake-registry = "/etc/nix/registry.json";
       http-connections = 50;
