@@ -9,6 +9,7 @@
     dnscontrol
     du-dust
     erdtree
+    fastfetch
     fd
     gh
     httpie
@@ -16,7 +17,6 @@
     ijq
     just
     jq
-    neofetch
     ollama
     ookla-speedtest
     ripgrep
