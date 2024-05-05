@@ -1,5 +1,12 @@
-_: {
+{pkgs, ...}: {
   nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 3d";
+    };
+
+    package = pkgs.nixVersions.git;
+
     settings = {
       trusted-substituters = [
         "https://cache.garnix.io"

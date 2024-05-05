@@ -21,7 +21,7 @@
     };
     optimise.automatic = true;
 
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.git;
 
     registry = lib.mapAttrs (_: v: {flake = v;}) inputs;
 

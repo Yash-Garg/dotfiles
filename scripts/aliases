@@ -11,6 +11,10 @@ if type zoxide &>/dev/null; then
     alias cd='z'
 fi
 
+if type fastfetch &>/dev/null; then
+    alias fetch='fastfetch'
+fi
+
 if type git &>/dev/null; then
     alias amend='git commit --amend'
     alias add='git add --all'
