@@ -1,13 +1,15 @@
-_: {
+{inputs, ...}: {
   programs.micro = {
     enable = true;
     settings = {
-      colorscheme = "twilight";
+      colorscheme = "dracula";
       mkparents = true;
-      softwrap = true;
+      softwrap = false;
       wordwrap = true;
     };
-    # keybinds = {
-    # };
+  };
+
+  xdg.configFile."micro/colorschemes/dracula.micro" = {
+    source = inputs.colors-micro;
   };
 }
