@@ -24,7 +24,7 @@
     flake-compat.flake = false;
 
     flake-utils.url = "github:numtide/flake-utils";
-    flake-utils-plus.url = "github:fl42v/flake-utils-plus";
+    flake-utils-plus.url = "github:gytis-ivaskevicius/flake-utils-plus";
     flake-utils-plus.inputs.flake-utils.follows = "flake-utils";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
