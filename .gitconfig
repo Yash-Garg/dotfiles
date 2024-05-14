@@ -1,94 +1,100 @@
 [user]
-name = Yash-Garg
-email = me@yashgarg.dev
-signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz
+    name = Yash-Garg
+    email = me@yashgarg.dev
+    signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz
 
 [push]
-autoSetupRemote = true
-default = current
+    autoSetupRemote = true
+    default = current
 
 [color]
-ui = true
+    ui = true
 
 [alias]
-c = clone
-diff = diff -w
-cpa = cherry-pick --abort
-cpc = cherry-pick --continue
-su = submodule update --init --recursive
+    c = clone
+    diff = diff -w
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+    su = submodule update --init --recursive
 
 [core]
-editor = nano
-autocrlf = false
-# sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
-pager = delta
-compression = 9
+    editor = nano
+    autocrlf = false
+    # sshcommand = C:/Windows/System32/OpenSSH/ssh.exe
+    pager = delta
+    compression = 9
 
 [color "diff"]
-meta = blue
-old = red
-new = green
+    meta = blue
+    old = red
+    new = green
 
 [interactive]
-diffFilter = delta --color-only
+    diffFilter = delta --color-only
 
 [commit]
-gpgsign = true
+    gpgsign = true
 
 [format]
-signoff = true
+    signoff = true
 
 [url "git@github.com:"]
-insteadOf = https://github.com/
-insteadOf = git://github.com/
+    insteadOf = https://github.com/
+    insteadOf = git://github.com/
 
 [pull]
-rebase = true
+    rebase = true
 
 [gpg]
-format = ssh
+    format = ssh
 
 [tag]
-gpgsign = true
+    gpgsign = true
 
 [init]
-defaultBranch = develop
+    defaultBranch = develop
 
 [merge]
-conflictstyle = diff3
+    conflictstyle = diff3
 
 [delta]
-features = line-numbers decorations
-navigate = false
-syntax-theme = none
-light = false
-line-numbers = true
-plus-style = green bold
-plus-emph-style = green bold normal
-minus-style = red bold
-minus-emph-style = red bold normal
+    features = line-numbers decorations
+    navigate = false
+    syntax-theme = none
+    light = false
+    line-numbers = true
+    plus-style = green bold
+    plus-emph-style = green bold normal
+    minus-style = red bold
+    minus-emph-style = red bold normal
 
 [delta "decorations"]
-file-style = bold yellow ul
-file-decoration-style = none
-hunk-header-decoration-style = white box
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = white box
 
 [delta "line-numbers"]
-line-numbers-left-format = "{nm:>4}:"
-line-numbers-right-format = "{np:<4} "
-line-numbers-minus-style = red bold
-line-numbers-plus-style = green bold
+    line-numbers-left-format = "{nm:>4}:"
+    line-numbers-right-format = "{np:<4} "
+    line-numbers-minus-style = red bold
+    line-numbers-plus-style = green bold
 
 [diff]
-algorithm = histogram
-submodule = log
-colorMoved = default
+    algorithm = histogram
+    submodule = log
+    colorMoved = default
 
 [submodule]
-recurse = true
+    recurse = true
 
 [status]
-submoduleSummary = true
+    submoduleSummary = true
 
 [gpg "ssh"]
-allowedSignersFile = allowed_signers
+    allowedSignersFile = allowed_signers
+
+[credential]
+	helper = manager
+
+[safe]
+	directory = *
