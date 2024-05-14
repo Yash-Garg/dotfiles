@@ -12,6 +12,10 @@ in {
 
   config = lib.mkIf cfg.gnome3.enable {
     services = {
+      # Enable automatic login for the user.
+      displayManager.autoLogin.enable = true;
+      displayManager.autoLogin.user = "yash";
+
       gnome.gnome-keyring.enable = true;
 
       udev.packages = with pkgs; [gnome.gnome-settings-daemon];
@@ -20,10 +24,6 @@ in {
         # Enable the GNOME Desktop Environment.
         displayManager.gdm.enable = true;
         desktopManager.gnome.enable = true;
-
-        # Enable automatic login for the user.
-        displayManager.autoLogin.enable = true;
-        displayManager.autoLogin.user = "yash";
       };
     };
 

@@ -22,6 +22,7 @@ in {
 
       # Bootloader
       loader = {
+        timeout = 60;
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
       };

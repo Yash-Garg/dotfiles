@@ -1,4 +1,5 @@
 builds:
     include:
         - homeConfigurations.*
+        - nixosConfigurations.*
         - packages.aarch64-darwin.*
