@@ -55,17 +55,17 @@
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/807a6428-0584-48ed-a996-85cfa2056863";
+    device = "/dev/disk/by-uuid/fde120c6-10a9-4fed-97c2-37d3cd85039a";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/44AE-A24E";
+    device = "/dev/disk/by-uuid/FF83-9407";
     fsType = "vfat";
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/eef2c6fb-deba-4437-90bd-759b3ab2a8cd";}
+    {device = "/dev/disk/by-uuid/3ab3e2f9-53e0-4de7-8052-4ce14c67df22";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

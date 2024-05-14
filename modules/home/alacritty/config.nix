@@ -43,7 +43,7 @@
   };
 
   font = {
-    size = 14;
+    size = 13;
 
     normal = {
       family = "CaskaydiaCove Nerd Font Mono";

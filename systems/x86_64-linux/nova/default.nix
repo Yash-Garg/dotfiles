@@ -6,6 +6,7 @@
   guiPkgs = with pkgs; [
     androidStudioPackages.dev
     discord
+    firefox
     google-chrome
     qbittorrent
     telegram-desktop
