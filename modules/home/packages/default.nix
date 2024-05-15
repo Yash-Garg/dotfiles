@@ -10,7 +10,6 @@
     dnscontrol
     du-dust
     erdtree
-    fastfetch
     fd
     gh
     httpie
