@@ -23,8 +23,13 @@ in {
       # Bootloader
       loader = {
         timeout = 60;
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
+        # efi.canTouchEfiVariables = true;
+        grub = {
+          enable = true;
+          devices = ["nodev"];
+          efiSupport = true;
+          useOSProber = true;
+        };
       };
     };
 
@@ -38,6 +43,8 @@ in {
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
+    time.hardwareClockInLocalTime = true;
 
     hardware = {
       bluetooth.enable = lib.mkDefault true;

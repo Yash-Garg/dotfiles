@@ -7,7 +7,6 @@
     discord
     firefox
     google-chrome
-    jetbrains-toolbox
     qbittorrent
     telegram-desktop
     vscode
