@@ -19,6 +19,7 @@ in {
   topology.self.name = "Desktop";
 
   profiles.desktop.enable = true;
+  profiles.desktop.android-dev.enable = true;
   profiles.desktop.gnome3.enable = true;
   profiles.desktop.ssh.enable = false;
 
@@ -38,7 +39,6 @@ in {
         (nerdfonts.override {
           fonts = ["CascadiaCode" "JetBrainsMono"];
         })
-        openjdk21
         scrcpy
         xclip
       ]

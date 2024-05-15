@@ -7,6 +7,7 @@
   cfg = config.profiles.desktop;
 in {
   imports = [
+    ./android-dev.nix
     ./gnome3.nix
     ./ssh.nix
   ];
