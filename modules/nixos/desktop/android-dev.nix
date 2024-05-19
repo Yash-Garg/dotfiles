@@ -5,7 +5,7 @@
   ...
 }: let
   cfg = config.profiles.desktop;
-  defaultJdk = pkgs.openjdk22;
+  defaultJdk = pkgs.openjdk11;
   toolchains = [
     pkgs.openjdk17
     defaultJdk
@@ -20,7 +20,6 @@ in {
       android-tools
       androidStudioPackages.stable
       androidStudioPackages.beta
-      androidStudioPackages.canary
       kotlin
     ];
 
