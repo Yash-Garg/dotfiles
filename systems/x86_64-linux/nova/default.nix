@@ -4,11 +4,11 @@
   ...
 }: let
   guiPkgs = with pkgs; [
-    discord
     firefox
     google-chrome
     qbittorrent
     telegram-desktop
+    vesktop
     vscode
   ];
 in {
