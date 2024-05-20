@@ -24,7 +24,10 @@ in {
       # Bootloader
       loader = {
         timeout = 60;
-        # efi.canTouchEfiVariables = true;
+        efi = {
+          efiSysMountPoint = "/boot";
+          canTouchEfiVariables = false;
+      	};
         grub = {
           enable = true;
           devices = ["nodev"];
