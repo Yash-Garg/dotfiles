@@ -11,6 +11,7 @@
     du-dust
     erdtree
     fd
+    fzf-git-sh
     gh
     httpie
     hyperfine

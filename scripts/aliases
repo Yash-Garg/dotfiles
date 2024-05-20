@@ -3,6 +3,11 @@
 alias cls='clear'
 alias gw='./gradlew'
 
+if type micro &>/dev/null; then
+    export EDITOR='micro'
+    alias e='micro'
+fi
+
 if type bat &>/dev/null; then
     alias cat='bat'
 fi
