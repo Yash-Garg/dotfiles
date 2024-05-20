@@ -6,7 +6,12 @@
   guiPkgs = with pkgs; [
     firefox
     google-chrome
+    (prismlauncher.override {
+      jdks = [openjdk17];
+      withWaylandGLFW = config.profiles.desktop.gnome3.enable;
+    })
     qbittorrent
+    slack
     telegram-desktop
     vesktop
     vscode
@@ -40,6 +45,7 @@ in {
           fonts = ["CascadiaCode" "JetBrainsMono"];
         })
         scrcpy
+        sshfs
         xclip
       ]
       ++ guiPkgs;
