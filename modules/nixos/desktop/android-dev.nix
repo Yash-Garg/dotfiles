@@ -5,9 +5,9 @@
   ...
 }: let
   cfg = config.profiles.desktop;
-  defaultJdk = pkgs.openjdk11;
+  defaultJdk = pkgs.openjdk17;
   toolchains = [
-    pkgs.openjdk17
+    pkgs.openjdk11
     defaultJdk
   ];
   inherit (lib) mkEnableOption mkIf;
