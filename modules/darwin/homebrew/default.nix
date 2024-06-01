@@ -4,6 +4,7 @@ _: {
     brews = [
       "cocoapods"
       "gnu-sed"
+      "mongodb-atlas"
       "ruby"
       "xcode-kotlin"
     ];
