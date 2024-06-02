@@ -9,7 +9,14 @@
     };
   };
 
-  xdg.configFile."micro/colorschemes/dracula.micro" = {
-    source = inputs.colors-micro;
+  xdg.configFile = {
+    microEditorColorschemes = {
+      source = ./dracula.micro;
+      target = "./micro/colorschemes/dracula.micro";
+    };
+    microEditorBindings = {
+      source = ./bindings.json;
+      target = "./micro/bindings.json";
+    };
   };
 }

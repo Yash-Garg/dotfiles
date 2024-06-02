@@ -2,9 +2,6 @@
   description = "NixOS and Home Manager Configurations";
 
   inputs = {
-    colors-micro.url = "https://raw.githubusercontent.com/Yash-Garg/dotfiles/stable/modules/home/micro/colors.micro";
-    colors-micro.flake = false;
-
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
