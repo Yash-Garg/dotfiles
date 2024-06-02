@@ -27,7 +27,7 @@ in {
         efi = {
           efiSysMountPoint = "/boot";
           canTouchEfiVariables = false;
-      	};
+        };
         grub = {
           enable = true;
           devices = ["nodev"];
