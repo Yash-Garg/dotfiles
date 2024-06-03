@@ -5,9 +5,6 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    deploy-rs.url = "github:serokell/deploy-rs";
-    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
-
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
     devshell.inputs.flake-utils.follows = "flake-utils";
@@ -69,8 +66,6 @@
       overlays = with inputs; [
         nix-topology.overlays.default
       ];
-
-      deploy = lib.mkDeploy {inherit (inputs) self;};
 
       outputs-builder = channels: {
         topology = import inputs.nix-topology {

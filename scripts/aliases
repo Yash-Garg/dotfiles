@@ -3,17 +3,12 @@
 alias cls='clear'
 alias gw='./gradlew'
 
-if type micro &>/dev/null; then
-    export EDITOR='micro'
-    alias e='micro'
-fi
-
 if type bat &>/dev/null; then
     alias cat='bat'
 fi
 
-if type zoxide &>/dev/null; then
-    alias cd='z'
+if type dust &>/dev/null; then
+    alias du='dust'
 fi
 
 if type fastfetch &>/dev/null; then
@@ -31,6 +26,15 @@ if type git &>/dev/null; then
     alias rst='git reset; git restore .'
 fi
 
-if type dust &>/dev/null; then
-    alias du='dust'
+if type micro &>/dev/null; then
+    export EDITOR='micro'
+    alias e='micro'
+fi
+
+if type xclip &>/dev/null; then
+    alias xclip='xclip -selection c'
+fi
+
+if type zoxide &>/dev/null; then
+    alias cd='z'
 fi
