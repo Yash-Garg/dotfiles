@@ -4,8 +4,9 @@
   ...
 }: let
   guiPkgs = with pkgs; [
-    firefox
+    firefox-beta
     google-chrome
+    jetbrains.idea-ultimate
     (prismlauncher.override {
       jdks = [openjdk17];
       withWaylandGLFW = config.profiles.desktop.gnome3.enable;
