@@ -14,17 +14,25 @@ in {
   };
 
   config = lib.mkIf cfg.zsh.enable {
-    programs.zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
-      history = {
-        size = 10000;
-        path = "$HOME/.zsh_history";
-        ignoreDups = true;
+    programs = {
+      zsh = {
+        enable = true;
+        enableCompletion = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+        history = {
+          size = 10000;
+          path = "$HOME/.zsh_history";
+          ignoreDups = true;
+        };
+        initExtra = "source $HOME/.shell-init";
       };
-      initExtra = "source $HOME/.shell-init";
+
+      atuin.enableZshIntegration = true;
+      eza.enableZshIntegration = true;
+      fzf.enableZshIntegration = true;
+      starship.enableZshIntegration = true;
+      zoxide.enableZshIntegration = true;
     };
   };
 }

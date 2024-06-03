@@ -36,6 +36,8 @@ in {
     isNormalUser = true;
     description = "Yash Garg";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
     packages = with pkgs;
       [
         apktool

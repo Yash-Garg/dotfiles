@@ -14,13 +14,21 @@ in {
   };
 
   config = lib.mkIf cfg.bash.enable {
-    programs.bash = {
-      enable = true;
-      enableCompletion = true;
-      historySize = 10000;
-      historyFile = "$HOME/.bash_history";
-      historyControl = ["ignorespace" "erasedups"];
-      initExtra = "source $HOME/.shell-init";
+    programs = {
+      bash = {
+        enable = true;
+        enableCompletion = true;
+        historySize = 10000;
+        historyFile = "$HOME/.bash_history";
+        historyControl = ["ignorespace" "erasedups"];
+        initExtra = "source $HOME/.shell-init";
+      };
+
+      atuin.enableBashIntegration = true;
+      eza.enableBashIntegration = true;
+      fzf.enableBashIntegration = true;
+      starship.enableBashIntegration = true;
+      zoxide.enableBashIntegration = true;
     };
   };
 }
