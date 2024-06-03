@@ -15,6 +15,7 @@ in {
     aggressiveResize = !pkgs.stdenv.isDarwin;
     shell = shellPath;
     shortcut = "q";
+    terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       mode-indicator
       {
