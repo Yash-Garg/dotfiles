@@ -1,9 +1,19 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: let
+  shellPath =
+    if config.shells.bash.enable
+    then "${pkgs.bash}/bin/bash"
+    else "${pkgs.zsh}/bin/zsh";
+in {
   programs.tmux = {
     enable = true;
     mouse = true;
     newSession = true;
-    aggressiveResize = true;
+    aggressiveResize = !pkgs.stdenv.isDarwin;
+    shell = shellPath;
     shortcut = "q";
     plugins = with pkgs.tmuxPlugins; [
       mode-indicator
