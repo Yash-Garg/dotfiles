@@ -4,6 +4,7 @@
   ...
 }: let
   guiPkgs = with pkgs; [
+    firefox
     google-chrome
     jetbrains.idea-ultimate
     microsoft-edge-beta
