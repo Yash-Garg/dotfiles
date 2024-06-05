@@ -59,6 +59,11 @@ in {
 
       # Enable networking
       networkmanager.enable = true;
+
+      firewall = {
+        enable = true;
+        allowedTCPPorts = [80 3000];
+      };
     };
 
     programs.adb.enable = true;
