@@ -11,7 +11,6 @@
     rev = "f1480c80e31c0b738e6d49a78137a42adfdccaab";
     sha256 = "sha256-5TLKrsW+yLzhjHMPXZJ+b4LprtZ4pXdkV9yB0LaVDUk=";
   };
-  font = "JetBrainsMono Nerd Font Mono";
 in {
   options.profiles.firefox = with lib; {
     enable = mkEnableOption "Enable firefox profile";
@@ -20,23 +19,7 @@ in {
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       enable = true;
-      policies = {
-        AppAutoUpdate = false;
-        AutofillAddressEnabled = false;
-        AutofillCreditCardEnabled = false;
-        DefaultDownloadDirectory = "\${HOME}/Downloads";
-        DisableAppUpdate = true;
-        DisableFirefoxAccounts = true;
-        DisableFormHistory = true;
-        DisablePocket = true;
-        DisableTelemetry = true;
-        DNSOverHTTPS = true;
-        DontCheckDefaultBrowser = true;
-        Homepage.StartPage = "previous-session";
-        NoDefaultBookmarks = true;
-        OfferToSaveLogins = false;
-        OfferToSaveLoginsDefault = false;
-      };
+      policies = import ./policies.nix;
       profiles = {
         yash = {
           isDefault = true;
@@ -67,20 +50,7 @@ in {
             default = "Google";
             privateDefault = "Google";
           };
-          settings = {
-            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-            "browser.safebrowsing.downloads.remote.block_dangerous" = false;
-            "browser.safebrowsing.downloads.remote.block_dangerous_host" = false;
-            "browser.safebrowsing.downloads.remote.block_potentially_unwanted" = false;
-            "browser.safebrowsing.downloads.remote.block_uncommon" = false;
-            "browser.safebrowsing.downloads.remote.url" = false;
-            "browser.safebrowsing.downloads.remote.enabled" = false;
-            "browser.safebrowsing.downloads.enabled" = false;
-            "toolkit.telemetry.enabled" = false;
-            "toolkit.telemetry.unified" = false;
-            "datareporting.healthreport.service.enabled" = false;
-            "font.name.monospace.x-western" = font;
-          };
+          settings = import ./settings.nix;
           userChrome = ''
             @-moz-document url(chrome://browser/content/browser.xhtml) {
               #main-window body {
