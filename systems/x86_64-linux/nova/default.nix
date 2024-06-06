@@ -13,6 +13,7 @@
     })
     qbittorrent
     slack
+    spotify
     telegram-desktop
     vesktop
     vscode
