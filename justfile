@@ -30,5 +30,5 @@ topology sys:
 eval conf:
   nix eval .#{{conf}} --apply builtins.attrNames --json
 
-template name:
-  nix run github:Yash-Garg/dotfiles?dir=templates/{{name}}
+template name path:
+  nix flake new --template .#templates.{{name}} {{path}}
