@@ -15,6 +15,7 @@ in {
     aggressiveResize = !pkgs.stdenv.isDarwin;
     shell = shellPath;
     shortcut = "q";
+    sensibleOnTop = true;
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       mode-indicator
@@ -42,6 +43,8 @@ in {
       bind p split-window -h
       bind-key Right next-window
       bind-key Left previous-window
+      bind -n End send-key C-e
+      bind -n Home send-key C-a
     '';
   };
 }
