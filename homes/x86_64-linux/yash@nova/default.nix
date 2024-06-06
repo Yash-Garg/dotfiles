@@ -5,7 +5,8 @@ _: {
   };
 
   profiles.alacritty.enable = true;
-  programs.mpv.enable = true;
+  profiles.firefox.enable = true;
+  profiles.mpv.enable = true;
   shells.zsh.enable = true;
 
   home.stateVersion = "23.11";

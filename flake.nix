@@ -29,6 +29,8 @@
     nix-topology.inputs.devshell.follows = "devshell";
     nix-topology.inputs.flake-utils.follows = "flake-utils";
 
+    nur.url = "github:nix-community/NUR";
+
     snowfall-lib.url = "github:snowfallorg/lib/dev";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
     snowfall-lib.inputs.flake-utils-plus.follows = "flake-utils-plus";
@@ -65,6 +67,7 @@
 
       overlays = with inputs; [
         nix-topology.overlays.default
+        nur.overlay
       ];
 
       outputs-builder = channels: {
