@@ -48,7 +48,7 @@ in {
             (buildFirefoxXpiAddon {
               pname = "dark-space-full-transparent";
               version = "1.3";
-              addonId = "dark-space-full-transparent@yash";
+              addonId = "{24aca621-5029-4aa4-95a9-81d4bd3eba76}";
               url = "https://addons.mozilla.org/firefox/downloads/file/3888121/dark_space_full_transparent-1.3.xpi";
               sha256 = "sha256-63emiqUdRBPIYnqXX7aftmNIs4TF5aWXKj0Fn/xnTng=";
               meta = with lib; {platforms = platforms.all;};
@@ -56,7 +56,7 @@ in {
             (buildFirefoxXpiAddon {
               pname = "material-icons-for-github";
               version = "1.8.14";
-              addonId = "csantos.gdev@gmail.com";
+              addonId = "{eac6e624-97fa-4f28-9d24-c06c9b8aa713}";
               url = "https://addons.mozilla.org/firefox/downloads/file/4288858/material_icons_for_github-1.8.14.xpi";
               sha256 = "sha256-GJt6tdrNJkFkUOlYOMHmuluXnDGD+C6M+RW8U1PcE+A=";
               meta = with lib; {platforms = platforms.all;};
