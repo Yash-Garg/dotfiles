@@ -11,4 +11,5 @@
   "toolkit.telemetry.unified" = false;
   "datareporting.healthreport.service.enabled" = false;
   "font.name.monospace.x-western" = "JetBrainsMono Nerd Font Mono";
+  "browser.discovery.enabled" = false;
 }

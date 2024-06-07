@@ -26,8 +26,9 @@ in {
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             bitwarden
             darkreader
-            ublock-origin
+            multi-account-containers
             sponsorblock
+            ublock-origin
             (buildFirefoxXpiAddon {
               pname = "dark-space-full-transparent";
               version = "1.3";
