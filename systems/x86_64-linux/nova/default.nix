@@ -28,7 +28,7 @@ in {
   profiles.desktop.enable = true;
   profiles.desktop.android-dev.enable = true;
   profiles.desktop.gnome3.enable = true;
-  profiles.desktop.ssh.enable = false;
+  profiles.desktop.ssh.enable = true;
   profiles.tailscale.enable = true;
 
   # Set your time zone.

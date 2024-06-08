@@ -34,6 +34,11 @@
     snowfall-lib.url = "github:snowfallorg/lib/dev";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
     snowfall-lib.inputs.flake-utils-plus.follows = "flake-utils-plus";
+
+    stylix.url = "github:danth/stylix";
+    stylix.inputs.flake-compat.follows = "flake-compat";
+    stylix.inputs.home-manager.follows = "home-manager";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: let
@@ -59,6 +64,7 @@
 
       systems.modules.nixos = with inputs; [
         nix-topology.nixosModules.default
+        stylix.nixosModules.stylix
       ];
 
       homes.modules = with inputs; [
