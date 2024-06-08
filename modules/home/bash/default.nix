@@ -3,17 +3,14 @@
   lib,
   ...
 }: let
-  cfg = config.shells;
+  cfg = config.shells.bash;
+  inherit (lib) mkEnableOption mkIf;
 in {
   options.shells.bash = {
-    enable = lib.mkOption {
-      default = false;
-      type = lib.types.bool;
-      description = "Enable bash";
-    };
+    enable = mkEnableOption "Bash profile";
   };
 
-  config = lib.mkIf cfg.bash.enable {
+  config = mkIf cfg.enable {
     programs = {
       bash = {
         enable = true;

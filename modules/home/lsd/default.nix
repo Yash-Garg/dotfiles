@@ -3,17 +3,14 @@
   lib,
   ...
 }: let
-  cfg = config.modules;
+  cfg = config.profiles.lsd;
+  inherit (lib) mkEnableOption mkIf;
 in {
-  options.modules.lsd = {
-    enable = lib.mkOption {
-      default = false;
-      type = lib.types.bool;
-      description = "Enable lsd";
-    };
+  options.profiles.lsd = {
+    enable = mkEnableOption "Enable lsd profile";
   };
 
-  config = lib.mkIf cfg.lsd.enable {
+  config = mkIf cfg.enable {
     programs.lsd = {
       enable = true;
       enableAliases = true;

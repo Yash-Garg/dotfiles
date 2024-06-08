@@ -22,6 +22,7 @@
     ookla-speedtest
     ripgrep
     scc
+    tailscale
     unzip
     zip
   ];

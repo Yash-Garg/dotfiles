@@ -5,6 +5,7 @@
   ...
 }: let
   cfg = config.profiles.desktop;
+  inherit (lib) mkEnableOption mkIf;
 in {
   imports = [
     ./android-dev.nix
@@ -12,11 +13,11 @@ in {
     ./ssh.nix
   ];
 
-  options.profiles.desktop = with lib; {
+  options.profiles.desktop = {
     enable = mkEnableOption "Profile for desktop machines";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     boot = {
       # Use latest kernel by default.
       kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;

@@ -3,17 +3,14 @@
   lib,
   ...
 }: let
-  cfg = config.shells;
+  cfg = config.shells.zsh;
+  inherit (lib) mkEnableOption mkIf;
 in {
   options.shells.zsh = {
-    enable = lib.mkOption {
-      default = false;
-      type = lib.types.bool;
-      description = "Enable zsh";
-    };
+    enable = mkEnableOption "Zsh profile";
   };
 
-  config = lib.mkIf cfg.zsh.enable {
+  config = mkIf cfg.enable {
     programs = {
       zsh = {
         enable = true;

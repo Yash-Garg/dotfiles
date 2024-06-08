@@ -11,12 +11,13 @@
     rev = "f1480c80e31c0b738e6d49a78137a42adfdccaab";
     sha256 = "sha256-5TLKrsW+yLzhjHMPXZJ+b4LprtZ4pXdkV9yB0LaVDUk=";
   };
+  inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.firefox = with lib; {
+  options.profiles.firefox = {
     enable = mkEnableOption "Enable firefox profile";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
       policies = import ./policies.nix;

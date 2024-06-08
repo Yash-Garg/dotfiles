@@ -5,12 +5,13 @@
   ...
 }: let
   cfg = config.profiles.desktop;
+  inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.desktop.ssh = with lib; {
+  options.profiles.desktop.ssh = {
     enable = mkEnableOption "Setup SSH";
   };
 
-  config = lib.mkIf cfg.ssh.enable {
+  config = mkIf cfg.ssh.enable {
     services.openssh = {
       enable = true;
       settings = {

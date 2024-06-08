@@ -5,12 +5,13 @@
   ...
 }: let
   cfg = config.profiles.alacritty;
+  inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.alacritty = with lib; {
+  options.profiles.alacritty = {
     enable = mkEnableOption "Enable alacritty profile";
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     programs.alacritty = {
       enable = true;
       settings = import ./config.nix;
