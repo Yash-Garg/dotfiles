@@ -33,6 +33,7 @@ in {
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
+        brightness-control-using-ddcutil
         pop-shell
         unmess
         user-themes
@@ -54,6 +55,7 @@ in {
             disable-user-extensions = false;
             enabled-extensions = [
               "appindicatorsupport@rgcjonas.gmail.com"
+              "display-brightness-ddcutil@themightydeity.github.com"
               "pop-shell@system76.com"
               "unmess@ezix.org"
               "user-theme@gnome-shell-extensions.gcampax.github.com"

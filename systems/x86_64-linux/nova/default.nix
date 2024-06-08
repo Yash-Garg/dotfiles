@@ -42,6 +42,7 @@ in {
     packages = with pkgs;
       [
         apktool
+        ddcutil
         flutter
         imwheel
         maestro
