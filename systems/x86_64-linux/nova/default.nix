@@ -29,6 +29,7 @@ in {
   profiles.desktop.android-dev.enable = true;
   profiles.desktop.gnome3.enable = true;
   profiles.desktop.ssh.enable = false;
+  profiles.tailscale.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -56,6 +57,7 @@ in {
       ++ guiPkgs;
   };
 
+  programs.adb.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     icu
