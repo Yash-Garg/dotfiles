@@ -5,7 +5,7 @@
 }: let
   shellPath =
     if config.shells.bash.enable
-    then "${pkgs.bash}/bin/bash"
+    then null
     else "${pkgs.zsh}/bin/zsh";
 in {
   programs.tmux = {
@@ -18,7 +18,6 @@ in {
     sensibleOnTop = true;
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
-      mode-indicator
       {
         plugin = rose-pine;
         extraConfig = ''
@@ -32,11 +31,13 @@ in {
           set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator}'
         '';
       }
+      mode-indicator
       sensible
       tmux-fzf
       yank
     ];
     extraConfig = ''
+      set -sg escape-time 100
       unbind c
       unbind p
       bind n new-window
