@@ -33,7 +33,6 @@ in {
       }
       mode-indicator
       sensible
-      tmux-fzf
       yank
     ];
     extraConfig = ''
