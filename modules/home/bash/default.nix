@@ -24,7 +24,8 @@ in {
       atuin.enableBashIntegration = true;
       eza.enableBashIntegration = true;
       fzf.enableBashIntegration = true;
-      starship.enableBashIntegration = true;
+      oh-my-posh.enableBashIntegration = config.profiles.oh-my-posh.enable;
+      starship.enableBashIntegration = config.profiles.starship.enable;
       zoxide.enableBashIntegration = true;
     };
   };

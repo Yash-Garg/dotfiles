@@ -4,6 +4,8 @@
     name = "yash";
   };
 
+  profiles.oh-my-posh.enable = true;
+
   shells.bash.enable = true;
 
   programs.bash.profileExtra = "eval `keychain --eval --agents ssh git-ssh`";

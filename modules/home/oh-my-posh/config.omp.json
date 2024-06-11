@@ -1,0 +1,91 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "final_space": true,
+    "disable_notice": true,
+    "version": 2,
+    "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "foreground": "lightYellow",
+                    "style": "plain",
+                    "template": "{{ if .WSL }}(wsl) {{ end }}",
+                    "type": "session"
+                },
+                {
+                    "type": "path",
+                    "style": "plain",
+                    "background": "transparent",
+                    "foreground": "blue",
+                    "template": "{{ .Path | lower }}",
+                    "properties": {
+                        "style": "full"
+                    }
+                },
+                {
+                    "type": "git",
+                    "background": "transparent",
+                    "foreground": "#ff94df",
+                    "style": "plain",
+                    "template": " <#ffffff>on</> <#DDB15F>git(</>{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}<#DDB15F>)</> <cyan>{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0 }}↑{{ end }}</>",
+                    "properties": {
+                        "branch_icon": "",
+                        "commit_icon": "@",
+                        "fetch_status": true,
+                        "fetch_stash_count": true
+                    }
+                }
+            ]
+        },
+        {
+            "type": "rprompt",
+            "overflow": "hidden",
+            "segments": [
+                {
+                    "type": "executiontime",
+                    "style": "plain",
+                    "foreground": "yellow",
+                    "background": "transparent",
+                    "template": "{{ .FormattedMs }}",
+                    "properties": {
+                        "threshold": 5000
+                    }
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground_templates": [
+                        "{{if gt .Code 0}}red{{end}}",
+                        "{{if eq .Code 0}}magenta{{end}}"
+                    ],
+                    "background": "transparent",
+                    "template": "\u276f"
+                }
+            ]
+        }
+    ],
+    "transient_prompt": {
+        "foreground_templates": [
+            "{{if gt .Code 0}}red{{end}}",
+            "{{if eq .Code 0}}magenta{{end}}"
+        ],
+        "background": "transparent",
+        "template": "\u276f "
+    },
+    "secondary_prompt": {
+        "foreground": "magenta",
+        "background": "transparent",
+        "template": "\u276f\u276f "
+    }
+}

@@ -200,7 +200,7 @@ function pgrep($name) {
     Get-Process $name
 }
 
-Invoke-Expression (&starship init powershell)
+oh-my-posh init pwsh --config 'C:/Users/Yash/config.omp.json' | Invoke-Expression
 Invoke-Expression (
     & {
         $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
