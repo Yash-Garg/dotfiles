@@ -2,14 +2,17 @@
   config,
   lib,
   pkgs,
+  namespace,
   ...
 }: let
   cfg = config.profiles.desktop;
-  defaultJdk = pkgs.openjdk17;
+  defaultJdk = pkgs.openjdk22;
   toolchains = [
     pkgs.openjdk11
+    pkgs.openjdk17
     defaultJdk
   ];
+  mapOpenJdk = pkg: "${pkg}/lib/openjdk";
   inherit (lib) mkEnableOption mkIf;
 in {
   options.profiles.desktop.android-dev = {
@@ -33,23 +36,19 @@ in {
       programs.gradle = {
         enable = true;
         package = pkgs.callPackage (pkgs.gradleGen {
-          version = "8.8-rc-1";
+          version = "8.8";
           nativeVersion = "0.22-milestone-26";
-          hash = "sha256-ouHP7n/97uhgFbhbLdKkNQMsQO7cAdgXIoVVbH2P6hM=";
+          hash = "sha256-pLQVhgH4Y2ze6rCb12r7ZAAwu1sUSq/iYaXorwJ9xhI=";
           defaultJava = defaultJdk;
         }) {};
         settings = {
           "org.gradle.caching" = true;
           "org.gradle.parallel" = true;
           "org.gradle.jvmargs" = "-XX:MaxMetaspaceSize=1024m -XX:+UseG1GC";
-          "org.gradle.home" = defaultJdk;
+          "org.gradle.java.home" = mapOpenJdk defaultJdk;
           "org.gradle.java.installations.auto-detect" = false;
           "org.gradle.java.installations.auto-download" = false;
-          "org.gradle.java.installations.paths" =
-            lib.concatMapStringsSep "," (
-              x: "${x}/lib/openjdk"
-            )
-            toolchains;
+          "org.gradle.java.installations.paths" = lib.concatMapStringsSep "," mapOpenJdk toolchains;
         };
       };
     };

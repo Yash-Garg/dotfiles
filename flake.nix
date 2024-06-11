@@ -64,7 +64,6 @@
 
       systems.modules.nixos = with inputs; [
         nix-topology.nixosModules.default
-        stylix.nixosModules.stylix
       ];
 
       homes.modules = with inputs; [
