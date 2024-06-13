@@ -1,5 +1,4 @@
 {
-    "Ctrl-x": "Quit",
     "\u001b[1;2A": "SelectUp",
     "\u001b[1;2B": "SelectDown",
     "\u001b[1;2C": "SelectRight",
