@@ -52,6 +52,7 @@ in {
         })
         scrcpy
         sshfs
+        tailscale
         xclip
       ]
       ++ guiPkgs;
