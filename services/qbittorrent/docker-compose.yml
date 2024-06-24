@@ -8,8 +8,8 @@ services:
       - TZ=Asia/Kolkata
       - WEBUI_PORT=3000
     volumes:
-      - ./data:/config
-      - /mnt/Downloads:/downloads
+      - qbit-data:/config
+      - /mnt/media:/media
     ports:
       - 3000:3000
       - 6881:6881

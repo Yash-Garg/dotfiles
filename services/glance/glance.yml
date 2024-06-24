@@ -1,0 +1,64 @@
+pages:
+  - name: Home
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+
+          - type: rss
+            limit: 10
+            collapse-after: 3
+            cache: 3h
+            feeds:
+              - url: https://fasterthanli.me/index.xml
+                title: fasterthanli.me
+
+          - type: twitch-channels
+            channels:
+              - theprimeagen
+              - dreamsofcode_dev
+              - christitustech
+              - rakazone
+              - ohnePixel
+              - togglebit
+              - tarik
+
+      - size: full
+        widgets:
+          - type: hacker-news
+
+          - type: videos
+            channels:
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCZNhwA1B5YqiY1nLzmM0ZRg # Christian Lempa
+              - UCOk-gHyjcWZNj3Br4oxwh0A # Techno Tim
+              - UC5--wS0Ljbin1TjWQX6eafA # bigboxSWE
+              - UCBJycsmduvYEL83R_U4JriQ # MKBHD
+
+          - type: reddit
+            subreddit: selfhosted
+
+      - size: small
+        widgets:
+          - type: weather
+            location: Delhi, India
+
+          - type: monitor
+            cache: 1m
+            title: Services
+            sites:
+              - title: h5ai
+                url: http://pi.local:90
+                icon: si:files
+              - title: jellyfin
+                url: http://pi.local:8096
+                icon: si:jellyfin
+              - title: qbittorrent
+                url: http://pi.local:3000
+                icon: si:qbittorrent
+              - title: radarr
+                url: http://pi.local:7878
+                icon: si:radarr
+              - title: sonarr
+                url: http://pi.local:8989
+                icon: si:sonarr

@@ -7,9 +7,9 @@ services:
       - PGID=1000
       - TZ=Asia/Kolkata
     volumes:
-      - ./data:/config
-      - /mnt/Media/Movies:/movies
-      - /mnt/Downloads:/downloads
+      - radarr-data:/config
+      - /mnt/media/movies:/movies
+      - /mnt/media:/media
     ports:
       - 7878:7878
     restart: unless-stopped

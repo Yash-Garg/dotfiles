@@ -9,6 +9,6 @@ services:
     ports:
       - 90:80/tcp
     volumes:
-      - ./data:/config
-      - /mnt/Downloads:/h5ai
+      - h5ai-data:/config
+      - /mnt/media:/h5ai
     restart: unless-stopped

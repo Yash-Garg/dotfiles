@@ -7,9 +7,9 @@ services:
       - PGID=1000
       - TZ=Asia/Kolkata
     volumes:
-      - ./data:/config
-      - /mnt/Media/Shows:/shows
-      - /mnt/Downloads:/downloads
+      - sonarr-data:/config
+      - /mnt/media/tv:/shows
+      - /mnt/media:/media
     ports:
       - 8989:8989
     restart: unless-stopped

@@ -7,10 +7,10 @@ services:
       - PGID=1000
       - TZ=Asia/Kolkata
     volumes:
-      - ./data:/config
-      - /mnt/Media/Anime:/anime
-      - /mnt/Media/Movies:/movies
-      - /mnt/Media/Shows:/shows
+      - jellyfin-data:/config
+      - /mnt/media/anime:/anime
+      - /mnt/media/movies:/movies
+      - /mnt/media/tv:/shows
     ports:
       - 8096:8096
     restart: unless-stopped
