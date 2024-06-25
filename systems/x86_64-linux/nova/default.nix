@@ -47,9 +47,7 @@ in {
         flutter
         imwheel
         maestro
-        (nerdfonts.override {
-          fonts = ["CascadiaCode" "JetBrainsMono"];
-        })
+        nerdfonts
         scrcpy
         sshfs
         tailscale

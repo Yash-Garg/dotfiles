@@ -10,9 +10,6 @@
 
   home.packages = with pkgs; [
     apktool
-    (nerdfonts.override {
-      fonts = ["CascadiaCode" "JetBrainsMono"];
-    })
     scrcpy
   ];
 
