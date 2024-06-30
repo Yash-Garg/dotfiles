@@ -1,5 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  namespace,
+  ...
+}: {
   fonts = {
-    packages = [pkgs.nerdfonts];
+    packages = [
+      pkgs.nerdfonts
+      pkgs.${namespace}.monolisa-nerdfonts
+    ];
   };
 }

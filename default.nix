@@ -70,4 +70,5 @@ in
   }: let
     callPackage = pkg: pkgs.callPackage pkg;
   in {
+    monolisa-nerdfonts = callPackage ./packages/monolisa-nerdfonts {};
   }
