@@ -6,10 +6,9 @@
   ...
 }: let
   cfg = config.profiles.desktop;
-  defaultJdk = pkgs.openjdk22;
+  defaultJdk = pkgs.openjdk17;
   toolchains = [
-    pkgs.openjdk11
-    pkgs.openjdk17
+    pkgs.openjdk22
     defaultJdk
   ];
   mapOpenJdk = pkg: "${pkg}/lib/openjdk";
