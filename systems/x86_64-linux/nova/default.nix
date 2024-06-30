@@ -47,7 +47,6 @@ in {
         flutter
         imwheel
         maestro
-        nerdfonts
         scrcpy
         sshfs
         tailscale
