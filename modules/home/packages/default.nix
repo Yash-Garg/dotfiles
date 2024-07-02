@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     alejandra
+    asciinema
     aria
     cachix
     charm-freeze
