@@ -1,10 +1,11 @@
 {pkgs, ...}: let
-  dots = pkgs.fetchFromGitHub {
-    owner = "Yash-Garg";
-    repo = "dotfiles";
-    rev = "2cc6fc0448caf6f26c10932d3e5dfb9b47aea79f";
-    sha256 = "sha256-WSaQefU5z1Phix5Qj5y86KFTEYDU6+rpPZdlCyxAvvk=";
-  };
+  # dots = pkgs.fetchFromGitHub {
+  #   owner = "Yash-Garg";
+  #   repo = "dotfiles";
+  #   rev = "2cc6fc0448caf6f26c10932d3e5dfb9b47aea79f";
+  #   sha256 = "sha256-WSaQefU5z1Phix5Qj5y86KFTEYDU6+rpPZdlCyxAvvk=";
+  # };
+  dots = ./../../..;
 in {
   home.file = {
     ".nanorc".text = ''

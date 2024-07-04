@@ -16,6 +16,7 @@
     cpa = cherry-pick --abort
     cpc = cherry-pick --continue
     su = submodule update --init --recursive
+    undo = reset --soft HEAD^
 
 [core]
     editor = nano

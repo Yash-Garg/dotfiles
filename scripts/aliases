@@ -38,3 +38,7 @@ fi
 if type zoxide &>/dev/null; then
     alias cd='z'
 fi
+
+if type kubectl &>/dev/null; then
+    alias k='kubectl'
+fi
