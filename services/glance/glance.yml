@@ -12,6 +12,8 @@ pages:
             feeds:
               - url: https://fasterthanli.me/index.xml
                 title: fasterthanli.me
+              - url: https://xeiaso.net/blog.rss
+                title: xeiaso.net
 
           - type: twitch-channels
             channels:
@@ -48,17 +50,17 @@ pages:
             title: Services
             sites:
               - title: h5ai
-                url: http://pi.local:90
+                url: http://pi:90
                 icon: si:files
               - title: jellyfin
-                url: http://pi.local:8096
+                url: http://pi:8096
                 icon: si:jellyfin
               - title: qbittorrent
-                url: http://pi.local:3000
+                url: http://pi:3000
                 icon: si:qbittorrent
               - title: radarr
-                url: http://pi.local:7878
+                url: http://pi:7878
                 icon: si:radarr
               - title: sonarr
-                url: http://pi.local:8989
+                url: http://pi:8989
                 icon: si:sonarr
