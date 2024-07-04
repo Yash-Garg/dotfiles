@@ -73,7 +73,7 @@ in {
         trustedInterfaces = ["tailscale0"];
         # allow the Tailscale UDP port through the firewall
         allowedUDPPorts = [config.services.tailscale.port];
-        allowedTCPPorts = [80 3000];
+        allowedTCPPorts = [80 1313 3000];
       };
     };
 

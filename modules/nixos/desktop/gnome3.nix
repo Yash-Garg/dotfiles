@@ -28,9 +28,9 @@ in {
       };
     };
 
-    users.users.yash.packages = with pkgs;
+    users.users.yash.packages =
       [
-        gnome3.gnome-tweaks
+        pkgs.gnome-tweaks
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
