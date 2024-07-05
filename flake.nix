@@ -39,6 +39,9 @@
     stylix.inputs.flake-compat.follows = "flake-compat";
     stylix.inputs.home-manager.follows = "home-manager";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    wallpaper.url = "https://raw.githubusercontent.com/isabelroses/nixos-artwork/master/wallpapers/nix-wallpaper-nineish-catppuccin-mocha.png";
+    wallpaper.flake = false;
   };
 
   outputs = inputs: let
@@ -68,6 +71,7 @@
 
       systems.modules.nixos = with inputs; [
         nix-topology.nixosModules.default
+        stylix.nixosModules.stylix
       ];
 
       homes.modules = with inputs; [

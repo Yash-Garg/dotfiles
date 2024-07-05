@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -93,6 +94,47 @@ in {
           layout = "us";
           variant = "intl";
         };
+      };
+    };
+
+    stylix = {
+      autoEnable = false;
+      enable = true;
+      image = inputs.wallpaper;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+      cursor = {
+        package = pkgs.rose-pine-cursor;
+        name = "BreezeX-RosePine-Linux";
+      };
+      fonts = {
+        emoji = {
+          name = "Noto Color Emoji";
+          package = pkgs.noto-fonts-color-emoji;
+        };
+        monospace = {
+          name = "JetBrainsMonoNL Nerd Font Mono Regular";
+          package = pkgs.nerdfonts;
+        };
+        sansSerif = {
+          name = "Roboto Regular";
+          package = pkgs.roboto;
+        };
+        serif = {
+          name = "Roboto Serif 20pt Regular";
+          package = pkgs.roboto-serif;
+        };
+        sizes = {
+          applications = 12;
+          terminal = 10;
+        };
+      };
+      polarity = "dark";
+      targets = {
+        grub = {
+          enable = true;
+          useImage = true;
+        };
+        nixos-icons.enable = true;
       };
     };
   };

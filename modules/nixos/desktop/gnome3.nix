@@ -35,10 +35,16 @@ in {
       ++ (with pkgs.gnomeExtensions; [
         appindicator
         brightness-control-using-ddcutil
+        dash-to-dock
         pop-shell
         unmess
         user-themes
       ]);
+
+    stylix.targets = {
+      gnome.enable = true;
+      gtk.enable = true;
+    };
 
     snowfallorg.users.yash.home.config = {
       gtk = {
@@ -57,18 +63,33 @@ in {
             enabled-extensions = [
               "appindicatorsupport@rgcjonas.gmail.com"
               "display-brightness-ddcutil@themightydeity.github.com"
+              "dash-to-dock@micxgx.gmail.com"
               "pop-shell@system76.com"
               "unmess@ezix.org"
               "user-theme@gnome-shell-extensions.gcampax.github.com"
             ];
           };
+
+          "org/gnome/shell/extensions/dash-to-dock" = {
+            autohide = true;
+            background-opacity = 0.0;
+            click-action = "previews";
+            dock-fixed = true;
+            dock-position = "BOTTOM";
+            hot-keys = false;
+            pressure-threshold = 200.0;
+            require-pressure-to-show = true;
+            scroll-action = "cycle-windows";
+            show-favorites = true;
+            show-trash = true;
+            transparency-mode = "fixed";
+          };
+
           "org/gnome/desktop/wm/preferences" = {
             resize-with-right-button = true;
             mouse-button-modifier = "<Alt>";
           };
-          "org/gnome/shell/extensions/user-theme" = {
-            name = "adw-gtk3-dark";
-          };
+
           "org/gnome/desktop/interface" = {
             gtk-theme = "adw-gtk3-dark";
             color-scheme = "prefer-dark";
