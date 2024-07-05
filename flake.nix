@@ -60,6 +60,10 @@
 
       channels-config = {
         allowUnfree = true;
+        cudaSupport = true;
+        permittedInsecurePackages = [
+          "electron-27.3.11"
+        ];
       };
 
       systems.modules.nixos = with inputs; [
