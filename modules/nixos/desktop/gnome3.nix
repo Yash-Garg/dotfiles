@@ -36,6 +36,7 @@ in {
         appindicator
         brightness-control-using-ddcutil
         dash-to-dock
+        media-controls
         pop-shell
         transparent-top-bar
         unmess
@@ -65,6 +66,7 @@ in {
               "appindicatorsupport@rgcjonas.gmail.com"
               "display-brightness-ddcutil@themightydeity.github.com"
               "dash-to-dock@micxgx.gmail.com"
+              "mediacontrols@cliffniff.github.com"
               "pop-shell@system76.com"
               "transparent-top-bar@zhanghai.me"
               "unmess@ezix.org"
