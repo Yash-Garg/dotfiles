@@ -19,7 +19,6 @@
     ijq
     just
     jq
-    ollama
     ookla-speedtest
     ripgrep
     scc
