@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
@@ -35,6 +34,11 @@ in {
           devices = ["nodev"];
           efiSupport = true;
           useOSProber = true;
+          gfxmodeEfi = "2560x1440";
+          backgroundColor = "#000000";
+          fontSize = 36;
+          splashImage = ./images/background.png;
+          font = "${pkgs.source-code-pro}/share/fonts/opentype/SourceCodePro-Medium.otf";
         };
       };
     };
@@ -101,7 +105,7 @@ in {
       autoEnable = false;
       enable = true;
       homeManagerIntegration.followSystem = true;
-      image = inputs.wallpaper;
+      image = ./images/background.png;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       cursor = {
         package = pkgs.rose-pine-cursor;
@@ -133,10 +137,6 @@ in {
       polarity = "dark";
       targets = {
         chromium.enable = true;
-        grub = {
-          enable = true;
-          useImage = true;
-        };
         nixos-icons.enable = true;
       };
     };

@@ -453,8 +453,7 @@
         "nixpkgs": "nixpkgs",
         "nur": "nur",
         "snowfall-lib": "snowfall-lib",
-        "stylix": "stylix",
-        "wallpaper": "wallpaper"
+        "stylix": "stylix"
       }
     },
     "snowfall-lib": {
@@ -529,18 +528,6 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
-      }
-    },
-    "wallpaper": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-Y1A94tHhRKiMMZTCd6TvMcopFOcUbB2ifFDD8dAt/mg=",
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/isabelroses/nixos-artwork/master/wallpapers/nix-wallpaper-nineish-catppuccin-mocha.png"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/isabelroses/nixos-artwork/master/wallpapers/nix-wallpaper-nineish-catppuccin-mocha.png"
       }
     }
   },
