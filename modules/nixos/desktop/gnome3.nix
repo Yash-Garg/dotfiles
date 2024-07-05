@@ -78,7 +78,9 @@ in {
     };
 
     # Enable Wayland compatibility workarounds within Nixpkgs
-    environment.variables.ELECTRON_OZONE_PLATFORM_HINT = "x11";
-    environment.variables.NIXOS_OZONE_WL = "1";
+    environment.variables = {
+      ELECTRON_OZONE_PLATFORM_HINT = "x11";
+      NIXOS_OZONE_WL = "1";
+    };
   };
 }
