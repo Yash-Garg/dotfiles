@@ -100,11 +100,13 @@ in {
     stylix = {
       autoEnable = false;
       enable = true;
+      homeManagerIntegration.followSystem = true;
       image = inputs.wallpaper;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       cursor = {
         package = pkgs.rose-pine-cursor;
         name = "BreezeX-RosePine-Linux";
+        size = 24;
       };
       fonts = {
         emoji = {
@@ -130,6 +132,7 @@ in {
       };
       polarity = "dark";
       targets = {
+        chromium.enable = true;
         grub = {
           enable = true;
           useImage = true;
