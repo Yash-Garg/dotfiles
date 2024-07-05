@@ -37,6 +37,7 @@ in {
         brightness-control-using-ddcutil
         dash-to-dock
         pop-shell
+        transparent-top-bar
         unmess
         user-themes
       ]);
@@ -65,6 +66,7 @@ in {
               "display-brightness-ddcutil@themightydeity.github.com"
               "dash-to-dock@micxgx.gmail.com"
               "pop-shell@system76.com"
+              "transparent-top-bar@zhanghai.me"
               "unmess@ezix.org"
               "user-theme@gnome-shell-extensions.gcampax.github.com"
             ];
@@ -101,10 +103,30 @@ in {
       };
     };
 
-    # Enable Wayland compatibility workarounds within Nixpkgs
-    environment.variables = {
-      ELECTRON_OZONE_PLATFORM_HINT = "x11";
-      NIXOS_OZONE_WL = "1";
+    environment = {
+      gnome.excludePackages = with pkgs;
+      with pkgs.gnome; [
+        epiphany
+        geary
+        gnome-calendar
+        gnome-characters
+        gnome-clocks
+        gnome-console
+        gnome-contacts
+        gnome-maps
+        gnome-music
+        gnome-weather
+        loupe
+        simple-scan
+        snapshot
+        totem
+      ];
+
+      # Enable Wayland compatibility workarounds within Nixpkgs
+      variables = {
+        ELECTRON_OZONE_PLATFORM_HINT = "x11";
+        NIXOS_OZONE_WL = "1";
+      };
     };
   };
 }
