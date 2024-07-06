@@ -5,12 +5,7 @@
   };
 
   profiles.oh-my-posh.enable = true;
-
-  shells.bash.enable = true;
-
-  programs.bash.profileExtra = "eval `keychain --eval --agents ssh git-ssh`";
-
-  home.packages = [pkgs.keychain];
+  shells.zsh.enable = true;
 
   home.stateVersion = "23.11";
 }
