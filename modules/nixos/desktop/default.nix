@@ -9,6 +9,7 @@
 in {
   imports = [
     ./android-dev.nix
+    ./earlyoom.nix
     ./gnome3.nix
     ./ssh.nix
   ];
