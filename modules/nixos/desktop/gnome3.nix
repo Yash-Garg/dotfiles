@@ -28,9 +28,10 @@ in {
       };
     };
 
-    users.users.yash.packages =
+    users.users.yash.packages = with pkgs;
       [
-        pkgs.gnome-tweaks
+        gnome-screenshot
+        gnome-tweaks
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
@@ -116,20 +117,30 @@ in {
     environment = {
       gnome.excludePackages = with pkgs;
       with pkgs.gnome; [
-        epiphany
-        geary
         gnome-calendar
         gnome-characters
         gnome-clocks
+        gnome-connections
         gnome-console
         gnome-contacts
+        gnome-initial-setup
         gnome-maps
         gnome-music
+        gnome-text-editor
+        gnome-tour
         gnome-weather
         loupe
-        simple-scan
         snapshot
+        simple-scan
+        epiphany
+        geary
+        evince
         totem
+        tali
+        iagno
+        hitori
+        atomix
+        yelp
       ];
 
       # Enable Wayland compatibility workarounds within Nixpkgs
