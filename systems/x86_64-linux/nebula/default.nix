@@ -13,6 +13,8 @@
 
   topology.self.name = "WSL";
 
+  time.timeZone = "Asia/Kolkata";
+
   environment = {
     pathsToLink = ["/share/zsh"];
     variables = {
@@ -20,14 +22,13 @@
     };
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
   users.users.yash = {
     isNormalUser = true;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     extraGroups = ["wheel" "docker"];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz"
-    ];
   };
 
   programs.nix-ld = {
