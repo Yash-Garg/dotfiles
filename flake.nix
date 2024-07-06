@@ -89,28 +89,12 @@
           ];
         };
       };
-    }
-    // {
+
       templates = {
-        cpp = {
-          description = "devshell for a C++ project";
-          path = ./templates/cpp;
-        };
-
-        go = {
-          description = "devshell for a Golang project";
-          path = ./templates/go;
-        };
-
-        node = {
-          description = "devshell for a Node.js project";
-          path = ./templates/node;
-        };
-
-        rust = {
-          description = "devshell for a Rust project";
-          path = ./templates/rust;
-        };
+        cpp.description = "devshell for a C++ project";
+        go.description = "devshell for a Golang project";
+        node.description = "devshell for a Node.js project";
+        rust.description = "devshell for a Rust project";
       };
     }
     // {
