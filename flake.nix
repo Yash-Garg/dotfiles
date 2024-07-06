@@ -96,8 +96,5 @@
         node.description = "devshell for a Node.js project";
         rust.description = "devshell for a Rust project";
       };
-    }
-    // {
-      packages.aarch64-darwin.macbook = inputs.self.darwinConfigurations.trinity.system;
     };
 }
