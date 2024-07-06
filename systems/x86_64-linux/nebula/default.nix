@@ -29,6 +29,7 @@
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     extraGroups = ["wheel" "docker"];
+    packages = [pkgs.wget];
   };
 
   programs.nix-ld = {

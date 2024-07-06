@@ -23,7 +23,6 @@
     ripgrep
     scc
     unzip
-    wget
     zip
   ];
 }
