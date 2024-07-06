@@ -20,6 +20,9 @@ in {
   config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
+      package = pkgs.wrapFirefox (
+        pkgs.firefox-unwrapped.override {pipewireSupport = true;}
+      ) {};
       policies = import ./policies.nix;
       profiles = {
         yash = {

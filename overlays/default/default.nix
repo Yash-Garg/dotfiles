@@ -1,4 +1,4 @@
-{inputs, ...}: _final: prev: {
+_: _final: prev: {
   google-chrome = prev.google-chrome.overrideAttrs (prevAttrs: {
     postFixup = ''
       makeWrapper ${prev.lib.getExe prev.electron_27} $out/bin/${prevAttrs.pname} \
