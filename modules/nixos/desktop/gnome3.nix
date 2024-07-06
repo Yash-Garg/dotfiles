@@ -97,9 +97,17 @@ in {
             mouse-button-modifier = "<Alt>";
           };
 
+          "org/gnome/desktop/background" = {
+            picture-uri = "file://${config.stylix.image}";
+            picture-uri-dark = "file://${config.stylix.image}";
+          };
+
           "org/gnome/desktop/interface" = {
             gtk-theme = "adw-gtk3-dark";
-            color-scheme = "prefer-dark";
+            color-scheme =
+              if config.stylix.polarity == "dark"
+              then "prefer-dark"
+              else "default";
           };
         };
       };
