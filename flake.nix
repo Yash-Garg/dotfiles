@@ -29,6 +29,8 @@
     nix-topology.inputs.devshell.follows = "devshell";
     nix-topology.inputs.flake-utils.follows = "flake-utils";
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     nur.url = "github:nix-community/NUR";
 
     snowfall-lib.url = "github:snowfallorg/lib/dev";
@@ -69,6 +71,7 @@
       systems.modules.nixos = with inputs; [
         nix-topology.nixosModules.default
         stylix.nixosModules.stylix
+        nixos-wsl.nixosModules.default
       ];
 
       homes.modules = with inputs; [
