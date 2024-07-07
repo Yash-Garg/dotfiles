@@ -12,6 +12,10 @@
     dev.enable = false;
   };
 
+  users.users.yash.packages = with pkgs; [
+    nix-output-monitor
+  ];
+
   nix =
     lib.${namespace}.mkNixConfig {inherit lib pkgs inputs;}
     // {
