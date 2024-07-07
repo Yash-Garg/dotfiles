@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  namespace,
   pkgs,
   ...
 }: let
@@ -28,17 +29,17 @@ in {
       };
     };
 
-    users.users.yash.packages = with pkgs;
+    users.users.yash.packages =
       [
-        gnome-screenshot
-        gnome-tweaks
+        pkgs.gnome-screenshot
+        pkgs.gnome-tweaks
+        pkgs.${namespace}.tiling-shell
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
         brightness-control-using-ddcutil
         dash-to-dock
         media-controls
-        pop-shell
         transparent-top-bar
         unmess
         user-themes
@@ -68,7 +69,7 @@ in {
               "display-brightness-ddcutil@themightydeity.github.com"
               "dash-to-dock@micxgx.gmail.com"
               "mediacontrols@cliffniff.github.com"
-              "pop-shell@system76.com"
+              "tilingshell@ferrarodomenico.com"
               "transparent-top-bar@zhanghai.me"
               "unmess@ezix.org"
               "user-theme@gnome-shell-extensions.gcampax.github.com"
