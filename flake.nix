@@ -57,6 +57,7 @@
       inherit inputs;
       src = ./.;
       snowfall = {
+        namespace = "dots";
         meta = {
           name = "yash-nix-configs";
           title = "Yash's Nix configurations";
@@ -92,6 +93,10 @@
       ];
 
       outputs-builder = channels: {
+        packages = {
+          macbook = inputs.self.darwinConfigurations.trinity.system;
+        };
+
         topology = import inputs.nix-topology {
           pkgs = channels.nixpkgs;
           modules = [
@@ -107,5 +112,6 @@
         node.description = "devshell for a Node.js project";
         rust.description = "devshell for a Rust project";
       };
-    };
+    }
+    // {};
 }

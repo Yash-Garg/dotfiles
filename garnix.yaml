@@ -6,3 +6,6 @@ builds:
     - packages.aarch64-darwin.*
     - packages.x86_64-linux.*
     - packages.aarch64-linux.*
+  exclude:
+    - packages.x86_64-linux.macbook
+    - packages.aarch64-linux.macbook
