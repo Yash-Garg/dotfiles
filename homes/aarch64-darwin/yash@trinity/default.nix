@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     apktool
+    nix-output-monitor
     scrcpy
   ];
 
