@@ -19,6 +19,11 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    lix.url = "git+https://git.lix.systems/lix-project/lix";
+    lix.inputs.nixpkgs.follows = "nixpkgs";
+    lix.inputs.nixpkgs-regression.follows = "nixpkgs";
+    lix.inputs.flake-compat.follows = "flake-compat";
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -29,7 +34,10 @@
     nix-topology.inputs.devshell.follows = "devshell";
     nix-topology.inputs.flake-utils.follows = "flake-utils";
 
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nixos-wsl.url = "github:getchoo/NixOS-WSL/hardware-graphics";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl.inputs.flake-compat.follows = "flake-compat";
+    nixos-wsl.inputs.flake-utils.follows = "flake-utils";
 
     nur.url = "github:nix-community/NUR";
 
