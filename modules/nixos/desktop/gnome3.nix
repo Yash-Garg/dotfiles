@@ -129,7 +129,6 @@ in {
         gnome-text-editor
         gnome-tour
         gnome-weather
-        loupe
         snapshot
         simple-scan
         epiphany
