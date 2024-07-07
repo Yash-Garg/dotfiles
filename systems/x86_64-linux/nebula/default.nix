@@ -8,6 +8,7 @@
     defaultUser = "yash";
     nativeSystemd = true;
     startMenuLaunchers = true;
+    usbip.enable = true;
     wslConf.network.hostname = "nebula";
   };
 
