@@ -3,7 +3,11 @@ command_timeout = 10000
 
 [username]
 show_always = true
-format = "[yash]($style)"
+format = "[$user]($style)"
+
+[nix_shell]
+symbol = "nix"
+format = "via [$symbol-$state]($style) "
 
 [cmd_duration]
 min_time = 0
