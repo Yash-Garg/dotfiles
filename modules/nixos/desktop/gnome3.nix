@@ -78,13 +78,13 @@ in {
 
           "org/gnome/shell/extensions/dash-to-dock" = {
             custom-theme-shrink = true;
-            dash-max-icon-size = 40;
+            dash-max-icon-size = 30;
             autohide = true;
             background-opacity = 0.8;
             click-action = "previews";
             extend-height = false;
             dock-fixed = false;
-            dock-position = "BOTTOM";
+            dock-position = "RIGHT";
             hot-keys = false;
             pressure-threshold = 200.0;
             require-pressure-to-show = true;
