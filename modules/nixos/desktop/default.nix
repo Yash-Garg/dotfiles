@@ -5,7 +5,7 @@
   ...
 }: let
   cfg = config.profiles.desktop;
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkDefault mkEnableOption mkIf;
 in {
   imports = [
     ./android-dev.nix
@@ -21,7 +21,7 @@ in {
   config = mkIf cfg.enable {
     boot = {
       # Use latest kernel by default.
-      kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+      kernelPackages = mkDefault pkgs.linuxPackages_latest;
 
       # Bootloader
       loader = {
@@ -58,7 +58,7 @@ in {
     time.hardwareClockInLocalTime = true;
 
     hardware = {
-      bluetooth.enable = lib.mkDefault true;
+      bluetooth.enable = mkDefault true;
     };
 
     networking = {
@@ -68,7 +68,7 @@ in {
       # (the default) this is the recommended approach. When using systemd-networkd it's
       # still possible to use this option, but it's recommended to use it in conjunction
       # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-      useDHCP = lib.mkDefault true;
+      useDHCP = mkDefault true;
 
       # Enable networking
       networkmanager.enable = true;

@@ -26,8 +26,6 @@ Set-Alias -Name e -Value explorer -Option AllScope
 
 function dig { dog -n 1.1.1.1 @args }
 
-function update { scoop update && scoop status }
-
 function gw {
     if (Test-Path ./gradlew) {
         ./gradlew @args
@@ -200,7 +198,7 @@ function pgrep($name) {
     Get-Process $name
 }
 
-oh-my-posh init pwsh --config 'C:/Users/Yash/config.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config "$HOME\config.omp.json" | Invoke-Expression
 Invoke-Expression (
     & {
         $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
