@@ -25,6 +25,7 @@ in {
         scripts = with pkgs.${namespace};
           [
             auto-profiles
+            better-chapters
           ]
           ++ (with pkgs.mpvScripts; [
             acompressor

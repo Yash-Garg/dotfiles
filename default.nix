@@ -71,8 +71,9 @@ in
     callPackage = pkg: pkgs.callPackage pkg;
   in {
     monolisa-nerdfonts = callPackage ./packages/monolisa-nerdfonts {};
-    mpv-scripts = {
-      auto-profiles = callPackage ./packages/mpv-scripts/auto-profiles {};
+    mpv-scripts = with ./packages/mpv-scripts; {
+      auto-profiles = callPackage ./auto-profiles {};
+      better-chapters = callPackage ./better-chapters {};
     };
     tiling-shell = callPackage ./packages/tiling-shell {};
   }
