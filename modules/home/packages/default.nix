@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  namespace,
+  ...
+}: {
   home.packages = with pkgs; [
     alejandra
     asciinema

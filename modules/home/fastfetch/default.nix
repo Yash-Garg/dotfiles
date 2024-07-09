@@ -1,6 +1,12 @@
-_: {
+{pkgs, ...}: {
   programs.fastfetch = {
     enable = true;
+    package = pkgs.fastfetch.override {
+      x11Support = false;
+      waylandSupport = false;
+      rpmSupport = false;
+      vulkanSupport = false;
+    };
     settings = {
       display = {
         size = {
