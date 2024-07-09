@@ -26,6 +26,9 @@ in {
           [
             auto-profiles
             better-chapters
+            boss-key
+            repl
+            status-line
           ]
           ++ (with pkgs.mpvScripts; [
             acompressor

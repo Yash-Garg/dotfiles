@@ -74,6 +74,9 @@ in
     mpv-scripts = with ./packages/mpv-scripts; {
       auto-profiles = callPackage ./auto-profiles {};
       better-chapters = callPackage ./better-chapters {};
+      boss-key = callPackage ./boss-key {};
+      repl = callPackage ./repl {};
+      status-line = callPackage ./status-line {};
     };
     tiling-shell = callPackage ./packages/tiling-shell {};
   }
