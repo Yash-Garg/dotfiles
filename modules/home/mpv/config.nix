@@ -10,10 +10,6 @@
   vulkan-queue-count = 1;
   hwdev = "nvdec";
 
-  # Shaders
-  # glsl-shader = "~~/shaders/SSimDownscaler.glsl";
-  # glsl-shader = "~~/shaders/KrigBilateral.glsl";
-
   # Resizers
   scale = "ewa_lanczos";
   dscale = "ewa_lanczos";
@@ -37,15 +33,17 @@
   # Subtitles
   demuxer-mkv-subtitle-preroll = true;
   sub-ass-vsfilter-blur-compat = true;
+  stretch-image-subs-to-screen = true;
   sub-fix-timing = true;
   sub-font = "Cabin";
-  sub-font-size = 50;
-  sub-border-size = 2.8;
+  sub-font-size = 20;
+  sub-border-size = 2;
   sub-auto = "fuzzy";
   sub-bold = true;
+  sub-scale = 0.6;
 
   # Window
-  osd-font = "Noto Sans";
+  osd-font = "Cabin";
   title = "\${media-title} [\${time-pos}\${!duration==0: / \${duration}}]";
   force-window-position = true;
   autofit-larger = "100%x85%";

@@ -15,8 +15,15 @@ in {
   config = mkIf cfg.enable {
     programs.mpv = {
       enable = true;
-      bindings = import ./bindings.nix;
       config = import ./config.nix;
+      bindings = {
+        BS = "cycle pause";
+        SPACE = "cycle pause";
+        UP = "add volume 2";
+        DOWN = "add volume -2";
+        b = "cycle audio";
+        v = "cycle sub";
+      };
       package = pkgs.mpv-unwrapped.wrapper {
         mpv = pkgs.mpv-unwrapped.override {
           ffmpeg = pkgs.ffmpeg-full;
@@ -36,7 +43,7 @@ in {
             autoload
             mpv-playlistmanager
             reload
-            sponsorblock
+            uosc
           ]);
       };
       scriptOpts = {
@@ -48,6 +55,7 @@ in {
           boxmaxchars = 140;
           boxalpha = 100;
         };
+        uosc = {};
       };
     };
 
@@ -72,7 +80,6 @@ in {
       in
         pkgs.stdenvNoCC.mkDerivation {
           name = "mpv-shaders";
-
           dontUnpack = true;
 
           buildPhase = ''
