@@ -15,8 +15,12 @@ stdenvNoCC.mkDerivation rec {
   };
 
   installPhase = ''
+    runHook preInstall
+
     mkdir -p $out/share/mpv/scripts
     cp scripts/${pname}.lua $out/share/mpv/scripts
+
+    runHook postInstall
   '';
 
   passthru.scriptName = "${pname}.lua";
