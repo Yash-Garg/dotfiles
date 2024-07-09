@@ -38,24 +38,6 @@ let
       # To make "nix-prefetch-url" work.
       urls = [url];
     };
-
-  getFlake = name:
-    with (fromJSON (readFile ./flake.lock)).nodes.${name}.locked; {
-      inherit rev;
-      outPath = fetchTarball {
-        url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
-        sha256 = narHash;
-      };
-    };
-
-  getRawFlake = name:
-    with (fromJSON (readFile ./flake.lock)).nodes.${name}.locked; {
-      inherit rev;
-      outPath = fetchurl {
-        inherit url;
-        sha256 = narHash;
-      };
-    };
 in
   {
     system ? currentSystem,
@@ -65,18 +47,10 @@ in
           inherit system;
         };
       },
-    fenix ? getFlake "fenix",
-    rust-manifest ? getRawFlake "rust-manifest",
   }: let
     callPackage = pkg: pkgs.callPackage pkg;
   in {
     monolisa-nerdfonts = callPackage ./packages/monolisa-nerdfonts {};
-    mpv-scripts = with ./packages/mpv-scripts; {
-      auto-profiles = callPackage ./auto-profiles {};
-      better-chapters = callPackage ./better-chapters {};
-      boss-key = callPackage ./boss-key {};
-      repl = callPackage ./repl {};
-      status-line = callPackage ./status-line {};
-    };
+    mpv-scripts = callPackage ./packages/mpv-scripts {};
     tiling-shell = callPackage ./packages/tiling-shell {};
   }
