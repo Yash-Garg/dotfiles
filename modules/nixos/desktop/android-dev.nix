@@ -8,6 +8,7 @@
   cfg = config.profiles.desktop;
   defaultJdk = pkgs.openjdk17;
   toolchains = [
+    pkgs.openjdk11
     pkgs.openjdk22
     defaultJdk
   ];
@@ -25,21 +26,25 @@ in {
       kotlin
     ];
 
-    programs.java = {
-      enable = true;
-      package = defaultJdk;
-      binfmt = false;
+    programs = {
+      adb.enable = true;
+      java = {
+        enable = true;
+        package = defaultJdk;
+        binfmt = false;
+      };
+      nix-ld.enable = true;
+      nix-ld.libraries = with pkgs; [
+        icu
+        openssl
+        stdenv.cc.cc
+        zlib
+      ];
     };
 
     snowfallorg.users.yash.home.config = {
       programs.gradle = {
         enable = true;
-        package = pkgs.callPackage (pkgs.gradleGen {
-          version = "8.8";
-          nativeVersion = "0.22-milestone-26";
-          hash = "sha256-pLQVhgH4Y2ze6rCb12r7ZAAwu1sUSq/iYaXorwJ9xhI=";
-          defaultJava = defaultJdk;
-        }) {};
         settings = {
           "org.gradle.caching" = true;
           "org.gradle.parallel" = true;
