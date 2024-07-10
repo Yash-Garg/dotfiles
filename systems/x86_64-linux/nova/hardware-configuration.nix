@@ -68,6 +68,11 @@ in {
     fsType = "vfat";
   };
 
+  fileSystems."/run/media/yash/sshd" = {
+    device = "/dev/disk/by-uuid/7838708038703F66";
+    fsType = "ntfs";
+  };
+
   swapDevices = [
     {device = "/dev/disk/by-uuid/3ab3e2f9-53e0-4de7-8052-4ce14c67df22";}
   ];
