@@ -31,6 +31,7 @@ in {
             bitwarden
             darkreader
             multi-account-containers
+            raindropio
             sponsorblock
             ublock-origin
             (buildFirefoxXpiAddon {
@@ -54,6 +55,31 @@ in {
             force = true;
             default = "Google";
             privateDefault = "Google";
+            engines = {
+              "Bing".metaData.hidden = true;
+              "DuckDuckGo".metaData.hidden = true;
+              "Wikipedia (en)".metaData.hidden = true;
+
+              "Nix Packages" = {
+                urls = [
+                  {
+                    template = "https://search.nixos.org/packages";
+                    params = [
+                      {
+                        name = "channel";
+                        value = "unstable";
+                      }
+                      {
+                        name = "query";
+                        value = "{searchTerms}";
+                      }
+                    ];
+                  }
+                ];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = ["@np"];
+              };
+            };
           };
           settings = import ./settings.nix;
           userChrome = ''

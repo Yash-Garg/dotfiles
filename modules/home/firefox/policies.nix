@@ -14,4 +14,14 @@
   NoDefaultBookmarks = true;
   OfferToSaveLogins = false;
   OfferToSaveLoginsDefault = false;
+  Permissions.Notifications.Allow = [];
+  PictureInPicture = false;
+  UserMessaging = {
+    ExtensionRecommendations = false;
+    FeatureRecommendations = false;
+    UrlbarInterventions = false;
+    SkipOnboarding = true;
+    MoreFromMozilla = false;
+    Locked = true;
+  };
 }
