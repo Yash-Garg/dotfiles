@@ -45,6 +45,10 @@
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
     snowfall-lib.inputs.flake-utils-plus.follows = "flake-utils-plus";
 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+    spicetify-nix.inputs.flake-compat.follows = "flake-compat";
+
     stylix.url = "github:danth/stylix";
     stylix.inputs.flake-compat.follows = "flake-compat";
     stylix.inputs.home-manager.follows = "home-manager";
@@ -79,12 +83,13 @@
 
       systems.modules.nixos = with inputs; [
         nix-topology.nixosModules.default
-        stylix.nixosModules.stylix
         nixos-wsl.nixosModules.default
+        stylix.nixosModules.stylix
       ];
 
       homes.modules = with inputs; [
         nix-index-database.hmModules.nix-index
+        spicetify-nix.homeManagerModules.default
       ];
 
       overlays = with inputs; [
