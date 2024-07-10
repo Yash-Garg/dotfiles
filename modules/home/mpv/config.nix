@@ -9,6 +9,7 @@
   vulkan-async-transfer = true;
   vulkan-queue-count = 1;
   hwdev = "nvdec";
+  video-sync = "display-resample";
 
   # Resizers
   scale = "ewa_lanczos";
@@ -40,10 +41,13 @@
   sub-border-size = 2;
   sub-auto = "fuzzy";
   sub-bold = true;
-  sub-scale = 0.6;
+  sub-scale = 0.5;
 
   # Window
-  osd-font = "Cabin";
+  osc = false;
+  osd-bar = false;
+  border = false;
+  osd-font = "CaskaydiaCove Nerd Font Mono";
   title = "\${media-title} [\${time-pos}\${!duration==0: / \${duration}}]";
   force-window-position = true;
   autofit-larger = "100%x85%";

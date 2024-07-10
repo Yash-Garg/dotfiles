@@ -47,15 +47,24 @@ in {
           ]);
       };
       scriptOpts = {
-        osc = {
-          deadzonesize = 0.75;
-          scalewindowed = 0.85;
-          scalefullscreen = 0.95;
-          scaleforcedwindow = 1.5;
-          boxmaxchars = 140;
-          boxalpha = 100;
+        autoload = {
+          disabled = false;
+          images = false;
+          videos = true;
+          audio = true;
+          ignore_hidden = true;
         };
-        uosc = {};
+        uosc = {
+          color = "foreground=ffffff,foreground_text=ffffff,background=000000,background_text=ffffff,curtain=111111,success=a5e075,error=ff616e";
+          controls = "menu,gap,subtitles,<has_many_audio>audio,<has_many_video>video,<has_many_edition>editions,<stream>stream-quality,gap,space,play-pause,space,gap,fullscreen";
+          controls_persistency = "paused,idle";
+          font_bold = true;
+          timeline_persistency = "paused,idle";
+          timeline_style = "bar";
+          top_bar_alt_title = "\${filename}";
+          top_bar_persistency = "paused,idle";
+          volume = "left";
+        };
       };
     };
 
