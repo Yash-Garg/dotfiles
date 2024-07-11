@@ -8,6 +8,7 @@ _: {
   profiles.firefox.enable = true;
   profiles.mpv.enable = true;
   profiles.spotify.enable = false;
+  profiles.obs.enable = true;
   profiles.oh-my-posh.enable = true;
 
   shells.zsh.enable = true;
