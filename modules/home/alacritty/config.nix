@@ -43,7 +43,7 @@
   };
 
   font = {
-    size = 15;
+    size = 14;
 
     normal = {
       family = "CaskaydiaCove Nerd Font Mono";
@@ -53,6 +53,16 @@
     bold = {
       family = "CaskaydiaCove Nerd Font Mono";
       style = "Bold";
+    };
+
+    bold_italic = {
+      family = "CaskaydiaCove Nerd Font Mono";
+      style = "Bold Italic";
+    };
+
+    italic = {
+      family = "CaskaydiaCove Nerd Font Mono";
+      style = "Italic";
     };
   };
 
