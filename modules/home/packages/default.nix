@@ -13,6 +13,7 @@
     delta
     direnv
     dnscontrol
+    dogdns
     du-dust
     erdtree
     fd
@@ -27,6 +28,7 @@
     ripgrep
     scc
     unzip
+    whois
     zip
   ];
 }
