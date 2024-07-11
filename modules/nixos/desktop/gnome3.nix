@@ -118,6 +118,10 @@ in {
     environment = {
       gnome.excludePackages = with pkgs;
       with pkgs.gnome; [
+        atomix
+        epiphany
+        evince
+        geary
         gnome-calendar
         gnome-characters
         gnome-clocks
@@ -130,16 +134,12 @@ in {
         gnome-text-editor
         gnome-tour
         gnome-weather
-        snapshot
-        simple-scan
-        epiphany
-        geary
-        evince
-        totem
-        tali
-        iagno
         hitori
-        atomix
+        iagno
+        simple-scan
+        snapshot
+        tali
+        totem
         yelp
       ];
 
