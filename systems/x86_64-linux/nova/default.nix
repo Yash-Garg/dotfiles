@@ -11,10 +11,10 @@
       jdks = [openjdk17];
       withWaylandGLFW = config.profiles.desktop.gnome3.enable;
     })
-    qbittorrent
     slack
     spotify
     telegram-desktop
+    transmission_4-gtk
     vesktop
     vscode
   ];
