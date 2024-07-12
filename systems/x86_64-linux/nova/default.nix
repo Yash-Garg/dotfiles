@@ -25,12 +25,20 @@ in {
 
   topology.self.name = "Desktop";
 
-  profiles.desktop.enable = true;
-  profiles.desktop.android-dev.enable = true;
-  profiles.desktop.gnome3.enable = true;
-  profiles.desktop.ssh.enable = true;
-  profiles.samba.enable = true;
-  profiles.tailscale.enable = true;
+  profiles = {
+    desktop = {
+      enable = true;
+      networkHosts = {
+        "192.168.29.245" = ["pi"];
+      };
+      android-dev.enable = true;
+      gnome3.enable = true;
+      ssh.enable = true;
+    };
+
+    samba.enable = true;
+    tailscale.enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";

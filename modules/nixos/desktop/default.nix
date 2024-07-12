@@ -5,7 +5,14 @@
   ...
 }: let
   cfg = config.profiles.desktop;
-  inherit (lib) mkDefault mkEnableOption mkIf;
+  inherit
+    (lib)
+    mkDefault
+    mkEnableOption
+    mkIf
+    mkOption
+    types
+    ;
 in {
   imports = [
     ./android-dev.nix
@@ -16,6 +23,13 @@ in {
 
   options.profiles.desktop = {
     enable = mkEnableOption "Profile for desktop machines";
+
+    networkHosts = lib.mkOption {
+      type = types.attrsOf (types.listOf types.str);
+      description = ''
+        Locally defined maps of hostnames to IP addresses.
+      '';
+    };
   };
 
   config = mkIf cfg.enable {
@@ -63,6 +77,7 @@ in {
 
     networking = {
       hostName = "nova";
+      hosts = cfg.networkHosts;
 
       # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
       # (the default) this is the recommended approach. When using systemd-networkd it's
