@@ -8,10 +8,12 @@
     name = "yash";
   };
 
-  profiles.${namespace} = {starship.enable = true;};
-  shells.${namespace} = {bash.enable = true;};
-  programs.bash.profileExtra = "eval `keychain --eval --agents ssh git-ssh`";
+  profiles.${namespace} = {
+    keychain.enable = true;
+    starship.enable = true;
+  };
 
-  home.packages = [pkgs.keychain];
+  shells.${namespace} = {bash.enable = true;};
+
   home.stateVersion = "23.11";
 }

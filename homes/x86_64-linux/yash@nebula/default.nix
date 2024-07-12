@@ -8,10 +8,12 @@
     name = "yash";
   };
 
-  profiles.${namespace} = {oh-my-posh.enable = true;};
-  shells.${namespace} = {zsh.enable = true;};
-  programs.zsh.profileExtra = "eval `keychain --eval --agents ssh git-ssh`";
+  profiles.${namespace} = {
+    keychain.enable = true;
+    oh-my-posh.enable = true;
+  };
 
-  home.packages = [pkgs.keychain];
+  shells.${namespace} = {zsh.enable = true;};
+
   home.stateVersion = "23.11";
 }
