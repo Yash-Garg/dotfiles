@@ -1,4 +1,8 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   env = {
     TERM = "screen-256color";
   };
@@ -43,7 +47,7 @@
   };
 
   font = {
-    size = 14;
+    size = lib.mkDefault 14;
 
     normal = {
       family = "CaskaydiaCove Nerd Font Mono";
@@ -66,7 +70,16 @@
     };
   };
 
+  selection.save_to_clipboard = true;
+  shell = {
+    program = "${pkgs.tmux}/bin/tmux";
+    args = ["attach"];
+  };
+
   window = {
+    dynamic_padding = true;
+    startup_mode = "Windowed";
+
     dimensions = {
       columns = 160;
       lines = 45;

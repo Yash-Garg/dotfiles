@@ -14,7 +14,9 @@ in {
   config = mkIf cfg.enable {
     programs.alacritty = {
       enable = true;
-      settings = import ./config.nix;
+      settings = import ./config.nix {
+        inherit lib pkgs;
+      };
     };
   };
 }
