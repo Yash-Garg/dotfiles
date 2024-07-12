@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  namespace,
   ...
 }: let
   guiPkgs = with pkgs; [
@@ -9,7 +10,7 @@
     microsoft-edge-beta
     (prismlauncher.override {
       jdks = [openjdk17];
-      withWaylandGLFW = config.profiles.desktop.gnome3.enable;
+      withWaylandGLFW = config.profiles.${namespace}.desktop.gnome3.enable;
     })
     slack
     spotify
@@ -25,7 +26,7 @@ in {
 
   topology.self.name = "Desktop";
 
-  profiles = {
+  profiles.${namespace} = {
     desktop = {
       enable = true;
       networkHosts = {

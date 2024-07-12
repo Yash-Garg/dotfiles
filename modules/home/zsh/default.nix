@@ -1,12 +1,13 @@
 {
   config,
   lib,
+  namespace,
   ...
 }: let
-  cfg = config.shells.zsh;
+  cfg = config.shells.${namespace}.zsh;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.shells.zsh = {
+  options.shells.${namespace}.zsh = {
     enable = mkEnableOption "Zsh profile";
   };
 
@@ -28,8 +29,8 @@ in {
       atuin.enableZshIntegration = true;
       eza.enableZshIntegration = true;
       fzf.enableZshIntegration = true;
-      oh-my-posh.enableBashIntegration = config.profiles.oh-my-posh.enable;
-      starship.enableBashIntegration = config.profiles.starship.enable;
+      oh-my-posh.enableBashIntegration = config.profiles.${namespace}.oh-my-posh.enable;
+      starship.enableBashIntegration = config.profiles.${namespace}.starship.enable;
       zoxide.enableZshIntegration = true;
     };
   };

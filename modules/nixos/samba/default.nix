@@ -2,12 +2,13 @@
   config,
   lib,
   pkgs,
+  namespace,
   ...
 }: let
-  cfg = config.profiles.samba;
+  cfg = config.profiles.${namespace}.samba;
   inherit (lib) mkEnableOption mkIf mkOption;
 in {
-  options.profiles.samba = {
+  options.profiles.${namespace}.samba = {
     enable = mkEnableOption {description = "Whether to configure samba server";};
   };
 

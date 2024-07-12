@@ -1,13 +1,14 @@
 {
   config,
   lib,
+  namespace,
   ...
 }: let
-  cfg = config.profiles.starship;
+  cfg = config.profiles.${namespace}.starship;
   settings = builtins.readFile ./config.toml;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.starship = {
+  options.profiles.${namespace}.starship = {
     enable = mkEnableOption "Enable starship profile";
   };
 

@@ -2,9 +2,10 @@
   config,
   lib,
   pkgs,
+  namespace,
   ...
 }: let
-  cfg = config.services.tailscale-autoconnect;
+  cfg = config.services.${namespace}.tailscale-autoconnect;
   inherit
     (lib)
     mkEnableOption
@@ -13,7 +14,7 @@
     types
     ;
 in {
-  options.services.tailscale-autoconnect = {
+  options.services.${namespace}.tailscale-autoconnect = {
     enable = mkEnableOption {description = "Whether to configure the Tailscale autoconnect service";};
 
     authkeyFile = mkOption {

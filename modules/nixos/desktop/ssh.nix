@@ -2,12 +2,13 @@
   config,
   lib,
   pkgs,
+  namespace,
   ...
 }: let
-  cfg = config.profiles.desktop;
+  cfg = config.profiles.${namespace}.desktop;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.desktop.ssh = {
+  options.profiles.${namespace}.desktop.ssh = {
     enable = mkEnableOption "Setup SSH";
   };
 

@@ -1,12 +1,13 @@
 {
   config,
   lib,
+  namespace,
   ...
 }: let
-  cfg = config.shells.bash;
+  cfg = config.shells.${namespace}.bash;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.shells.bash = {
+  options.shells.${namespace}.bash = {
     enable = mkEnableOption "Bash profile";
   };
 
@@ -24,8 +25,8 @@ in {
       atuin.enableBashIntegration = true;
       eza.enableBashIntegration = true;
       fzf.enableBashIntegration = true;
-      oh-my-posh.enableBashIntegration = config.profiles.oh-my-posh.enable;
-      starship.enableBashIntegration = config.profiles.starship.enable;
+      oh-my-posh.enableBashIntegration = config.profiles.${namespace}.oh-my-posh.enable;
+      starship.enableBashIntegration = config.profiles.${namespace}.starship.enable;
       zoxide.enableBashIntegration = true;
     };
   };

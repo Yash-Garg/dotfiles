@@ -2,9 +2,10 @@
   config,
   pkgs,
   lib,
+  namespace,
   ...
 }: let
-  cfg = config.profiles.firefox;
+  cfg = config.profiles.${namespace}.firefox;
   css-hacks = pkgs.fetchFromGitHub {
     owner = "MrOtherGuy";
     repo = "firefox-csshacks";
@@ -13,7 +14,7 @@
   };
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.firefox = {
+  options.profiles.${namespace}.firefox = {
     enable = mkEnableOption "Enable firefox profile";
   };
 

@@ -1,10 +1,11 @@
 {
   config,
   pkgs,
+  namespace,
   ...
 }: let
   shellPath =
-    if config.shells.bash.enable
+    if config.shells.${namespace}.bash.enable
     then null
     else "${pkgs.zsh}/bin/zsh";
 in {

@@ -2,12 +2,13 @@
   config,
   pkgs,
   lib,
+  namespace,
   ...
 }: let
-  cfg = config.profiles.obs;
+  cfg = config.profiles.${namespace}.obs;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.obs = {
+  options.profiles.${namespace}.obs = {
     enable = mkEnableOption "Enable obs profile";
   };
 

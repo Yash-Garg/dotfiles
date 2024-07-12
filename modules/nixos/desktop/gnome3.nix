@@ -5,10 +5,10 @@
   pkgs,
   ...
 }: let
-  cfg = config.profiles.desktop;
+  cfg = config.profiles.${namespace}.desktop;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.profiles.desktop.gnome3 = {
+  options.profiles.${namespace}.desktop.gnome3 = {
     enable = mkEnableOption "Setup desktop with Gnome DE";
   };
 

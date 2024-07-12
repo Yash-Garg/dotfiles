@@ -1,17 +1,19 @@
-_: {
+{namespace, ...}: {
   snowfallorg.user = {
     enable = true;
     name = "yash";
   };
 
-  profiles.alacritty.enable = true;
-  profiles.firefox.enable = true;
-  profiles.mpv.enable = true;
-  profiles.spotify.enable = false;
-  profiles.obs.enable = true;
-  profiles.oh-my-posh.enable = true;
+  profiles.${namespace} = {
+    alacritty.enable = true;
+    firefox.enable = true;
+    mpv.enable = true;
+    spotify.enable = false;
+    obs.enable = true;
+    oh-my-posh.enable = true;
+  };
 
-  shells.zsh.enable = true;
+  shells.${namespace}.zsh.enable = true;
 
   home.stateVersion = "23.11";
 }

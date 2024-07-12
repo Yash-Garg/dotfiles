@@ -2,9 +2,10 @@
   config,
   lib,
   pkgs,
+  namespace,
   ...
 }: let
-  cfg = config.profiles.desktop;
+  cfg = config.profiles.${namespace}.desktop;
   inherit
     (lib)
     mkDefault
@@ -21,7 +22,7 @@ in {
     ./ssh.nix
   ];
 
-  options.profiles.desktop = {
+  options.profiles.${namespace}.desktop = {
     enable = mkEnableOption "Profile for desktop machines";
 
     networkHosts = lib.mkOption {
