@@ -69,7 +69,7 @@
 
   selection.save_to_clipboard = true;
   shell = {
-    program = "${pkgs.tmux}/bin/tmux";
+    program = "${lib.getExe pkgs.tmux}";
     args = [ "attach" ];
   };
 

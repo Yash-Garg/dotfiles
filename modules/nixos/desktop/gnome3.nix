@@ -76,6 +76,7 @@ in
               "unmess@ezix.org"
               "user-theme@gnome-shell-extensions.gcampax.github.com"
             ];
+            welcome-dialog-last-shown-version = "999999999";
           };
 
           "org/gnome/shell/extensions/dash-to-dock" = {
@@ -96,9 +97,40 @@ in
             transparency-mode = "fixed";
           };
 
+          "org/gnome/desktop/wm/keybindings" = {
+            close = [ "<Super>q" ];
+          };
+
           "org/gnome/desktop/wm/preferences" = {
             resize-with-right-button = true;
             mouse-button-modifier = "<Alt>";
+          };
+
+          "org/gnome/settings-daemon/plugins/media-keys" = {
+            area-screenshot-clip = [ "<Shift><Super>s" ];
+            custom-keybindings = [
+              "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+              "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+              "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+            ];
+          };
+
+          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+            binding = "<Super>t";
+            command = "${lib.getExe pkgs.alacritty}";
+            name = "open-terminal";
+          };
+
+          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+            binding = "<Super>e";
+            command = "nautilus";
+            name = "open-file-manager";
+          };
+
+          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+            binding = "<Super><Shift>s";
+            command = "${lib.getExe pkgs.gnome-screenshot} -a";
+            name = "open-screenshot-tool";
           };
 
           "org/gnome/desktop/background" = {
@@ -106,9 +138,26 @@ in
             picture-uri-dark = "file://${config.stylix.image}";
           };
 
+          "org/gnome/shell/app-switcher" = {
+            current-workspace-only = false;
+          };
+
+          "org/gnome/mutter" = {
+            edge-tiling = true;
+            dynamic-workspaces = true;
+            workspaces-only-on-primary = true;
+          };
+
           "org/gnome/desktop/interface" = {
-            gtk-theme = "adw-gtk3-dark";
+            clock-show-seconds = false;
+            clock-show-weekday = true;
             color-scheme = if config.stylix.polarity == "dark" then "prefer-dark" else "default";
+            enable-hot-corners = false;
+            font-antialiasing = "rgba";
+            font-hinting = "full";
+            gtk-enable-primary-paste = false;
+            gtk-theme = "adw-gtk3-dark";
+            monospace-font-name = config.stylix.fonts.monospace.name;
           };
         };
       };
