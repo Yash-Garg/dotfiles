@@ -32,6 +32,7 @@ in
       fzf.enableBashIntegration = true;
       oh-my-posh.enableBashIntegration = config.profiles.${namespace}.oh-my-posh.enable;
       starship.enableBashIntegration = config.profiles.${namespace}.starship.enable;
+      wezterm.enableBashIntegration = config.profiles.${namespace}.wezterm.enable;
       zoxide.enableBashIntegration = true;
     };
   };

@@ -31,8 +31,9 @@ in
       atuin.enableZshIntegration = true;
       eza.enableZshIntegration = true;
       fzf.enableZshIntegration = true;
-      oh-my-posh.enableBashIntegration = config.profiles.${namespace}.oh-my-posh.enable;
-      starship.enableBashIntegration = config.profiles.${namespace}.starship.enable;
+      oh-my-posh.enableZshIntegration = config.profiles.${namespace}.oh-my-posh.enable;
+      starship.enableZshIntegration = config.profiles.${namespace}.starship.enable;
+      wezterm.enableZshIntegration = config.profiles.${namespace}.wezterm.enable;
       zoxide.enableZshIntegration = true;
     };
   };

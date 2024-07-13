@@ -12,6 +12,7 @@
     spotify.enable = false;
     obs.enable = true;
     oh-my-posh.enable = true;
+    wezterm.enable = true;
   };
 
   shells.${namespace} = {
