@@ -4,7 +4,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    alejandra
     asciinema
     aria
     cachix
@@ -24,6 +23,7 @@
     ijq
     just
     jq
+    nixfmt-rfc-style
     ookla-speedtest
     ripgrep
     scc

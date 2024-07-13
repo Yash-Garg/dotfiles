@@ -98,6 +98,8 @@
       ];
 
       outputs-builder = channels: {
+        formatter = channels.nixpkgs.nixfmt-rfc-style;
+
         packages = {
           macbook = inputs.self.darwinConfigurations.trinity.system;
         };
