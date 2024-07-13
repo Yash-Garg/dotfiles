@@ -1,15 +1,16 @@
+{ pkgs, namespace, ... }:
 {
-  pkgs,
-  namespace,
-  ...
-}: {
   snowfallorg.user = {
     enable = true;
     name = "yash";
   };
 
-  profiles.${namespace} = {oh-my-posh.enable = true;};
-  shells.${namespace} = {zsh.enable = true;};
+  profiles.${namespace} = {
+    oh-my-posh.enable = true;
+  };
+  shells.${namespace} = {
+    zsh.enable = true;
+  };
 
   home.packages = with pkgs; [
     apktool

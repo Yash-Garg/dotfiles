@@ -8,7 +8,11 @@ _: _final: prev: {
   });
 
   nerdfonts = prev.nerdfonts.override {
-    fonts = ["CascadiaCode" "GeistMono" "JetBrainsMono"];
+    fonts = [
+      "CascadiaCode"
+      "GeistMono"
+      "JetBrainsMono"
+    ];
   };
 
   slack = prev.slack.overrideAttrs (prevAttrs: {
@@ -24,5 +28,5 @@ _: _final: prev: {
       '';
   });
 
-  vesktop = prev.vesktop.override {withSystemVencord = false;};
+  vesktop = prev.vesktop.override { withSystemVencord = false; };
 }

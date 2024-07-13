@@ -1,8 +1,5 @@
+{ lib, pkgs, ... }:
 {
-  lib,
-  pkgs,
-  ...
-}: {
   env = {
     TERM = "screen-256color";
   };
@@ -73,7 +70,7 @@
   selection.save_to_clipboard = true;
   shell = {
     program = "${pkgs.tmux}/bin/tmux";
-    args = ["attach"];
+    args = [ "attach" ];
   };
 
   window = {

@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   # dots = pkgs.fetchFromGitHub {
   #   owner = "Yash-Garg";
   #   repo = "dotfiles";
@@ -6,7 +7,8 @@
   #   sha256 = "sha256-WSaQefU5z1Phix5Qj5y86KFTEYDU6+rpPZdlCyxAvvk=";
   # };
   dots = ./../../..;
-in {
+in
+{
   home.file = {
     ".nanorc".text = ''
       set tabsize 4

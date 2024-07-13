@@ -1,7 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.eza = {
     enable = true;
     icons = false;
-    extraOptions = ["--all"];
+    extraOptions = [ "--all" ];
   };
 }

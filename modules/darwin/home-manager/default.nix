@@ -1,3 +1,1 @@
-_: {
-  home-manager.useGlobalPkgs = true;
-}
+_: { home-manager.useGlobalPkgs = true; }

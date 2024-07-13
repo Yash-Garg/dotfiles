@@ -4,10 +4,12 @@
   lib,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.alacritty;
   inherit (lib) mkEnableOption mkIf;
-in {
+in
+{
   options.profiles.${namespace}.alacritty = {
     enable = mkEnableOption "Enable alacritty profile";
   };
@@ -15,9 +17,7 @@ in {
   config = mkIf cfg.enable {
     programs.alacritty = {
       enable = true;
-      settings = import ./config.nix {
-        inherit lib pkgs;
-      };
+      settings = import ./config.nix { inherit lib pkgs; };
     };
   };
 }

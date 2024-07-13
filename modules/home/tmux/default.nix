@@ -3,12 +3,11 @@
   pkgs,
   namespace,
   ...
-}: let
-  shellPath =
-    if config.shells.${namespace}.bash.enable
-    then null
-    else "${pkgs.zsh}/bin/zsh";
-in {
+}:
+let
+  shellPath = if config.shells.${namespace}.bash.enable then null else "${pkgs.zsh}/bin/zsh";
+in
+{
   programs.tmux = {
     enable = true;
     mouse = true;

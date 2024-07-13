@@ -1,8 +1,5 @@
+{ pkgs, namespace, ... }:
 {
-  pkgs,
-  namespace,
-  ...
-}: {
   snowfallorg.user = {
     enable = true;
     name = "yash";
@@ -13,7 +10,9 @@
     oh-my-posh.enable = true;
   };
 
-  shells.${namespace} = {zsh.enable = true;};
+  shells.${namespace} = {
+    zsh.enable = true;
+  };
 
   home.stateVersion = "23.11";
 }

@@ -4,18 +4,19 @@
   pkgs,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.services.${namespace}.tailscale-autoconnect;
-  inherit
-    (lib)
+  inherit (lib)
     mkEnableOption
     mkIf
     mkOption
     types
     ;
-in {
+in
+{
   options.services.${namespace}.tailscale-autoconnect = {
-    enable = mkEnableOption {description = "Whether to configure the Tailscale autoconnect service";};
+    enable = mkEnableOption { description = "Whether to configure the Tailscale autoconnect service"; };
 
     authkeyFile = mkOption {
       type = types.path;
@@ -25,8 +26,8 @@ in {
     extraOptions = mkOption {
       type = types.listOf types.str;
       description = "List of extra flags passed to the `tailscale` invocation";
-      default = [];
-      example = ["--ssh"];
+      default = [ ];
+      example = [ "--ssh" ];
     };
   };
 
@@ -43,7 +44,7 @@ in {
         "network-pre.target"
         "tailscale.service"
       ];
-      wantedBy = ["multi-user.target"];
+      wantedBy = [ "multi-user.target" ];
 
       # set this service as a oneshot job
       serviceConfig.Type = "oneshot";

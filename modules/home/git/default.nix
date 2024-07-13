@@ -10,8 +10,6 @@ _: {
       ".vscode/"
       ".idea/"
     ];
-    includes = [
-      {path = "$HOME/.gitconfig";}
-    ];
+    includes = [ { path = "$HOME/.gitconfig"; } ];
   };
 }

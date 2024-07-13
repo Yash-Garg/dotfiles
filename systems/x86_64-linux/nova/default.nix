@@ -3,13 +3,14 @@
   pkgs,
   namespace,
   ...
-}: let
+}:
+let
   guiPkgs = with pkgs; [
     google-chrome
     jetbrains.idea-ultimate
     microsoft-edge-beta
     (prismlauncher.override {
-      jdks = [openjdk17];
+      jdks = [ openjdk17 ];
       withWaylandGLFW = config.profiles.${namespace}.desktop.gnome3.enable;
     })
     slack
@@ -19,10 +20,9 @@
     vesktop
     vscode
   ];
-in {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+in
+{
+  imports = [ ./hardware-configuration.nix ];
 
   topology.self.name = "Desktop";
 
@@ -30,7 +30,7 @@ in {
     desktop = {
       enable = true;
       networkHosts = {
-        "192.168.29.245" = ["pi"];
+        "192.168.29.245" = [ "pi" ];
       };
       android-dev.enable = true;
       gnome3.enable = true;
@@ -47,10 +47,14 @@ in {
   users.users.yash = {
     isNormalUser = true;
     description = "Yash Garg";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-    packages = with pkgs;
+    packages =
+      with pkgs;
       [
         apktool
         ddcutil

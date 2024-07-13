@@ -1,8 +1,5 @@
+{ pkgs, namespace, ... }:
 {
-  pkgs,
-  namespace,
-  ...
-}: {
   snowfallorg.user = {
     enable = true;
     name = "yash";
@@ -13,7 +10,9 @@
     starship.enable = true;
   };
 
-  shells.${namespace} = {bash.enable = true;};
+  shells.${namespace} = {
+    bash.enable = true;
+  };
 
   home.stateVersion = "23.11";
 }

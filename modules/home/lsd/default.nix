@@ -3,10 +3,12 @@
   lib,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.lsd;
   inherit (lib) mkEnableOption mkIf;
-in {
+in
+{
   options.profiles.${namespace}.lsd = {
     enable = mkEnableOption "Enable lsd profile";
   };

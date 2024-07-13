@@ -2,10 +2,8 @@ let
   inherit (builtins) currentSystem fromJSON readFile;
 
   # Copied from https://github.com/edolstra/flake-compat/pull/44/files
-  fetchurl = {
-    url,
-    sha256,
-  }:
+  fetchurl =
+    { url, sha256 }:
     derivation {
       builder = "builtin:fetchurl";
 
@@ -36,22 +34,23 @@ let
       ];
 
       # To make "nix-prefetch-url" work.
-      urls = [url];
+      urls = [ url ];
     };
 in
-  {
-    system ? currentSystem,
-    pkgs ?
-      import (getFlake "nixpkgs") {
-        localSystem = {
-          inherit system;
-        };
-      },
-  }: let
-    callPackage = pkg: pkgs.callPackage pkg;
-  in {
-    monolisa-nerdfonts = callPackage ./packages/monolisa-nerdfonts {};
-    mpv-scripts = callPackage ./packages/mpv-scripts {};
-    termsnap = callPackage ./packages/termsnap {};
-    tiling-shell = callPackage ./packages/tiling-shell {};
-  }
+{
+  system ? currentSystem,
+  pkgs ? import (getFlake "nixpkgs") {
+    localSystem = {
+      inherit system;
+    };
+  },
+}:
+let
+  callPackage = pkg: pkgs.callPackage pkg;
+in
+{
+  monolisa-nerdfonts = callPackage ./packages/monolisa-nerdfonts { };
+  mpv-scripts = callPackage ./packages/mpv-scripts { };
+  termsnap = callPackage ./packages/termsnap { };
+  tiling-shell = callPackage ./packages/tiling-shell { };
+}

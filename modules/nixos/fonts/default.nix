@@ -1,8 +1,5 @@
+{ pkgs, namespace, ... }:
 {
-  pkgs,
-  namespace,
-  ...
-}: {
   fonts = {
     packages = [
       pkgs.cabin

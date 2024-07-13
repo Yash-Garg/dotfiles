@@ -3,10 +3,12 @@
   lib,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.tailscale;
   inherit (lib) mkEnableOption mkIf;
-in {
+in
+{
   options.profiles.${namespace}.tailscale = {
     enable = mkEnableOption "Tailscale profile";
   };

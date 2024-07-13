@@ -3,10 +3,12 @@
   lib,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.shells.${namespace}.bash;
   inherit (lib) mkEnableOption mkIf;
-in {
+in
+{
   options.shells.${namespace}.bash = {
     enable = mkEnableOption "Bash profile";
   };
@@ -18,7 +20,10 @@ in {
         enableCompletion = true;
         historySize = 10000;
         historyFile = "$HOME/.bash_history";
-        historyControl = ["ignorespace" "erasedups"];
+        historyControl = [
+          "ignorespace"
+          "erasedups"
+        ];
         initExtra = "source $HOME/.shell-init";
       };
 

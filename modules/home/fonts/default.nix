@@ -1,3 +1,1 @@
-_: {
-  fonts.fontconfig.enable = true;
-}
+_: { fonts.fontconfig.enable = true; }

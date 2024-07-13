@@ -4,7 +4,8 @@
   lib,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.firefox;
   css-hacks = pkgs.fetchFromGitHub {
     owner = "MrOtherGuy";
@@ -13,7 +14,8 @@
     sha256 = "sha256-5TLKrsW+yLzhjHMPXZJ+b4LprtZ4pXdkV9yB0LaVDUk=";
   };
   inherit (lib) mkEnableOption mkIf;
-in {
+in
+{
   options.profiles.${namespace}.firefox = {
     enable = mkEnableOption "Enable firefox profile";
   };
@@ -21,9 +23,7 @@ in {
   config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
-      package = pkgs.wrapFirefox (
-        pkgs.firefox-unwrapped.override {pipewireSupport = true;}
-      ) {};
+      package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
       policies = import ./policies.nix;
       profiles = {
         yash = {
@@ -41,7 +41,9 @@ in {
               addonId = "{24aca621-5029-4aa4-95a9-81d4bd3eba76}";
               url = "https://addons.mozilla.org/firefox/downloads/file/3888121/dark_space_full_transparent-1.3.xpi";
               sha256 = "sha256-63emiqUdRBPIYnqXX7aftmNIs4TF5aWXKj0Fn/xnTng=";
-              meta = with lib; {platforms = platforms.all;};
+              meta = with lib; {
+                platforms = platforms.all;
+              };
             })
             (buildFirefoxXpiAddon {
               pname = "material-icons-for-github";
@@ -49,7 +51,9 @@ in {
               addonId = "{eac6e624-97fa-4f28-9d24-c06c9b8aa713}";
               url = "https://addons.mozilla.org/firefox/downloads/file/4315349/material_icons_for_github-1.8.16.xpi";
               sha256 = "sha256-rPPDBHrH8VEwCRVUZ4nES2TMw5wyj/wALOl4RipfS5Q=";
-              meta = with lib; {platforms = platforms.all;};
+              meta = with lib; {
+                platforms = platforms.all;
+              };
             })
           ];
           search = {
@@ -78,7 +82,7 @@ in {
                   }
                 ];
                 icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-                definedAliases = ["@np"];
+                definedAliases = [ "@np" ];
               };
             };
           };

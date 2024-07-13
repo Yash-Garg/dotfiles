@@ -1,15 +1,12 @@
+{ pkgs, inputs, ... }:
 {
-  pkgs,
-  inputs,
-  ...
-}: {
   users.users.yash = {
     name = "yash";
     home = "/Users/yash";
   };
 
   environment = {
-    pathsToLink = ["/share/zsh"];
+    pathsToLink = [ "/share/zsh" ];
     variables = {
       LANG = "en_US.UTF-8";
     };

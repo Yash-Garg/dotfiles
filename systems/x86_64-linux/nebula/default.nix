@@ -1,18 +1,13 @@
+{ config, pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./wsl.nix
-  ];
+  imports = [ ./wsl.nix ];
 
   topology.self.name = "WSL";
 
   time.timeZone = "Asia/Kolkata";
 
   environment = {
-    pathsToLink = ["/share/zsh"];
+    pathsToLink = [ "/share/zsh" ];
     variables = {
       LANG = "en_US.UTF-8";
     };
@@ -24,8 +19,11 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-    extraGroups = ["wheel" "docker"];
-    packages = [pkgs.wget];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
+    packages = [ pkgs.wget ];
   };
 
   programs.nix-ld = {

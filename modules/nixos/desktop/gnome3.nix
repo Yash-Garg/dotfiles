@@ -4,10 +4,12 @@
   namespace,
   pkgs,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.desktop;
   inherit (lib) mkEnableOption mkIf;
-in {
+in
+{
   options.profiles.${namespace}.desktop.gnome3 = {
     enable = mkEnableOption "Setup desktop with Gnome DE";
   };
@@ -20,7 +22,7 @@ in {
 
       gnome.gnome-keyring.enable = true;
 
-      udev.packages = with pkgs; [gnome.gnome-settings-daemon];
+      udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
       xserver = {
         # Enable the GNOME Desktop Environment.
@@ -106,42 +108,41 @@ in {
 
           "org/gnome/desktop/interface" = {
             gtk-theme = "adw-gtk3-dark";
-            color-scheme =
-              if config.stylix.polarity == "dark"
-              then "prefer-dark"
-              else "default";
+            color-scheme = if config.stylix.polarity == "dark" then "prefer-dark" else "default";
           };
         };
       };
     };
 
     environment = {
-      gnome.excludePackages = with pkgs;
-      with pkgs.gnome; [
-        atomix
-        epiphany
-        evince
-        geary
-        gnome-calendar
-        gnome-characters
-        gnome-clocks
-        gnome-connections
-        gnome-console
-        gnome-contacts
-        gnome-initial-setup
-        gnome-maps
-        gnome-music
-        gnome-text-editor
-        gnome-tour
-        gnome-weather
-        hitori
-        iagno
-        simple-scan
-        snapshot
-        tali
-        totem
-        yelp
-      ];
+      gnome.excludePackages =
+        with pkgs;
+        with pkgs.gnome;
+        [
+          atomix
+          epiphany
+          evince
+          geary
+          gnome-calendar
+          gnome-characters
+          gnome-clocks
+          gnome-connections
+          gnome-console
+          gnome-contacts
+          gnome-initial-setup
+          gnome-maps
+          gnome-music
+          gnome-text-editor
+          gnome-tour
+          gnome-weather
+          hitori
+          iagno
+          simple-scan
+          snapshot
+          tali
+          totem
+          yelp
+        ];
 
       # Enable Wayland compatibility workarounds within Nixpkgs
       variables = {

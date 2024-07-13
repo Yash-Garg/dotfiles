@@ -4,11 +4,18 @@
   lib,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.keychain;
   command = "eval `keychain --eval --agents ssh ${cfg.authKey}`";
-  inherit (lib) mkEnableOption mkIf mkOption types;
-in {
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    mkOption
+    types
+    ;
+in
+{
   options.profiles.${namespace}.keychain = {
     enable = mkEnableOption "Enable keychain integration";
 
@@ -20,7 +27,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [pkgs.keychain];
+    home.packages = [ pkgs.keychain ];
 
     programs = {
       bash.profileExtra = mkIf config.shells.${namespace}.bash.enable command;

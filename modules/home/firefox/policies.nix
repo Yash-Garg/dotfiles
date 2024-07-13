@@ -14,7 +14,7 @@
   NoDefaultBookmarks = true;
   OfferToSaveLogins = false;
   OfferToSaveLoginsDefault = false;
-  Permissions.Notifications.Allow = [];
+  Permissions.Notifications.Allow = [ ];
   PictureInPicture = false;
   UserMessaging = {
     ExtensionRecommendations = false;

@@ -8,10 +8,8 @@ _: {
       "ruby"
       "xcode-kotlin"
     ];
-    casks = [
-      "flutter"
-    ];
-    taps = [];
+    casks = [ "flutter" ];
+    taps = [ ];
     masApps = {
       "Amphetamine" = 937984704;
       "Bitwarden" = 1352778147;

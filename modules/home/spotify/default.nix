@@ -5,11 +5,13 @@
   inputs,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.spotify;
   spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
   inherit (lib) mkEnableOption mkIf;
-in {
+in
+{
   options.profiles.${namespace}.spotify = {
     enable = mkEnableOption "Enable Spotify";
   };

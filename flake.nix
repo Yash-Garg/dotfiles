@@ -55,20 +55,22 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs: let
-    eachSystem = inputs.nixpkgs.lib.genAttrs (import inputs.systems);
-    lib = inputs.snowfall-lib.mkLib {
-      inherit inputs;
-      src = ./.;
-      snowfall = {
-        namespace = "dots";
-        meta = {
-          name = "yash-nix-configs";
-          title = "Yash's Nix configurations";
+  outputs =
+    inputs:
+    let
+      eachSystem = inputs.nixpkgs.lib.genAttrs (import inputs.systems);
+      lib = inputs.snowfall-lib.mkLib {
+        inherit inputs;
+        src = ./.;
+        snowfall = {
+          namespace = "dots";
+          meta = {
+            name = "yash-nix-configs";
+            title = "Yash's Nix configurations";
+          };
         };
       };
-    };
-  in
+    in
     lib.mkFlake {
       inherit inputs;
       src = ./.;
@@ -76,9 +78,7 @@
       channels-config = {
         allowUnfree = true;
         cudaSupport = true;
-        permittedInsecurePackages = [
-          "electron-27.3.11"
-        ];
+        permittedInsecurePackages = [ "electron-27.3.11" ];
       };
 
       systems.modules.nixos = with inputs; [
@@ -107,7 +107,7 @@
         topology = import inputs.nix-topology {
           pkgs = channels.nixpkgs;
           modules = [
-            {inherit (inputs.self) nixosConfigurations;}
+            { inherit (inputs.self) nixosConfigurations; }
             ./topology.nix
           ];
         };
@@ -120,5 +120,5 @@
         rust.description = "devshell for a Rust project";
       };
     }
-    // {};
+    // { };
 }

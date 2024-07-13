@@ -19,59 +19,62 @@
   inputs.crane.inputs.flake-utils.follows = "flake-utils";
   inputs.crane.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = {
-    self,
-    nixpkgs,
-    crane,
-    devshell,
-    fenix,
-    flake-utils,
-    ...
-  }:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [devshell.overlays.default];
-      };
+  outputs =
+    {
+      self,
+      nixpkgs,
+      crane,
+      devshell,
+      fenix,
+      flake-utils,
+      ...
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ devshell.overlays.default ];
+        };
 
-      rustStable = (import fenix {inherit pkgs;}).fromToolchainFile {
-        file = ./toolchain.toml;
-        sha256 = "sha256-3St/9/UKo/6lz2Kfq2VmlzHyufduALpiIKaaKX4Pq0g==";
-      };
+        rustStable = (import fenix { inherit pkgs; }).fromToolchainFile {
+          file = ./toolchain.toml;
+          sha256 = "sha256-3St/9/UKo/6lz2Kfq2VmlzHyufduALpiIKaaKX4Pq0g==";
+        };
 
-      craneLib = (crane.mkLib pkgs).overrideToolchain rustStable;
+        craneLib = (crane.mkLib pkgs).overrideToolchain rustStable;
 
-      custom-package = craneLib.buildPackage {
-        src = craneLib.cleanCargoSource (craneLib.path ./.);
-        buildInputs = [];
-        nativeBuildInputs = [];
-        cargoClippyExtraArgs = "--all-targets -- --deny warnings";
-      };
-    in {
-      checks = {
-        inherit custom-package;
-      };
+        custom-package = craneLib.buildPackage {
+          src = craneLib.cleanCargoSource (craneLib.path ./.);
+          buildInputs = [ ];
+          nativeBuildInputs = [ ];
+          cargoClippyExtraArgs = "--all-targets -- --deny warnings";
+        };
+      in
+      {
+        checks = {
+          inherit custom-package;
+        };
 
-      packages.default = custom-package;
+        packages.default = custom-package;
 
-      apps.default = flake-utils.lib.mkApp {
-        drv = custom-package;
-      };
+        apps.default = flake-utils.lib.mkApp { drv = custom-package; };
 
-      devShells.default = pkgs.devshell.mkShell {
-        env = [
-          {
-            name = "DEVSHELL_NO_MOTD";
-            value = 1;
-          }
-        ];
+        devShells.default = pkgs.devshell.mkShell {
+          env = [
+            {
+              name = "DEVSHELL_NO_MOTD";
+              value = 1;
+            }
+          ];
 
-        packages = with pkgs; [
-          gcc
-          just
-          libressl
-          rustStable
-        ];
-      };
-    });
+          packages = with pkgs; [
+            gcc
+            just
+            libressl
+            rustStable
+          ];
+        };
+      }
+    );
 }

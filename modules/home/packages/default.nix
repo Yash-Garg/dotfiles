@@ -1,8 +1,5 @@
+{ pkgs, namespace, ... }:
 {
-  pkgs,
-  namespace,
-  ...
-}: {
   home.packages = with pkgs; [
     asciinema
     aria

@@ -1,7 +1,4 @@
-{
-  stdenvNoCC,
-  lib,
-}:
+{ stdenvNoCC, lib }:
 stdenvNoCC.mkDerivation {
   pname = "monolisa-nerdfonts";
   version = "2.015";

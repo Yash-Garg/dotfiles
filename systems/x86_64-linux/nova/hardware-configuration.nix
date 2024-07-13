@@ -7,17 +7,27 @@
   pkgs,
   modulesPath,
   ...
-}: let
+}:
+let
   driverPkg = config.boot.kernelPackages.nvidiaPackages.production.bin;
-in {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+in
+{
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel" "i2c-dev"];
-  boot.extraModulePackages = [];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "ahci"
+    "nvme"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [
+    "kvm-intel"
+    "i2c-dev"
+  ];
+  boot.extraModulePackages = [ ];
 
   hardware.i2c.enable = true;
 
@@ -29,7 +39,7 @@ in {
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -73,9 +83,7 @@ in {
     fsType = "ntfs";
   };
 
-  swapDevices = [
-    {device = "/dev/disk/by-uuid/3ab3e2f9-53e0-4de7-8052-4ce14c67df22";}
-  ];
+  swapDevices = [ { device = "/dev/disk/by-uuid/3ab3e2f9-53e0-4de7-8052-4ce14c67df22"; } ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -4,17 +4,18 @@
   pkgs,
   namespace,
   ...
-}: let
+}:
+let
   cfg = config.profiles.${namespace}.desktop;
-  inherit
-    (lib)
+  inherit (lib)
     mkDefault
     mkEnableOption
     mkIf
     mkOption
     types
     ;
-in {
+in
+{
   imports = [
     ./android-dev.nix
     ./earlyoom.nix
@@ -47,7 +48,7 @@ in {
         };
         grub = {
           enable = true;
-          devices = ["nodev"];
+          devices = [ "nodev" ];
           efiSupport = true;
           useOSProber = true;
           gfxmodeEfi = "2560x1440";
@@ -93,10 +94,14 @@ in {
         enable = true;
         allowPing = true;
         # always allow traffic from your Tailscale network
-        trustedInterfaces = ["tailscale0"];
+        trustedInterfaces = [ "tailscale0" ];
         # allow the Tailscale UDP port through the firewall
-        allowedUDPPorts = [config.services.tailscale.port];
-        allowedTCPPorts = [80 1313 3000];
+        allowedUDPPorts = [ config.services.tailscale.port ];
+        allowedTCPPorts = [
+          80
+          1313
+          3000
+        ];
       };
     };
 
