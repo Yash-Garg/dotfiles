@@ -5,46 +5,24 @@ pages:
         widgets:
           - type: calendar
 
-          - type: rss
-            limit: 10
-            collapse-after: 3
-            cache: 3h
-            feeds:
-              - url: https://fasterthanli.me/index.xml
-                title: fasterthanli.me
-              - url: https://xeiaso.net/blog.rss
-                title: xeiaso.net
-
-          - type: twitch-channels
-            channels:
-              - theprimeagen
-              - dreamsofcode_dev
-              - christitustech
-              - rakazone
-              - ohnePixel
-              - togglebit
-              - tarik
-
-      - size: full
-        widgets:
-          - type: hacker-news
-
-          - type: videos
-            channels:
-              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
-              - UCZNhwA1B5YqiY1nLzmM0ZRg # Christian Lempa
-              - UCOk-gHyjcWZNj3Br4oxwh0A # Techno Tim
-              - UC5--wS0Ljbin1TjWQX6eafA # bigboxSWE
-              - UCBJycsmduvYEL83R_U4JriQ # MKBHD
-
-          - type: reddit
-            subreddit: selfhosted
-
-      - size: small
-        widgets:
           - type: weather
             location: Delhi, India
 
+      - size: full
+        widgets:
+          - type: search
+            search-engine: google
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+
+          - type: reddit
+            show-thumbnails: true
+            subreddit: technology
+
+      - size: small
+        widgets:
           - type: monitor
             cache: 1m
             title: Services
@@ -58,9 +36,110 @@ pages:
               - title: qbittorrent
                 url: http://pi:3000
                 icon: si:qbittorrent
-              - title: radarr
-                url: http://pi:7878
-                icon: si:radarr
-              - title: sonarr
-                url: http://pi:8989
-                icon: si:sonarr
+
+          - type: bookmarks
+            groups:
+              - links:
+                  - title: Gmail
+                    url: https://mail.google.com/mail/u/0/
+                  - title: Amazon
+                    url: https://www.amazon.com/
+                  - title: Github
+                    url: https://github.com/
+                  - title: Wikipedia
+                    url: https://en.wikipedia.org/
+              - title: Entertainment
+                color: 10 70 50
+                links:
+                  - title: Netflix
+                    url: https://www.netflix.com/
+                  - title: YouTube
+                    url: https://www.youtube.com/
+                  - title: Prime Video
+                    url: https://www.primevideo.com/
+              - title: Social
+                color: 200 50 50
+                links:
+                  - title: Reddit
+                    url: https://www.reddit.com/
+                  - title: Twitter
+                    url: https://twitter.com/
+                  - title: Instagram
+                    url: https://www.instagram.com/
+  - name: Feeds
+    columns:
+      - size: full
+        widgets:
+          - type: rss
+            limit: 20
+            collapse-after: 7
+            cache: 3h
+            feeds:
+              - url: https://fasterthanli.me/index.xml
+                title: fasterthanli.me
+              - url: https://xeiaso.net/blog.rss
+                title: xeiaso.net
+              - url: https://blog.bytebytego.com/feed
+                title: bytebytego.com
+              - url: https://netflixtechblog.com/feed
+                title: netflixtechblog.com
+              - url: https://www.jeffgeerling.com/blog.xml
+                title: jeffgeerling.com
+
+          - type: lobsters
+            sort-by: hot
+            limit: 15
+            collapse-after: 10
+
+      - size: full
+        widgets:
+          - type: hacker-news
+
+          - type: reddit
+            subreddit: selfhosted
+
+  - name: Videos
+    columns:
+      - size: full
+        widgets:
+          - type: videos
+            style: grid-cards
+            collapse-after-rows: 10
+            limit: 50
+            channels:
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCZNhwA1B5YqiY1nLzmM0ZRg # Christian Lempa
+              - UCOk-gHyjcWZNj3Br4oxwh0A # Techno Tim
+              - UC5--wS0Ljbin1TjWQX6eafA # bigboxSWE
+              - UCBJycsmduvYEL83R_U4JriQ # MKBHD
+              - UCWQaM7SpSECp9FELz-cHzuQ # Dreams of Code
+              - UCbRP3c757lWg9M-U7TyEkXA # Theo
+              - UCuGS5mN1_CpPzuOUAu2LluA # Nixhero
+              - UCY1kMZp36IQSyNx_9h4mpCg # Mark Rober
+              - UCrPseYLGpNygVi34QpGNqpA # Ludwig
+
+      - size: small
+        widgets:
+          - type: twitch-channels
+            collapse-after: 7
+            channels:
+              - theprimeagen
+              - dreamsofcode_dev
+              - christitustech
+              - rakazone
+              - ohnePixel
+              - togglebit
+              - typecraft
+              - sinatraa
+              - ottomated
+              - ohnepixel
+              - piratesoftware
+              - tarik
+
+          - type: twitch-top-games
+            exclude:
+              - just-chatting
+              - pools-hot-tubs-and-beaches
+              - music
+              - art
+              - asmr
