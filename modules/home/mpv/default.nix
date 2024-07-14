@@ -15,6 +15,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    home.packages = [ pkgs.jellyfin-mpv-shim ];
+
     programs.mpv = {
       enable = true;
       config = import ./config.nix;
