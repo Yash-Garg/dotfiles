@@ -6,6 +6,7 @@
 }:
 let
   cfg = config.shells.${namespace}.bash;
+  profiles = config.profiles.${namespace};
   inherit (lib) mkEnableOption mkIf;
 in
 {
@@ -30,9 +31,10 @@ in
       atuin.enableBashIntegration = true;
       eza.enableBashIntegration = true;
       fzf.enableBashIntegration = true;
-      oh-my-posh.enableBashIntegration = config.profiles.${namespace}.oh-my-posh.enable;
-      starship.enableBashIntegration = config.profiles.${namespace}.starship.enable;
-      wezterm.enableBashIntegration = config.profiles.${namespace}.wezterm.enable;
+      kitty.shellIntegration.enableBashIntegration = profiles.kitty.enable;
+      oh-my-posh.enableBashIntegration = profiles.oh-my-posh.enable;
+      starship.enableBashIntegration = profiles.starship.enable;
+      wezterm.enableBashIntegration = profiles.wezterm.enable;
       zoxide.enableBashIntegration = true;
     };
   };

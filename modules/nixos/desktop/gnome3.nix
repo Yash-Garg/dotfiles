@@ -117,7 +117,7 @@ in
 
           "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
             binding = "<Super>t";
-            command = "${lib.getExe pkgs.alacritty}";
+            command = "${lib.getExe pkgs.kitty}";
             name = "open-terminal";
           };
 

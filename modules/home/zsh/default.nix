@@ -6,6 +6,7 @@
 }:
 let
   cfg = config.shells.${namespace}.zsh;
+  profiles = config.profiles.${namespace};
   inherit (lib) mkEnableOption mkIf;
 in
 {
@@ -31,9 +32,10 @@ in
       atuin.enableZshIntegration = true;
       eza.enableZshIntegration = true;
       fzf.enableZshIntegration = true;
-      oh-my-posh.enableZshIntegration = config.profiles.${namespace}.oh-my-posh.enable;
-      starship.enableZshIntegration = config.profiles.${namespace}.starship.enable;
-      wezterm.enableZshIntegration = config.profiles.${namespace}.wezterm.enable;
+      kitty.shellIntegration.enableZshIntegration = profiles.kitty.enable;
+      oh-my-posh.enableZshIntegration = profiles.oh-my-posh.enable;
+      starship.enableZshIntegration = profiles.starship.enable;
+      wezterm.enableZshIntegration = profiles.wezterm.enable;
       zoxide.enableZshIntegration = true;
     };
   };
