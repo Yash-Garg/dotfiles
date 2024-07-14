@@ -9,6 +9,7 @@ let
     google-chrome
     jetbrains.idea-ultimate
     microsoft-edge-beta
+    newsflash
     (prismlauncher.override {
       jdks = [ openjdk17 ];
       withWaylandGLFW = config.profiles.${namespace}.desktop.gnome3.enable;
