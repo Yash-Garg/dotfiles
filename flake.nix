@@ -85,7 +85,7 @@
       };
 
       systems.modules.darwin = with inputs; [
-        # srvos.darwinModules.desktop
+        srvos.darwinModules.desktop
         srvos.nixosModules.mixins-trusted-nix-caches
       ];
 
