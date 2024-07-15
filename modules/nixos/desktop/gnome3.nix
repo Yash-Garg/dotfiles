@@ -27,7 +27,9 @@ in
       xserver = {
         # Enable the GNOME Desktop Environment.
         displayManager.gdm.enable = true;
+        displayManager.gdm.wayland = true;
         desktopManager.gnome.enable = true;
+        excludePackages = [ pkgs.xterm ];
       };
     };
 

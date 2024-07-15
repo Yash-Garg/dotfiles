@@ -34,11 +34,11 @@ in
         copy_on_select = true;
         disable_ligatures = false;
         enable_audio_bell = false;
+        hide_window_decorations = true;
         intital_window_width = 140;
         initial_window_height = 35;
         scrollback_lines = 2000;
         show_hyperlink_targets = true;
-        tab_bar_edge = "top";
         window_padding_width = 10;
       } // import ./colors.nix;
     };

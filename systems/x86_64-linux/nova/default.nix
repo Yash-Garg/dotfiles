@@ -7,12 +7,10 @@
 }:
 let
   guiPkgs = with pkgs; [
-    eyedropper
     foliate
     google-chrome
     handbrake
     jetbrains.idea-ultimate
-    microsoft-edge-beta
     newsflash
     (prismlauncher.override {
       jdks = [ openjdk17 ];
