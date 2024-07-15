@@ -8,6 +8,7 @@
 let
   guiPkgs = with pkgs; [
     google-chrome
+    handbrake
     jetbrains.idea-ultimate
     microsoft-edge-beta
     newsflash

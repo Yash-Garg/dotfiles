@@ -28,7 +28,6 @@ fi
 
 if type micro &>/dev/null; then
     export EDITOR='micro'
-    alias e='micro'
 fi
 
 if type xclip &>/dev/null; then
@@ -41,4 +40,8 @@ fi
 
 if type kubectl &>/dev/null; then
     alias k='kubectl'
+fi
+
+if type kitty &>/dev/null; then
+    alias s='kitten ssh'
 fi
