@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  namespace,
+  ...
+}:
 {
   imports = [ ./wsl.nix ];
 
@@ -13,17 +18,22 @@
     };
   };
 
+  profiles.${namespace}.desktop.ssh.enable = true;
+
   security.sudo.wheelNeedsPassword = false;
 
-  users.users.yash = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    ignoreShellProgramCheck = true;
-    extraGroups = [
-      "wheel"
-      "docker"
-    ];
-    packages = [ pkgs.wget ];
+  users = {
+    mutableUsers = false;
+    users.yash = {
+      isNormalUser = true;
+      shell = pkgs.zsh;
+      ignoreShellProgramCheck = true;
+      extraGroups = [
+        "wheel"
+        "docker"
+      ];
+      packages = [ pkgs.wget ];
+    };
   };
 
   programs.nix-ld = {

@@ -100,7 +100,7 @@
 
       systems.hosts.nebula.modules = with inputs; [
         nixos-wsl.nixosModules.default
-        srvos.nixosModules.desktop
+        srvos.nixosModules.server
       ];
 
       homes.modules = with inputs; [
