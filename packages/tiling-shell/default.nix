@@ -8,11 +8,11 @@ let
 in
 stdenvNoCC.mkDerivation rec {
   pname = "tiling-shell";
-  version = "11.0.0";
+  version = "12.0.0";
 
   src = fetchzip {
     url = "https://github.com/domferr/tilingshell/releases/download/${version}/${uuid}.zip";
-    hash = "sha256-7ocvXad8VVl8ePuD918PXLOiGuxEBwxpyVD3RuBnAtM=";
+    hash = "sha256-XMaZ8JA0F/GuaidH6WoOBc2/wQ1CbN4IFKvXiCV9wys=";
     stripRoot = false;
   };
 
