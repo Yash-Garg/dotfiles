@@ -60,7 +60,6 @@ in
           ignore_hidden = true;
         };
         uosc = {
-          color = "foreground=ffffff,foreground_text=ffffff,background=000000,background_text=ffffff,curtain=111111,success=a5e075,error=ff616e";
           controls = "menu,gap,subtitles,<has_many_audio>audio,<has_many_video>video,<has_many_edition>editions,<stream>stream-quality,gap,space,play-pause,space,gap,fullscreen";
           controls_persistency = "paused,idle";
           font_bold = true;
