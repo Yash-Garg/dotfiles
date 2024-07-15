@@ -91,14 +91,17 @@
 
       systems.modules.nixos = with inputs; [
         nix-topology.nixosModules.default
-        nixos-wsl.nixosModules.default
         srvos.nixosModules.common
         srvos.nixosModules.mixins-trusted-nix-caches
         stylix.nixosModules.stylix
       ];
 
       systems.hosts.nova.modules = with inputs; [ srvos.nixosModules.desktop ];
-      systems.hosts.nebula.modules = with inputs; [ srvos.nixosModules.desktop ];
+
+      systems.hosts.nebula.modules = with inputs; [
+        nixos-wsl.nixosModules.default
+        srvos.nixosModules.desktop
+      ];
 
       homes.modules = with inputs; [
         nix-index-database.hmModules.nix-index
