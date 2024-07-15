@@ -3,8 +3,11 @@
   fonts = {
     packages = [
       pkgs.cabin
-      pkgs.nerdfonts
+      pkgs.dejavu_fonts
       pkgs.${namespace}.monolisa-nerdfonts
+      pkgs.nerdfonts
+      pkgs.noto-fonts
+      pkgs.unifont
     ];
   };
 }
