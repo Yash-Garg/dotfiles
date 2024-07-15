@@ -20,6 +20,7 @@ in
     ./android-dev.nix
     ./earlyoom.nix
     ./gnome3.nix
+    ./rnnoise.nix
     ./ssh.nix
   ];
 

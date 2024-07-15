@@ -7,6 +7,8 @@
 }:
 let
   guiPkgs = with pkgs; [
+    eyedropper
+    foliate
     google-chrome
     handbrake
     jetbrains.idea-ultimate
@@ -37,6 +39,7 @@ in
       };
       android-dev.enable = true;
       gnome3.enable = true;
+      noise-cancellation.enable = true;
       ssh.enable = true;
     };
 
