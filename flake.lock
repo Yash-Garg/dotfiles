@@ -543,6 +543,7 @@
         "nur": "nur",
         "snowfall-lib": "snowfall-lib",
         "spicetify-nix": "spicetify-nix",
+        "srvos": "srvos",
         "stylix": "stylix"
       }
     },
@@ -591,6 +592,26 @@
       "original": {
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "srvos": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1721004418,
+        "narHash": "sha256-jfmWtz2Md9kL/3suesHZQ6zYtho8YH3l3b6IGRzWypk=",
+        "owner": "nix-community",
+        "repo": "srvos",
+        "rev": "a025944e2de625045eaa1522ee69a568a469e476",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "srvos",
         "type": "github"
       }
     },

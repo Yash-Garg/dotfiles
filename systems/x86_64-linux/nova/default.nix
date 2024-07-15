@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   namespace,
   ...
@@ -70,7 +71,7 @@ in
       ++ guiPkgs;
   };
 
-  environment.variables.CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
+  environment.variables.CHROME_EXECUTABLE = "${lib.getExe pkgs.google-chrome}";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;

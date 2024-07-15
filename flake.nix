@@ -49,6 +49,9 @@
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
     spicetify-nix.inputs.flake-compat.follows = "flake-compat";
 
+    srvos.url = "github:nix-community/srvos";
+    srvos.inputs.nixpkgs.follows = "nixpkgs";
+
     stylix.url = "github:danth/stylix";
     stylix.inputs.flake-compat.follows = "flake-compat";
     stylix.inputs.home-manager.follows = "home-manager";
@@ -81,11 +84,21 @@
         permittedInsecurePackages = [ "electron-27.3.11" ];
       };
 
+      systems.modules.darwin = with inputs; [
+        # srvos.darwinModules.desktop
+        srvos.nixosModules.mixins-trusted-nix-caches
+      ];
+
       systems.modules.nixos = with inputs; [
         nix-topology.nixosModules.default
         nixos-wsl.nixosModules.default
+        srvos.nixosModules.common
+        srvos.nixosModules.mixins-trusted-nix-caches
         stylix.nixosModules.stylix
       ];
+
+      systems.hosts.nova.modules = with inputs; [ srvos.nixosModules.desktop ];
+      systems.hosts.nebula.modules = with inputs; [ srvos.nixosModules.desktop ];
 
       homes.modules = with inputs; [
         nix-index-database.hmModules.nix-index

@@ -7,7 +7,7 @@
 }:
 let
   cfg = config.profiles.${namespace}.desktop;
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkDefault mkEnableOption mkIf;
 in
 {
   options.profiles.${namespace}.desktop.ssh = {
@@ -18,7 +18,7 @@ in
     services.openssh = {
       enable = true;
       settings = {
-        X11Forwarding = true;
+        X11Forwarding = mkDefault true;
         PermitRootLogin = "no";
         PasswordAuthentication = false;
       };
