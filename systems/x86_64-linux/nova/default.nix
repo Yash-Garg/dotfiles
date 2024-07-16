@@ -63,6 +63,7 @@ in
         apktool
         ddcutil
         flutter
+        git-lfs
         imwheel
         maestro
         scrcpy

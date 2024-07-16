@@ -20,6 +20,7 @@
     ijq
     just
     jq
+    mediainfo
     nixfmt-rfc-style
     ookla-speedtest
     ripgrep
