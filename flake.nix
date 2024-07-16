@@ -60,6 +60,10 @@
     inputs:
     let
       eachSystem = inputs.nixpkgs.lib.genAttrs (import inputs.systems);
+      commonModules = with inputs; [
+        lix.nixosModules.default
+        nix-topology.nixosModules.default
+      ];
       lib = inputs.snowfall-lib.mkLib {
         inherit inputs;
         src = ./.;
@@ -82,22 +86,24 @@
         permittedInsecurePackages = [ "electron-27.3.11" ];
       };
 
-      systems.modules.darwin = with inputs; [
-        lix.nixosModules.default
-        nix-topology.nixosModules.default
-        srvos.darwinModules.common
-        srvos.darwinModules.mixins-nix-experimental
-        srvos.darwinModules.mixins-trusted-nix-caches
-      ];
+      systems.modules.darwin =
+        with inputs;
+        [
+          srvos.darwinModules.common
+          srvos.darwinModules.mixins-nix-experimental
+          srvos.darwinModules.mixins-trusted-nix-caches
+        ]
+        ++ commonModules;
 
-      systems.modules.nixos = with inputs; [
-        lix.nixosModules.default
-        nix-topology.nixosModules.default
-        srvos.nixosModules.common
-        srvos.nixosModules.mixins-nix-experimental
-        srvos.nixosModules.mixins-trusted-nix-caches
-        stylix.nixosModules.stylix
-      ];
+      systems.modules.nixos =
+        with inputs;
+        [
+          srvos.nixosModules.common
+          srvos.nixosModules.mixins-nix-experimental
+          srvos.nixosModules.mixins-trusted-nix-caches
+          stylix.nixosModules.stylix
+        ]
+        ++ commonModules;
 
       systems.hosts.nova.modules = with inputs; [ srvos.nixosModules.desktop ];
 
