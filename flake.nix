@@ -5,6 +5,11 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    deploy-rs.url = "github:serokell/deploy-rs";
+    deploy-rs.inputs.flake-compat.follows = "flake-compat";
+    deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+    deploy-rs.inputs.utils.follows = "flake-utils";
+
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
     devshell.inputs.flake-utils.follows = "flake-utils";
@@ -86,6 +91,12 @@
         permittedInsecurePackages = [ "electron-27.3.11" ];
       };
 
+      checks = builtins.mapAttrs (
+        system: deploy-lib: deploy-lib.deployChecks inputs.self.deploy
+      ) inputs.deploy-rs.lib;
+
+      deploy = lib.mkDeploy { inherit (inputs) self; };
+
       systems.modules.darwin =
         with inputs;
         [
@@ -147,5 +158,7 @@
         rust.description = "devshell for a Rust project";
       };
     }
-    // { };
+    // {
+      self = inputs.self;
+    };
 }
