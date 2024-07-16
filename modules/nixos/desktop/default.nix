@@ -142,7 +142,7 @@ in
           package = pkgs.noto-fonts-color-emoji;
         };
         monospace = {
-          name = "JetBrainsMonoNL Nerd Font Mono Regular";
+          name = "JetBrainsMono Nerd Font Mono Regular";
           package = pkgs.nerdfonts;
         };
         sansSerif = {
