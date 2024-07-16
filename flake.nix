@@ -19,10 +19,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    lix.url = "git+https://git.lix.systems/lix-project/lix";
+    lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
     lix.inputs.nixpkgs.follows = "nixpkgs";
-    lix.inputs.nixpkgs-regression.follows = "nixpkgs";
-    lix.inputs.flake-compat.follows = "flake-compat";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
@@ -85,13 +83,18 @@
       };
 
       systems.modules.darwin = with inputs; [
-        srvos.darwinModules.desktop
-        srvos.nixosModules.mixins-trusted-nix-caches
+        lix.nixosModules.default
+        nix-topology.nixosModules.default
+        srvos.darwinModules.common
+        srvos.darwinModules.mixins-nix-experimental
+        srvos.darwinModules.mixins-trusted-nix-caches
       ];
 
       systems.modules.nixos = with inputs; [
+        lix.nixosModules.default
         nix-topology.nixosModules.default
         srvos.nixosModules.common
+        srvos.nixosModules.mixins-nix-experimental
         srvos.nixosModules.mixins-trusted-nix-caches
         stylix.nixosModules.stylix
       ];
@@ -102,6 +105,8 @@
         nixos-wsl.nixosModules.default
         srvos.nixosModules.server
       ];
+
+      systems.hosts.trinity.modules = with inputs; [ srvos.darwinModules.desktop ];
 
       homes.modules = with inputs; [
         nix-index-database.hmModules.nix-index

@@ -6,8 +6,6 @@
       inputs,
     }:
     {
-      package = inputs.lix.packages.${pkgs.system}.default;
-
       generateNixPathFromInputs = true;
       generateRegistryFromInputs = true;
       linkInputs = true;
@@ -34,15 +32,6 @@
           "yash"
         ];
         warn-dirty = false;
-
-        experimental-features = lib.mkForce [
-          "auto-allocate-uids"
-          "ca-derivations"
-          "cgroups"
-          "flakes"
-          "nix-command"
-          "recursive-nix"
-        ];
 
         trusted-substituters = [
           "https://cache.garnix.io"
