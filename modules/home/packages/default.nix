@@ -22,6 +22,8 @@
     jq
     mediainfo
     nixfmt-rfc-style
+    nurl
+    nvd
     ookla-speedtest
     ripgrep
     scc
