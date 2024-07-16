@@ -31,7 +31,7 @@ function gdiff() {
 function cmb() {
     if [ -d .git ]; then
         git log --graph --color=always \
-            --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+            --format="%C(auto)%h%d %s %C(#6e6e6e)%C(bold)%cr" "$@" |
             fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
                 --bind "ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
