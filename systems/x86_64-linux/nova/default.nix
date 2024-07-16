@@ -7,6 +7,8 @@
 }:
 let
   guiPkgs = with pkgs; [
+    collision
+    curtail
     foliate
     google-chrome
     handbrake
