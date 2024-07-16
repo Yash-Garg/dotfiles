@@ -2,6 +2,9 @@
   description = "NixOS and Home Manager Configurations";
 
   inputs = {
+    catppuccin-starship.url = "github:catppuccin/starship";
+    catppuccin-starship.flake = false;
+
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 

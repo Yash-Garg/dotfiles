@@ -10,9 +10,9 @@
     firefox.enable = true;
     kitty.enable = true;
     mpv.enable = true;
-    spotify.enable = false;
     obs.enable = true;
     oh-my-posh.enable = true;
+    spotify.enable = false;
   };
 
   shells.${namespace} = {
