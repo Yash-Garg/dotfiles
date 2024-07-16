@@ -17,6 +17,8 @@
     cpc = cherry-pick --continue
     su = submodule update --init --recursive
     undo = reset --soft HEAD^
+    sw = "!git switch $(git branch | fzf | tr -d '*[:space:]')"
+    staash = stash --all
 
 [core]
     editor = nano
