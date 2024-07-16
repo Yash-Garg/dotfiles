@@ -1,13 +1,14 @@
 { pkgs, namespace, ... }:
 {
   fonts = {
-    packages = [
-      pkgs.cabin
-      pkgs.dejavu_fonts
-      pkgs.${namespace}.monolisa-nerdfonts
-      pkgs.nerdfonts
-      pkgs.noto-fonts
-      pkgs.unifont
-    ];
+    packages =
+      (with pkgs; [
+        cabin
+        dejavu_fonts
+        nerdfonts
+        noto-fonts
+        unifont
+      ])
+      ++ [ pkgs.${namespace}.monolisa-nerdfonts ];
   };
 }
