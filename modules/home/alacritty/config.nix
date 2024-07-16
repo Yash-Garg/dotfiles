@@ -68,10 +68,6 @@
   };
 
   selection.save_to_clipboard = true;
-  shell = {
-    program = "${lib.getExe pkgs.tmux}";
-    args = [ "attach" ];
-  };
 
   window = {
     dynamic_padding = true;

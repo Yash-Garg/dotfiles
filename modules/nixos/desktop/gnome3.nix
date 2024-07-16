@@ -145,7 +145,7 @@ in
           };
 
           "org/gnome/mutter" = {
-            edge-tiling = true;
+            edge-tiling = false;
             dynamic-workspaces = true;
             workspaces-only-on-primary = true;
           };
