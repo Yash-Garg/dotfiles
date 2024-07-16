@@ -20,7 +20,7 @@ if type git &>/dev/null; then
     alias add='git add --all'
     alias st='git status'
     alias push='git push'
-    alias fpush='git push --force'
+    alias fpush='git push --force-with-lease'
     alias pull='git pull'
     alias commit='git commit -m'
     alias rst='git reset; git restore .'

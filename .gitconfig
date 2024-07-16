@@ -7,8 +7,14 @@
     autoSetupRemote = true
     default = current
 
+[branch]
+    sort = -committerdate
+
 [color]
     ui = true
+
+[column]
+    ui = auto
 
 [alias]
     c = clone
@@ -19,6 +25,7 @@
     undo = reset --soft HEAD^
     sw = "!git switch $(git branch | fzf | tr -d '*[:space:]')"
     staash = stash --all
+    fix = commit --fixup
 
 [core]
     editor = nano
@@ -60,6 +67,9 @@
 [merge]
     conflictstyle = diff3
 
+[rerere]
+    enabled = true
+
 [delta]
     features = line-numbers decorations
     navigate = false
@@ -97,7 +107,10 @@
     allowedSignersFile = allowed_signers
 
 [credential]
-	helper = manager
+    helper = manager
 
 [safe]
-	directory = *
+    directory = *
+
+[fetch]
+    writeCommitGraph = true
