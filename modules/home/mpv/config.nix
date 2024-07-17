@@ -41,7 +41,7 @@
   sub-border-size = 2;
   sub-auto = "fuzzy";
   sub-bold = true;
-  sub-scale = 0.5;
+  sub-scale = 1;
 
   # Window
   osc = false;
