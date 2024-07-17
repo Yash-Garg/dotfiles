@@ -1,6 +1,7 @@
 { pkgs, namespace, ... }:
 {
   home.packages = with pkgs; [
+    age
     asciinema
     aria
     cachix
@@ -27,6 +28,7 @@
     ookla-speedtest
     ripgrep
     scc
+    sops
     unzip
     whois
     zip
