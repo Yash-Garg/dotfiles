@@ -142,7 +142,7 @@
     nix-topology.inputs.devshell.follows = "devshell";
     nix-topology.inputs.flake-utils.follows = "flake-utils";
 
-    nixos-wsl.url = "github:getchoo/NixOS-WSL/hardware-graphics";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     nixos-wsl.inputs.flake-compat.follows = "flake-compat";
     nixos-wsl.inputs.flake-utils.follows = "flake-utils";
