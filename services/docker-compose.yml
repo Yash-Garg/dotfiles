@@ -4,12 +4,8 @@ include:
       - h5ai/docker-compose.yml
       - jellyfin/docker-compose.yml
       - qbittorrent/docker-compose.yml
-      - radarr/docker-compose.yml
-      - sonarr/docker-compose.yml
 
 volumes:
   h5ai-data:
   jellyfin-data:
   qbit-data:
-  radarr-data:
-  sonarr-data:

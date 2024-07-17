@@ -107,6 +107,7 @@ pages:
             collapse-after-rows: 10
             limit: 50
             channels:
+              - UCsWaVYzOFvEWDsEuvuZJ-8A # EmergentMind
               - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
               - UCZNhwA1B5YqiY1nLzmM0ZRg # Christian Lempa
               - UCOk-gHyjcWZNj3Br4oxwh0A # Techno Tim
