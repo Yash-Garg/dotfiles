@@ -49,6 +49,7 @@
       systems.modules.nixos =
         with inputs;
         [
+          sops-nix.nixosModules.sops
           srvos.nixosModules.common
           srvos.nixosModules.mixins-nix-experimental
           srvos.nixosModules.mixins-trusted-nix-caches
@@ -151,6 +152,10 @@
     snowfall-lib.url = "github:snowfallorg/lib/dev";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
     snowfall-lib.inputs.flake-utils-plus.follows = "flake-utils-plus";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.inputs.nixpkgs-stable.follows = "";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
