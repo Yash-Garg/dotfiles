@@ -43,6 +43,7 @@ in
       ssh.enable = true;
     };
 
+    openrazer.enable = true;
     samba.enable = true;
     tailscale.enable = true;
   };
