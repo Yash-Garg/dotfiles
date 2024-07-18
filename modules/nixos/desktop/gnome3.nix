@@ -40,12 +40,14 @@ in
         pkgs.${namespace}.tiling-shell
       ]
       ++ (with pkgs.gnomeExtensions; [
+        advanced-alttab-window-switcher
         appindicator
+        arcmenu
         brightness-control-using-ddcutil
+        clipboard-indicator
         dash-to-dock
         media-controls
         transparent-top-bar
-        unmess
         user-themes
       ]);
 
@@ -65,47 +67,150 @@ in
 
       dconf = {
         enable = true;
+        # Note: Use `dconf dump dir` to get the current settings
         settings = {
           "org/gnome/shell" = {
             disable-user-extensions = false;
             enabled-extensions = [
+              "advanced-alt-tab@G-dH.github.com"
               "appindicatorsupport@rgcjonas.gmail.com"
+              "arcmenu@arcmenu.com"
+              "clipboard-indicator@tudmotu.com"
               "display-brightness-ddcutil@themightydeity.github.com"
               "dash-to-dock@micxgx.gmail.com"
               "mediacontrols@cliffniff.github.com"
               "tilingshell@ferrarodomenico.com"
               "transparent-top-bar@zhanghai.me"
-              "unmess@ezix.org"
               "user-theme@gnome-shell-extensions.gcampax.github.com"
             ];
             welcome-dialog-last-shown-version = "999999999";
           };
 
+          "org/gnome/shell/extensions/advanced-alt-tab-window-switcher" = {
+            animation-time-factor = 100;
+            app-switcher-popup-fav-apps = false;
+            app-switcher-popup-filter = 3;
+            app-switcher-popup-hide-win-counter-for-single-window = true;
+            app-switcher-popup-include-show-apps-icon = false;
+            app-switcher-popup-search-pref-running = true;
+            app-switcher-popup-titles = true;
+            app-switcher-popup-win-counter = true;
+            enable-super = false;
+            hot-edge-fullscreen = false;
+            super-key-mode = 1;
+            switcher-popup-hover-select = false;
+            switcher-popup-interactive-indicators = true;
+            switcher-popup-preview-selected = 1;
+            switcher-popup-start-search = false;
+            switcher-popup-timeout = 0;
+            switcher-popup-tooltip-label-scale = 100;
+            switcher-popup-tooltip-title = 1;
+            switcher-popup-wrap = true;
+            switcher-ws-thumbnails = 0;
+            win-switch-mark-minimized = false;
+            win-switch-minimized-to-end = false;
+            win-switch-skip-minimized = false;
+            win-switcher-popup-filter = 1;
+            win-switcher-popup-icon-size = 32;
+            win-switcher-popup-order = 2;
+            win-switcher-popup-preview-size = 160;
+            win-switcher-popup-titles = 1;
+            win-switcher-popup-ws-indexes = false;
+            win-switcher-single-prev-size = 192;
+          };
+
+          "org/gnome/shell/extensions/arcmenu" = {
+            alphabetize-all-programs = false;
+            apps-show-extra-details = false;
+            arc-menu-icon = 5;
+            category-icon-type = "Symbolic";
+            context-menu-items = [ ];
+            dash-to-panel-standalone = false;
+            disable-recently-installed-apps = true;
+            disable-tooltips = true;
+            hide-overview-on-startup = true;
+            menu-background-color = "rgba(48,48,49,0.98)";
+            menu-border-color = "rgb(60,60,60)";
+            menu-button-appearance = "None";
+            menu-button-icon = "Menu_Icon";
+            menu-foreground-color = "rgb(223,223,223)";
+            menu-item-active-bg-color = "rgb(25,98,163)";
+            menu-item-active-fg-color = "rgb(255,255,255)";
+            menu-item-hover-bg-color = "rgb(21,83,158)";
+            menu-item-hover-fg-color = "rgb(255,255,255)";
+            menu-layout = "Runner";
+            menu-separator-color = "rgba(255,255,255,0.1)";
+            multi-lined-labels = true;
+            multi-monitor = false;
+            position-in-panel = "Left";
+            prefs-visible-page = 0;
+            runner-hotkey-open-primary-monitor = false;
+            runner-position = "Centered";
+            runner-search-display-style = "Grid";
+            runner-show-frequent-apps = false;
+            search-entry-border-radius = "(true, 25)";
+            show-activities-button = true;
+            show-category-sub-menus = false;
+            show-hidden-recent-files = false;
+          };
+
+          "org/gnome/shell/extensions/clipboard-indicator" = {
+            clear-on-boot = true;
+            confirm-clear = false;
+            disable-down-arrow = true;
+            display-mode = 0;
+            keep-selected-on-clear = true;
+            move-item-first = true;
+            preview-size = 10;
+            toggle-menu = [ "<Super>v" ];
+            topbar-preview-size = 10;
+          };
+
           "org/gnome/shell/extensions/dash-to-dock" = {
+            animate-show-apps = true;
+            apply-custom-theme = false;
+            autohide = true;
+            background-opacity = 0.5;
+            click-action = "previews";
+            custom-background-color = false;
             custom-theme-shrink = true;
             dash-max-icon-size = 30;
-            autohide = true;
-            background-opacity = 0.8;
-            click-action = "previews";
-            extend-height = false;
+            disable-overview-on-startup = false;
             dock-fixed = false;
             dock-position = "RIGHT";
+            extend-height = false;
+            height-fraction = 0.8;
+            hide-tooltip = true;
             hot-keys = false;
+            icon-size-fixed = false;
+            multi-monitor = false;
             pressure-threshold = 200.0;
+            preview-size-scale = 0.0;
             require-pressure-to-show = true;
             scroll-action = "cycle-windows";
+            show-apps-always-in-the-edge = true;
             show-favorites = true;
+            show-mounts-network = false;
+            show-show-apps-button = false;
             show-trash = true;
-            transparency-mode = "fixed";
+            transparency-mode = "FIXED";
           };
 
           "org/gnome/desktop/wm/keybindings" = {
             close = [ "<Super>q" ];
+            switch-applications = [ ];
+            switch-applications-backward = [ ];
+            switch-windows = [ "<Alt>Tab" ];
+            switch-windows-backward = [ "<Shift><Alt>Tab" ];
           };
 
           "org/gnome/desktop/wm/preferences" = {
             resize-with-right-button = true;
             mouse-button-modifier = "<Alt>";
+          };
+
+          "org/gnome/shell/keybindings" = {
+            toggle-message-tray = [ ];
           };
 
           "org/gnome/settings-daemon/plugins/media-keys" = {

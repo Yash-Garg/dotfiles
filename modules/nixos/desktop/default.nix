@@ -132,9 +132,9 @@ in
       image = ./images/background.png;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       cursor = {
-        package = pkgs.rose-pine-cursor;
-        name = "BreezeX-RosePine-Linux";
-        size = 24;
+        package = pkgs.catppuccin-cursors.mochaLavender;
+        name = "catppuccin-mocha-lavender-cursors";
+        size = 38;
       };
       fonts = {
         emoji = {

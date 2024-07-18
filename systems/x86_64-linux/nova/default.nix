@@ -9,6 +9,7 @@ let
   guiPkgs = with pkgs; [
     collision
     curtail
+    emblem
     foliate
     google-chrome
     handbrake
@@ -21,6 +22,7 @@ let
     slack
     spotify
     telegram-desktop
+    textpieces
     transmission_4-gtk
     vesktop
     vscode

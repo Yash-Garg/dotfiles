@@ -8,6 +8,7 @@
   profiles.${namespace} = {
     oh-my-posh.enable = true;
   };
+
   shells.${namespace} = {
     zsh.enable = true;
   };
