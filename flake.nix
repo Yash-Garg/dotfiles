@@ -133,18 +133,18 @@
     lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
     lix.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-generators.url = "github:nix-community/nixos-generators";
-    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
-
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     nix-topology.url = "github:oddlama/nix-topology";
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
     nix-topology.inputs.devshell.follows = "devshell";
     nix-topology.inputs.flake-utils.follows = "flake-utils";
+
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
