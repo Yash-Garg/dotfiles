@@ -16,6 +16,11 @@ let
   inherit (lib) mkEnableOption mkIf;
 in
 {
+  imports = [
+    ./policies.nix
+    ./settings.nix
+  ];
+
   options.profiles.${namespace}.firefox = {
     enable = mkEnableOption "Enable firefox profile";
   };
@@ -24,7 +29,6 @@ in
     programs.firefox = {
       enable = true;
       package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
-      policies = import ./policies.nix;
       profiles = {
         yash = {
           isDefault = true;
@@ -86,7 +90,6 @@ in
               };
             };
           };
-          settings = import ./settings.nix;
           userChrome = ''
             @import url("${css-hacks}/chrome/auto_devtools_theme_for_rdm.css");
             @import url("${css-hacks}/chrome/compact_extensions_panel.css");

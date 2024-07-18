@@ -10,6 +10,8 @@ let
   inherit (lib) mkEnableOption mkIf;
 in
 {
+  imports = [ ./config.nix ];
+
   options.profiles.${namespace}.mpv = {
     enable = mkEnableOption "Enable mpv profile";
   };
@@ -19,7 +21,6 @@ in
 
     programs.mpv = {
       enable = true;
-      config = import ./config.nix;
       bindings = {
         BS = "cycle pause";
         SPACE = "cycle pause";

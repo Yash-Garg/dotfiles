@@ -10,11 +10,14 @@ let
   inherit (lib) mkEnableOption mkIf;
 in
 {
+  imports = [ ./colors.nix ];
+
   options.profiles.${namespace}.kitty = {
     enable = mkEnableOption "Enable kitty profile";
   };
 
   config = mkIf cfg.enable {
+
     programs.kitty = {
       enable = true;
 
@@ -41,7 +44,7 @@ in
         show_hyperlink_targets = true;
         tab_bar_edge = "top";
         window_padding_width = 10;
-      } // import ./colors.nix;
+      };
     };
   };
 }
