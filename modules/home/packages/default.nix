@@ -23,6 +23,7 @@
     jq
     mediainfo
     nixfmt-rfc-style
+    nixos-generators
     nurl
     nvd
     ookla-speedtest

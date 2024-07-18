@@ -49,6 +49,7 @@
       systems.modules.nixos =
         with inputs;
         [
+          nixos-generators.nixosModules.all-formats
           sops-nix.nixosModules.sops
           srvos.nixosModules.common
           srvos.nixosModules.mixins-nix-experimental
@@ -131,6 +132,9 @@
 
     lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
     lix.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";

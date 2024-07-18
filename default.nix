@@ -1,6 +1,15 @@
 let
   inherit (builtins) currentSystem fromJSON readFile;
 
+  getFlake =
+    name: with (fromJSON (readFile ./flake.lock)).nodes.${name}.locked; {
+      inherit rev;
+      outPath = fetchTarball {
+        url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
+        sha256 = narHash;
+      };
+    };
+
   # Copied from https://github.com/edolstra/flake-compat/pull/44/files
   fetchurl =
     { url, sha256 }:

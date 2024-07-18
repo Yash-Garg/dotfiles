@@ -42,13 +42,13 @@ in
 
       # Bootloader
       loader = {
-        timeout = 60;
+        timeout = lib.mkDefault 60;
         efi = {
           efiSysMountPoint = "/boot";
           canTouchEfiVariables = false;
         };
         grub = {
-          enable = true;
+          enable = lib.mkDefault true;
           devices = [ "nodev" ];
           efiSupport = true;
           useOSProber = true;
