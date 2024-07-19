@@ -40,7 +40,6 @@
       systems.modules.darwin =
         with inputs;
         [
-          srvos.darwinModules.common
           srvos.darwinModules.mixins-nix-experimental
           srvos.darwinModules.mixins-trusted-nix-caches
         ]
@@ -52,17 +51,13 @@
           lanzaboote.nixosModules.lanzaboote
           nixos-generators.nixosModules.all-formats
           sops-nix.nixosModules.sops
-          srvos.nixosModules.common
           srvos.nixosModules.mixins-nix-experimental
           srvos.nixosModules.mixins-trusted-nix-caches
           stylix.nixosModules.stylix
         ]
         ++ commonModules;
 
-      systems.hosts.nebula.modules = with inputs; [
-        nixos-wsl.nixosModules.default
-        srvos.nixosModules.server
-      ];
+      systems.hosts.nebula.modules = with inputs; [ nixos-wsl.nixosModules.default ];
 
       systems.hosts.nova.modules = with inputs; [
         srvos.nixosModules.desktop
