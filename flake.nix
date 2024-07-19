@@ -58,7 +58,10 @@
         ]
         ++ commonModules;
 
-      systems.hosts.nova.modules = with inputs; [ srvos.nixosModules.desktop ];
+      systems.hosts.nova.modules = with inputs; [
+        srvos.nixosModules.desktop
+        srvos.nixosModules.mixins-systemd-boot
+      ];
 
       systems.hosts.nebula.modules = with inputs; [
         nixos-wsl.nixosModules.default
