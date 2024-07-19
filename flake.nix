@@ -49,6 +49,7 @@
       systems.modules.nixos =
         with inputs;
         [
+          lanzaboote.nixosModules.lanzaboote
           nixos-generators.nixosModules.all-formats
           sops-nix.nixosModules.sops
           srvos.nixosModules.common
@@ -58,14 +59,14 @@
         ]
         ++ commonModules;
 
-      systems.hosts.nova.modules = with inputs; [
-        srvos.nixosModules.desktop
-        srvos.nixosModules.mixins-systemd-boot
-      ];
-
       systems.hosts.nebula.modules = with inputs; [
         nixos-wsl.nixosModules.default
         srvos.nixosModules.server
+      ];
+
+      systems.hosts.nova.modules = with inputs; [
+        srvos.nixosModules.desktop
+        srvos.nixosModules.mixins-systemd-boot
       ];
 
       systems.hosts.trinity.modules = with inputs; [ srvos.darwinModules.desktop ];
@@ -132,6 +133,10 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.1";
+    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
+    lanzaboote.inputs.flake-utils.follows = "flake-utils";
 
     lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
     lix.inputs.nixpkgs.follows = "nixpkgs";

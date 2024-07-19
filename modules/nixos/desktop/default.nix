@@ -40,13 +40,21 @@ in
       # Use latest kernel by default.
       kernelPackages = mkDefault pkgs.linuxPackages_latest;
 
+      lanzaboote = {
+        enable = true;
+        pkiBundle = "/etc/secureboot";
+      };
+
       # Bootloader
       loader = {
-        timeout = lib.mkDefault 60;
         efi = {
           efiSysMountPoint = "/boot";
           canTouchEfiVariables = false;
         };
+
+        systemd-boot.enable = lib.mkForce false;
+
+        timeout = lib.mkDefault 60;
       };
     };
 
