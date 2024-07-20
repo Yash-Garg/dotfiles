@@ -26,6 +26,7 @@ in
       androidStudioPackages.stable
       androidStudioPackages.beta
       kotlin
+      maestro
     ];
 
     programs = {

@@ -69,8 +69,7 @@ in
         ddcutil
         flutter
         git-lfs
-        imwheel
-        maestro
+        qemu_kvm
         scrcpy
         sshfs
         tailscale
