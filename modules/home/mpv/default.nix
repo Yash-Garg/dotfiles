@@ -61,9 +61,12 @@ in
           ignore_hidden = true;
         };
         uosc = {
+          buffered_time_threshold = 600;
           controls = "menu,gap,subtitles,<has_many_audio>audio,<has_many_video>video,<has_many_edition>editions,<stream>stream-quality,gap,space,play-pause,space,gap,fullscreen";
           controls_persistency = "paused,idle";
           font_bold = true;
+          scale_fullscreen = 1.1;
+          stream_quality_options = "";
           timeline_persistency = "paused,idle";
           timeline_style = "bar";
           top_bar_alt_title = "\${filename}";

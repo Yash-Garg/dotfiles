@@ -12,6 +12,16 @@ _: {
     hwdev = "nvdec";
     video-sync = "display-resample";
 
+    # Demuxer
+    cache = true;
+    cache-pause = true;
+    cache-pause-wait = 1;
+    demuxer-thread = "yes";
+    demuxer-readahead-secs = "600";
+    demuxer-max-bytes = "1000M";
+    demuxer-max-back-bytes = "200M";
+    demuxer-mkv-subtitle-preroll = true;
+
     # Resizers
     scale = "ewa_lanczos";
     dscale = "ewa_lanczos";
@@ -27,13 +37,12 @@ _: {
     deband-grain = 32;
 
     # Audio
-    volume = 100;
+    volume = 80;
     volume-max = 200;
     audio-file-auto = "fuzzy";
     audio-pitch-correction = true;
 
     # Subtitles
-    demuxer-mkv-subtitle-preroll = true;
     sub-ass-vsfilter-blur-compat = true;
     stretch-image-subs-to-screen = true;
     sub-fix-timing = true;
@@ -49,6 +58,7 @@ _: {
     osd-bar = false;
     border = false;
     osd-font = "CaskaydiaCove Nerd Font Mono";
+    osd-font-size = 16;
     title = "\${media-title} [\${time-pos}\${!duration==0: / \${duration}}]";
     force-window-position = true;
     autofit-larger = "100%x85%";

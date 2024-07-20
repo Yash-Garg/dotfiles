@@ -217,6 +217,7 @@ in
 
           "org/gnome/shell/keybindings" = {
             toggle-message-tray = [ ];
+            toggle-overview = [ "<Super>Tab" ];
           };
 
           "org/gnome/settings-daemon/plugins/media-keys" = {
