@@ -155,13 +155,19 @@ in
           };
 
           "org/gnome/shell/extensions/clipboard-indicator" = {
+            clear-history = [ ];
             clear-on-boot = true;
             confirm-clear = false;
             disable-down-arrow = true;
             display-mode = 0;
-            keep-selected-on-clear = true;
+            enable-keybindings = true;
+            keep-selected-on-clear = false;
             move-item-first = true;
+            next-entry = [ ];
+            paste-button = false;
+            prev-entry = [ ];
             preview-size = 10;
+            private-mode-binding = [ ];
             toggle-menu = [ "<Super>v" ];
             topbar-preview-size = 10;
           };
