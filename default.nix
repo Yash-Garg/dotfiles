@@ -60,6 +60,5 @@ in
 {
   monolisa-nerdfonts = callPackage ./packages/monolisa-nerdfonts { };
   mpv-scripts = callPackage ./packages/mpv-scripts { };
-  termsnap = callPackage ./packages/termsnap { };
   tiling-shell = callPackage ./packages/tiling-shell { };
 }
