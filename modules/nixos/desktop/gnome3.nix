@@ -122,6 +122,7 @@ in
           "org/gnome/shell/extensions/arcmenu" = {
             alphabetize-all-programs = false;
             apps-show-extra-details = false;
+            arcmenu-hotkey = [ "<Alt>space" ];
             arc-menu-icon = 5;
             category-icon-type = "Symbolic";
             context-menu-items = [ ];
@@ -203,6 +204,7 @@ in
           };
 
           "org/gnome/desktop/wm/keybindings" = {
+            activate-window-menu = [ ];
             close = [ "<Super>q" ];
             switch-applications = [ ];
             switch-applications-backward = [ ];
@@ -217,7 +219,7 @@ in
 
           "org/gnome/shell/keybindings" = {
             toggle-message-tray = [ ];
-            toggle-overview = [ "<Super>Tab" ];
+            toggle-overview = [ "<Super>" ];
           };
 
           "org/gnome/settings-daemon/plugins/media-keys" = {
