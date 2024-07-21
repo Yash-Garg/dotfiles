@@ -158,7 +158,7 @@
 
     nur.url = "github:nix-community/NUR";
 
-    snowfall-lib.url = "github:snowfallorg/lib/dev";
+    snowfall-lib.url = "github:snowfallorg/lib/main";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";
     snowfall-lib.inputs.flake-utils-plus.follows = "flake-utils-plus";
 
