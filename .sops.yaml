@@ -1,7 +1,11 @@
 keys:
-  - &primary age15qmuq8nmufv2ww83h2rjsupxk5qr48dmp696g08734xn2t2gz4ss6h8v5m
+  - &nebula age1d67kp0xknjrtdg97w7kd5t3legh8adp5nngahmzx0smh09zlzytsrz4u5g
+  - &nova age15qmuq8nmufv2ww83h2rjsupxk5qr48dmp696g08734xn2t2gz4ss6h8v5m
+  - &trinity age1rst3fnsdqkj6uvmgtxxhj58kh4qfz38flre2hh409nzu65ntv5eqxksqnw
 creation_rules:
   - path_regex: secrets/*
     key_groups:
       - age:
-          - *primary
+          - *nebula
+          - *nova
+          - *trinity
