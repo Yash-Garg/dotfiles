@@ -85,6 +85,8 @@ pages:
                 title: netflixtechblog.com
               - url: https://www.jeffgeerling.com/blog.xml
                 title: jeffgeerling.com
+              - url: https://nadh.in/index.xml
+                title: nadh.in
 
           - type: lobsters
             sort-by: hot
