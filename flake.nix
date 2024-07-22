@@ -57,6 +57,11 @@
         ]
         ++ commonModules;
 
+      systems.hosts.eclipse.modules = with inputs; [
+        raspberry-pi-nix.nixosModules.raspberry-pi
+        srvos.nixosModules.server
+      ];
+
       systems.hosts.nebula.modules = with inputs; [ nixos-wsl.nixosModules.default ];
 
       systems.hosts.nova.modules = with inputs; [
@@ -149,14 +154,15 @@
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     nixos-wsl.inputs.flake-compat.follows = "flake-compat";
     nixos-wsl.inputs.flake-utils.follows = "flake-utils";
 
     nur.url = "github:nix-community/NUR";
+
+    raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
+    raspberry-pi-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     snowfall-lib.url = "github:snowfallorg/lib/main";
     snowfall-lib.inputs.nixpkgs.follows = "nixpkgs";

@@ -11,7 +11,7 @@
   };
 
   shells.${namespace} = {
-    bash.enable = true;
+    zsh.enable = true;
   };
 
   home.stateVersion = "23.11";

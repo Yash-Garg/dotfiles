@@ -14,6 +14,7 @@ in
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "ahci"
