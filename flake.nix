@@ -59,6 +59,7 @@
 
       systems.hosts.eclipse.modules = with inputs; [
         raspberry-pi-nix.nixosModules.raspberry-pi
+        srvos.nixosModules.mixins-mdns
         srvos.nixosModules.server
       ];
 
