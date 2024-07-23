@@ -37,7 +37,6 @@ in
       [
         pkgs.gnome-screenshot
         pkgs.gnome-tweaks
-        pkgs.${namespace}.tiling-shell
       ]
       ++ (with pkgs.gnomeExtensions; [
         advanced-alttab-window-switcher
@@ -47,6 +46,7 @@ in
         clipboard-indicator
         dash-to-dock
         media-controls
+        tiling-shell
         transparent-top-bar
         user-themes
       ]);

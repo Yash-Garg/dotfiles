@@ -60,5 +60,4 @@ in
 {
   monolisa-nerdfonts = callPackage ./packages/monolisa-nerdfonts { };
   mpv-scripts = callPackage ./packages/mpv-scripts { };
-  tiling-shell = callPackage ./packages/tiling-shell { };
 }
