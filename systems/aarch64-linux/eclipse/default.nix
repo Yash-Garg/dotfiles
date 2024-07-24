@@ -16,27 +16,7 @@
     bluez-tools
   ];
 
-  hardware = {
-    bluetooth.enable = true;
-    raspberry-pi.config = {
-      all = {
-        base-dt-params = {
-          krnbt = {
-            enable = true;
-            value = "on";
-          };
-        };
-      };
-    };
-  };
-
-  networking = {
-    hostName = "eclipse";
-    useDHCP = true;
-    interfaces = {
-      wlan0.useDHCP = true;
-    };
-  };
+  networking.hostName = "eclipse";
 
   services.openssh = {
     enable = true;
@@ -54,5 +34,5 @@
     };
   };
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
