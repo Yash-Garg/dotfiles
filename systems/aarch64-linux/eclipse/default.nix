@@ -7,13 +7,14 @@
 }:
 {
   boot.initrd.systemd.enableTpm2 = lib.mkForce false;
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+
+  time.timeZone = "Asia/Kolkata";
+  topology.self.name = "Raspberry Pi 5";
 
   environment.systemPackages = with pkgs; [
     git
     bluez
     bluez-tools
-    wirelesstools
   ];
 
   hardware = {
@@ -33,12 +34,6 @@
   networking = {
     hostName = "eclipse";
     useDHCP = true;
-    firewall = {
-      allowedTCPPorts = [
-        80
-        443
-      ];
-    };
     interfaces = {
       wlan0.useDHCP = true;
     };
@@ -49,23 +44,16 @@
     package = pkgs.openssh_hpn;
   };
 
-  time.timeZone = "Asia/Kolkata";
-
-  topology.self.name = "Raspberry Pi 5";
-
   users = {
     mutableUsers = false;
     users.yash = {
       isNormalUser = true;
-      initialPassword = "123456";
+      hashedPassword = "$y$j9T$LIz9rrSiikhg0OqEzMpPc1$2NPu5OfVA6MGiGJHb6V0ZkdYVB6tJhsyTeA6Uq83h86";
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
       extraGroups = [ "wheel" ];
     };
-    users.root.openssh.authorizedKeys.keys = [
-      ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz''
-    ];
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
