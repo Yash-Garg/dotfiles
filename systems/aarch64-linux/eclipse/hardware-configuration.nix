@@ -58,9 +58,15 @@
     ];
   };
 
-  fileSystems."/mnt/media" = {
+  fileSystems."/media" = {
     device = "/dev/disk/by-uuid/6bf02424-40c6-4966-9fb1-9d5d2b071a8a";
     fsType = "ext4";
+    options = [
+      "rw"
+      "auto"
+      "noatime"
+      "nofail"
+    ];
   };
 
   swapDevices = [ ];
