@@ -23,6 +23,7 @@
     jq
     mediainfo
     nixfmt-rfc-style
+    nix-inspect
     nixos-generators
     nurl
     nvd
