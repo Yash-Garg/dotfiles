@@ -9,8 +9,6 @@
 
   topology.self.name = "WSL";
 
-  time.timeZone = "Asia/Kolkata";
-
   environment = {
     pathsToLink = [ "/share/zsh" ];
     variables = {

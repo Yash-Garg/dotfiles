@@ -8,7 +8,6 @@
 {
   boot.initrd.systemd.enableTpm2 = lib.mkForce false;
 
-  time.timeZone = "Asia/Kolkata";
   topology.self.name = "Raspberry Pi 5";
 
   environment.systemPackages = with pkgs; [

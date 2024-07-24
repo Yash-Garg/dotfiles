@@ -50,9 +50,6 @@ in
     tailscale.enable = true;
   };
 
-  # Set your time zone.
-  time.timeZone = "Asia/Kolkata";
-
   users.users.yash = {
     isNormalUser = true;
     description = "Yash Garg";
