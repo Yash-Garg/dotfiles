@@ -29,7 +29,7 @@
         sandbox = true;
         trusted-users = [
           "root"
-          "yash"
+          "@wheel"
         ];
         warn-dirty = false;
 
