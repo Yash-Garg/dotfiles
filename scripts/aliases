@@ -30,6 +30,10 @@ if type micro &>/dev/null; then
     export EDITOR='micro'
 fi
 
+if type rg &>/dev/null; then
+    alias grep='rg'
+fi
+
 if type xclip &>/dev/null; then
     alias xclip='xclip -selection c'
 fi
