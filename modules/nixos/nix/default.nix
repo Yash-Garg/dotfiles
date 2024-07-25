@@ -24,11 +24,5 @@
     };
 
     optimise.automatic = true;
-
-    settings.allowed-users = [ "@wheel" ];
-    settings.trusted-users = [
-      "root"
-      "@wheel"
-    ];
   };
 }

@@ -37,7 +37,7 @@ in
     desktop = {
       enable = true;
       networkHosts = {
-        "192.168.29.245" = [ "pi" ];
+        "192.168.29.234" = [ "cosmos" ];
       };
       android-dev.enable = true;
       gnome3.enable = true;
