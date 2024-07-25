@@ -45,12 +45,12 @@
   };
 
   fileSystems."/" = {
-    device = "/dev/root";
+    device = "/dev/disk/by-label/NIXOS_SD";
     fsType = "ext4";
   };
 
   fileSystems."/boot/firmware" = {
-    device = "/dev/disk/by-uuid/2178-694E";
+    device = "/dev/disk/by-label/FIRMWARE";
     fsType = "vfat";
     options = [
       "fmask=0022"
@@ -64,7 +64,6 @@
     options = [
       "nofail"
       "rw"
-      "users"
     ];
   };
 

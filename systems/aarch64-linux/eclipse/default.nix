@@ -6,6 +6,8 @@
   ...
 }:
 {
+  imports = [ ./hardware-configuration.nix ];
+
   boot.initrd.systemd.enableTpm2 = lib.mkForce false;
   networking.hostName = "eclipse";
   topology.self.name = "Raspberry Pi 5";
