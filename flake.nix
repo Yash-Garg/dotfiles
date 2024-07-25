@@ -57,7 +57,7 @@
         ]
         ++ commonModules;
 
-      systems.hosts.eclipse.modules = with inputs; [
+      systems.hosts.cosmos.modules = with inputs; [
         raspberry-pi-nix.nixosModules.raspberry-pi
         srvos.nixosModules.mixins-mdns
         vscode-server.nixosModules.default

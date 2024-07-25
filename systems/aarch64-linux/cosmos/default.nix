@@ -9,7 +9,7 @@
   imports = [ ./hardware-configuration.nix ];
 
   boot.initrd.systemd.enableTpm2 = lib.mkForce false;
-  networking.hostName = "eclipse";
+  networking.hostName = "cosmos";
   topology.self.name = "Raspberry Pi 5";
 
   environment.systemPackages = with pkgs; [
