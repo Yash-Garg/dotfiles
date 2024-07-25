@@ -62,16 +62,25 @@
     device = "/dev/disk/by-uuid/6bf02424-40c6-4966-9fb1-9d5d2b071a8a";
     fsType = "ext4";
     options = [
-      "rw"
-      "noatime"
       "nofail"
+      "rw"
+      "users"
     ];
   };
 
   swapDevices = [ ];
 
-  networking.useDHCP = lib.mkDefault true;
-  networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
+  networking = {
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        80
+        443
+      ];
+    };
+    interfaces.wlan0.useDHCP = lib.mkDefault true;
+    useDHCP = lib.mkDefault true;
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 }

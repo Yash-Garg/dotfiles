@@ -17,12 +17,19 @@
     bluez-tools
   ];
 
-  services.openssh = {
-    enable = true;
-    package = pkgs.openssh_hpn;
-  };
+  services = {
+    jellyfin = {
+      enable = true;
+      openFirewall = true;
+    };
 
-  services.vscode-server.enable = true;
+    openssh = {
+      enable = true;
+      package = pkgs.openssh_hpn;
+    };
+
+    vscode-server.enable = true;
+  };
 
   users = {
     mutableUsers = false;
