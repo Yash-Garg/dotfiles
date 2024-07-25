@@ -22,6 +22,8 @@
     package = pkgs.openssh_hpn;
   };
 
+  services.vscode-server.enable = true;
+
   users = {
     mutableUsers = false;
     users.yash = {

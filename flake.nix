@@ -60,6 +60,7 @@
       systems.hosts.eclipse.modules = with inputs; [
         raspberry-pi-nix.nixosModules.raspberry-pi
         srvos.nixosModules.mixins-mdns
+        vscode-server.nixosModules.default
       ];
 
       systems.hosts.nebula.modules = with inputs; [ nixos-wsl.nixosModules.default ];
@@ -183,5 +184,9 @@
     stylix.inputs.flake-compat.follows = "flake-compat";
     stylix.inputs.home-manager.follows = "home-manager";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
+    vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+    vscode-server.inputs.flake-utils.follows = "flake-utils";
   };
 }
