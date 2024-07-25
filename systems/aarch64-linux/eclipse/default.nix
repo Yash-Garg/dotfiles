@@ -8,7 +8,6 @@
 {
   boot.initrd.systemd.enableTpm2 = lib.mkForce false;
   networking.hostName = "eclipse";
-  sdImage.compressImage = false;
   topology.self.name = "Raspberry Pi 5";
 
   environment.systemPackages = with pkgs; [
