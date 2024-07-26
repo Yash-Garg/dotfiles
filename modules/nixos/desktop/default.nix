@@ -21,7 +21,6 @@ in
     ./earlyoom.nix
     ./gnome3.nix
     ./rnnoise.nix
-    ./ssh.nix
   ];
 
   options.${namespace}.profiles.desktop = {

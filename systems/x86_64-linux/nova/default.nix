@@ -42,7 +42,6 @@ in
       android-dev.enable = true;
       gnome3.enable = true;
       noise-cancellation.enable = true;
-      ssh.enable = true;
     };
 
     services = {
@@ -61,6 +60,8 @@ in
           };
         };
       };
+
+      ssh.enable = true;
 
       tailscale.enable = true;
     };

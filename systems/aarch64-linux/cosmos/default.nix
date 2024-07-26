@@ -35,17 +35,16 @@
       };
     };
 
+    ssh = {
+      enable = true;
+      package = pkgs.openssh_hpn;
+      passwordAuth = true;
+    };
+
     jellyfin.enable = true;
   };
 
-  services = {
-    openssh = {
-      enable = true;
-      package = pkgs.openssh_hpn;
-    };
-
-    vscode-server.enable = true;
-  };
+  services.vscode-server.enable = true;
 
   users = {
     mutableUsers = false;
