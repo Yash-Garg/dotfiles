@@ -5,6 +5,7 @@
   namespace,
   ...
 }:
+with lib.${namespace};
 {
   documentation = {
     enable = true;
@@ -15,7 +16,7 @@
 
   users.users.yash.packages = with pkgs; [ nix-output-monitor ];
 
-  nix = lib.${namespace}.mkNixConfig { inherit lib pkgs inputs; } // {
+  nix = mkNixConfig { inherit lib pkgs inputs; } // {
     gc = {
       automatic = true;
       dates = "daily";

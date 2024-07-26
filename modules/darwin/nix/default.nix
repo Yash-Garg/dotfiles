@@ -5,8 +5,9 @@
   namespace,
   ...
 }:
+with lib.${namespace};
 {
-  nix = lib.${namespace}.mkNixConfig { inherit lib pkgs inputs; } // {
+  nix = mkNixConfig { inherit lib pkgs inputs; } // {
     gc = {
       automatic = true;
       options = "--delete-older-than 3d";
