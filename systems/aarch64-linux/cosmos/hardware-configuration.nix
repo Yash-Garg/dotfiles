@@ -67,6 +67,15 @@
     ];
   };
 
+  fileSystems."/mnt/evo970" = {
+    device = "/dev/disk/by-uuid/f0895f54-b1fb-4406-9c55-eeb12e4822d7";
+    fsType = "ext4";
+    options = [
+      "nofail"
+      "rw"
+    ];
+  };
+
   swapDevices = [ ];
 
   networking = {
