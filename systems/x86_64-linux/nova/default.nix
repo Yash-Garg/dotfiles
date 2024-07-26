@@ -28,7 +28,6 @@ let
     vscode
   ];
 in
-with lib.${namespace};
 {
   imports = [ ./hardware-configuration.nix ];
 
