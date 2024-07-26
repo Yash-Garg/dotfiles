@@ -6,11 +6,11 @@
   ...
 }:
 let
-  cfg = config.profiles.${namespace}.openrazer;
+  cfg = config.${namespace}.services.openrazer;
   inherit (lib) mkEnableOption mkIf mkOption;
 in
 {
-  options.profiles.${namespace}.openrazer = {
+  options.${namespace}.services.openrazer = {
     enable = mkEnableOption { description = "Whether to configure openrazer settings"; };
 
     users = mkOption {

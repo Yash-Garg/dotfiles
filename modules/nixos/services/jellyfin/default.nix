@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.profiles.${namespace}.jellyfin;
+  cfg = config.${namespace}.services.jellyfin;
   inherit (lib) mkEnableOption mkIf;
 in
 {
-  options.profiles.${namespace}.jellyfin = {
+  options.${namespace}.services.jellyfin = {
     enable = mkEnableOption "Jellyfin server profile";
   };
 

@@ -6,11 +6,11 @@
   ...
 }:
 let
-  cfg = config.profiles.${namespace}.grub;
+  cfg = config.${namespace}.profiles.grub;
   inherit (lib) mkEnableOption mkIf;
 in
 {
-  options.profiles.${namespace}.grub = {
+  options.${namespace}.profiles.grub = {
     enable = mkEnableOption "Enable the GRUB bootloader";
   };
 

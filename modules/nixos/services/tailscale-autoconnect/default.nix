@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.services.${namespace}.tailscale-autoconnect;
+  cfg = config.${namespace}.services.tailscale-autoconnect;
   inherit (lib)
     mkEnableOption
     mkIf
@@ -15,7 +15,7 @@ let
     ;
 in
 {
-  options.services.${namespace}.tailscale-autoconnect = {
+  options.${namespace}.services.tailscale-autoconnect = {
     enable = mkEnableOption { description = "Whether to configure the Tailscale autoconnect service"; };
 
     authkeyFile = mkOption {

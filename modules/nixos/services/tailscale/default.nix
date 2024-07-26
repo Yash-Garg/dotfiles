@@ -5,12 +5,12 @@
   ...
 }:
 let
-  cfg = config.profiles.${namespace}.tailscale;
+  cfg = config.${namespace}.services.tailscale;
   inherit (lib) mkEnableOption mkIf;
 in
 {
-  options.profiles.${namespace}.tailscale = {
-    enable = mkEnableOption "Tailscale profile";
+  options.${namespace}.services.tailscale = {
+    enable = mkEnableOption "Tailscale";
   };
 
   config = mkIf cfg.enable {

@@ -17,7 +17,7 @@ let
     newsflash
     (prismlauncher.override {
       jdks = [ openjdk17 ];
-      withWaylandGLFW = config.profiles.${namespace}.desktop.gnome3.enable;
+      withWaylandGLFW = config.${namespace}.profiles.desktop.gnome3.enable;
     })
     slack
     spotify
@@ -28,13 +28,14 @@ let
     vscode
   ];
 in
+with lib.${namespace};
 {
   imports = [ ./hardware-configuration.nix ];
 
   topology.self.name = "Desktop";
 
-  profiles.${namespace} = {
-    desktop = {
+  dots = {
+    profiles.desktop = {
       enable = true;
       networkHosts = {
         "192.168.29.234" = [ "cosmos" ];
@@ -45,9 +46,25 @@ in
       ssh.enable = true;
     };
 
-    openrazer.enable = true;
-    samba.enable = true;
-    tailscale.enable = true;
+    services = {
+      openrazer.enable = true;
+
+      samba = {
+        enable = true;
+        shares = {
+          sshd = {
+            path = "/run/media/yash/sshd";
+            browseable = "yes";
+            writeable = "yes";
+            "guest ok" = "yes";
+            "create mask" = "0644";
+            "directory mask" = "0755";
+          };
+        };
+      };
+
+      tailscale.enable = true;
+    };
   };
 
   users.users.yash = {

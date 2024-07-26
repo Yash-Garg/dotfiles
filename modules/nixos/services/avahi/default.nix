@@ -5,12 +5,12 @@
   ...
 }:
 let
-  cfg = config.profiles.${namespace}.avahi;
+  cfg = config.${namespace}.services.avahi;
   inherit (lib) mkEnableOption mkIf;
 in
 {
-  options.profiles.${namespace}.avahi = {
-    enable = mkEnableOption "Avahi profile for mDNS";
+  options.${namespace}.services.avahi = {
+    enable = mkEnableOption "Avahi";
   };
 
   config = mkIf cfg.enable {

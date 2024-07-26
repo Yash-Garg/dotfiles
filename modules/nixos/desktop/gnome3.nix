@@ -6,11 +6,11 @@
   ...
 }:
 let
-  cfg = config.profiles.${namespace}.desktop;
+  cfg = config.${namespace}.profiles.desktop;
   inherit (lib) mkEnableOption mkIf;
 in
 {
-  options.profiles.${namespace}.desktop.gnome3 = {
+  options.${namespace}.profiles.desktop.gnome3 = {
     enable = mkEnableOption "Setup desktop with Gnome DE";
   };
 

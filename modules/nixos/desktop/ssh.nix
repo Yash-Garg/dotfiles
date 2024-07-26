@@ -6,11 +6,11 @@
   ...
 }:
 let
-  cfg = config.profiles.${namespace}.desktop;
+  cfg = config.${namespace}.profiles.desktop;
   inherit (lib) mkDefault mkEnableOption mkIf;
 in
 {
-  options.profiles.${namespace}.desktop.ssh = {
+  options.${namespace}.profiles.desktop.ssh = {
     enable = mkEnableOption "Setup SSH";
   };
 

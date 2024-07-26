@@ -5,6 +5,7 @@
   namespace,
   ...
 }:
+with lib.${namespace};
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -18,8 +19,23 @@
     bluez-tools
   ];
 
-  profiles.${namespace} = {
+  dots.services = {
     avahi.enable = true;
+
+    samba = {
+      enable = true;
+      shares = {
+        media = {
+          path = "/mnt/wd500/media";
+          browseable = "yes";
+          writeable = "yes";
+          "guest ok" = "yes";
+          "create mask" = "0644";
+          "directory mask" = "0755";
+        };
+      };
+    };
+
     jellyfin.enable = true;
   };
 
