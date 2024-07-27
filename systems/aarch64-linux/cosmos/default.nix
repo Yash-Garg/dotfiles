@@ -21,6 +21,8 @@
   dots.services = {
     avahi.enable = true;
 
+    qbittorrent.enable = true;
+
     samba = {
       enable = true;
       shares = {
