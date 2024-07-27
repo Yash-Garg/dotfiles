@@ -5,6 +5,7 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.profiles.desktop;
   defaultJdk = pkgs.openjdk17;
@@ -14,7 +15,6 @@ let
     defaultJdk
   ];
   mapOpenJdk = pkg: "${pkg}/lib/openjdk";
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   options.${namespace}.profiles.desktop.android-dev = {

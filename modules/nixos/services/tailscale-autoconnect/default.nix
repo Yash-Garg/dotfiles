@@ -5,14 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.services.tailscale-autoconnect;
-  inherit (lib)
-    mkEnableOption
-    mkIf
-    mkOption
-    types
-    ;
 in
 {
   options.${namespace}.services.tailscale-autoconnect = {

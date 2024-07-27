@@ -5,16 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.services.ssh;
-  inherit (lib)
-    mkDefault
-    mkEnableOption
-    mkOption
-    mkPackageOption
-    mkIf
-    types
-    ;
 in
 {
   options.${namespace}.services.ssh = {

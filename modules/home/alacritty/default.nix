@@ -5,9 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.alacritty;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   imports = [ ./settings.nix ];

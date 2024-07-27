@@ -5,11 +5,11 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.starship;
   palette = builtins.readFile "${inputs.catppuccin-starship}/palettes/mocha.toml";
   settings = builtins.readFile ./config.toml;
-  inherit (lib) mkEnableOption mkMerge mkIf;
 in
 {
   options.profiles.${namespace}.starship = {

@@ -4,9 +4,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.services.tailscale;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   options.${namespace}.services.tailscale = {

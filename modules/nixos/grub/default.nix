@@ -5,9 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.profiles.grub;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   options.${namespace}.profiles.grub = {

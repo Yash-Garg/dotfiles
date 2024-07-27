@@ -5,15 +5,10 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.keychain;
   command = "eval `keychain --eval --agents ssh ${cfg.authKey}`";
-  inherit (lib)
-    mkEnableOption
-    mkIf
-    mkOption
-    types
-    ;
 in
 {
   options.profiles.${namespace}.keychain = {

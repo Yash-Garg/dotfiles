@@ -5,9 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.kitty;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   imports = [ ./colors.nix ];

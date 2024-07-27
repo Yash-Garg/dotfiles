@@ -5,9 +5,9 @@
   pkgs,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.profiles.desktop;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   options.${namespace}.profiles.desktop.gnome3 = {

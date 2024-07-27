@@ -5,9 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.mpv;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   imports = [ ./config.nix ];

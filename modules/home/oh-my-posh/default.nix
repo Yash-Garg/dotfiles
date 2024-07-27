@@ -4,10 +4,10 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.oh-my-posh;
   ompConfig = builtins.readFile ./config.omp.json;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   options.profiles.${namespace}.oh-my-posh = {

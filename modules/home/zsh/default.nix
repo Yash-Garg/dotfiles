@@ -4,10 +4,10 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.shells.${namespace}.zsh;
   profiles = config.profiles.${namespace};
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   options.shells.${namespace}.zsh = {

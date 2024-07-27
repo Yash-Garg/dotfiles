@@ -5,9 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.profiles.desktop;
-  inherit (lib) mkEnableOption mkIf;
   noise-suppression-for-voice = pkgs.writeTextDir "share/pipewire/pipewire.conf.d/99-noise-cancellation.conf" ''
     context.modules = [
     {   name = libpipewire-module-filter-chain

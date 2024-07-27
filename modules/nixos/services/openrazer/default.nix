@@ -5,9 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.services.openrazer;
-  inherit (lib) mkEnableOption mkIf mkOption;
 in
 {
   options.${namespace}.services.openrazer = {

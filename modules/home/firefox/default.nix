@@ -5,6 +5,7 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.firefox;
   css-hacks = pkgs.fetchFromGitHub {
@@ -13,7 +14,6 @@ let
     rev = "f1480c80e31c0b738e6d49a78137a42adfdccaab";
     sha256 = "sha256-5TLKrsW+yLzhjHMPXZJ+b4LprtZ4pXdkV9yB0LaVDUk=";
   };
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   imports = [

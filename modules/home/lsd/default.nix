@@ -4,9 +4,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.profiles.${namespace}.lsd;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   imports = [ ./colors.nix ];

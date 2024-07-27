@@ -4,9 +4,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.services.jellyfin;
-  inherit (lib) mkEnableOption mkIf;
 in
 {
   options.${namespace}.services.jellyfin = {
