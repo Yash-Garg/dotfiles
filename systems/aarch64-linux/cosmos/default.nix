@@ -5,18 +5,11 @@
   namespace,
   ...
 }:
+with lib;
 {
   imports = [ ./hardware-configuration.nix ];
 
-  boot.initrd.systemd.enableTpm2 = lib.mkForce false;
-  networking.hostName = "cosmos";
-  topology.self.name = "Raspberry Pi 5";
-
-  environment.systemPackages = with pkgs; [
-    git
-    bluez
-    bluez-tools
-  ];
+  boot.initrd.systemd.enableTpm2 = mkForce false;
 
   dots.services = {
     avahi.enable = true;
@@ -43,10 +36,36 @@
       passwordAuth = true;
     };
 
+    tailscale.enable = true;
+
+    tailscale-autoconnect = {
+      enable = true;
+      authkeyFile = config.sops.secrets.tsauthkey.path;
+      extraOptions = [
+        "--accept-risk=lose-ssh"
+        "--ssh"
+        "--advertise-routes=192.168.0.0/24,192.168.1.0/24"
+      ];
+    };
+
     jellyfin.enable = true;
   };
 
-  services.vscode-server.enable = true;
+  environment.systemPackages = with pkgs; [
+    git
+    bluez
+    bluez-tools
+  ];
+
+  networking.hostName = "cosmos";
+
+  sops.age.sshKeyPaths = lib.mkForce [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.gnupg.sshKeyPaths = lib.mkForce [ ];
+  sops.secrets.tsauthkey = {
+    sopsFile = snowfall.fs.get-file "secrets/tailscale.yaml";
+  };
+
+  topology.self.name = "Raspberry Pi 5";
 
   users = {
     mutableUsers = false;

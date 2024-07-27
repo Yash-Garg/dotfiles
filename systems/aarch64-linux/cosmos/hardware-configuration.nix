@@ -12,15 +12,21 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.kernelParams = [
-    "8250.nr_uarts=11"
-    "console=ttyAMA10,9600"
-    "console=tty0"
-  ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    extraModulePackages = [ ];
+    initrd.availableKernelModules = [ ];
+    initrd.kernelModules = [ ];
+    kernelModules = [ ];
+    kernelParams = [
+      "8250.nr_uarts=11"
+      "console=ttyAMA10,9600"
+      "console=tty0"
+    ];
+    kernel.sysctl = {
+      "net.ipv4.ip_forward" = 1;
+      "net.ipv6.conf.all.forwarding" = 1;
+    };
+  };
 
   hardware = {
     bluetooth.enable = true;
