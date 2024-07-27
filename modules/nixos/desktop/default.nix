@@ -5,15 +5,9 @@
   namespace,
   ...
 }:
+with lib;
 let
   cfg = config.${namespace}.profiles.desktop;
-  inherit (lib)
-    mkDefault
-    mkEnableOption
-    mkIf
-    mkOption
-    types
-    ;
 in
 {
   imports = [
@@ -35,26 +29,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    boot = {
-      # Use latest kernel by default.
-      kernelPackages = mkDefault pkgs.linuxPackages_latest;
-
-      lanzaboote = {
-        enable = true;
-        pkiBundle = "/etc/secureboot";
-      };
-
-      # Bootloader
-      loader = {
-        efi = {
-          efiSysMountPoint = "/boot";
-          canTouchEfiVariables = false;
-        };
-
-        systemd-boot.enable = lib.mkForce false;
-
-        timeout = lib.mkDefault 60;
-      };
+    dots.system.boot = {
+      enable = true;
+      secure.enable = true;
     };
 
     # Enable sound with pipewire.
@@ -68,10 +45,7 @@ in
     };
 
     time.hardwareClockInLocalTime = true;
-
-    hardware = {
-      bluetooth.enable = mkDefault true;
-    };
+    hardware.bluetooth.enable = mkDefault true;
 
     networking = {
       hostName = "nova";

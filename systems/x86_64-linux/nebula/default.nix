@@ -5,8 +5,8 @@
   ...
 }:
 {
-  imports = [ ./wsl.nix ];
-
+  dots.system.wsl.enable = true;
+  security.sudo.wheelNeedsPassword = false;
   topology.self.name = "WSL";
 
   environment = {
@@ -15,8 +15,6 @@
       LANG = "en_US.UTF-8";
     };
   };
-
-  security.sudo.wheelNeedsPassword = false;
 
   users.users.yash = {
     isNormalUser = true;

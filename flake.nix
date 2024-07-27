@@ -50,6 +50,7 @@
         [
           lanzaboote.nixosModules.lanzaboote
           nixos-generators.nixosModules.all-formats
+          nixos-wsl.nixosModules.default
           sops-nix.nixosModules.sops
           srvos.nixosModules.mixins-nix-experimental
           srvos.nixosModules.mixins-trusted-nix-caches
@@ -62,8 +63,6 @@
         srvos.nixosModules.mixins-mdns
         vscode-server.nixosModules.default
       ];
-
-      systems.hosts.nebula.modules = with inputs; [ nixos-wsl.nixosModules.default ];
 
       systems.hosts.nova.modules = with inputs; [
         srvos.nixosModules.desktop
