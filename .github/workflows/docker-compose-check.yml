@@ -16,8 +16,8 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: |
-            services/**/*.yml
-            services/*.yml
+            docker/**/*.yml
+            docker/*.yml
 
   run-services:
     needs: [file-changes]
@@ -28,4 +28,4 @@ jobs:
       - name: Check docker compose services
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
-          compose-file: "./services/docker-compose.yml"
+          compose-file: "./docker/docker-compose.yml"
