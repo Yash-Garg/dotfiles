@@ -30,3 +30,6 @@ template name path:
 
 check flake:
   nom build .#nixosConfigurations.{{flake}}.config.system.build.toplevel
+
+test sys:
+  nix run github:nix-community/nixos-anywhere -- --flake .#{{sys}} --vm-test
