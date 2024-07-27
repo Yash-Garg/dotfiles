@@ -203,6 +203,16 @@ in
             transparency-mode = "FIXED";
           };
 
+          "org/gnome/shell/extensions/display-brightness-ddcutil" = {
+            button-location = 1;
+            ddcutil-binary-path = "${lib.getExe pkgs.ddcutil}";
+            ddcutil-queue-ms = 130.0;
+            ddcutil-sleep-multiplier = 40.0;
+            position-system-menu = 3.0;
+            show-value-label = true;
+            step-change-keyboard = 2.0;
+          };
+
           "org/gnome/desktop/wm/keybindings" = {
             activate-window-menu = [ ];
             close = [ "<Super>q" ];
