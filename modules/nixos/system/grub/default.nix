@@ -23,7 +23,7 @@ in
       gfxmodeEfi = "2560x1440";
       backgroundColor = "#000000";
       fontSize = 36;
-      splashImage = ../desktop/images/background.png;
+      splashImage = ../desktop/stylix/background.png;
       font = "${pkgs.source-code-pro}/share/fonts/opentype/SourceCodePro-Medium.otf";
     };
   };
