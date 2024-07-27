@@ -76,6 +76,8 @@
     ];
   };
 
+  raspberry-pi-nix.board = "bcm2712";
+
   swapDevices = [ ];
 
   networking = {
