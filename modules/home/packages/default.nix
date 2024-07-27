@@ -25,6 +25,7 @@
     nixfmt-rfc-style
     nix-inspect
     nixos-generators
+    nixpkgs-review
     nurl
     nvd
     ookla-speedtest
