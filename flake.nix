@@ -125,7 +125,6 @@
 
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
-    devshell.inputs.flake-utils.follows = "flake-utils";
 
     flake-compat.url = "github:nix-community/flake-compat";
     flake-compat.flake = false;
