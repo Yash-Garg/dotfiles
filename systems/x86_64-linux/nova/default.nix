@@ -49,15 +49,8 @@ in
 
       samba = {
         enable = true;
-        shares = {
-          sshd = {
-            path = "/run/media/yash/sshd";
-            browseable = "yes";
-            writeable = "yes";
-            "guest ok" = "yes";
-            "create mask" = "0644";
-            "directory mask" = "0755";
-          };
+        shares.downloads = {
+          path = "/run/media/yash/sshd";
         };
       };
 

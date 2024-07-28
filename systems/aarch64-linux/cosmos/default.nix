@@ -22,14 +22,8 @@ with lib;
     samba = {
       enable = true;
       shares = {
-        media = {
-          path = "/mnt/wd500/media";
-          browseable = "yes";
-          writeable = "yes";
-          "guest ok" = "yes";
-          "create mask" = "0644";
-          "directory mask" = "0755";
-        };
+        media.path = "/mnt/wd500/media";
+        evo.path = "/mnt/evo970";
       };
     };
 
