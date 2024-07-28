@@ -30,6 +30,3 @@ template name path:
 
 check flake:
   nom build .#nixosConfigurations.{{flake}}.config.system.build.toplevel
-
-secret name:
-  sops updatekeys secrets/{{name}}.yaml

@@ -1,4 +1,9 @@
-{ pkgs, namespace, ... }:
+{
+  pkgs,
+  inputs,
+  namespace,
+  ...
+}:
 {
   home.packages = with pkgs; [
     age
@@ -19,6 +24,7 @@
     httpie
     hyperfine
     ijq
+    inputs.agenix.packages."${system}".default
     just
     jq
     mediainfo
@@ -31,7 +37,6 @@
     ookla-speedtest
     ripgrep
     scc
-    sops
     unzip
     whois
     zip

@@ -9,6 +9,9 @@ with lib;
 {
   imports = [ ./hardware-configuration.nix ];
 
+  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tsauthkey.age";
+
   boot.initrd.systemd.enableTpm2 = mkForce false;
 
   dots.services = {
@@ -40,7 +43,7 @@ with lib;
 
     tailscale-autoconnect = {
       enable = true;
-      authkeyFile = config.sops.secrets.tsauthkey.path;
+      authkeyFile = config.age.secrets.tsauthkey.path;
       extraOptions = [
         "--accept-risk=lose-ssh"
         "--ssh"
@@ -58,12 +61,6 @@ with lib;
   ];
 
   networking.hostName = "cosmos";
-
-  sops.age.sshKeyPaths = lib.mkForce [ "/etc/ssh/ssh_host_ed25519_key" ];
-  sops.gnupg.sshKeyPaths = lib.mkForce [ ];
-  sops.secrets.tsauthkey = {
-    sopsFile = snowfall.fs.get-file "secrets/tailscale.yaml";
-  };
 
   topology.self.name = "Raspberry Pi 5";
 
