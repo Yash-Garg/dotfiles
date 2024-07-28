@@ -5,7 +5,11 @@
   ...
 }:
 {
-  dots.system.wsl.enable = true;
+  dots.system.wsl = {
+    enable = true;
+    hostname = "nebula";
+  };
+
   security.sudo.wheelNeedsPassword = false;
   topology.self.name = "WSL";
 
