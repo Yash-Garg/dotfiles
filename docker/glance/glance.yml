@@ -75,6 +75,8 @@ pages:
             collapse-after: 7
             cache: 3h
             feeds:
+              - url: https://tailscale.dev/feed.xml
+                title: tailscale.dev
               - url: https://fasterthanli.me/index.xml
                 title: fasterthanli.me
               - url: https://xeiaso.net/blog.rss
