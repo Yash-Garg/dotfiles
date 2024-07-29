@@ -14,5 +14,5 @@ let
   ];
 in
 {
-  "tsauthkey.age".publicKeys = users ++ systems;
+  "tailscale/cosmos.age".publicKeys = users ++ systems;
 }
