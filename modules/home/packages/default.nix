@@ -13,6 +13,7 @@
     charm-freeze
     curl
     delta
+    deploy-rs
     direnv
     dnscontrol
     dogdns

@@ -36,11 +36,9 @@ in
   dots = {
     profiles.desktop = {
       enable = true;
-      networkHosts = {
-        "192.168.29.234" = [ "cosmos" ];
-      };
       android-dev.enable = true;
       gnome3.enable = true;
+      networkHosts = { };
       noise-cancellation.enable = true;
     };
 
