@@ -87,13 +87,6 @@
   swapDevices = [ ];
 
   networking = {
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [
-        80
-        443
-      ];
-    };
     interfaces.wlan0.useDHCP = lib.mkDefault true;
     useDHCP = lib.mkDefault true;
   };

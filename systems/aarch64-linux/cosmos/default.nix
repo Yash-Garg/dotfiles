@@ -54,7 +54,18 @@ with lib;
     bluez-tools
   ];
 
-  networking.hostName = "cosmos";
+  networking = {
+    hostName = "cosmos";
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        80
+        90
+        8080
+        443
+      ];
+    };
+  };
 
   topology.self.name = "Raspberry Pi 5";
 
@@ -65,7 +76,36 @@ with lib;
       hashedPassword = "$y$j9T$LIz9rrSiikhg0OqEzMpPc1$2NPu5OfVA6MGiGJHb6V0ZkdYVB6tJhsyTeA6Uq83h86";
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [
+        "wheel"
+        "docker"
+      ];
+    };
+  };
+
+  virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+
+    oci-containers.containers = {
+      glance = {
+        image = "glanceapp/glance:latest";
+        ports = [ "8080:8080" ];
+        volumes = [ "${snowfall.fs.get-file "docker/glance/glance.yml"}:/app/glance.yml" ];
+        autoStart = true;
+      };
+
+      h5ai = {
+        image = "awesometic/h5ai:latest";
+        ports = [ "90:80" ];
+        volumes = [ "/mnt/wd500/media:/h5ai" ];
+        autoStart = true;
+      };
     };
   };
 
