@@ -40,11 +40,7 @@
 
       systems.modules.darwin =
         with inputs;
-        [
-          srvos.darwinModules.mixins-nix-experimental
-          srvos.darwinModules.mixins-trusted-nix-caches
-        ]
-        ++ commonModules;
+        [ srvos.darwinModules.mixins-trusted-nix-caches ] ++ commonModules;
 
       systems.modules.nixos =
         with inputs;
@@ -52,7 +48,6 @@
           lanzaboote.nixosModules.lanzaboote
           nixos-generators.nixosModules.all-formats
           nixos-wsl.nixosModules.default
-          srvos.nixosModules.mixins-nix-experimental
           srvos.nixosModules.mixins-trusted-nix-caches
           stylix.nixosModules.stylix
         ]

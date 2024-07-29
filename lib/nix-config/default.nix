@@ -6,6 +6,8 @@
       inputs,
     }:
     {
+      package = inputs.lix.packages.${pkgs.system}.default;
+
       generateNixPathFromInputs = true;
       generateRegistryFromInputs = true;
       linkInputs = true;
@@ -21,6 +23,14 @@
         allowed-users = [ "yash" ];
         auto-optimise-store = false;
         builders-use-substitutes = true;
+        experimental-features = lib.mkForce [
+          "auto-allocate-uids"
+          "ca-derivations"
+          "cgroups"
+          "flakes"
+          "nix-command"
+          "recursive-nix"
+        ];
         flake-registry = "/etc/nix/registry.json";
         http-connections = 50;
         keep-going = true;
