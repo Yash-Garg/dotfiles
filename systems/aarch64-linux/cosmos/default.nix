@@ -95,7 +95,7 @@ with lib;
     oci-containers.containers = {
       glance = {
         image = "glanceapp/glance:latest";
-        ports = [ "8080:8080" ];
+        ports = [ "80:8080" ];
         volumes = [ "${snowfall.fs.get-file "docker/glance/glance.yml"}:/app/glance.yml" ];
         autoStart = true;
       };
@@ -103,7 +103,7 @@ with lib;
       h5ai = {
         image = "awesometic/h5ai:latest";
         ports = [ "90:80" ];
-        volumes = [ "/mnt/wd500/media:/h5ai" ];
+        volumes = [ "/mnt:/h5ai" ];
         autoStart = true;
       };
     };
