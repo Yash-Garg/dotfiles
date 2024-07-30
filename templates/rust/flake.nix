@@ -5,7 +5,6 @@
 
   inputs.devshell.url = "github:numtide/devshell";
   inputs.devshell.inputs.nixpkgs.follows = "nixpkgs";
-  inputs.devshell.inputs.flake-utils.follows = "flake-utils";
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
@@ -16,7 +15,6 @@
   inputs.fenix.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.crane.url = "github:ipetkov/crane";
-  inputs.crane.inputs.flake-utils.follows = "flake-utils";
   inputs.crane.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
@@ -39,7 +37,7 @@
 
         rustStable = (import fenix { inherit pkgs; }).fromToolchainFile {
           file = ./toolchain.toml;
-          sha256 = "sha256-3St/9/UKo/6lz2Kfq2VmlzHyufduALpiIKaaKX4Pq0g==";
+          sha256 = "sha256-6eN/GKzjVSjEhGO9FhWObkRFaE1Jf+uqMSdQnb8lcB4=";
         };
 
         craneLib = (crane.mkLib pkgs).overrideToolchain rustStable;
