@@ -65,7 +65,7 @@
   };
 
   fileSystems."/mnt/wd500" = {
-    device = "/dev/disk/by-uuid/6bf02424-40c6-4966-9fb1-9d5d2b071a8a";
+    device = "/dev/disk/by-uuid/ec2f35a7-a498-451f-b0c9-1d6677023277";
     fsType = "ext4";
     options = [
       "nofail"
@@ -74,7 +74,7 @@
   };
 
   fileSystems."/mnt/evo970" = {
-    device = "/dev/disk/by-uuid/f0895f54-b1fb-4406-9c55-eeb12e4822d7";
+    device = "/dev/disk/by-uuid/382ba8fb-7d26-4b71-b59c-667f87566853";
     fsType = "ext4";
     options = [
       "nofail"
