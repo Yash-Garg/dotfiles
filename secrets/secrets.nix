@@ -6,7 +6,7 @@ let
     user2
   ];
 
-  cosmos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOW2nl7vmnVVqb03KCiVHbhGmvdeyMLYIIFVsfvX3xsQ";
+  cosmos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLP1aahIQ3NxtO6D7fMLzFT91xjCASrAlmHPIxEaVRT";
   nova = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA4Sgn2sPpoVG1nAIZfS0bwmWRZyfKgsoymFzOt1pp0G";
   systems = [
     cosmos
