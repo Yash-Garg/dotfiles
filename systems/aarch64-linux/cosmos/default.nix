@@ -77,8 +77,8 @@ with lib;
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
       extraGroups = [
-        "wheel"
         "docker"
+        "wheel"
       ];
     };
   };

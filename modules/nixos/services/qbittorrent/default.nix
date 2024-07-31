@@ -9,11 +9,19 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.services.qbittorrent;
-  configDir = "/var/lib/qbittorrent";
+  configDir = "${cfg.dataDir}/.config";
 in
 {
   options.${namespace}.services.qbittorrent = {
     enable = mkBoolOpt false "Enable qbittorrent-nox service.";
+
+    dataDir = mkOption {
+      type = types.path;
+      default = "/var/lib/qbittorrent";
+      description = ''
+        Directory where qBittorrent-nox will create files.
+      '';
+    };
 
     user = mkOption {
       type = types.str;
@@ -37,7 +45,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.qbittorrent ];
+    environment.systemPackages = [ pkgs.qbittorrent-nox ];
 
     networking.firewall = mkIf cfg.openFirewall {
       allowedTCPPorts = [ cfg.port ];
@@ -48,27 +56,27 @@ in
       after = [ "network.target" ];
       description = "qBittorrent Daemon";
       wantedBy = [ "multi-user.target" ];
-      path = [ pkgs.qbittorrent ];
+      path = [ pkgs.qbittorrent-nox ];
       serviceConfig = {
         ExecStart = ''
-          ${pkgs.qbittorrent}/bin/qbittorrent-nox \
+          ${pkgs.qbittorrent-nox}/bin/qbittorrent-nox \
             --profile=${configDir} \
             --webui-port=${toString cfg.port}
         '';
         Restart = "on-success";
         User = cfg.user;
         Group = cfg.group;
-        UMask = "0002";
       };
     };
 
+    systemd.tmpfiles.rules = [ "d '${cfg.dataDir}' 0700 ${cfg.user} ${cfg.group} - -" ];
+
     users.users = mkIf (cfg.user == "qbittorrent") {
       qbittorrent = {
-        inherit (cfg) group;
-        home = configDir;
-        createHome = true;
         description = "qBittorrent Daemon user";
-        isNormalUser = true;
+        group = cfg.group;
+        home = cfg.dataDir;
+        isSystemUser = true;
       };
     };
 

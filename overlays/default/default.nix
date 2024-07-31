@@ -15,8 +15,6 @@ _: _final: prev: {
     ];
   };
 
-  qbittorrent = prev.qbittorrent.override { guiSupport = false; };
-
   slack = prev.slack.overrideAttrs (prevAttrs: {
     installPhase =
       prevAttrs.installPhase
