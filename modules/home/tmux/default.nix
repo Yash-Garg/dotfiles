@@ -43,8 +43,6 @@ in
       bind p split-window -h
       bind-key Right next-window
       bind-key Left previous-window
-      bind -n End send-key C-e
-      bind -n Home send-key C-a
     '';
   };
 }
