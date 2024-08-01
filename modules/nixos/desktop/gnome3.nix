@@ -83,6 +83,18 @@ in
               "transparent-top-bar@zhanghai.me"
               "user-theme@gnome-shell-extensions.gcampax.github.com"
             ];
+            favorite-apps = [
+              "org.gnome.Nautilus.desktop"
+              "firefox.desktop"
+              "kitty.desktop"
+              "code.desktop"
+              "Alacritty.desktop"
+              "android-studio.desktop"
+              "spotify.desktop"
+              "org.telegram.desktop.desktop"
+              "slack.desktop"
+              "vesktop.desktop"
+            ];
             welcome-dialog-last-shown-version = "999999999";
           };
 
