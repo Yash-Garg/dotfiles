@@ -2,7 +2,7 @@
 {
   programs.alacritty.settings = {
     env = {
-      TERM = "screen-256color";
+      TERM = "xterm-256color";
     };
 
     # Colors (Aura Theme)
