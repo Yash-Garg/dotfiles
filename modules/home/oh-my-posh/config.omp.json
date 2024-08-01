@@ -11,6 +11,13 @@
             "newline": true,
             "segments": [
                 {
+                    "type": "nix-shell",
+                    "style": "plain",
+                    "template": "(nix-{{ .Type }}) ",
+                    "background": "transparent",
+                    "foreground": "#00f7ff"
+                },
+                {
                     "foreground": "lightYellow",
                     "style": "plain",
                     "template": "{{ if .WSL }}(wsl) {{ end }}",
