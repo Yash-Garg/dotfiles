@@ -22,7 +22,7 @@ with lib;
     samba = {
       enable = true;
       shares = {
-        media.path = "/mnt/wd500/media";
+        media.path = "/mnt/wd500";
         evo.path = "/mnt/evo970";
       };
     };
