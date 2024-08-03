@@ -10,9 +10,7 @@
     oh-my-posh.enable = true;
   };
 
-  shells.${namespace} = {
-    zsh.enable = true;
-  };
+  shells.${namespace}.zsh.enable = true;
 
   home.stateVersion = "24.11";
 }

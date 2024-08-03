@@ -5,13 +5,9 @@
     name = "yash";
   };
 
-  profiles.${namespace} = {
-    oh-my-posh.enable = true;
-  };
+  profiles.${namespace}.oh-my-posh.enable = true;
 
-  shells.${namespace} = {
-    zsh.enable = true;
-  };
+  shells.${namespace}.zsh.enable = true;
 
   home.packages = with pkgs; [
     apktool

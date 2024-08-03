@@ -15,6 +15,7 @@ _: {
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
+        _FXShowPosixPathInTitle = false;
         FXDefaultSearchScope = "SCcf";
         FXEnableExtensionChangeWarning = false;
         FXPreferredViewStyle = "Nlsv";
