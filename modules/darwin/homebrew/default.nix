@@ -7,6 +7,7 @@ let
     "discord"
     "flutter"
     "iina"
+    "imageoptim"
     "iterm2"
     "jetbrains-toolbox"
     "linear-linear"
