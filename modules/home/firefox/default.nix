@@ -51,10 +51,10 @@ in
             })
             (buildFirefoxXpiAddon {
               pname = "material-icons-for-github";
-              version = "1.8.16";
+              version = "1.8.23";
               addonId = "{eac6e624-97fa-4f28-9d24-c06c9b8aa713}";
-              url = "https://addons.mozilla.org/firefox/downloads/file/4315349/material_icons_for_github-1.8.16.xpi";
-              sha256 = "sha256-rPPDBHrH8VEwCRVUZ4nES2TMw5wyj/wALOl4RipfS5Q=";
+              url = "https://addons.mozilla.org/firefox/downloads/file/4326942/material_icons_for_github-1.8.23.xpi";
+              sha256 = "sha256-Pee0D0bUCmIB5P4GvwIa8NRXuKzW1LpIpKJSMXVNWbg=";
               meta = with lib; {
                 platforms = platforms.all;
               };
