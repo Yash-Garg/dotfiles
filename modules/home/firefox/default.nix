@@ -33,12 +33,9 @@ in
         yash = {
           isDefault = true;
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+            betterttv
             bitwarden
             darkreader
-            multi-account-containers
-            raindropio
-            sponsorblock
-            ublock-origin
             (buildFirefoxXpiAddon {
               pname = "dark-space-full-transparent";
               version = "1.3";
@@ -49,6 +46,7 @@ in
                 platforms = platforms.all;
               };
             })
+            keepa
             (buildFirefoxXpiAddon {
               pname = "material-icons-for-github";
               version = "1.8.23";
@@ -59,6 +57,13 @@ in
                 platforms = platforms.all;
               };
             })
+            multi-account-containers
+            protondb-for-steam
+            raindropio
+            return-youtube-dislikes
+            sponsorblock
+            steam-database
+            ublock-origin
           ];
           search = {
             force = true;
