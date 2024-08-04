@@ -40,8 +40,9 @@ with lib;
       authkeyFile = config.age.secrets.tsauthkey.path;
       extraOptions = [
         "--accept-risk=lose-ssh"
-        "--ssh"
+        "--advertise-exit-node"
         "--advertise-routes=192.168.0.0/24,192.168.1.0/24"
+        "--ssh"
       ];
     };
 
