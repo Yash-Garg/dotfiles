@@ -35,10 +35,12 @@ in
         "network-pre.target"
         "tailscale.service"
       ];
+
       wants = [
         "network-pre.target"
         "tailscale.service"
       ];
+
       wantedBy = [ "multi-user.target" ];
 
       # set this service as a oneshot job

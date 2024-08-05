@@ -22,10 +22,6 @@
       "console=ttyAMA10,9600"
       "console=tty0"
     ];
-    kernel.sysctl = {
-      "net.ipv4.ip_forward" = 1;
-      "net.ipv6.conf.all.forwarding" = 1;
-    };
   };
 
   hardware = {

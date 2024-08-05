@@ -14,21 +14,23 @@ in
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "ahci"
-    "nvme"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-  ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [
-    "kvm-intel"
-    "i2c-dev"
-  ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    extraModulePackages = [ ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "ahci"
+      "nvme"
+      "usbhid"
+      "usb_storage"
+      "sd_mod"
+    ];
+    initrd.kernelModules = [ ];
+    kernelModules = [
+      "kvm-intel"
+      "i2c-dev"
+    ];
+  };
 
   hardware.i2c.enable = true;
 
