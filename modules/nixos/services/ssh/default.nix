@@ -6,8 +6,10 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.services.ssh;
+  bool-to-yes-no = value: if value then "yes" else "no";
 in
 {
   options.${namespace}.services.ssh = {
@@ -21,7 +23,9 @@ in
 
     package = mkPackageOption pkgs "openssh" { };
 
-    passwordAuth = mkEnableOption "Allow password authentication";
+    passwordAuth = mkBoolOpt true "Allow password authentication";
+
+    permitRootLogin = mkBoolOpt false "Allow root login";
   };
 
   config = mkIf cfg.enable {
@@ -30,7 +34,7 @@ in
       package = cfg.package;
       settings = {
         X11Forwarding = mkDefault true;
-        PermitRootLogin = "no";
+        PermitRootLogin = bool-to-yes-no cfg.permitRootLogin;
         PasswordAuthentication = mkDefault cfg.passwordAuth;
       };
       openFirewall = true;
