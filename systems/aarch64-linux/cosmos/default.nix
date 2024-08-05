@@ -33,9 +33,7 @@ with lib;
       passwordAuth = true;
     };
 
-    tailscale.enable = true;
-
-    tailscale-autoconnect = {
+    tailscale = {
       enable = true;
       authkeyFile = config.age.secrets.tsauthkey.path;
       extraOptions = [
