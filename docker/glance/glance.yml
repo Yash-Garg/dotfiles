@@ -28,13 +28,13 @@ pages:
             title: Services
             sites:
               - title: h5ai
-                url: http://cosmos.local:90
+                url: http://192.168.29.200:90
                 icon: si:files
               - title: jellyfin
-                url: http://cosmos.local:8096
+                url: http://192.168.29.200:8096
                 icon: si:jellyfin
               - title: qbittorrent
-                url: http://cosmos.local:3000
+                url: http://192.168.29.200:3000
                 icon: si:qbittorrent
 
           - type: bookmarks
