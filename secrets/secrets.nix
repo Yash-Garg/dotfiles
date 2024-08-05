@@ -1,9 +1,9 @@
 let
-  user1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz";
-  user2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGT/WxAzpXRNz4AInl2lvZtegbKW0mZxzJjmMcAy1iOx";
+  main = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILx1G6WZ4MQ8c4hUZy2Be+GF5fZQJSssn4qnJoQ4MPxz";
+  alt = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGT/WxAzpXRNz4AInl2lvZtegbKW0mZxzJjmMcAy1iOx";
   users = [
-    user1
-    user2
+    main
+    alt
   ];
 
   cosmos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLP1aahIQ3NxtO6D7fMLzFT91xjCASrAlmHPIxEaVRT";
@@ -16,6 +16,6 @@ let
   ];
 in
 {
-  "tailscale/cosmos.age".publicKeys = users ++ systems;
-  "tailscale/nebula.age".publicKeys = users ++ systems;
+  "tailscale/cosmos.age".publicKeys = users ++ [cosmos];
+  "tailscale/nebula.age".publicKeys = users ++ [nebula];
 }
