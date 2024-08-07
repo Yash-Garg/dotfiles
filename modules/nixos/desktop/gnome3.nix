@@ -59,10 +59,23 @@ in
     snowfallorg.users.yash.home.config = {
       gtk = {
         enable = true;
+
         theme = {
           name = "adw-gtk3-dark";
           package = pkgs.adw-gtk3;
         };
+
+        gtk3.bookmarks =
+          let
+            home = config.users.users.yash.home;
+            mnt = "/mnt";
+          in
+          [
+            "file://${home}/dotfiles"
+            "file://${mnt}/sshd"
+            "file://${mnt}/evo"
+            "file://${mnt}/wd"
+          ];
       };
 
       dconf = {

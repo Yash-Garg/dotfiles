@@ -1,5 +1,1 @@
-_: {
-  programs.home-manager = {
-    enable = true;
-  };
-}
+_: { programs.home-manager.enable = true; }
