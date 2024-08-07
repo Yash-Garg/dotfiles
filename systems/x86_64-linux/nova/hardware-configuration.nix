@@ -81,9 +81,29 @@ in
     fsType = "vfat";
   };
 
-  fileSystems."/run/media/yash/sshd" = {
+  fileSystems."/mnt/sshd" = {
     device = "/dev/disk/by-uuid/7838708038703F66";
     fsType = "ntfs";
+  };
+
+  fileSystems."/mnt/evo" = {
+    device = "//cosmos.local/evo";
+    fsType = "cifs";
+    options =
+      let
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
+  };
+
+  fileSystems."/mnt/wd" = {
+    device = "//cosmos.local/media";
+    fsType = "cifs";
+    options =
+      let
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
   };
 
   swapDevices = [ { device = "/dev/disk/by-uuid/29c26536-b342-4c31-bf42-10614bfc61fd"; } ];

@@ -71,6 +71,7 @@ in
       with pkgs;
       [
         apktool
+        cifs-utils
         ddcutil
         flutter
         git-lfs
