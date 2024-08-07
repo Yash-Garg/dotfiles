@@ -16,6 +16,8 @@ let
   ];
 in
 {
+  "cifs/nova.age".publicKeys = users ++ [ nova ];
+
   "tailscale/cosmos.age".publicKeys = users ++ [ cosmos ];
   "tailscale/nebula.age".publicKeys = users ++ [ nebula ];
 }

@@ -31,7 +31,7 @@ in
 {
   imports = [ ./hardware-configuration.nix ];
 
-  topology.self.name = "Desktop";
+  age.identityPaths = [ "${config.users.users.yash.home}/.ssh/git-ssh" ];
 
   dots = {
     profiles.desktop = {
@@ -43,6 +43,15 @@ in
     };
 
     services = {
+      cifs = {
+        enable = true;
+        cifsHost = "nova";
+        mounts = {
+          evo.path = "cosmos.local/evo";
+          wd.path = "cosmos.local/media";
+        };
+      };
+
       openrazer.enable = true;
 
       samba = {
@@ -58,6 +67,8 @@ in
     };
   };
 
+  topology.self.name = "Desktop";
+
   users.users.yash = {
     isNormalUser = true;
     description = "Yash Garg";
@@ -71,7 +82,6 @@ in
       with pkgs;
       [
         apktool
-        cifs-utils
         ddcutil
         flutter
         git-lfs
