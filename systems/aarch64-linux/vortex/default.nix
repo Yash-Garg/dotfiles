@@ -4,17 +4,22 @@
   pkgs,
   ...
 }:
+with lib;
+let
+  hostName = "vortex";
+in
 {
   imports = [ ./hardware-configuration.nix ];
 
-  age.secrets.tsauthkey.file = lib.snowfall.fs.get-file "secrets/tailscale/vortex.age";
+  age.secrets.passwordfile-vortex.file = snowfall.fs.get-file "secrets/users/${hostName}.age";
+  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/${hostName}.age";
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
 
   networking = {
     domain = "";
-    hostName = "vortex";
+    inherit hostName;
   };
 
   dots = {
@@ -43,7 +48,7 @@
 
   users.users.yash = {
     isNormalUser = true;
-    hashedPassword = "$y$j9T$LIz9rrSiikhg0OqEzMpPc1$2NPu5OfVA6MGiGJHb6V0ZkdYVB6tJhsyTeA6Uq83h86";
+    hashedPasswordFile = config.age.secrets.passwordfile-vortex.path;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     extraGroups = [ "wheel" ];
