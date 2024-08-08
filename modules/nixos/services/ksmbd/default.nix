@@ -72,7 +72,7 @@ in
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
       path = [ pkgs.ksmbd-tools ];
-      # preStart = "${pkgs.ksmbd-tools}/bin/ksmbd.adduser -i /run/ksmbd/passwd -a ${cfg.user} -p ${cfg.passwordFile}";
+      preStart = "${pkgs.ksmbd-tools}/bin/ksmbd.adduser -P /run/ksmbd/passwd -a ${cfg.user} < ${cfg.passwordFile}";
       serviceConfig = {
         Type = "forking";
         ExecStart = "${pkgs.ksmbd-tools}/bin/ksmbd.mountd -C /etc/ksmbd/ksmbd.conf -P /run/ksmbd/passwd";
