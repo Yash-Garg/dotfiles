@@ -9,31 +9,35 @@
   imports = [ ./hardware-configuration.nix ];
 
   boot.tmp.cleanOnBoot = true;
-
-  dots.services = {
-    ssh = {
-      enable = true;
-      package = pkgs.openssh_hpn;
-      addRootKeys = true;
-      permitRootLogin = true;
-    };
-
-    tailscale = {
-      enable = true;
-      extraOptions = [
-        "--accept-risk=lose-ssh"
-        "--advertise-exit-node"
-        "--advertise-routes=192.168.0.0/24,192.168.1.0/24"
-        "--ssh"
-      ];
-    };
-  };
-
   zramSwap.enable = true;
 
-  networking = {
-    domain = "";
-    hostName = "vortex";
+  dots = {
+    hardware.networking = {
+      enable = true;
+      hostName = "vortex";
+      tcpPorts = [ ];
+    };
+
+    services = {
+      ssh = {
+        enable = true;
+        package = pkgs.openssh_hpn;
+        addRootKeys = true;
+        permitRootLogin = true;
+      };
+
+      tailscale = {
+        enable = true;
+        extraOptions = [
+          "--accept-risk=lose-ssh"
+          "--advertise-exit-node"
+          "--advertise-routes=192.168.0.0/24,192.168.1.0/24"
+          "--ssh"
+        ];
+      };
+    };
+
+    virtualisation.enable = true;
   };
 
   users = {

@@ -34,12 +34,10 @@ in
   dots = {
     desktop = {
       enable = true;
-      android-dev.enable = true;
-      earlyoom.enable = true;
       gnome.enable = true;
-      noise-cancellation.enable = true;
-      stylix.enable = true;
     };
+
+    hardware.networking.hostName = "nova";
 
     services = {
       cifs = {
@@ -51,24 +49,15 @@ in
         };
       };
 
-      openrazer.enable = true;
-
       samba = {
         enable = true;
         shares = {
           downloads.path = "/mnt/sshd";
         };
       };
-
-      ssh.enable = true;
-
-      tailscale.enable = true;
     };
 
-    system.boot = {
-      enable = true;
-      secure.enable = true;
-    };
+    system.boot.secure.enable = true;
   };
 
   topology.self.name = "Desktop";
@@ -97,12 +86,6 @@ in
       ]
       ++ guiPkgs;
   };
-
-  environment.variables.CHROME_EXECUTABLE = "${lib.getExe pkgs.google-chrome}";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

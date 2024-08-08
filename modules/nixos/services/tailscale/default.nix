@@ -30,6 +30,9 @@ in
   };
 
   config = mkIf cfg.enable {
+    # always allow traffic from Tailscale network
+    networking.firewall.trustedInterfaces = mkIf cfg.openFirewall [ "tailscale0" ];
+
     services.tailscale = {
       enable = true;
       authKeyFile = cfg.authkeyFile;

@@ -33,51 +33,7 @@ in
       };
     };
 
-    users.users.yash.packages =
-      [
-        pkgs.gnome-screenshot
-        pkgs.gnome-tweaks
-      ]
-      ++ (with pkgs.gnomeExtensions; [
-        advanced-alttab-window-switcher
-        appindicator
-        arcmenu
-        brightness-control-using-ddcutil
-        clipboard-indicator
-        dash-to-dock
-        media-controls
-        tiling-shell
-        transparent-top-bar
-        user-themes
-      ]);
-
-    stylix.targets = {
-      gnome.enable = true;
-      gtk.enable = true;
-    };
-
     snowfallorg.users.yash.home.config = {
-      gtk = {
-        enable = true;
-
-        theme = {
-          name = "adw-gtk3-dark";
-          package = pkgs.adw-gtk3;
-        };
-
-        gtk3.bookmarks =
-          let
-            home = config.users.users.yash.home;
-            mnt = "/mnt";
-          in
-          [
-            "file://${home}/dotfiles"
-            "file://${mnt}/sshd"
-            "file://${mnt}/evo"
-            "file://${mnt}/wd"
-          ];
-      };
-
       dconf = {
         enable = true;
         # Note: Use `dconf dump dir` to get the current settings
@@ -312,7 +268,55 @@ in
           };
         };
       };
+
+      gtk = {
+        enable = true;
+
+        theme = {
+          name = "adw-gtk3-dark";
+          package = pkgs.adw-gtk3;
+        };
+
+        gtk3.bookmarks =
+          let
+            home = config.users.users.yash.home;
+            mnt = "/mnt";
+          in
+          [
+            "file://${home}/dotfiles"
+            "file://${mnt}/sshd"
+            "file://${mnt}/evo"
+            "file://${mnt}/wd"
+          ];
+      };
     };
+
+    stylix.targets = {
+      gnome.enable = true;
+      gtk.enable = true;
+    };
+
+    # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+    systemd.services."getty@tty1".enable = false;
+    systemd.services."autovt@tty1".enable = false;
+
+    users.users.yash.packages =
+      [
+        pkgs.gnome-screenshot
+        pkgs.gnome-tweaks
+      ]
+      ++ (with pkgs.gnomeExtensions; [
+        advanced-alttab-window-switcher
+        appindicator
+        arcmenu
+        brightness-control-using-ddcutil
+        clipboard-indicator
+        dash-to-dock
+        media-controls
+        tiling-shell
+        transparent-top-bar
+        user-themes
+      ]);
 
     environment = {
       gnome.excludePackages =

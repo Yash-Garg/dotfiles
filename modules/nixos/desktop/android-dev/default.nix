@@ -20,7 +20,7 @@ in
   options.${namespace}.desktop.android-dev = {
     enable = mkEnableOption "Configure a development environment for Android apps";
   };
-  config = mkIf cfg.android-dev.enable {
+  config = mkIf cfg.enable {
     users.users.yash.packages = with pkgs; [
       android-tools
       androidStudioPackages.stable
