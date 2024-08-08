@@ -17,6 +17,7 @@ with lib;
   dots = {
     hardware.networking = {
       enable = true;
+      extra = false;
       hostName = "cosmos";
       tcpPorts = [
         80

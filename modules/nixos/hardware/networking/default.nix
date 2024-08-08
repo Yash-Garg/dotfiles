@@ -16,6 +16,7 @@ in
     domain = mkOpt str "" "The domain name of the machine";
     hostName = mkOpt str "nixos" "The hostname of the machine";
     hosts = mkOpt attrs { } (mdDoc "An attribute set to merge with `networking.hosts`");
+    extra = mkBoolOpt true "Whether or not to enable extra networking features";
     tcpPorts = mkOpt (listOf port) [
       80
       443
@@ -33,11 +34,12 @@ in
       # (the default) this is the recommended approach. When using systemd-networkd it's
       # still possible to use this option, but it's recommended to use it in conjunction
       # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+      interfaces.wlan0.useDHCP = mkDefault true;
       useDHCP = mkDefault true;
 
       # Enable networking
-      networkmanager.enable = true;
-      nftables.enable = true;
+      networkmanager.enable = cfg.extra;
+      nftables.enable = cfg.extra;
 
       firewall = {
         enable = true;
