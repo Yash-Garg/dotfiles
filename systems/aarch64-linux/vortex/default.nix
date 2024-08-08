@@ -13,13 +13,12 @@
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
 
-  dots = {
-    hardware.networking = {
-      enable = true;
-      extra = false;
-      hostName = "vortex";
-    };
+  networking = {
+    domain = "";
+    hostName = "vortex";
+  };
 
+  dots = {
     services = {
       ssh = {
         enable = true;
