@@ -51,16 +51,10 @@ in
         };
       };
 
-      ksmbd = {
+      samba = {
         enable = true;
-        openFirewall = true;
-        passwordFile = config.age.secrets.samba-passwd.path;
-        shares.downloads = {
-          path = "/mnt/sshd";
-          browseable = "yes";
-          "read only" = "no";
-          "guest ok" = "no";
-          comment = "Media Share.";
+        shares = {
+          downloads.path = "/mnt/sshd";
         };
       };
     };
