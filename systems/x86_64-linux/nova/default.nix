@@ -31,6 +31,8 @@ in
 {
   imports = [ ./hardware-configuration.nix ];
 
+  age.secrets.ksmbd-passwd.file = lib.snowfall.fs.get-file "secrets/ksmbd/nova.age";
+
   dots = {
     desktop = {
       enable = true;
@@ -52,12 +54,18 @@ in
       ksmbd = {
         enable = true;
         openFirewall = true;
+        users = [
+          {
+            user = "yash";
+            passwordFile = config.age.secrets.ksmbd-passwd.path;
+          }
+        ];
         shares.public = {
           path = "/mnt/sshd";
           "read only" = true;
           browseable = "yes";
           "guest ok" = "yes";
-          comment = "Public samba share.";
+          comment = "Media Share.";
         };
       };
     };

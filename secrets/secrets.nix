@@ -16,10 +16,11 @@ let
   ];
 in
 {
-  "cifs/nova.age".publicKeys = users ++ [ nova ];
-
   "tailscale/cosmos.age".publicKeys = users ++ [ cosmos ];
+  "users/cosmos.age".publicKeys = users ++ [ cosmos ];
+
   "tailscale/nebula.age".publicKeys = users ++ [ nebula ];
 
-  "users/cosmos.age".publicKeys = users ++ [ cosmos ];
+  "cifs/nova.age".publicKeys = users ++ [ nova ];
+  "ksmbd/nova.age".publicKeys = users ++ [ nova ];
 }
