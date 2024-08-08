@@ -33,7 +33,7 @@ in
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      package = cfg.package;
+      inherit (cfg) package;
       settings = {
         X11Forwarding = mkDefault true;
         PermitRootLogin = bool-to-yes-no cfg.permitRootLogin;

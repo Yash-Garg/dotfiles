@@ -31,8 +31,8 @@ in
 
       # Secure Boot
       lanzaboote = {
-        enable = cfg.secure.enable;
-        pkiBundle = cfg.secure.pkiBundle;
+        inherit (cfg.secure) enable;
+        inherit (cfg.secure) pkiBundle;
       };
 
       # Bootloader

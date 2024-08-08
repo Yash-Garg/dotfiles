@@ -19,7 +19,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       crane,
       devshell,

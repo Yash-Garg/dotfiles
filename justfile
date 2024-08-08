@@ -1,32 +1,32 @@
 deploy:
-  nixos-rebuild switch --flake . --use-remote-sudo
+    nixos-rebuild switch --flake . --use-remote-sudo
 
 debug:
-  nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
+    nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
 
 update:
-  nix flake update
+    nix flake update
 
 history:
-  nix profile history --profile /nix/var/nix/profiles/system
+    nix profile history --profile /nix/var/nix/profiles/system
 
 gc:
-  sudo nix-collect-garbage --delete-old
+    sudo nix-collect-garbage --delete-old
 
 darwin:
-  nix run nix-darwin -- switch --flake .
+    nix run nix-darwin -- switch --flake .
 
 darwin-check:
-  nom build .#darwinConfigurations.trinity.system
+    nom build .#darwinConfigurations.trinity.system
 
 topology sys:
-  nom build .#topology.{{sys}}.config.output
+    nom build .#topology.{{ sys }}.config.output
 
 eval conf:
-  nix eval .#{{conf}} --apply builtins.attrNames --json
+    nix eval .#{{ conf }} --apply builtins.attrNames --json
 
 template name path:
-  nix flake new --template .#templates.{{name}} {{path}}
+    nix flake new --template .#templates.{{ name }} {{ path }}
 
 check flake:
-  nom build .#nixosConfigurations.{{flake}}.config.system.build.toplevel
+    nom build .#nixosConfigurations.{{ flake }}.config.system.build.toplevel

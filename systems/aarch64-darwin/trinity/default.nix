@@ -1,5 +1,4 @@
-{ pkgs, inputs, ... }:
-{
+_: {
   users.users.yash = {
     name = "yash";
     home = "/Users/yash";

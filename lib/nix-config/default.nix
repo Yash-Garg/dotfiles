@@ -1,10 +1,6 @@
 {
   mkNixConfig =
-    {
-      pkgs,
-      lib,
-      inputs,
-    }:
+    { pkgs, lib }:
     {
       package = pkgs.lix;
 

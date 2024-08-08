@@ -279,7 +279,7 @@ in
 
         gtk3.bookmarks =
           let
-            home = config.users.users.yash.home;
+            inherit (config.users.users.yash) home;
             mnt = "/mnt";
           in
           [

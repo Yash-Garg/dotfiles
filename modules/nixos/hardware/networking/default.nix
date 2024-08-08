@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   namespace,
   ...
@@ -26,9 +25,9 @@ in
 
   config = mkIf cfg.enable {
     networking = {
-      domain = cfg.domain;
-      hostName = cfg.hostName;
-      hosts = cfg.hosts;
+      inherit (cfg) domain;
+      inherit (cfg) hostName;
+      inherit (cfg) hosts;
 
       # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
       # (the default) this is the recommended approach. When using systemd-networkd it's

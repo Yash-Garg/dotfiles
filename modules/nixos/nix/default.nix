@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  inputs,
   namespace,
   ...
 }:
@@ -16,7 +15,7 @@ with lib.${namespace};
 
   users.users.yash.packages = with pkgs; [ nix-output-monitor ];
 
-  nix = mkNixConfig { inherit lib pkgs inputs; } // {
+  nix = mkNixConfig { inherit lib pkgs; } // {
     gc = {
       automatic = true;
       dates = "daily";

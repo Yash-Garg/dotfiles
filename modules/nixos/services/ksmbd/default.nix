@@ -65,7 +65,7 @@ in
     services.samba-wsdd = {
       enable = true;
       discovery = true;
-      openFirewall = cfg.openFirewall;
+      inherit (cfg) openFirewall;
     };
 
     systemd.services.ksmbd = {

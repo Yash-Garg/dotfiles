@@ -1,6 +1,5 @@
 name: Check docker compose services
 on: push
-
 jobs:
   file-changes:
     runs-on: ubuntu-latest
@@ -18,7 +17,6 @@ jobs:
           files: |
             docker/**/*.yml
             docker/*.yml
-
   run-services:
     needs: [file-changes]
     runs-on: ubuntu-latest

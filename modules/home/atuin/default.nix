@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   programs.atuin = {
     enable = true;
     flags = [ "--disable-up-arrow" ];

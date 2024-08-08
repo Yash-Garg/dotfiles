@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+_:
 let
   # dots = pkgs.fetchFromGitHub {
   #   owner = "Yash-Garg";

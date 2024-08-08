@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  namespace,
-  ...
-}:
+{ pkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
     age

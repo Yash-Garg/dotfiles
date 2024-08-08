@@ -10,12 +10,6 @@ let
   nebula = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH0oDlwxn0cKRuNrpb0neWGczQzQbQbX8fPkvc1zIcwe";
   nova = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA4Sgn2sPpoVG1nAIZfS0bwmWRZyfKgsoymFzOt1pp0G";
   vortex = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2aT32IeITZcrNPSbZnrtbRqRdekmVr42sLHw6IL/h1";
-  systems = [
-    cosmos
-    nebula
-    nova
-    vortex
-  ];
 in
 {
   "tailscale/cosmos.age".publicKeys = users ++ [ cosmos ];

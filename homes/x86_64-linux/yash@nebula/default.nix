@@ -1,4 +1,4 @@
-{ pkgs, namespace, ... }:
+{ namespace, ... }:
 {
   snowfallorg.user = {
     enable = true;

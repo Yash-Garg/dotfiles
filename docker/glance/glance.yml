@@ -4,10 +4,8 @@ pages:
       - size: small
         widgets:
           - type: calendar
-
           - type: weather
             location: Delhi, India
-
       - size: full
         widgets:
           - type: search
@@ -16,11 +14,9 @@ pages:
               - title: YouTube
                 shortcut: "!yt"
                 url: https://www.youtube.com/results?search_query={QUERY}
-
           - type: reddit
             show-thumbnails: true
             subreddit: technology
-
       - size: small
         widgets:
           - type: monitor
@@ -36,7 +32,6 @@ pages:
               - title: qbittorrent
                 url: http://192.168.29.200:3000
                 icon: si:qbittorrent
-
           - type: bookmarks
             groups:
               - links:
@@ -89,19 +84,15 @@ pages:
                 title: jeffgeerling.com
               - url: https://nadh.in/index.xml
                 title: nadh.in
-
           - type: lobsters
             sort-by: hot
             limit: 15
             collapse-after: 10
-
       - size: full
         widgets:
           - type: hacker-news
-
           - type: reddit
             subreddit: selfhosted
-
   - name: Videos
     columns:
       - size: full
@@ -122,7 +113,6 @@ pages:
               - UCuGS5mN1_CpPzuOUAu2LluA # Nixhero
               - UCY1kMZp36IQSyNx_9h4mpCg # Mark Rober
               - UCrPseYLGpNygVi34QpGNqpA # Ludwig
-
       - size: small
         widgets:
           - type: twitch-channels
@@ -140,7 +130,6 @@ pages:
               - ohnepixel
               - piratesoftware
               - tarik
-
           - type: twitch-top-games
             exclude:
               - just-chatting

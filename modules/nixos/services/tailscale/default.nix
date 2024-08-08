@@ -37,7 +37,7 @@ in
       enable = true;
       authKeyFile = cfg.authkeyFile;
       extraUpFlags = cfg.extraOptions;
-      openFirewall = cfg.openFirewall;
+      inherit (cfg) openFirewall;
       useRoutingFeatures = "both";
     };
   };
