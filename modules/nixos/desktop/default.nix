@@ -32,6 +32,7 @@ in
 
       services = {
         openrazer = enabled;
+        printing = enabled;
         ssh = enabled;
         tailscale = enabled;
       };
