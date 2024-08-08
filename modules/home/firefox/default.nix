@@ -11,8 +11,8 @@ let
   css-hacks = pkgs.fetchFromGitHub {
     owner = "MrOtherGuy";
     repo = "firefox-csshacks";
-    rev = "f1480c80e31c0b738e6d49a78137a42adfdccaab";
-    sha256 = "sha256-5TLKrsW+yLzhjHMPXZJ+b4LprtZ4pXdkV9yB0LaVDUk=";
+    rev = "9a9dd88871104528422ada76ebb7e35ca3c2bc6b";
+    sha256 = "sha256-e0NRl02detYub0abhe8glRgokyHdyt9Hxc8rSTYanEw=";
   };
 in
 {
