@@ -7,7 +7,7 @@
 }:
 with lib;
 let
-  cfg = config.${namespace}.profiles.desktop;
+  cfg = config.${namespace}.desktop.android-dev;
   defaultJdk = pkgs.openjdk17;
   toolchains = [
     pkgs.openjdk11
@@ -17,7 +17,7 @@ let
   mapOpenJdk = pkg: "${pkg}/lib/openjdk";
 in
 {
-  options.${namespace}.profiles.desktop.android-dev = {
+  options.${namespace}.desktop.android-dev = {
     enable = mkEnableOption "Configure a development environment for Android apps";
   };
   config = mkIf cfg.android-dev.enable {

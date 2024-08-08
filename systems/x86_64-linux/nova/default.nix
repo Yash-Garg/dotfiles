@@ -17,7 +17,7 @@ let
     newsflash
     (prismlauncher.override {
       jdks = [ openjdk17 ];
-      withWaylandGLFW = config.${namespace}.profiles.desktop.gnome3.enable;
+      withWaylandGLFW = config.${namespace}.desktop.gnome.enable;
     })
     slack
     spotify
@@ -32,12 +32,13 @@ in
   imports = [ ./hardware-configuration.nix ];
 
   dots = {
-    profiles.desktop = {
+    desktop = {
       enable = true;
       android-dev.enable = true;
-      gnome3.enable = true;
-      networkHosts = { };
+      earlyoom.enable = true;
+      gnome.enable = true;
       noise-cancellation.enable = true;
+      stylix.enable = true;
     };
 
     services = {
@@ -62,6 +63,11 @@ in
       ssh.enable = true;
 
       tailscale.enable = true;
+    };
+
+    system.boot = {
+      enable = true;
+      secure.enable = true;
     };
   };
 

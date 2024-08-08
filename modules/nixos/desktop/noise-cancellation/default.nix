@@ -7,7 +7,7 @@
 }:
 with lib;
 let
-  cfg = config.${namespace}.profiles.desktop;
+  cfg = config.${namespace}.desktop.noise-cancellation;
   noise-suppression-for-voice = pkgs.writeTextDir "share/pipewire/pipewire.conf.d/99-noise-cancellation.conf" ''
     context.modules = [
     {   name = libpipewire-module-filter-chain
@@ -43,11 +43,9 @@ let
   '';
 in
 {
-  options.${namespace}.profiles.desktop.noise-cancellation = {
+  options.${namespace}.desktop.noise-cancellation = {
     enable = mkEnableOption "Enable noise cancellation in PipeWire";
   };
 
-  config = mkIf cfg.noise-cancellation.enable {
-    services.pipewire.configPackages = [ noise-suppression-for-voice ];
-  };
+  config = mkIf cfg.enable { services.pipewire.configPackages = [ noise-suppression-for-voice ]; };
 }

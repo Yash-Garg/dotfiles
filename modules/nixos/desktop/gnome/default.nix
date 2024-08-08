@@ -7,14 +7,14 @@
 }:
 with lib;
 let
-  cfg = config.${namespace}.profiles.desktop;
+  cfg = config.${namespace}.desktop.gnome;
 in
 {
-  options.${namespace}.profiles.desktop.gnome3 = {
+  options.${namespace}.desktop.gnome = {
     enable = mkEnableOption "Setup desktop with Gnome DE";
   };
 
-  config = mkIf cfg.gnome3.enable {
+  config = mkIf cfg.enable {
     services = {
       # Enable automatic login for the user.
       displayManager.autoLogin.enable = true;
@@ -320,10 +320,10 @@ in
         with pkgs.gnome;
         [
           atomix
-          epiphany
-          evince
-          geary
-          gnome-calendar
+          pkgs.epiphany
+          pkgs.evince
+          pkgs.geary
+          pkgs.gnome-calendar
           gnome-characters
           gnome-clocks
           gnome-connections
@@ -337,11 +337,11 @@ in
           gnome-weather
           hitori
           iagno
-          simple-scan
+          pkgs.simple-scan
           snapshot
           tali
-          totem
-          yelp
+          pkgs.totem
+          pkgs.yelp
         ];
 
       # Enable Wayland compatibility workarounds within Nixpkgs

@@ -7,21 +7,15 @@
 }:
 with lib;
 let
-  cfg = config.${namespace}.profiles.desktop;
+  cfg = config.${namespace}.desktop;
 in
 {
-  imports = [
-    ./android-dev.nix
-    ./earlyoom.nix
-    ./gnome3.nix
-    ./rnnoise.nix
-  ];
-
-  options.${namespace}.profiles.desktop = {
+  options.${namespace}.desktop = {
     enable = mkEnableOption "Profile for desktop machines";
 
     networkHosts = lib.mkOption {
       type = types.attrsOf (types.listOf types.str);
+      default = { };
       description = ''
         Locally defined maps of hostnames to IP addresses.
       '';
@@ -29,14 +23,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    dots = {
-      desktop.stylix.enable = true;
-      system.boot = {
-        enable = true;
-        secure.enable = true;
-      };
-    };
-
     # Enable sound with pipewire.
     hardware.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -92,18 +78,6 @@ in
           layout = "us";
           variant = "intl";
         };
-      };
-    };
-
-    xdg.mime = {
-      enable = true;
-      defaultApplications = {
-        "text/html" = "firefox.desktop";
-        "x-scheme-handler/http" = "firefox.desktop";
-        "x-scheme-handler/https" = "firefox.desktop";
-        "x-scheme-handler/about" = "firefox.desktop";
-        "x-scheme-handler/unknown" = "firefox.desktop";
-        "application/pdf" = "firefox.desktop";
       };
     };
   };
