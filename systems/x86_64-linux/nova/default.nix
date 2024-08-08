@@ -54,8 +54,8 @@ in
 
       samba = {
         enable = true;
-        shares.downloads = {
-          path = "/run/media/yash/sshd";
+        shares = {
+          downloads.path = "/mnt/sshd";
         };
       };
 
