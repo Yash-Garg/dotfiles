@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.services.openrazer;
 in
@@ -18,9 +19,13 @@ in
       default = [ "yash" ];
       description = "List of users to add to the openrazer group";
     };
+
+    gui = mkBoolOpt false "Whether to enable the polychromatic GUI";
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = [ pkgs.openrazer-daemon ];
+
     hardware.openrazer = {
       enable = true;
       users = cfg.users;
@@ -29,6 +34,6 @@ in
       syncEffectsEnabled = false;
     };
 
-    users.users.yash.packages = [ pkgs.polychromatic ];
+    users.users.yash.packages = mkIf cfg.gui [ pkgs.polychromatic ];
   };
 }
