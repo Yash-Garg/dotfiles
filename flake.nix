@@ -20,6 +20,7 @@
           };
         };
       };
+      treefmtModule = inputs.treefmt-nix.lib.evalModule;
     in
     lib.mkFlake {
       inherit inputs;
@@ -76,7 +77,7 @@
       ];
 
       outputs-builder = channels: {
-        formatter = (inputs.treefmt-nix.lib.evalModule channels.nixpkgs ./treefmt.nix).config.build.wrapper;
+        formatter = (treefmtModule channels.nixpkgs ./treefmt.nix).config.build.wrapper;
 
         packages = {
           macbook = inputs.self.darwinConfigurations.trinity.system;
