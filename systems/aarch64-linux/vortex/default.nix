@@ -50,5 +50,5 @@
     extraGroups = [ "wheel" ];
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "24.05";
 }
