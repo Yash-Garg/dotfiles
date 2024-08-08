@@ -11,7 +11,6 @@ let
     };
 
 in
-# Copied from https://github.com/edolstra/flake-compat/pull/44/files
 {
   system ? currentSystem,
   pkgs ? import (getFlake "nixpkgs") {
