@@ -21,6 +21,8 @@ in
       description = "List of SSH keys to add to the authorized_keys file";
     };
 
+    addRootKeys = mkBoolOpt false "Add the same keys to the root user";
+
     package = mkPackageOption pkgs "openssh" { };
 
     passwordAuth = mkBoolOpt true "Allow password authentication";
@@ -41,5 +43,6 @@ in
     };
 
     users.users.yash.openssh.authorizedKeys.keys = cfg.keys;
+    users.users.root.openssh.authorizedKeys.keys = mkIf cfg.addRootKeys cfg.keys;
   };
 }
