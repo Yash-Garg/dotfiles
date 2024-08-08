@@ -49,10 +49,15 @@ in
         };
       };
 
-      samba = {
+      ksmbd = {
         enable = true;
-        shares = {
-          downloads.path = "/mnt/sshd";
+        openFirewall = true;
+        shares.public = {
+          path = "/mnt/sshd";
+          "read only" = true;
+          browseable = "yes";
+          "guest ok" = "yes";
+          comment = "Public samba share.";
         };
       };
     };
