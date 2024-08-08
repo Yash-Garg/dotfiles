@@ -20,4 +20,6 @@ in
 
   "tailscale/cosmos.age".publicKeys = users ++ [ cosmos ];
   "tailscale/nebula.age".publicKeys = users ++ [ nebula ];
+
+  "users/cosmos.age".publicKeys = users ++ [ cosmos ];
 }

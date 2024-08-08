@@ -9,6 +9,7 @@ with lib;
 {
   imports = [ ./hardware-configuration.nix ];
 
+  age.secrets.passwordfile-cosmos.file = snowfall.fs.get-file "secrets/users/cosmos.age";
   age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/cosmos.age";
 
   boot.initrd.systemd.enableTpm2 = mkForce false;
@@ -71,7 +72,7 @@ with lib;
     mutableUsers = false;
     users.yash = {
       isNormalUser = true;
-      hashedPassword = "$y$j9T$LIz9rrSiikhg0OqEzMpPc1$2NPu5OfVA6MGiGJHb6V0ZkdYVB6tJhsyTeA6Uq83h86";
+      passwordFile = config.age.secrets.passwordfile-cosmos.path;
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
       extraGroups = [
