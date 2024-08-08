@@ -23,6 +23,7 @@
       ssh = {
         enable = true;
         addRootKeys = true;
+        passwordAuth = false;
         permitRootLogin = true;
       };
 
