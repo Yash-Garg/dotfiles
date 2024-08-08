@@ -7,7 +7,6 @@
 }:
 with lib;
 {
-  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
   age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/nebula.age";
 
   dots = {

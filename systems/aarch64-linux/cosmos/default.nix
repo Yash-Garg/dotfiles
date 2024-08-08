@@ -9,7 +9,6 @@ with lib;
 {
   imports = [ ./hardware-configuration.nix ];
 
-  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
   age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/cosmos.age";
 
   boot.initrd.systemd.enableTpm2 = mkForce false;

@@ -31,8 +31,6 @@ in
 {
   imports = [ ./hardware-configuration.nix ];
 
-  age.identityPaths = [ "${config.users.users.yash.home}/.ssh/git-ssh" ];
-
   dots = {
     profiles.desktop = {
       enable = true;
