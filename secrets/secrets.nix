@@ -9,10 +9,12 @@ let
   cosmos = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJLP1aahIQ3NxtO6D7fMLzFT91xjCASrAlmHPIxEaVRT";
   nebula = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH0oDlwxn0cKRuNrpb0neWGczQzQbQbX8fPkvc1zIcwe";
   nova = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA4Sgn2sPpoVG1nAIZfS0bwmWRZyfKgsoymFzOt1pp0G";
+  vortex = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2aT32IeITZcrNPSbZnrtbRqRdekmVr42sLHw6IL/h1";
   systems = [
     cosmos
     nebula
     nova
+    vortex
   ];
 in
 {
@@ -23,4 +25,6 @@ in
 
   "cifs/nova.age".publicKeys = users ++ [ nova ];
   "samba/nova.age".publicKeys = users ++ [ nova ];
+
+  "tailscale/vortex.age".publicKeys = users ++ [ vortex ];
 }

@@ -8,26 +8,28 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
+  age.secrets.tsauthkey.file = lib.snowfall.fs.get-file "secrets/tailscale/vortex.age";
+
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
 
   dots = {
     hardware.networking = {
       enable = true;
+      extra = false;
       hostName = "vortex";
-      tcpPorts = [ ];
     };
 
     services = {
       ssh = {
         enable = true;
-        package = pkgs.openssh_hpn;
         addRootKeys = true;
         permitRootLogin = true;
       };
 
       tailscale = {
         enable = true;
+        authkeyFile = config.age.secrets.tsauthkey.path;
         extraOptions = [
           "--accept-risk=lose-ssh"
           "--advertise-exit-node"
@@ -40,15 +42,12 @@
     virtualisation.enable = true;
   };
 
-  users = {
-    mutableUsers = false;
-    users.yash = {
-      isNormalUser = true;
-      hashedPassword = "$y$j9T$LIz9rrSiikhg0OqEzMpPc1$2NPu5OfVA6MGiGJHb6V0ZkdYVB6tJhsyTeA6Uq83h86";
-      shell = pkgs.zsh;
-      ignoreShellProgramCheck = true;
-      extraGroups = [ "wheel" ];
-    };
+  users.users.yash = {
+    isNormalUser = true;
+    hashedPassword = "$y$j9T$LIz9rrSiikhg0OqEzMpPc1$2NPu5OfVA6MGiGJHb6V0ZkdYVB6tJhsyTeA6Uq83h86";
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
+    extraGroups = [ "wheel" ];
   };
 
   system.stateVersion = "24.11";
