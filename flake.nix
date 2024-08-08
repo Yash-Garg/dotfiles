@@ -4,7 +4,6 @@
   outputs =
     inputs:
     let
-      eachSystem = inputs.nixpkgs.lib.genAttrs (import inputs.systems);
       commonModules = with inputs; [
         agenix.nixosModules.default
         lix.nixosModules.default
@@ -33,7 +32,7 @@
       };
 
       checks = builtins.mapAttrs (
-        system: deploy-lib: deploy-lib.deployChecks inputs.self.deploy
+        _system: deploy-lib: deploy-lib.deployChecks inputs.self.deploy
       ) inputs.deploy-rs.lib;
 
       deploy = lib.mkDeploy { inherit (inputs) self; };
@@ -77,7 +76,7 @@
       ];
 
       outputs-builder = channels: {
-        formatter = channels.nixpkgs.nixfmt-rfc-style;
+        formatter = (inputs.treefmt-nix.lib.evalModule channels.nixpkgs ./treefmt.nix).config.build.wrapper;
 
         packages = {
           macbook = inputs.self.darwinConfigurations.trinity.system;
@@ -100,7 +99,7 @@
       };
     }
     // {
-      self = inputs.self;
+      inherit (inputs) self;
     };
 
   inputs = {
@@ -176,6 +175,9 @@
     stylix.inputs.flake-compat.follows = "flake-compat";
     stylix.inputs.home-manager.follows = "home-manager";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     vscode-server.inputs.nixpkgs.follows = "nixpkgs";
