@@ -22,5 +22,5 @@ in
   "tailscale/nebula.age".publicKeys = users ++ [ nebula ];
 
   "cifs/nova.age".publicKeys = users ++ [ nova ];
-  "ksmbd/nova.age".publicKeys = users ++ [ nova ];
+  "samba/nova.age".publicKeys = users ++ [ nova ];
 }

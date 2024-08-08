@@ -25,6 +25,8 @@ in
     enable = mkEnableOption "Enable cifsd kernel server";
     extraConfig = mkOpt lines "" "Additional global section and extra section lines go in here.";
     openFirewall = mkBoolOpt false "Whether to automatically open the necessary ports in the firewall.";
+    user = mkOpt str "yash" "User to add to the server";
+    passwordFile = mkOpt path null "Path to a file containing password for user";
     securityType = mkOpt str "user" "Samba security type";
     shares = mkOption {
       default = { };
@@ -43,15 +45,6 @@ in
           };
         }
       '';
-    };
-    users = mkOption {
-      default = [ ];
-      type = listOf (submodule {
-        options = {
-          user = mkOption { type = str; };
-          passwordFile = mkOption { type = path; };
-        };
-      });
     };
   };
 
@@ -79,9 +72,7 @@ in
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
       path = [ pkgs.ksmbd-tools ];
-      preStart = builtins.concatStringsSep "\n" (
-        map (it: "ksmbd.adduser -i /run/ksmbd/passwd -a ${it.user} < ${it.passwordFile}") cfg.users
-      );
+      # preStart = "${pkgs.ksmbd-tools}/bin/ksmbd.adduser -i /run/ksmbd/passwd -a ${cfg.user} -p ${cfg.passwordFile}";
       serviceConfig = {
         Type = "forking";
         ExecStart = "${pkgs.ksmbd-tools}/bin/ksmbd.mountd -C /etc/ksmbd/ksmbd.conf -P /run/ksmbd/passwd";
