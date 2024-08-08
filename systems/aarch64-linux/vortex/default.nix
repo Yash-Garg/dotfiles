@@ -10,13 +10,21 @@
 
   boot.tmp.cleanOnBoot = true;
 
-  dots = {
-    services = {
-      ssh = {
-        enable = true;
-        package = pkgs.openssh_hpn;
-        permitRootLogin = true;
-      };
+  dots.services = {
+    ssh = {
+      enable = true;
+      package = pkgs.openssh_hpn;
+      permitRootLogin = true;
+    };
+
+    tailscale = {
+      enable = true;
+      extraOptions = [
+        "--accept-risk=lose-ssh"
+        "--advertise-exit-node"
+        "--advertise-routes=192.168.0.0/24,192.168.1.0/24"
+        "--ssh"
+      ];
     };
   };
 
