@@ -7,6 +7,7 @@
       generateNixPathFromInputs = true;
       generateRegistryFromInputs = true;
       linkInputs = true;
+      distributedBuilds = true;
 
       extraOptions = ''
         keep-outputs = true
@@ -51,5 +52,19 @@
           "raspberry-pi-nix.cachix.org-1:WmV2rdSangxW0rZjY/tBvBDSaNFQ3DyEQsVw8EvHn9o="
         ];
       };
+
+      buildMachines = [
+        {
+          hostName = "vortex";
+          maxJobs = 2;
+          sshUser = "root";
+          system = "aarch64-linux";
+          supportedFeatures = [
+            "benchmark"
+            "big-parallel"
+            "kvm"
+          ];
+        }
+      ];
     };
 }
