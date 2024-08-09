@@ -5,10 +5,7 @@
     name = "yash";
   };
 
-  profiles.${namespace} = {
-    keychain.enable = true;
-    starship.enable = true;
-  };
+  profiles.${namespace}.starship.enable = true;
 
   shells.${namespace}.zsh.enable = true;
 
