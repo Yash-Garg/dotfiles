@@ -36,6 +36,7 @@ in
       oh-my-posh.enableZshIntegration = profiles.oh-my-posh.enable;
       starship.enableZshIntegration = profiles.starship.enable;
       wezterm.enableZshIntegration = profiles.wezterm.enable;
+      yazi.enableZshIntegration = true;
       zoxide.enableZshIntegration = true;
     };
   };

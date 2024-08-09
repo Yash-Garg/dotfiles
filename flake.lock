@@ -153,6 +153,22 @@
         "type": "github"
       }
     },
+    "catppuccin-yazi": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722538198,
+        "narHash": "sha256-oJo52hMSK7mr5f0DtnyaN1FVOSKKUOHWCT80V1qfyrU=",
+        "owner": "catppuccin",
+        "repo": "yazi",
+        "rev": "37dec9bf1f7e52e0d593c225827b9dbc71ce504c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "yazi",
+        "type": "github"
+      }
+    },
     "crane": {
       "inputs": {
         "nixpkgs": [
@@ -894,6 +910,7 @@
       "inputs": {
         "agenix": "agenix",
         "catppuccin-starship": "catppuccin-starship",
+        "catppuccin-yazi": "catppuccin-yazi",
         "darwin": "darwin_2",
         "deploy-rs": "deploy-rs",
         "devshell": "devshell",

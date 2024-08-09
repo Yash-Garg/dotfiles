@@ -35,6 +35,7 @@ in
       oh-my-posh.enableBashIntegration = profiles.oh-my-posh.enable;
       starship.enableBashIntegration = profiles.starship.enable;
       wezterm.enableBashIntegration = profiles.wezterm.enable;
+      yazi.enableBashIntegration = true;
       zoxide.enableBashIntegration = true;
     };
   };
