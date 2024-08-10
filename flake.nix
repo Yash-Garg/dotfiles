@@ -46,6 +46,7 @@
         with inputs;
         [
           lanzaboote.nixosModules.lanzaboote
+          nixos-cosmic.nixosModules.default
           nixos-generators.nixosModules.all-formats
           nixos-wsl.nixosModules.default
           srvos.nixosModules.mixins-trusted-nix-caches
@@ -150,6 +151,11 @@
     nix-topology.inputs.flake-utils.follows = "flake-utils";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-cosmic.inputs.nixpkgs-stable.follows = "nixpkgs";
+    nixos-cosmic.inputs.flake-compat.follows = "flake-compat";
 
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
