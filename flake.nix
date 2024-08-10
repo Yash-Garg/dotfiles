@@ -45,6 +45,7 @@
       systems.modules.nixos =
         with inputs;
         [
+          impermanence.nixosModules.impermanence
           lanzaboote.nixosModules.lanzaboote
           nixos-cosmic.nixosModules.default
           nixos-generators.nixosModules.all-formats
@@ -134,6 +135,8 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    impermanence.url = "github:nix-community/impermanence";
 
     lanzaboote.url = "github:nix-community/lanzaboote/v0.4.1";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
