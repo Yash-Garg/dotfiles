@@ -1,12 +1,5 @@
-_: {
-  i18n =
-    let
-      locale = "en_US.UTF-8";
-    in
-    {
-      defaultLocale = locale;
-      extraLocaleSettings = {
-        LC_ALL = locale;
-      };
-    };
+{ lib, ... }:
+{
+  console.keyMap = lib.mkForce "us";
+  i18n.defaultLocale = "en_US.UTF-8";
 }
