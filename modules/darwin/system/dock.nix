@@ -11,8 +11,10 @@
       let
         brewAppDir = config.homebrew.caskArgs.appdir;
         homeAppDir = "${config.users.users.yash.home}/Applications";
+        sysAppDir = "/System/Applications";
       in
       [
+        "${sysAppDir}/Launchpad.app"
         "${brewAppDir}/iTerm.app"
         "${brewAppDir}/Linear.app"
         "${brewAppDir}/Xcode.app"
