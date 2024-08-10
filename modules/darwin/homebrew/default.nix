@@ -35,6 +35,8 @@ in
       greedy = true;
     }) casks;
 
+    caskArgs.appdir = "/Applications";
+
     global = {
       autoUpdate = false;
       brewfile = true;
