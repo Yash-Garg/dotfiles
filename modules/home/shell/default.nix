@@ -1,13 +1,5 @@
-_:
-let
-  # dots = pkgs.fetchFromGitHub {
-  #   owner = "Yash-Garg";
-  #   repo = "dotfiles";
-  #   rev = "2cc6fc0448caf6f26c10932d3e5dfb9b47aea79f";
-  #   sha256 = "sha256-WSaQefU5z1Phix5Qj5y86KFTEYDU6+rpPZdlCyxAvvk=";
-  # };
-  dots = ./../../..;
-in
+{ lib, ... }:
+with lib;
 {
   home.file = {
     ".nanorc".text = ''
@@ -18,21 +10,21 @@ in
       set smarthome
     '';
 
-    ".gitconfig".source = "${dots}/.gitconfig";
+    ".gitconfig".source = snowfall.fs.get-file ".gitconfig";
 
     ".functions" = {
       executable = true;
-      source = "${dots}/scripts/functions";
+      source = snowfall.fs.get-file "scripts/functions";
     };
 
     ".aliases" = {
       executable = true;
-      source = "${dots}/scripts/aliases";
+      source = snowfall.fs.get-file "scripts/aliases";
     };
 
     ".shell-init" = {
       executable = true;
-      source = "${dots}/scripts/shell-init";
+      source = snowfall.fs.get-file "scripts/shell-init";
     };
   };
 }
