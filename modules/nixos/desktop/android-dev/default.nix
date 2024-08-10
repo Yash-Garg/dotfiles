@@ -36,13 +36,16 @@ in
         package = defaultJdk;
         binfmt = false;
       };
-      nix-ld.enable = true;
-      nix-ld.libraries = with pkgs; [
-        icu
-        openssl
-        stdenv.cc.cc
-        zlib
-      ];
+      nix-ld = {
+        enable = true;
+        package = pkgs.nix-ld-rs;
+        libraries = with pkgs; [
+          icu
+          openssl
+          stdenv.cc.cc
+          zlib
+        ];
+      };
     };
 
     snowfallorg.users.yash.home.config = {
