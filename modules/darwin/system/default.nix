@@ -2,6 +2,26 @@
 {
   system = {
     defaults = {
+      CustomUserPreferences = {
+        "com.apple.desktopservices" = {
+          # Avoid creating .DS_Store files on network or USB volumes
+          DSDontWriteNetworkStores = true;
+          DSDontWriteUSBStores = true;
+        };
+
+        "com.apple.finder" = {
+          ShowExternalHardDrivesOnDesktop = true;
+          ShowHardDrivesOnDesktop = true;
+          ShowMountedServersOnDesktop = true;
+          ShowRemovableMediaOnDesktop = true;
+          _FXSortFoldersFirst = true;
+        };
+
+        NSGlobalDomain = {
+          AppleActionOnDoubleClick = "Minimize";
+        };
+      };
+
       dock = {
         autohide = false;
         largesize = 110;
@@ -30,6 +50,11 @@
           ];
         show-recents = false;
         tilesize = 35;
+        # Disable all hot corners
+        wvous-tl-corner = 1;
+        wvous-bl-corner = 1;
+        wvous-tr-corner = 1;
+        wvous-br-corner = 1;
       };
 
       finder = {
@@ -44,8 +69,16 @@
         ShowStatusBar = true;
       };
 
+      loginwindow = {
+        GuestEnabled = false;
+      };
+
       NSGlobalDomain = {
+        "com.apple.sound.beep.feedback" = 0;
+        "com.apple.trackpad.forceClick" = true;
         AppleInterfaceStyle = "Dark";
+        AppleScrollerPagingBehavior = true;
+        AppleWindowTabbingMode = "always";
         InitialKeyRepeat = 15;
         KeyRepeat = 1;
         NSAutomaticCapitalizationEnabled = false;
@@ -57,6 +90,8 @@
 
       trackpad = {
         Clicking = true;
+        TrackpadRightClick = true;
+        TrackpadThreeFingerDrag = true;
       };
     };
 
