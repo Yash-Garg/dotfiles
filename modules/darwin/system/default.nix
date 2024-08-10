@@ -1,5 +1,9 @@
-{ config, ... }:
-{
+_: {
+  imports = [
+    ./dock.nix
+    ./finder.nix
+  ];
+
   system = {
     defaults = {
       CustomUserPreferences = {
@@ -9,64 +13,9 @@
           DSDontWriteUSBStores = true;
         };
 
-        "com.apple.finder" = {
-          ShowExternalHardDrivesOnDesktop = true;
-          ShowHardDrivesOnDesktop = true;
-          ShowMountedServersOnDesktop = true;
-          ShowRemovableMediaOnDesktop = true;
-          _FXSortFoldersFirst = true;
-        };
-
         NSGlobalDomain = {
           AppleActionOnDoubleClick = "Minimize";
         };
-      };
-
-      dock = {
-        autohide = false;
-        largesize = 110;
-        magnification = true;
-        mineffect = "scale";
-        minimize-to-application = false;
-        orientation = "bottom";
-        persistent-apps =
-          let
-            brewAppDir = config.homebrew.caskArgs.appdir;
-            homeAppDir = "${config.users.users.yash.home}/Applications";
-          in
-          [
-            "${brewAppDir}/iTerm.app"
-            "${brewAppDir}/Linear.app"
-            "${brewAppDir}/Xcode.app"
-            "${brewAppDir}/ChatGPT.app"
-            "${brewAppDir}/Visual Studio Code.app"
-            "${brewAppDir}/Discord.app"
-            "${brewAppDir}/Spotify.app"
-            "${homeAppDir}/Android Studio.app"
-            "${brewAppDir}/Arc.app"
-            "${brewAppDir}/WhatsApp.app"
-            "${brewAppDir}/Slack.app"
-            "${brewAppDir}/Telegram.app"
-          ];
-        show-recents = false;
-        tilesize = 35;
-        # Disable all hot corners
-        wvous-tl-corner = 1;
-        wvous-bl-corner = 1;
-        wvous-tr-corner = 1;
-        wvous-br-corner = 1;
-      };
-
-      finder = {
-        AppleShowAllExtensions = true;
-        AppleShowAllFiles = true;
-        _FXShowPosixPathInTitle = false;
-        FXDefaultSearchScope = "SCcf";
-        FXEnableExtensionChangeWarning = false;
-        FXPreferredViewStyle = "Nlsv";
-        QuitMenuItem = false;
-        ShowPathbar = true;
-        ShowStatusBar = true;
       };
 
       loginwindow = {
