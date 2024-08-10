@@ -37,10 +37,16 @@ _: {
         NSAutomaticSpellingCorrectionEnabled = false;
       };
 
+      screencapture = {
+        disable-shadow = true;
+        show-thumbnail = false;
+        type = "png";
+      };
+
       trackpad = {
         Clicking = true;
         TrackpadRightClick = true;
-        TrackpadThreeFingerDrag = true;
+        TrackpadThreeFingerDrag = false;
       };
     };
 

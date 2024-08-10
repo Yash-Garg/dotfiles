@@ -2,7 +2,7 @@ _: {
   system.defaults = {
     CustomUserPreferences."com.apple.finder" = {
       ShowExternalHardDrivesOnDesktop = true;
-      ShowHardDrivesOnDesktop = true;
+      ShowHardDrivesOnDesktop = false;
       ShowMountedServersOnDesktop = true;
       ShowRemovableMediaOnDesktop = true;
       _FXSortFoldersFirst = true;
