@@ -23,7 +23,7 @@ in
         mouse_mode = true;
         on_force_close = "detach";
         scroll_buffer_size = 100000;
-        simplified_ui = true;
+        simplified_ui = false;
         theme = mkDefault "catppuccin-mocha";
         themes.catppuccin-mocha = {
           bg = "#585b70";
@@ -38,11 +38,9 @@ in
           black = "#181825";
           white = "#cdd6f4";
         };
-        ui = {
-          pane_frames = {
-            hide_session_name = false;
-            rounded_corners = true;
-          };
+        ui.pane_frames = {
+          hide_session_name = false;
+          rounded_corners = true;
         };
       };
     };
