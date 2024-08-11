@@ -5,7 +5,11 @@ config.check_for_updates = false
 config.color_scheme = "Aura (Gogh)"
 config.enable_scroll_bar = false
 config.enable_tab_bar = false
-config.font = wezterm.font("CaskaydiaCove Nerd Font Mono", { weight = "DemiBold" })
+config.font = wezterm.font({
+    family = "CaskaydiaCove Nerd Font Mono",
+    weight = "DemiBold",
+    harfbuzz_features = { "ss02", "ss19", "ss20" },
+})
 config.font_size = 17
 config.initial_cols = 130
 config.initial_rows = 35
