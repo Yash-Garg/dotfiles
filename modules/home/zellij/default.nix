@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }:
@@ -14,6 +15,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    home.packages = [ pkgs.zjstatus ];
+
     programs.zellij = {
       enable = true;
       settings = {
@@ -37,7 +40,7 @@ in
         };
         ui = {
           pane_frames = {
-            hide_session_name = true;
+            hide_session_name = false;
             rounded_corners = true;
           };
         };

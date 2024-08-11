@@ -36,6 +36,5 @@
     unzip
     whois
     zip
-    zjstatus
   ];
 }
