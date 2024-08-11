@@ -38,7 +38,7 @@ _: {
       };
 
       screencapture = {
-        disable-shadow = true;
+        disable-shadow = false;
         show-thumbnail = false;
         type = "png";
       };

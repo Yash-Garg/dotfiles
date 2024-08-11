@@ -1,7 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     age
+    agenix
     asciinema
     aria
     cachix
@@ -20,7 +21,6 @@
     httpie
     hyperfine
     ijq
-    inputs.agenix.packages."${system}".default
     just
     jq
     mediainfo
@@ -36,5 +36,6 @@
     unzip
     whois
     zip
+    zjstatus
   ];
 }
