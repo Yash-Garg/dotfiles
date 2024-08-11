@@ -53,3 +53,10 @@ fi
 if type batman &>/dev/null; then
     alias man='batman'
 fi
+
+if type zellij &>/dev/null; then
+    alias zj='zellij'
+    alias zr='zellij run -d right -c --'
+    alias zrf='zellij run -f -c --'
+    alias zri='zellij run -d right -i -c --'
+fi
