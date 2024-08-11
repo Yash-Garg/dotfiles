@@ -59,4 +59,5 @@ if type zellij &>/dev/null; then
     alias zr='zellij run -d right -c --'
     alias zrf='zellij run -f -c --'
     alias zri='zellij run -d right -i -c --'
+    alias zkill='zellij ka && zellij da'
 fi
