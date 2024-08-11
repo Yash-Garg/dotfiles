@@ -7,6 +7,7 @@
 
   profiles.${namespace} = {
     oh-my-posh.enable = true;
+    stylix.enable = true;
     zellij.enable = true;
   };
 

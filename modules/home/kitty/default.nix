@@ -17,11 +17,10 @@ in
   };
 
   config = mkIf cfg.enable {
-
     programs.kitty = {
       enable = true;
 
-      font = {
+      font = mkForce {
         name = "CaskaydiaCove Nerd Font Mono";
         package = pkgs.nerdfonts;
         size = 14;

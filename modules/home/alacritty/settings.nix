@@ -6,7 +6,7 @@
     };
 
     # Colors (Aura Theme)
-    colors = {
+    colors = lib.mkForce {
       primary = {
         background = "#15141b";
         foreground = "#edecee";
@@ -44,8 +44,8 @@
       };
     };
 
-    font = {
-      size = lib.mkDefault 14;
+    font = lib.mkForce {
+      size = 14;
 
       normal = {
         family = "CaskaydiaCove Nerd Font Mono";

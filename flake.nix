@@ -40,7 +40,11 @@
 
       systems.modules.darwin =
         with inputs;
-        [ srvos.darwinModules.mixins-trusted-nix-caches ] ++ commonModules;
+        [
+          srvos.darwinModules.mixins-trusted-nix-caches
+          stylix.darwinModules.stylix
+        ]
+        ++ commonModules;
 
       systems.modules.nixos =
         with inputs;

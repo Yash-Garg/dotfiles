@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   programs.yazi = {
     enable = true;
@@ -10,5 +10,5 @@
     };
   };
 
-  xdg.configFile."yazi/theme.toml".source = "${inputs.catppuccin-yazi.outPath}/themes/mocha.toml";
+  xdg.configFile."yazi/theme.toml".source = lib.mkDefault "${inputs.catppuccin-yazi.outPath}/themes/mocha.toml";
 }

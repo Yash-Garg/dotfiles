@@ -1,5 +1,6 @@
-_: {
-  programs.fzf.colors = {
+{ lib, ... }:
+{
+  programs.fzf.colors = lib.mkForce {
     bg = "-1";
     "bg+" = "#44475a";
     fg = "#f8f8f2";

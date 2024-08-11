@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "${pkgs.btop}/share/btop/themes/dracula.theme";
+      color_theme = lib.mkForce "${pkgs.btop}/share/btop/themes/dracula.theme";
       theme_background = false;
     };
   };

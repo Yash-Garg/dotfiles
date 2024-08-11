@@ -24,7 +24,7 @@ in
         on_force_close = "detach";
         scroll_buffer_size = 100000;
         simplified_ui = true;
-        theme = "catppuccin-mocha";
+        theme = mkDefault "catppuccin-mocha";
         ui = {
           pane_frames = {
             hide_session_name = true;

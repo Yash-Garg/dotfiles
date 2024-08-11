@@ -12,7 +12,8 @@
     mpv.enable = true;
     obs.enable = true;
     oh-my-posh.enable = true;
-    spotify.enable = false;
+    stylix.enable = true;
+    zellij.enable = true;
   };
 
   shells.${namespace}.zsh.enable = true;
