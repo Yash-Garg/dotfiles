@@ -114,3 +114,6 @@
 
 [fetch]
     writeCommitGraph = true
+
+[includeIf "gitdir/i:~/projects/work/"]
+    path = ~/.gitconfig-work

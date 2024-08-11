@@ -1,4 +1,6 @@
-_: {
+{ lib, ... }:
+with lib;
+{
   programs.git = {
     enable = true;
     ignores = [
@@ -10,6 +12,6 @@ _: {
       ".vscode/"
       ".idea/"
     ];
-    includes = [ { path = "$HOME/.gitconfig"; } ];
+    includes = [ { path = snowfall.fs.get-file ".gitconfig"; } ];
   };
 }

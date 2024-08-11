@@ -10,7 +10,7 @@ with lib;
       set smarthome
     '';
 
-    ".gitconfig".source = snowfall.fs.get-file ".gitconfig";
+    ".gitconfig-work".source = snowfall.fs.get-file ".gitconfig-work";
 
     ".functions" = {
       executable = true;
