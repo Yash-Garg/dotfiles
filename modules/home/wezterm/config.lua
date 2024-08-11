@@ -19,9 +19,9 @@ config.window_background_opacity = 0.9
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.window_padding = {
-    left = 20,
-    right = 20,
+    left = 10,
+    right = 10,
     top = 15,
-    bottom = 15,
+    bottom = 0,
 }
 return config
