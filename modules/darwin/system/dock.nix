@@ -15,7 +15,7 @@
       in
       [
         "${sysAppDir}/Launchpad.app"
-        "${brewAppDir}/iTerm.app"
+        "${brewAppDir}/WezTerm.app"
         "${brewAppDir}/Linear.app"
         "${brewAppDir}/Xcode.app"
         "${brewAppDir}/ChatGPT.app"

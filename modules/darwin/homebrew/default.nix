@@ -8,7 +8,6 @@ let
     "flutter"
     "iina"
     "imageoptim"
-    "iterm2"
     "jetbrains-toolbox"
     "linear-linear"
     "maccy"
@@ -16,6 +15,7 @@ let
     "rectangle"
     "spotify"
     "visual-studio-code"
+    "wezterm"
   ];
 in
 {

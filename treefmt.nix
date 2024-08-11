@@ -7,6 +7,7 @@
     nixfmt.enable = true;
     shellcheck.enable = true;
     statix.enable = true;
+    stylua.enable = true;
     taplo.enable = true;
     yamlfmt.enable = true;
   };
