@@ -5,7 +5,10 @@
     name = "yash";
   };
 
-  profiles.${namespace}.oh-my-posh.enable = true;
+  profiles.${namespace} = {
+    oh-my-posh.enable = true;
+    zellij.enable = true;
+  };
 
   shells.${namespace}.zsh.enable = true;
 

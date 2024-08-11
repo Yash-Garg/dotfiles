@@ -36,6 +36,7 @@ in
       starship.enableBashIntegration = profiles.starship.enable;
       wezterm.enableBashIntegration = profiles.wezterm.enable;
       yazi.enableBashIntegration = true;
+      zellij.enableBashIntegration = profiles.zellij.enable;
       zoxide.enableBashIntegration = true;
     };
   };
