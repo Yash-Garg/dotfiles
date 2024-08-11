@@ -49,3 +49,7 @@ fi
 if type kitty &>/dev/null; then
     alias s='kitten ssh'
 fi
+
+if type batman &>/dev/null; then
+    alias man='batman'
+fi
