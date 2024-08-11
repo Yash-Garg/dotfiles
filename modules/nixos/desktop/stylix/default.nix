@@ -54,5 +54,19 @@ in
         nixos-icons.enable = true;
       };
     };
+
+    snowfallorg.users.yash.home.config = {
+      stylix.targets = {
+        alacritty.enable = true;
+        bat.enable = true;
+        btop.enable = true;
+        fzf.enable = true;
+        kitty.enable = true;
+        vesktop.enable = true;
+        wezterm.enable = true;
+        yazi.enable = true;
+        zellij.enable = true;
+      };
+    };
   };
 }

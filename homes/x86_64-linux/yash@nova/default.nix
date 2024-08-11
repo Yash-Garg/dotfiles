@@ -12,7 +12,6 @@
     mpv.enable = true;
     obs.enable = true;
     oh-my-posh.enable = true;
-    stylix.enable = true;
     zellij.enable = true;
   };
 
