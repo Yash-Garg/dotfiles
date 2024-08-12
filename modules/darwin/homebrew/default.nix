@@ -1,4 +1,4 @@
-_:
+{ lib, ... }:
 let
   casks = [
     "alt-tab"
@@ -17,6 +17,7 @@ let
     "visual-studio-code"
     "wezterm"
   ];
+  hmModules = lib.snowfall.fs.get-snowfall-file "modules/home";
 in
 {
   homebrew = {
@@ -58,6 +59,17 @@ in
       autoUpdate = true;
       cleanup = "zap";
       upgrade = true;
+    };
+  };
+
+  # Since we aren't managing graphical apps with home-manager
+  # on darwin, add the config files directly in xdg config
+  snowfallorg.users.yash.home.config = {
+    xdg.configFile = {
+      weztermConfig = {
+        source = "${hmModules}/wezterm/config.lua";
+        target = "wezterm/wezterm.lua";
+      };
     };
   };
 }
