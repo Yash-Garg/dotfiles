@@ -23,6 +23,8 @@ in
           setSocketVariable = true;
         };
       };
+
+      oci-containers.backend = "docker";
     };
   };
 }
