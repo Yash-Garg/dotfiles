@@ -1,4 +1,5 @@
-_: {
+{ pkgs, lib, ... }:
+{
   users.users.yash = {
     name = "yash";
     home = "/Users/yash";
@@ -6,6 +7,14 @@ _: {
 
   environment = {
     pathsToLink = [ "/share/zsh" ];
+    systemPackages = with pkgs; [
+      findutils
+      gawk
+      gnugrep
+      gnused
+      gnutls
+    ];
+    systemPath = lib.mkBefore [ "/opt/homebrew/bin" ];
     variables = {
       LANG = "en_US.UTF-8";
     };
