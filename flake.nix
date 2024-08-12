@@ -116,6 +116,9 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
+    base16-schemes.url = "github:tinted-theming/schemes";
+    base16-schemes.flake = false;
+
     catppuccin-starship.url = "github:catppuccin/starship";
     catppuccin-starship.flake = false;
 

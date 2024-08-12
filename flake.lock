@@ -105,6 +105,22 @@
         "type": "github"
       }
     },
+    "base16-schemes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718992165,
+        "narHash": "sha256-9i9IjZcjvinb/214x5YShUDBZBC2189HYs26uGy/Hck=",
+        "owner": "tinted-theming",
+        "repo": "schemes",
+        "rev": "ef9a4c3c384624694608adebf0993d7a3bed3cf2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tinted-theming",
+        "repo": "schemes",
+        "type": "github"
+      }
+    },
     "base16-tmux": {
       "flake": false,
       "locked": {
@@ -1130,6 +1146,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "base16-schemes": "base16-schemes",
         "catppuccin-starship": "catppuccin-starship",
         "catppuccin-yazi": "catppuccin-yazi",
         "darwin": "darwin_2",

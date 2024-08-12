@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 with lib;
@@ -9,7 +10,7 @@ with lib;
   stylix = {
     enable = true;
     autoEnable = false;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${inputs.base16-schemes.outPath}/base16/catppuccin-mocha.yaml";
     homeManagerIntegration.followSystem = true;
     image = pkgs.fetchurl {
       url = "https://w.wallhaven.cc/full/l8/wallhaven-l8x38r.jpg";

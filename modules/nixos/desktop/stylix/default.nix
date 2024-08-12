@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   namespace,
   ...
 }:
@@ -20,7 +21,7 @@ in
       enable = true;
       homeManagerIntegration.followSystem = true;
       image = ./background.png;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+      base16Scheme = "${inputs.base16-schemes.outPath}/base16/catppuccin-mocha.yaml";
       cursor = {
         package = pkgs.rose-pine-cursor;
         name = "BreezeX-RosePine-Linux";
