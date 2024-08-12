@@ -1,33 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  namespace,
-  ...
-}:
-let
-  guiPkgs = with pkgs; [
-    collision
-    curtail
-    emblem
-    foliate
-    google-chrome
-    handbrake
-    jetbrains.idea-ultimate
-    newsflash
-    (prismlauncher.override {
-      jdks = [ openjdk17 ];
-      withWaylandGLFW = config.${namespace}.desktop.gnome.enable;
-    })
-    slack
-    spotify
-    telegram-desktop
-    textpieces
-    transmission_4-gtk
-    vesktop
-    vscode
-  ];
-in
+{ lib, pkgs, ... }:
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -36,6 +7,7 @@ in
   dots = {
     desktop = {
       enable = true;
+      extraPackages = [ ];
       gnome.enable = true;
     };
 
@@ -73,20 +45,6 @@ in
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-    packages =
-      with pkgs;
-      [
-        apktool
-        ddcutil
-        flutter
-        git-lfs
-        qemu_kvm
-        scrcpy
-        sshfs
-        tailscale
-        xclip
-      ]
-      ++ guiPkgs;
   };
 
   # This value determines the NixOS release from which the default

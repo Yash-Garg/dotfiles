@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }:
@@ -12,6 +13,12 @@ in
 {
   options.${namespace}.desktop = {
     enable = mkEnableOption "Profile for desktop machines";
+
+    extraPackages = mkOption {
+      type = types.listOf types.package;
+      default = [ ];
+      description = "Extra packages to install on desktop machines";
+    };
   };
 
   config = mkIf cfg.enable {
@@ -45,6 +52,43 @@ in
     # Enable the X11 windowing system.
     services.xserver = enabled;
 
-    time.hardwareClockInLocalTime = true;
+    # Common packages for desktop machines
+    users.users.yash.packages =
+      # CLI
+      with pkgs;
+      [
+        apktool
+        ddcutil
+        flutter
+        git-lfs
+        qemu_kvm
+        scrcpy
+        sshfs
+        tailscale
+        xclip
+      ]
+      # GUI
+      ++ (with pkgs; [
+        collision
+        curtail
+        emblem
+        foliate
+        google-chrome
+        handbrake
+        jetbrains.idea-ultimate
+        newsflash
+        (prismlauncher.override {
+          jdks = [ openjdk17 ];
+          withWaylandGLFW = config.${namespace}.desktop.gnome.enable;
+        })
+        slack
+        spotify
+        telegram-desktop
+        textpieces
+        transmission_4-gtk
+        vesktop
+        vscode
+      ])
+      ++ cfg.extraPackages;
   };
 }
