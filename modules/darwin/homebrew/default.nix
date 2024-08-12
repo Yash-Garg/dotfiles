@@ -63,10 +63,7 @@ in
   # on darwin, add the config files directly in xdg config
   snowfallorg.users.yash.home.config = {
     xdg.configFile = {
-      weztermConfig = {
-        source = "${hmModules}/wezterm/config.lua";
-        target = "wezterm/wezterm.lua";
-      };
+      "wezterm".source = "${hmModules}/wezterm/config";
     };
   };
 }

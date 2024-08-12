@@ -18,7 +18,10 @@ in
     programs.wezterm = {
       enable = true;
       package = pkgs.wezterm;
-      extraConfig = builtins.readFile ./config.lua;
+      extraConfig = mkMerge [
+        (builtins.readFile ./config/appearance.lua)
+        (builtins.readFile ./config/wezterm.lua)
+      ];
     };
   };
 }

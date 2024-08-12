@@ -1,8 +1,14 @@
 local wezterm = require("wezterm")
+local appearance = require("appearance")
 local config = wezterm.config_builder()
+
 config.automatically_reload_config = true
 config.check_for_updates = false
-config.color_scheme = "Aura (Gogh)"
+if appearance.is_dark() then
+    config.color_scheme = "Aura (Gogh)"
+else
+    config.color_scheme = "Rosé Pine Dawn (Gogh)"
+end
 config.enable_scroll_bar = false
 config.enable_tab_bar = false
 config.font = wezterm.font({
@@ -13,6 +19,7 @@ config.font = wezterm.font({
 config.font_size = 17
 config.initial_cols = 130
 config.initial_rows = 35
+config.macos_window_background_blur = 10
 config.scrollback_lines = 5000
 config.use_fancy_tab_bar = true
 config.window_background_opacity = 0.9
@@ -24,4 +31,5 @@ config.window_padding = {
     top = 15,
     bottom = 0,
 }
+
 return config
