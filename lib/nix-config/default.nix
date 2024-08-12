@@ -41,6 +41,7 @@
         warn-dirty = false;
 
         extra-trusted-substituters = [
+          "https://ai.cachix.org"
           "https://nixpkgs-wayland.cachix.org"
           "https://yash-garg.cachix.org"
           "https://cache.nixos.org"
@@ -49,6 +50,7 @@
         ];
 
         extra-trusted-public-keys = [
+          "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="
           "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
           "yash-garg.cachix.org-1:sHcKOvVej+RlINvt4XVAOE/Cnho3hnrHHRv0uq1u7Xs="
           "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="

@@ -53,6 +53,7 @@
           impermanence.nixosModules.impermanence
           lanzaboote.nixosModules.lanzaboote
           nix-index-database.nixosModules.nix-index
+          nixified-ai.nixosModules.invokeai-nvidia
           nixos-cosmic.nixosModules.default
           nixos-generators.nixosModules.all-formats
           nixos-wsl.nixosModules.default
@@ -162,6 +163,9 @@
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
     nix-topology.inputs.devshell.follows = "devshell";
     nix-topology.inputs.flake-utils.follows = "flake-utils";
+
+    nixified-ai.url = "github:nixified-ai/flake";
+    nixified-ai.inputs.nixpkgs.follows = "nixpkgs";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
