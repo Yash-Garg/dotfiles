@@ -32,6 +32,7 @@ in
       eza.enableBashIntegration = true;
       fzf.enableBashIntegration = true;
       kitty.shellIntegration.enableBashIntegration = profiles.kitty.enable;
+      nix-index.enableBashIntegration = true;
       oh-my-posh.enableBashIntegration = profiles.oh-my-posh.enable;
       starship.enableBashIntegration = profiles.starship.enable;
       wezterm.enableBashIntegration = profiles.wezterm.enable;

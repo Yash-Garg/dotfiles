@@ -33,6 +33,7 @@ in
       eza.enableZshIntegration = true;
       fzf.enableZshIntegration = true;
       kitty.shellIntegration.enableZshIntegration = profiles.kitty.enable;
+      nix-index.enableZshIntegration = true;
       oh-my-posh.enableZshIntegration = profiles.oh-my-posh.enable;
       starship.enableZshIntegration = profiles.starship.enable;
       wezterm.enableZshIntegration = profiles.wezterm.enable;

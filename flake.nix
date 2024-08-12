@@ -41,6 +41,7 @@
       systems.modules.darwin =
         with inputs;
         [
+          nix-index-database.darwinModules.nix-index
           srvos.darwinModules.mixins-trusted-nix-caches
           stylix.darwinModules.stylix
         ]
@@ -51,6 +52,7 @@
         [
           impermanence.nixosModules.impermanence
           lanzaboote.nixosModules.lanzaboote
+          nix-index-database.nixosModules.nix-index
           nixos-cosmic.nixosModules.default
           nixos-generators.nixosModules.all-formats
           nixos-wsl.nixosModules.default
