@@ -4,7 +4,6 @@
     age
     agenix
     asciinema
-    aria
     cachix
     charm-freeze
     curl
