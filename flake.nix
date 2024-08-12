@@ -81,6 +81,7 @@
 
       overlays = with inputs; [
         nix-topology.overlays.default
+        nixpkgs-wayland.overlay
         nur.overlay
       ];
 
@@ -160,6 +161,10 @@
     nix-topology.inputs.flake-utils.follows = "flake-utils";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-wayland.inputs.flake-compat.follows = "flake-compat";
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
