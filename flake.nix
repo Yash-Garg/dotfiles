@@ -93,7 +93,7 @@
           pkgs = channels.nixpkgs;
           modules = [
             { inherit (inputs.self) nixosConfigurations; }
-            ./topology.nix
+            ./topology
           ];
         };
       };
