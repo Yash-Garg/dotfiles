@@ -1,0 +1,12 @@
+layout {
+    tab name="main" {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+
+        pane split_direction="vertical" {
+            pane cwd="~/projects/work"
+            pane cwd="~/dotfiles"
+        }
+    }
+}

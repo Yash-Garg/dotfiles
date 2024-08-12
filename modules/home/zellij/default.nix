@@ -46,7 +46,7 @@ in
     };
 
     xdg.configFile = {
-      "zellij/layouts/default.kdl".text = builtins.readFile ./default.kdl;
+      "zellij/layouts".source = ./layouts;
     };
   };
 }
