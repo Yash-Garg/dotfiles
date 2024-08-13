@@ -77,6 +77,7 @@
 
       homes.modules = with inputs; [
         nix-index-database.hmModules.nix-index
+        nixvim.homeManagerModules.nixvim
         spicetify-nix.homeManagerModules.default
       ];
 
@@ -172,6 +173,14 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     nixpkgs-wayland.inputs.flake-compat.follows = "flake-compat";
+
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.inputs.nix-darwin.follows = "darwin";
+    nixvim.inputs.devshell.follows = "devshell";
+    nixvim.inputs.treefmt-nix.follows = "treefmt-nix";
+    nixvim.inputs.home-manager.follows = "home-manager";
+    nixvim.inputs.flake-compat.follows = "flake-compat";
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
