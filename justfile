@@ -1,5 +1,13 @@
+default:
+    @just --list --unsorted
+
 deploy:
-    nixos-rebuild switch --flake . --use-remote-sudo
+    #!/usr/bin/env bash
+    if [[ $(uname) == "Darwin" ]]; then
+        nix run nix-darwin -- switch --flake .
+    else
+        nixos-rebuild switch --flake . --use-remote-sudo
+    fi
 
 debug:
     nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
@@ -12,9 +20,6 @@ history:
 
 gc:
     sudo nix-collect-garbage --delete-old
-
-darwin:
-    nix run nix-darwin -- switch --flake .
 
 darwin-check:
     nom build .#darwinConfigurations.trinity.system
@@ -29,4 +34,9 @@ template name path:
     nix flake new --template .#templates.{{ name }} {{ path }}
 
 check flake:
-    nom build .#nixosConfigurations.{{ flake }}.config.system.build.toplevel
+    #!/usr/bin/env bash
+    if [[ $(uname) == "Darwin" ]]; then
+        nom build .#darwinConfigurations.{{ flake }}.system
+    else
+        nom build .#nixosConfigurations.{{ flake }}.config.system.build.toplevel
+    fi
