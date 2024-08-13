@@ -38,6 +38,7 @@ in
       inherit (cfg) authKeyFile;
       inherit (cfg) openFirewall;
       extraUpFlags = cfg.extraOptions;
+      permitCertUid = "caddy";
       useRoutingFeatures = "both";
     };
   };

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  namespace,
   ...
 }:
 with lib;
@@ -13,6 +14,7 @@ in
 
   age.secrets.passwordfile-vortex.file = snowfall.fs.get-file "secrets/users/${hostName}.age";
   age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/${hostName}.age";
+  age.secrets.tsauthkey-env.file = snowfall.fs.get-file "secrets/tailscale/${hostName}-env.age";
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
@@ -46,12 +48,41 @@ in
     virtualisation.enable = true;
   };
 
+  services.caddy = {
+    enable = true;
+    package = pkgs.${namespace}.caddy-tailscale;
+    virtualHosts = {
+      "https://glance.turtle-lake.ts.net" = {
+        extraConfig = ''
+          bind tailscale/glance
+          tailscale_auth
+          reverse_proxy :90
+        '';
+      };
+    };
+  };
+
+  systemd.services.caddy = {
+    serviceConfig = {
+      EnvironmentFile = [ config.age.secrets.tsauthkey-env.path ];
+    };
+  };
+
   users.users.yash = {
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.passwordfile-vortex.path;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     extraGroups = [ "wheel" ];
+  };
+
+  virtualisation.oci-containers.containers = {
+    glance = {
+      image = "glanceapp/glance:latest";
+      ports = [ "90:8080" ];
+      volumes = [ "${snowfall.fs.get-file "docker/glance/glance.yml"}:/app/glance.yml" ];
+      autoStart = true;
+    };
   };
 
   system.stateVersion = "24.05";
