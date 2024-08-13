@@ -13,7 +13,7 @@ in
   options.${namespace}.services.tailscale = {
     enable = mkEnableOption "Tailscale";
 
-    authkeyFile = mkOption {
+    authKeyFile = mkOption {
       type = types.nullOr types.path;
       default = null;
       description = "Path to a file containing a Tailscale authkey that this device can use to authenticate itself";
@@ -35,9 +35,9 @@ in
 
     services.tailscale = {
       enable = true;
-      authKeyFile = cfg.authkeyFile;
-      extraUpFlags = cfg.extraOptions;
+      inherit (cfg) authKeyFile;
       inherit (cfg) openFirewall;
+      extraUpFlags = cfg.extraOptions;
       useRoutingFeatures = "both";
     };
   };

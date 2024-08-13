@@ -46,7 +46,7 @@ with lib;
 
       tailscale = {
         enable = true;
-        authkeyFile = config.age.secrets.tsauthkey.path;
+        authKeyFile = config.age.secrets.tsauthkey.path;
         extraOptions = [
           "--accept-risk=lose-ssh"
           "--advertise-exit-node"
