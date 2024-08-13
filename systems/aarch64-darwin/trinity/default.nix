@@ -13,6 +13,7 @@
       gnugrep
       gnused
       gnutls
+      inetutils
     ];
     systemPath = lib.mkBefore [ "/opt/homebrew/bin" ];
     variables = {

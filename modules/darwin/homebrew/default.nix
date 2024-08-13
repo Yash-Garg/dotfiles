@@ -11,6 +11,7 @@ let
     "jetbrains-toolbox"
     "linear-linear"
     "maccy"
+    "postman"
     "raycast"
     "rectangle"
     "spotify"
