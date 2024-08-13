@@ -8,13 +8,17 @@
 with lib;
 let
   hostName = "vortex";
+  get-secret = name: snowfall.fs.get-file "secrets/${hostName}/${name}.age";
 in
 {
   imports = [ ./hardware-configuration.nix ];
 
-  age.secrets.passwordfile-vortex.file = snowfall.fs.get-file "secrets/${hostName}/user.age";
-  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/${hostName}/tailscale.age";
-  age.secrets.tsauthkey-env.file = snowfall.fs.get-file "secrets/${hostName}/caddy.env.age";
+  age.secrets = {
+    passwordfile-vortex.file = get-secret "user";
+    feed-auth.file = get-secret "miniflux.env";
+    tsauthkey.file = get-secret "tailscale";
+    tsauthkey-env.file = get-secret "caddy.env";
+  };
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
@@ -59,6 +63,31 @@ in
           reverse_proxy :90
         '';
       };
+      "https://miniflux.turtle-lake.ts.net" = {
+        extraConfig = ''
+          bind tailscale/miniflux
+          tailscale_auth
+          reverse_proxy :8889
+        '';
+      };
+    };
+  };
+
+  services.miniflux = {
+    enable = true;
+    adminCredentialsFile = config.age.secrets.feed-auth.path;
+    createDatabaseLocally = true;
+    config = {
+      LISTEN_ADDR = "127.0.0.1:8889";
+      FETCH_ODYSEE_WATCH_TIME = 1;
+      FETCH_YOUTUBE_WATCH_TIME = 1;
+      LOG_DATE_TIME = 1;
+      LOG_FORMAT = "json";
+      WORKER_POOL_SIZE = 2;
+      BASE_URL = "https://miniflux.turtle-lake.ts.net/";
+      HTTPS = 1;
+      METRICS_COLLECTOR = 1;
+      WEBAUTHN = 1;
     };
   };
 
