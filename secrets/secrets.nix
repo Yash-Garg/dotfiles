@@ -21,6 +21,6 @@ in
   "samba/nova.age".publicKeys = users ++ [ nova ];
 
   "tailscale/vortex.age".publicKeys = users ++ [ vortex ];
-  "tailscale/vortex-env.age".publicKeys = users ++ [ vortex ];
+  "tailscale/vortex.env.age".publicKeys = users ++ [ vortex ];
   "users/vortex.age".publicKeys = users ++ [ vortex ];
 }

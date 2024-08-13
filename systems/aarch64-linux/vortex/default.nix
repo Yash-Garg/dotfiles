@@ -14,7 +14,7 @@ in
 
   age.secrets.passwordfile-vortex.file = snowfall.fs.get-file "secrets/users/${hostName}.age";
   age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/${hostName}.age";
-  age.secrets.tsauthkey-env.file = snowfall.fs.get-file "secrets/tailscale/${hostName}-env.age";
+  age.secrets.tsauthkey-env.file = snowfall.fs.get-file "secrets/tailscale/${hostName}.env.age";
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
