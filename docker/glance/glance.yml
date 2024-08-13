@@ -24,13 +24,13 @@ pages:
             title: Services
             sites:
               - title: h5ai
-                url: http://192.168.29.200:90
+                url: http://localhost:80
                 icon: si:files
               - title: jellyfin
-                url: http://192.168.29.200:8096
+                url: http://localhost:8096
                 icon: si:jellyfin
               - title: qbittorrent
-                url: http://192.168.29.200:3000
+                url: http://localhost:3000
                 icon: si:qbittorrent
           - type: bookmarks
             groups:
