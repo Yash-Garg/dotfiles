@@ -84,6 +84,8 @@ pages:
                 title: jeffgeerling.com
               - url: https://nadh.in/index.xml
                 title: nadh.in
+              - url: https://mitchellh.com/feed.xml
+                title: mitchellh.com
           - type: lobsters
             sort-by: hot
             limit: 15
