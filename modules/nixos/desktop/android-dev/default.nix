@@ -25,7 +25,10 @@ in
       android-tools
       androidStudioPackages.stable
       androidStudioPackages.beta
+      apktool
+      flutter
       kotlin
+      scrcpy
       maestro
     ];
 

@@ -57,14 +57,10 @@ in
       # CLI
       with pkgs;
       [
-        apktool
         ddcutil
-        flutter
         git-lfs
         qemu_kvm
-        scrcpy
         sshfs
-        tailscale
         xclip
       ]
       # GUI
