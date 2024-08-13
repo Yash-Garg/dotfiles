@@ -12,15 +12,16 @@ let
   vortex = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2aT32IeITZcrNPSbZnrtbRqRdekmVr42sLHw6IL/h1";
 in
 {
-  "tailscale/cosmos.age".publicKeys = users ++ [ cosmos ];
-  "users/cosmos.age".publicKeys = users ++ [ cosmos ];
+  "cosmos/tailscale.age".publicKeys = users ++ [ cosmos ];
+  "cosmos/user.age".publicKeys = users ++ [ cosmos ];
 
-  "tailscale/nebula.age".publicKeys = users ++ [ nebula ];
+  "nebula/tailscale.age".publicKeys = users ++ [ nebula ];
 
-  "cifs/nova.age".publicKeys = users ++ [ nova ];
-  "samba/nova.age".publicKeys = users ++ [ nova ];
+  "nova/cifs.age".publicKeys = users ++ [ nova ];
+  "nova/samba.age".publicKeys = users ++ [ nova ];
 
-  "tailscale/vortex.age".publicKeys = users ++ [ vortex ];
-  "tailscale/vortex.env.age".publicKeys = users ++ [ vortex ];
-  "users/vortex.age".publicKeys = users ++ [ vortex ];
+  "vortex/caddy.env.age".publicKeys = users ++ [ vortex ];
+  "vortex/miniflux.env.age".publicKeys = users ++ [ vortex ];
+  "vortex/tailscale.age".publicKeys = users ++ [ vortex ];
+  "vortex/user.age".publicKeys = users ++ [ vortex ];
 }

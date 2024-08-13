@@ -8,8 +8,8 @@ with lib;
 {
   imports = [ ./hardware-configuration.nix ];
 
-  age.secrets.passwordfile-cosmos.file = snowfall.fs.get-file "secrets/users/cosmos.age";
-  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/cosmos.age";
+  age.secrets.passwordfile-cosmos.file = snowfall.fs.get-file "secrets/cosmos/user.age";
+  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/cosmos/tailscale.age";
 
   boot.initrd.systemd.enableTpm2 = mkForce false;
 

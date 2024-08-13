@@ -6,7 +6,7 @@
 }:
 with lib;
 {
-  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/nebula.age";
+  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/nebula/tailscale.age";
 
   dots = {
     system.wsl = {

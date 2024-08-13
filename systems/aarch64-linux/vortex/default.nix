@@ -12,9 +12,9 @@ in
 {
   imports = [ ./hardware-configuration.nix ];
 
-  age.secrets.passwordfile-vortex.file = snowfall.fs.get-file "secrets/users/${hostName}.age";
-  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/tailscale/${hostName}.age";
-  age.secrets.tsauthkey-env.file = snowfall.fs.get-file "secrets/tailscale/${hostName}.env.age";
+  age.secrets.passwordfile-vortex.file = snowfall.fs.get-file "secrets/${hostName}/user.age";
+  age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/${hostName}/tailscale.age";
+  age.secrets.tsauthkey-env.file = snowfall.fs.get-file "secrets/${hostName}/caddy.env.age";
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;

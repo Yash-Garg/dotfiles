@@ -46,7 +46,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    age.secrets.cifs-creds.file = snowfall.fs.get-file "secrets/cifs/${cfg.cifsHost}.age";
+    age.secrets.cifs-creds.file = snowfall.fs.get-file "secrets/${cfg.cifsHost}/cifs.age";
 
     environment.etc."nixos/smb-secrets".source = config.age.secrets.cifs-creds.path;
     environment.etc."nixos/smb-secrets".mode = "0600";
