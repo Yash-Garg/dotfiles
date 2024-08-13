@@ -32,6 +32,14 @@ in
   config = mkIf cfg.enable {
     # always allow traffic from Tailscale network
     networking.firewall.trustedInterfaces = mkIf cfg.openFirewall [ "tailscale0" ];
+    networking = {
+      nameservers = [
+        "100.100.100.100"
+        "8.8.8.8"
+        "1.1.1.1"
+      ];
+      search = [ "turtle-lake.ts.net" ];
+    };
 
     services.tailscale = {
       enable = true;
