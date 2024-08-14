@@ -38,7 +38,7 @@ in
       starship.enableZshIntegration = profiles.starship.enable;
       wezterm.enableZshIntegration = profiles.wezterm.enable;
       yazi.enableZshIntegration = true;
-      zellij.enableZshIntegration = profiles.zellij.enable;
+      zellij.enableZshIntegration = false;
       zoxide.enableZshIntegration = true;
     };
   };
