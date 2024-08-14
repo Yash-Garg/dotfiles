@@ -4,11 +4,7 @@ local config = wezterm.config_builder()
 
 config.automatically_reload_config = true
 config.check_for_updates = false
-if appearance.is_dark() then
-    config.color_scheme = "Aura (Gogh)"
-else
-    config.color_scheme = "Rosé Pine Dawn (Gogh)"
-end
+config.color_scheme = "Aura (Gogh)"
 config.enable_scroll_bar = false
 config.enable_tab_bar = false
 config.font = wezterm.font({
