@@ -10,6 +10,7 @@
     firefox.enable = true;
     kitty.enable = true;
     mpv.enable = true;
+    neovim.enable = true;
     obs.enable = true;
     oh-my-posh.enable = true;
     zellij.enable = true;

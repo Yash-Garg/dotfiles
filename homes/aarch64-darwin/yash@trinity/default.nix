@@ -6,6 +6,7 @@
   };
 
   profiles.${namespace} = {
+    neovim.enable = true;
     oh-my-posh.enable = true;
     zellij.enable = true;
   };
