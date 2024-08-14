@@ -2,10 +2,12 @@
 with lib.${namespace};
 {
   programs.nixvim.plugins.bufferline = enabled // {
-    hover.enabled = true;
-    indicator.style = null;
-    mode = "buffers";
-    separatorStyle = "padded_slope";
-    themable = true;
+    settings.options = {
+      hover.enabled = true;
+      indicator.style = null;
+      mode = "buffers";
+      separatorStyle = "slant";
+      themable = true;
+    };
   };
 }
