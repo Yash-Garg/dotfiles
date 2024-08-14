@@ -196,6 +196,5 @@ with lib.${namespace};
         };
       }
     ];
-    extraConfigLua = ''require("telescope").setup{}'';
   };
 }
