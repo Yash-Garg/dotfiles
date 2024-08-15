@@ -17,6 +17,7 @@ let
     "spotify"
     "visual-studio-code"
     "wezterm"
+    "zed"
   ];
   hmModules = lib.snowfall.fs.get-snowfall-file "modules/home";
 in

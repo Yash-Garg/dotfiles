@@ -9,7 +9,6 @@
     curl
     delta
     deploy-rs
-    direnv
     dnscontrol
     dogdns
     du-dust
