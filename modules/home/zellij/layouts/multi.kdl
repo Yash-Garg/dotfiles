@@ -1,0 +1,59 @@
+layout {
+    tab name="dotfiles" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+
+        pane split_direction="vertical" {
+            pane cwd="~/dotfiles" size="60%"
+            pane size="40%"
+        }
+
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="work" focus=true cwd="~/projects/work" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+
+        pane split_direction="horizontal" {
+            pane split_direction="vertical" {
+                pane
+                pane
+            }
+
+            pane
+        }
+
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="personal" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+
+        pane
+
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="misc" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+
+        pane command="btop" start_suspended=true
+
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}
