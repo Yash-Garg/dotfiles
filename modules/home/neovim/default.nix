@@ -21,6 +21,29 @@ in
 
   config = mkIf cfg.enable {
     programs.nixvim = enabled // {
+      autoCmd = [
+        {
+          # Show diagnostic window when cursor is over warning/error
+          event = [
+            "CursorHold"
+            "CursorHoldI"
+          ];
+          group = "float_diagnostic_cursor";
+          callback.__raw = ''
+            function()
+            	vim.diagnostic.open_float(
+            		nil,
+            		{ focus = false, scope = "cursor" }
+            	)
+            end
+          '';
+        }
+      ];
+
+      autoGroups = {
+        float_diagnostic_cursor = { };
+      };
+
       colorschemes.rose-pine = enabled // {
         settings = {
           dark_variant = "moon";
