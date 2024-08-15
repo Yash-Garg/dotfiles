@@ -26,7 +26,7 @@ in
           dark_variant = "moon";
           styles = {
             bold = true;
-            italic = true;
+            italic = false;
             transparency = true;
           };
         };

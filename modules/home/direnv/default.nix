@@ -5,7 +5,7 @@
   namespace,
   ...
 }:
-lib.mkIf (pkgs.stdenv.isDarwin) {
+lib.mkIf pkgs.stdenv.isDarwin {
   programs.direnv = {
     enable = true;
     enableBashIntegration = config.shells.${namespace}.bash.enable;

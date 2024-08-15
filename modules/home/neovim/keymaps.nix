@@ -3,8 +3,8 @@ with lib;
 {
   programs.nixvim = {
     globals = {
-      mapleader = " ";
-      maplocalleader = " ";
+      mapleader = ",";
+      maplocalleader = ",";
     };
 
     keymaps =
@@ -25,13 +25,12 @@ with lib;
               Y = "y$";
 
               # back and fourth between the two most recent files
-              "<C-c>" = ":b#<CR>";
+              "<leader><leader>" = ":b#<CR>";
 
               # close by Ctrl+x
               "<C-x>" = ":close<CR>";
 
-              # save by Space+s or Ctrl+s
-              "<leader>s" = ":w<CR>";
+              # save by Ctrl+s
               "<C-s>" = ":w<CR>";
 
               # navigate to left/right window
