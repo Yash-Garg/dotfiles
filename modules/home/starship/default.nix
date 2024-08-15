@@ -8,7 +8,7 @@
 with lib;
 let
   cfg = config.profiles.${namespace}.starship;
-  palette = builtins.readFile "${inputs.catppuccin-starship}/palettes/mocha.toml";
+  palette = builtins.readFile "${inputs.catppuccin-starship}/themes/mocha.toml";
   settings = builtins.readFile ./config.toml;
 in
 {
