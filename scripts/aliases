@@ -26,8 +26,12 @@ if type git &>/dev/null; then
     alias rst='git reset; git restore .'
 fi
 
+if type nvim &>/dev/null; then
+    export EDITOR='nvim'
+fi
+
 if type micro &>/dev/null; then
-    export EDITOR='micro'
+    alias m='micro'
 fi
 
 if type rg &>/dev/null; then

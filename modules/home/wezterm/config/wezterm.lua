@@ -3,7 +3,7 @@ local utils = require("utils")
 local config = wezterm.config_builder()
 
 if utils.is_windows() then
-    config.default_prog = { 'pwsh' }
+    config.default_prog = { "pwsh" }
 end
 
 config.adjust_window_size_when_changing_font_size = false
@@ -33,6 +33,6 @@ config.window_padding = {
     top = 15,
     bottom = 0,
 }
-config.win32_system_backdrop = 'Acrylic'
+config.win32_system_backdrop = "Acrylic"
 
 return config
