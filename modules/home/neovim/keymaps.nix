@@ -48,9 +48,6 @@ with lib;
               inherit action key;
             })
             {
-              # better indenting
-              ">" = ">gv";
-              "<" = "<gv";
               "<TAB>" = ">gv";
               "<S-TAB>" = "<gv";
             };

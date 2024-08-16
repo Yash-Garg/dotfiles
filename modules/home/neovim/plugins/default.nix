@@ -7,6 +7,7 @@ with lib.${namespace};
     ./completion.nix
     ./devicons.nix
     ./lsp.nix
+    ./lualine.nix
     ./telescope.nix
     ./treesitter.nix
   ];
