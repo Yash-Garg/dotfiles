@@ -16,4 +16,16 @@ function module.is_dark()
     return true
 end
 
+function module.is_linux()
+    return wezterm.target_triple:find("linux") ~= nil
+end
+
+function module.is_darwin()
+    return wezterm.target_triple:find("darwin") ~= nil
+end
+
+function module.is_windows()
+    return wezterm.target_triple:find("windows") ~= nil
+end
+
 return module

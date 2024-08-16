@@ -19,7 +19,7 @@ in
       enable = true;
       package = pkgs.wezterm;
       extraConfig = mkMerge [
-        (builtins.readFile ./config/appearance.lua)
+        (builtins.readFile ./config/utils.lua)
         (builtins.readFile ./config/wezterm.lua)
       ];
     };
