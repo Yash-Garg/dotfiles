@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   namespace,
   ...
 }:
@@ -60,5 +61,7 @@ in
       viAlias = true;
       vimAlias = true;
     };
+
+    programs.tmux.plugins = [ pkgs.tmuxPlugins.vim-tmux-navigator ];
   };
 }

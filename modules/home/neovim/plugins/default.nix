@@ -25,6 +25,7 @@ with lib.${namespace};
     nvim-autopairs = enabled;
     nvim-tree = enabled;
     todo-comments = enabled;
+    tmux-navigator = enabled;
     which-key = enabled;
   };
 }

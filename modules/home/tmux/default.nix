@@ -10,6 +10,8 @@ in
 {
   programs.tmux = {
     enable = true;
+    baseIndex = 1;
+    keyMode = "vi";
     mouse = true;
     newSession = true;
     aggressiveResize = !pkgs.stdenv.isDarwin;
@@ -39,7 +41,6 @@ in
           set -g @catppuccin_directory_text "#{pane_current_path}"
         '';
       }
-      sensible
       yank
     ];
     extraConfig = ''
