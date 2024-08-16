@@ -19,24 +19,33 @@ in
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       {
-        plugin = rose-pine;
+        plugin = catppuccin;
         extraConfig = ''
-          set -g @rose_pine_variant 'main'
-          set -g @rose_pine_host 'on'
-          set -g @rose_pine_user 'on'
-          set -g @rose_pine_directory 'off'
-          set -g @rose_pine_show_current_program 'off'
-          set -g @rose_pine_show_pane_directory 'on'
-          set -g @rose_pine_hostname_icon '󰒋 '
-          set -g @rose_pine_status_left_prepend_section '#{tmux_mode_indicator}'
+          set -g @catppuccin_window_left_separator ""
+          set -g @catppuccin_window_right_separator " "
+          set -g @catppuccin_window_middle_separator " █"
+          set -g @catppuccin_window_number_position "right"
+
+          set -g @catppuccin_window_default_fill "number"
+          set -g @catppuccin_window_current_fill "number"
+
+          set -g @catppuccin_status_background "default"
+          set -g @catppuccin_status_modules_right "application session"
+          set -g @catppuccin_status_left_separator  " "
+          set -g @catppuccin_status_right_separator ""
+          set -g @catppuccin_status_fill "icon"
+          set -g @catppuccin_status_connect_separator "no"
+
+          set -g @catppuccin_directory_text "#{pane_current_path}"
         '';
       }
-      mode-indicator
       sensible
       yank
     ];
     extraConfig = ''
+      set -ga terminal-overrides ",xterm-256color:Tc"
       set -sg escape-time 100
+      set-option -g status-position top
       unbind c
       unbind p
       bind n new-window
