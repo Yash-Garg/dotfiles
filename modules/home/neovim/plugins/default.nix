@@ -19,9 +19,6 @@ with lib.${namespace};
         current_line_blame = true;
       };
     };
-    lightline = enabled // {
-      colorscheme = "rosepine";
-    };
     luasnip = enabled;
     nix = enabled;
     nix-develop = enabled;
