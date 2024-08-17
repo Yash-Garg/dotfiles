@@ -4,7 +4,7 @@ _:
   programs.nixvim.opts = {
     mouse = "";
     number = true;
-    relativenumber = false;
+    relativenumber = true;
     colorcolumn = "";
     wildmenu = true;
     showmatch = true;
