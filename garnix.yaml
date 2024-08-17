@@ -4,6 +4,3 @@ builds:
     - nixosConfigurations.*
     - darwinConfigurations.*
     - packages.*.*
-  exclude:
-    - packages.x86_64-linux.macbook
-    - packages.aarch64-linux.macbook

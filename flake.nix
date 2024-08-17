@@ -90,10 +90,6 @@
       outputs-builder = channels: {
         formatter = (treefmtModule channels.nixpkgs ./treefmt.nix).config.build.wrapper;
 
-        packages = {
-          macbook = inputs.self.darwinConfigurations.trinity.system;
-        };
-
         topology = import inputs.nix-topology {
           pkgs = channels.nixpkgs;
           modules = [
