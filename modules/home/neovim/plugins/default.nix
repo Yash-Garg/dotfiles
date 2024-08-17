@@ -8,6 +8,7 @@ with lib.${namespace};
     ./devicons.nix
     ./lsp.nix
     ./lualine.nix
+    ./nvim-tree.nix
     ./telescope.nix
     ./treesitter.nix
   ];
@@ -19,11 +20,9 @@ with lib.${namespace};
         current_line_blame = true;
       };
     };
-    luasnip = enabled;
     nix = enabled;
     nix-develop = enabled;
     nvim-autopairs = enabled;
-    nvim-tree = enabled;
     todo-comments = enabled;
     tmux-navigator = enabled;
     which-key = enabled;
