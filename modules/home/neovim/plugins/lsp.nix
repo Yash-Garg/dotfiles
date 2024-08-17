@@ -9,7 +9,6 @@ with lib.${namespace};
       cmake = enabled;
       cssls = enabled;
       dartls = enabled;
-      elixirls = enabled;
       docker-compose-language-service = enabled;
       gleam = enabled;
       golangci-lint-ls = enabled;
