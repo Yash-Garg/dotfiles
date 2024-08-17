@@ -1,8 +1,7 @@
 {
   config,
   lib,
-  system,
-  inputs,
+  pkgs,
   namespace,
   ...
 }:
@@ -10,7 +9,6 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.spotify;
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
 in
 {
   options.profiles.${namespace}.spotify = {
@@ -19,9 +17,9 @@ in
 
   config = mkIf cfg.enable {
     programs.spicetify = enabled // {
-      theme = spicePkgs.themes.catppuccin;
+      theme = pkgs.spicetify.themes.catppuccin;
       colorScheme = "mocha";
-      enabledExtensions = with spicePkgs.extensions; [
+      enabledExtensions = with pkgs.spicetify.extensions; [
         hidePodcasts
         lastfm
       ];
