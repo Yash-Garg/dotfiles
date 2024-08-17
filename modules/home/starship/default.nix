@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.starship;
   palette = builtins.readFile "${inputs.catppuccin-starship}/themes/mocha.toml";
@@ -17,8 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.starship = {
-      enable = true;
+    programs.starship = enabled // {
       settings = mkMerge [
         (builtins.fromTOML settings)
         (builtins.fromTOML palette)

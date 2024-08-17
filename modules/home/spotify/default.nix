@@ -7,6 +7,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.spotify;
   spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
@@ -17,8 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.spicetify = {
-      enable = true;
+    programs.spicetify = enabled // {
       theme = spicePkgs.themes.catppuccin;
       colorScheme = "mocha";
       enabledExtensions = with spicePkgs.extensions; [

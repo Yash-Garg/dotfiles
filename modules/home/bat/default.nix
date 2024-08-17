@@ -1,7 +1,12 @@
-{ lib, pkgs, ... }:
 {
-  programs.bat = {
-    enable = true;
+  lib,
+  pkgs,
+  namespace,
+  ...
+}:
+with lib.${namespace};
+{
+  programs.bat = enabled // {
     config = {
       theme = lib.mkForce "Dracula";
       pager = "never";

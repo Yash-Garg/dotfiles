@@ -1,13 +1,13 @@
-{ namespace, ... }:
+{ lib, namespace, ... }:
+with lib.${namespace};
 {
-  snowfallorg.user = {
-    enable = true;
+  snowfallorg.user = enabled // {
     name = "yash";
   };
 
-  profiles.${namespace}.starship.enable = true;
+  profiles.${namespace}.starship = enabled;
 
-  shells.${namespace}.zsh.enable = true;
+  shells.${namespace}.zsh = enabled;
 
   home.stateVersion = "24.11";
 }

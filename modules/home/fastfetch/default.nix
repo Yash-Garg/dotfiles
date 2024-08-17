@@ -1,7 +1,12 @@
-{ pkgs, ... }:
 {
-  programs.fastfetch = {
-    enable = true;
+  pkgs,
+  lib,
+  namespace,
+  ...
+}:
+with lib.${namespace};
+{
+  programs.fastfetch = enabled // {
     package = pkgs.fastfetch.override {
       x11Support = false;
       waylandSupport = false;

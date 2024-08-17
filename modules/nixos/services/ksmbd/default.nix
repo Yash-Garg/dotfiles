@@ -62,8 +62,7 @@ in
 
     networking.firewall.allowedTCPPorts = mkIf cfg.openFirewall [ 445 ];
 
-    services.samba-wsdd = {
-      enable = true;
+    services.samba-wsdd = enabled // {
       discovery = true;
       inherit (cfg) openFirewall;
     };

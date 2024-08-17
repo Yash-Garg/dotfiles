@@ -38,8 +38,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.samba = {
-      enable = true;
+    services.samba = enabled // {
       openFirewall = true;
 
       extraConfig = ''
@@ -66,8 +65,7 @@ in
     };
 
     # Advertise shares to Windows hosts
-    services.samba-wsdd = {
-      enable = true;
+    services.samba-wsdd = enabled // {
       discovery = true;
       openFirewall = true;
       workgroup = "WORKGROUP";

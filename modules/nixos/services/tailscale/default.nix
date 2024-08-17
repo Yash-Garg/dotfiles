@@ -41,8 +41,7 @@ in
       search = [ "turtle-lake.ts.net" ];
     };
 
-    services.tailscale = {
-      enable = true;
+    services.tailscale = enabled // {
       inherit (cfg) authKeyFile;
       inherit (cfg) openFirewall;
       extraUpFlags = cfg.extraOptions;

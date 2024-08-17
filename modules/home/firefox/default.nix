@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.firefox;
   css-hacks = pkgs.fetchFromGitHub {
@@ -27,8 +28,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.firefox = {
-      enable = true;
+    programs.firefox = enabled // {
       package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
       profiles = {
         yash = {

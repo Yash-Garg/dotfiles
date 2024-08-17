@@ -50,16 +50,15 @@ in
   };
 
   config = mkIf cfg.enable {
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
+    hardware.pulseaudio = disabled;
+    security.rtkit = enabled;
 
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+    services.pipewire = enabled // {
+      alsa = enabled // {
+        support32Bit = true;
+      };
+      configPackages = mkIf cfg.noise-cancellation [ noise-suppression-for-voice ];
+      pulse = enabled;
     };
-
-    services.pipewire.configPackages = mkIf cfg.noise-cancellation [ noise-suppression-for-voice ];
   };
 }

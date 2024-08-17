@@ -1,11 +1,16 @@
-{ config, pkgs, ... }:
 {
-  programs.direnv = {
-    enable = true;
+  config,
+  pkgs,
+  lib,
+  namespace,
+  ...
+}:
+with lib.${namespace};
+{
+  programs.direnv = enabled // {
     silent = true;
     # faster, persistent implementation of use_nix and use_flake
-    nix-direnv = {
-      enable = true;
+    nix-direnv = enabled // {
       package = pkgs.nix-direnv.override { nix = config.nix.package; };
     };
 

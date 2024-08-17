@@ -16,10 +16,8 @@ in
 
   config = mkIf cfg.enable {
     virtualisation = {
-      docker = {
-        enable = true;
-        rootless = {
-          enable = true;
+      docker = enabled // {
+        rootless = enabled // {
           setSocketVariable = true;
         };
       };

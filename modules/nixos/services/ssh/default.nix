@@ -31,8 +31,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.openssh = {
-      enable = true;
+    services.openssh = enabled // {
       inherit (cfg) package;
       settings = {
         X11Forwarding = mkDefault true;

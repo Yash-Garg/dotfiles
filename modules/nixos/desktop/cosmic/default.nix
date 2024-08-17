@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.desktop.cosmic;
 in
@@ -14,7 +15,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.desktopManager.cosmic.enable = true;
-    services.displayManager.cosmic-greeter.enable = true;
+    services.desktopManager.cosmic = enabled;
+    services.displayManager.cosmic-greeter = enabled;
   };
 }

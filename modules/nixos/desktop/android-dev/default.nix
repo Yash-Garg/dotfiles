@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.desktop.android-dev;
   defaultJdk = pkgs.openjdk17;
@@ -20,6 +21,7 @@ in
   options.${namespace}.desktop.android-dev = {
     enable = mkEnableOption "Configure a development environment for Android apps";
   };
+
   config = mkIf cfg.enable {
     users.users.yash.packages = with pkgs; [
       android-tools
@@ -33,14 +35,12 @@ in
     ];
 
     programs = {
-      adb.enable = true;
-      java = {
-        enable = true;
+      adb = enabled;
+      java = enabled // {
         package = defaultJdk;
         binfmt = false;
       };
-      nix-ld = {
-        enable = true;
+      nix-ld = enabled // {
         package = pkgs.nix-ld-rs;
         libraries = with pkgs; [
           icu
@@ -52,8 +52,7 @@ in
     };
 
     snowfallorg.users.yash.home.config = {
-      programs.gradle = {
-        enable = true;
+      programs.gradle = enabled // {
         settings = {
           "org.gradle.caching" = true;
           "org.gradle.parallel" = true;

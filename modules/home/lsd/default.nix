@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.lsd;
 in
@@ -16,9 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-
-    programs.lsd = {
-      enable = true;
+    programs.lsd = enabled // {
       enableAliases = true;
       settings = {
         date = "relative";

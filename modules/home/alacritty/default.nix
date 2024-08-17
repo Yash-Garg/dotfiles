@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.alacritty;
 in
@@ -15,5 +16,5 @@ in
     enable = mkEnableOption "Enable alacritty profile";
   };
 
-  config = mkIf cfg.enable { programs.alacritty.enable = true; };
+  config = mkIf cfg.enable { programs.alacritty = enabled; };
 }

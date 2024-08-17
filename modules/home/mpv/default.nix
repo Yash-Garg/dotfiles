@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.mpv;
 in
@@ -19,8 +20,7 @@ in
   config = mkIf cfg.enable {
     home.packages = [ pkgs.jellyfin-mpv-shim ];
 
-    programs.mpv = {
-      enable = true;
+    programs.mpv = enabled // {
       bindings = {
         BS = "cycle pause";
         SPACE = "cycle pause";

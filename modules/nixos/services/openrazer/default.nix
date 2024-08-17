@@ -26,8 +26,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.openrazer-daemon ];
 
-    hardware.openrazer = {
-      enable = true;
+    hardware.openrazer = enabled // {
       inherit (cfg) users;
       batteryNotifier.enable = false;
       devicesOffOnScreensaver = false;

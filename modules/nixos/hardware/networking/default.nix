@@ -40,8 +40,7 @@ in
       networkmanager.enable = cfg.extra;
       nftables.enable = cfg.extra;
 
-      firewall = {
-        enable = true;
+      firewall = enabled // {
         allowPing = true;
         allowedTCPPorts = cfg.tcpPorts;
       };

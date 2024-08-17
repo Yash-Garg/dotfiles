@@ -1,1 +1,1 @@
-_: { programs.home-manager.enable = true; }
+{ lib, namespace, ... }: with lib.${namespace}; { programs.home-manager = enabled; }

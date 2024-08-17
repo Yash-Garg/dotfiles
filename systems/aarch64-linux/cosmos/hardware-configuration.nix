@@ -4,10 +4,11 @@
 {
   config,
   lib,
+  namespace,
   modulesPath,
   ...
 }:
-
+with lib.${namespace};
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
@@ -24,20 +25,18 @@
   };
 
   hardware = {
-    bluetooth.enable = true;
+    bluetooth = enabled;
     raspberry-pi.config = {
       pi5 = {
         dt-overlays = {
-          vc4-kms-v3d-pi5 = {
-            enable = true;
+          vc4-kms-v3d-pi5 = enabled // {
             params = { };
           };
         };
       };
       all = {
         base-dt-params = {
-          krnbt = {
-            enable = true;
+          krnbt = enabled // {
             value = "on";
           };
         };

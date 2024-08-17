@@ -6,11 +6,10 @@
 }:
 with lib.${namespace};
 {
-  documentation = {
-    enable = true;
-    doc.enable = false;
-    man.enable = true;
-    dev.enable = false;
+  documentation = enabled // {
+    doc = disabled;
+    man = enabled;
+    dev = disabled;
   };
 
   users.users.yash.packages = with pkgs; [ nix-output-monitor ];

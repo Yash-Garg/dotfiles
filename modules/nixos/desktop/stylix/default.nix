@@ -7,6 +7,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.desktop.stylix;
 in
@@ -16,9 +17,8 @@ in
   };
 
   config = mkIf cfg.enable {
-    stylix = {
+    stylix = enabled // {
       autoEnable = false;
-      enable = true;
       homeManagerIntegration.followSystem = true;
       image = ./background.png;
       base16Scheme = "${inputs.base16-schemes.outPath}/base16/catppuccin-mocha.yaml";
@@ -51,22 +51,22 @@ in
       };
       polarity = "dark";
       targets = {
-        chromium.enable = true;
-        nixos-icons.enable = true;
+        chromium = enabled;
+        nixos-icons = enabled;
       };
     };
 
     snowfallorg.users.yash.home.config = {
       stylix.targets = {
-        alacritty.enable = true;
-        bat.enable = true;
-        btop.enable = true;
-        fzf.enable = true;
-        kitty.enable = true;
-        vesktop.enable = true;
-        wezterm.enable = true;
-        yazi.enable = true;
-        zellij.enable = true;
+        alacritty = enabled;
+        bat = enabled;
+        btop = enabled;
+        fzf = enabled;
+        kitty = enabled;
+        vesktop = enabled;
+        wezterm = enabled;
+        yazi = enabled;
+        zellij = enabled;
       };
     };
   };

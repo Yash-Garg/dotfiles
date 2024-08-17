@@ -1,15 +1,16 @@
 {
   config,
   pkgs,
+  lib,
   namespace,
   ...
 }:
+with lib.${namespace};
 let
   shellPath = if config.shells.${namespace}.bash.enable then null else "${pkgs.zsh}/bin/zsh";
 in
 {
-  programs.tmux = {
-    enable = true;
+  programs.tmux = enabled // {
     baseIndex = 1;
     keyMode = "vi";
     mouse = true;

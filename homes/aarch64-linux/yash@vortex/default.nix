@@ -1,13 +1,16 @@
-{ namespace, ... }:
+{ lib, namespace, ... }:
+with lib.${namespace};
 {
-  snowfallorg.user = {
-    enable = true;
+  snowfallorg.user = enabled // {
     name = "yash";
   };
 
-  profiles.${namespace}.oh-my-posh.enable = true;
+  profiles.${namespace} = {
+    neovim = enabled;
+    oh-my-posh = enabled;
+  };
 
-  shells.${namespace}.zsh.enable = true;
+  shells.${namespace}.zsh = enabled;
 
   home.stateVersion = "24.05";
 }

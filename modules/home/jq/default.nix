@@ -1,5 +1,1 @@
-_: {
-  programs.jq = {
-    enable = true;
-  };
-}
+{ lib, namespace, ... }: with lib.${namespace}; { programs.jq = enabled; }

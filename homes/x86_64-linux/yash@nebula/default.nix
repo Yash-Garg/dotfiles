@@ -1,17 +1,17 @@
-{ namespace, ... }:
+{ lib, namespace, ... }:
+with lib.${namespace};
 {
-  snowfallorg.user = {
-    enable = true;
+  snowfallorg.user = enabled // {
     name = "yash";
   };
 
   profiles.${namespace} = {
-    keychain.enable = true;
-    oh-my-posh.enable = true;
-    zellij.enable = true;
+    keychain = enabled;
+    oh-my-posh = enabled;
+    zellij = enabled;
   };
 
-  shells.${namespace}.zsh.enable = true;
+  shells.${namespace}.zsh = enabled;
 
   home.stateVersion = "24.11";
 }

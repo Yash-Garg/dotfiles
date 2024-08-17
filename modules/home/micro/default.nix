@@ -1,6 +1,7 @@
-_: {
-  programs.micro = {
-    enable = true;
+{ lib, namespace, ... }:
+with lib.${namespace};
+{
+  programs.micro = enabled // {
     settings = {
       colorscheme = "dracula";
       mkparents = true;
@@ -14,6 +15,7 @@ _: {
       source = ./dracula.micro;
       target = "./micro/colorschemes/dracula.micro";
     };
+
     microEditorBindings = {
       source = ./bindings.json;
       target = "./micro/bindings.json";

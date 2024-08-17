@@ -1,21 +1,25 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  namespace,
+  ...
+}:
+with lib.${namespace};
 {
   imports = [ ./hardware-configuration.nix ];
 
   age.secrets.samba-passwd.file = lib.snowfall.fs.get-file "secrets/nova/samba.age";
 
   dots = {
-    desktop = {
-      enable = true;
+    desktop = enabled // {
       extraPackages = [ ];
-      gnome.enable = true;
+      gnome = enabled;
     };
 
     hardware.networking.hostName = "nova";
 
     services = {
-      cifs = {
-        enable = true;
+      cifs = enabled // {
         cifsHost = "nova";
         mounts = {
           evo.path = "cosmos.local/evo";
@@ -23,15 +27,14 @@
         };
       };
 
-      samba = {
-        enable = true;
+      samba = enabled // {
         shares = {
           downloads.path = "/mnt/sshd";
         };
       };
     };
 
-    system.boot.secure.enable = true;
+    system.boot.secure = enabled;
   };
 
   topology.self.name = "Desktop";

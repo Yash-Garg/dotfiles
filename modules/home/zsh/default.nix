@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.shells.${namespace}.zsh;
   profiles = config.profiles.${namespace};
@@ -16,11 +17,10 @@ in
 
   config = mkIf cfg.enable {
     programs = {
-      zsh = {
-        enable = true;
+      zsh = enabled // {
         enableCompletion = true;
-        autosuggestion.enable = true;
-        syntaxHighlighting.enable = true;
+        autosuggestion = enabled;
+        syntaxHighlighting = enabled;
         history = {
           size = 10000;
           path = "$HOME/.zsh_history";

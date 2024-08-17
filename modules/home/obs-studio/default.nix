@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.obs;
 in
@@ -15,8 +16,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.obs-studio = {
-      enable = true;
+    programs.obs-studio = enabled // {
       plugins = with pkgs.obs-studio-plugins; [
         obs-pipewire-audio-capture
         wlrobs

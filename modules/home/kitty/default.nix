@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.kitty;
 in
@@ -17,9 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.kitty = {
-      enable = true;
-
+    programs.kitty = enabled // {
       font = mkForce {
         name = "CaskaydiaCove Nerd Font Mono";
         package = pkgs.nerdfonts;

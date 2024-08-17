@@ -4,9 +4,11 @@
 {
   config,
   lib,
+  namespace,
   modulesPath,
   ...
 }:
+with lib.${namespace};
 let
   driverPkg = config.boot.kernelPackages.nvidiaPackages.production.bin;
 in
@@ -31,11 +33,10 @@ in
     ];
   };
 
-  hardware.i2c.enable = true;
+  hardware.i2c = enabled;
 
   # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
+  hardware.graphics = enabled // {
     enable32Bit = true;
     package = driverPkg;
   };
@@ -45,7 +46,7 @@ in
 
   hardware.nvidia = {
     # Modesetting is required.
-    modesetting.enable = true;
+    modesetting = enabled;
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
     powerManagement.enable = false;

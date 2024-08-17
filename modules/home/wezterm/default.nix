@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.wezterm;
 in
@@ -15,8 +16,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.wezterm = {
-      enable = true;
+    programs.wezterm = enabled // {
       package = pkgs.wezterm;
       extraConfig = mkMerge [
         (builtins.readFile ./config/utils.lua)

@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.services.avahi;
 in
@@ -14,11 +15,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.avahi = {
-      enable = true;
+    services.avahi = enabled // {
       nssmdns4 = true;
-      publish = {
-        enable = true;
+      publish = enabled // {
         addresses = true;
         domain = true;
         hinfo = true;

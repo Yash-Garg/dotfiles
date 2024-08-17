@@ -1,8 +1,8 @@
-{ lib, ... }:
+{ lib, namespace, ... }:
 with lib;
+with lib.${namespace};
 {
-  programs.git = {
-    enable = true;
+  programs.git = enabled // {
     ignores = [
       "key.properties"
       "keystore.properties"

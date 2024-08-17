@@ -1,7 +1,12 @@
-{ pkgs, ... }:
 {
-  xdg = {
-    enable = true;
+  pkgs,
+  lib,
+  namespace,
+  ...
+}:
+with lib.${namespace};
+{
+  xdg = enabled // {
     mime.enable = !pkgs.stdenv.isDarwin;
   };
 }

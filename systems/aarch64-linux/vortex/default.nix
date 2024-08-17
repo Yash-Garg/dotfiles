@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   hostName = "vortex";
   get-secret = name: snowfall.fs.get-file "secrets/${hostName}/${name}.age";
@@ -21,7 +22,7 @@ in
   };
 
   boot.tmp.cleanOnBoot = true;
-  zramSwap.enable = true;
+  zramSwap = enabled;
 
   networking = {
     domain = "";
@@ -30,15 +31,13 @@ in
 
   dots = {
     services = {
-      ssh = {
-        enable = true;
+      ssh = enabled // {
         addRootKeys = true;
         passwordAuth = false;
         permitRootLogin = true;
       };
 
-      tailscale = {
-        enable = true;
+      tailscale = enabled // {
         authKeyFile = config.age.secrets.tsauthkey.path;
         extraOptions = [
           "--accept-risk=lose-ssh"
@@ -49,11 +48,10 @@ in
       };
     };
 
-    virtualisation.enable = true;
+    virtualisation = enabled;
   };
 
-  services.caddy = {
-    enable = true;
+  services.caddy = enabled // {
     package = pkgs.${namespace}.caddy-tailscale;
     virtualHosts = {
       "https://glance.turtle-lake.ts.net" = {
@@ -73,8 +71,7 @@ in
     };
   };
 
-  services.miniflux = {
-    enable = true;
+  services.miniflux = enabled // {
     adminCredentialsFile = config.age.secrets.feed-auth.path;
     createDatabaseLocally = true;
     config = {

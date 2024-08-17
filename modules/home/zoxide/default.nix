@@ -1,5 +1,1 @@
-_: {
-  programs.zoxide = {
-    enable = true;
-  };
-}
+{ lib, namespace, ... }: with lib.${namespace}; { programs.zoxide = enabled; }

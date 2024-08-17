@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.desktop.earlyoom;
 in
@@ -19,8 +20,7 @@ in
     # avoid the linux kernel from locking itself when we're putting too much strain on the memory
     # this helps avoid having to shut down forcefully when we OOM
     services = {
-      earlyoom = {
-        enable = true;
+      earlyoom = enabled // {
         enableNotifications = true; # annoying, but we want to know what's killed
         freeSwapThreshold = 2;
         freeMemThreshold = 2;

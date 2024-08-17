@@ -1,6 +1,7 @@
-_: {
-  programs.aria2 = {
-    enable = true;
+{ lib, namespace, ... }:
+with lib.${namespace};
+{
+  programs.aria2 = enabled // {
     settings = {
       file-allocation = "none";
       log-level = "warn";

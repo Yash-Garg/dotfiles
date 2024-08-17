@@ -2,23 +2,23 @@
   lib,
   config,
   pkgs,
+  namespace,
   ...
 }:
 with lib;
+with lib.${namespace};
 {
   age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/nebula/tailscale.age";
 
   dots = {
-    system.wsl = {
-      enable = true;
+    system.wsl = enabled // {
       hostname = "nebula";
     };
 
     services = {
-      ssh.enable = true;
+      ssh = enabled;
 
-      tailscale = {
-        enable = true;
+      tailscale = enabled // {
         authKeyFile = config.age.secrets.tsauthkey.path;
         extraOptions = [
           "--accept-risk=lose-ssh"
@@ -49,8 +49,7 @@ with lib;
     packages = [ pkgs.wget ];
   };
 
-  programs.nix-ld = {
-    enable = true;
+  programs.nix-ld = enabled // {
     package = pkgs.nix-ld-rs;
   };
 

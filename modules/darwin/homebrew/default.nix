@@ -1,4 +1,5 @@
-{ lib, ... }:
+{ lib, namespace, ... }:
+with lib.${namespace};
 let
   casks = [
     "alt-tab"
@@ -22,9 +23,7 @@ let
   hmModules = lib.snowfall.fs.get-snowfall-file "modules/home";
 in
 {
-  homebrew = {
-    enable = true;
-
+  homebrew = enabled // {
     brews = [
       "cocoapods"
       "ruby"

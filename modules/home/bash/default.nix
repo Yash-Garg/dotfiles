@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.shells.${namespace}.bash;
   profiles = config.profiles.${namespace};
@@ -16,8 +17,7 @@ in
 
   config = mkIf cfg.enable {
     programs = {
-      bash = {
-        enable = true;
+      bash = enabled // {
         enableCompletion = true;
         historySize = 10000;
         historyFile = "$HOME/.bash_history";

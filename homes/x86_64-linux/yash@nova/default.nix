@@ -1,22 +1,22 @@
-{ namespace, ... }:
+{ lib, namespace, ... }:
+with lib.${namespace};
 {
-  snowfallorg.user = {
-    enable = true;
+  snowfallorg.user = enabled // {
     name = "yash";
   };
 
   profiles.${namespace} = {
-    alacritty.enable = true;
-    firefox.enable = true;
-    kitty.enable = true;
-    mpv.enable = true;
-    neovim.enable = true;
-    obs.enable = true;
-    oh-my-posh.enable = true;
-    zellij.enable = true;
+    alacritty = enabled;
+    firefox = enabled;
+    kitty = enabled;
+    mpv = enabled;
+    neovim = enabled;
+    obs = enabled;
+    oh-my-posh = enabled;
+    zellij = enabled;
   };
 
-  shells.${namespace}.zsh.enable = true;
+  shells.${namespace}.zsh = enabled;
 
   home.stateVersion = "24.11";
 }

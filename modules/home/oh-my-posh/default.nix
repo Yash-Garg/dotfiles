@@ -5,6 +5,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.oh-my-posh;
   ompConfig = builtins.readFile ./config.omp.json;
@@ -15,8 +16,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    programs.oh-my-posh = {
-      enable = true;
+    programs.oh-my-posh = enabled // {
       settings = builtins.fromJSON ompConfig;
     };
   };

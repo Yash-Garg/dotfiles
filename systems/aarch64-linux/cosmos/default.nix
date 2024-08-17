@@ -2,9 +2,11 @@
   lib,
   config,
   pkgs,
+  namespace,
   ...
 }:
 with lib;
+with lib.${namespace};
 {
   imports = [ ./hardware-configuration.nix ];
 
@@ -14,8 +16,7 @@ with lib;
   boot.initrd.systemd.enableTpm2 = mkForce false;
 
   dots = {
-    hardware.networking = {
-      enable = true;
+    hardware.networking = enabled // {
       extra = false;
       hostName = "cosmos";
       tcpPorts = [
@@ -26,26 +27,23 @@ with lib;
     };
 
     services = {
-      avahi.enable = true;
+      avahi = enabled;
 
-      qbittorrent.enable = true;
+      qbittorrent = enabled;
 
-      samba = {
-        enable = true;
+      samba = enabled // {
         shares = {
           media.path = "/mnt/wd500";
           evo.path = "/mnt/evo970";
         };
       };
 
-      ssh = {
-        enable = true;
+      ssh = enabled // {
         package = pkgs.openssh_hpn;
         passwordAuth = true;
       };
 
-      tailscale = {
-        enable = true;
+      tailscale = enabled // {
         authKeyFile = config.age.secrets.tsauthkey.path;
         extraOptions = [
           "--accept-risk=lose-ssh"
@@ -55,10 +53,10 @@ with lib;
         ];
       };
 
-      jellyfin.enable = true;
+      jellyfin = enabled;
     };
 
-    virtualisation.enable = true;
+    virtualisation = enabled;
   };
 
   environment.systemPackages = with pkgs; [

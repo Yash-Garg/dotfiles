@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.zellij;
 in
@@ -17,8 +18,7 @@ in
   config = mkIf cfg.enable {
     home.packages = [ pkgs.zjstatus ];
 
-    programs.zellij = {
-      enable = true;
+    programs.zellij = enabled // {
       settings = {
         mouse_mode = true;
         on_force_close = "detach";
@@ -46,7 +46,10 @@ in
     };
 
     xdg.configFile = {
-      "zellij/layouts".source = ./layouts;
+      zellijLayouts = {
+        source = ./layouts;
+        target = "./zellij/layouts";
+      };
     };
   };
 }

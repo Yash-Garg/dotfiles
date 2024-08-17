@@ -28,12 +28,11 @@ in
   };
 
   config = mkIf cfg.enable {
-    wsl = {
-      enable = true;
+    wsl = enabled // {
       defaultUser = cfg.user;
       nativeSystemd = true;
       startMenuLaunchers = true;
-      usbip.enable = true;
+      usbip = enabled;
       wslConf.network.hostname = cfg.hostname;
 
       # Binaries for Docker Desktop wsl-distro-proxy

@@ -1,17 +1,22 @@
-{ pkgs, namespace, ... }:
 {
-  snowfallorg.user = {
-    enable = true;
+  pkgs,
+  lib,
+  namespace,
+  ...
+}:
+with lib.${namespace};
+{
+  snowfallorg.user = enabled // {
     name = "yash";
   };
 
   profiles.${namespace} = {
-    neovim.enable = true;
-    oh-my-posh.enable = true;
-    zellij.enable = true;
+    neovim = enabled;
+    oh-my-posh = enabled;
+    zellij = enabled;
   };
 
-  shells.${namespace}.zsh.enable = true;
+  shells.${namespace}.zsh = enabled;
 
   home.packages = with pkgs; [
     apktool

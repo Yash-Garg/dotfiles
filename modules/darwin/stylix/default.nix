@@ -3,12 +3,13 @@
   lib,
   pkgs,
   inputs,
+  namespace,
   ...
 }:
 with lib;
+with lib.${namespace};
 {
-  stylix = {
-    enable = true;
+  stylix = enabled // {
     autoEnable = false;
     base16Scheme = "${inputs.base16-schemes.outPath}/base16/catppuccin-mocha.yaml";
     homeManagerIntegration.followSystem = true;
@@ -20,15 +21,15 @@ with lib;
 
   snowfallorg.users.yash.home.config = {
     stylix.targets = {
-      alacritty.enable = true;
-      bat.enable = true;
-      btop.enable = true;
-      fzf.enable = true;
-      kitty.enable = true;
-      vesktop.enable = true;
-      wezterm.enable = true;
-      yazi.enable = true;
-      zellij.enable = true;
+      alacritty = enabled;
+      bat = enabled;
+      btop = enabled;
+      fzf = enabled;
+      kitty = enabled;
+      vesktop = enabled;
+      wezterm = enabled;
+      yazi = enabled;
+      zellij = enabled;
     };
   };
 }

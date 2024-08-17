@@ -6,6 +6,7 @@
   ...
 }:
 with lib;
+with lib.${namespace};
 let
   cfg = config.${namespace}.desktop.gnome;
 in
@@ -17,25 +18,26 @@ in
   config = mkIf cfg.enable {
     services = {
       # Enable automatic login for the user.
-      displayManager.autoLogin.enable = true;
-      displayManager.autoLogin.user = "yash";
+      displayManager.autoLogin = enabled // {
+        user = "yash";
+      };
 
-      gnome.gnome-keyring.enable = true;
+      gnome.gnome-keyring = enabled;
 
       udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
       xserver = {
         # Enable the GNOME Desktop Environment.
-        displayManager.gdm.enable = true;
-        displayManager.gdm.wayland = true;
-        desktopManager.gnome.enable = true;
+        displayManager.gdm = enabled // {
+          wayland = true;
+        };
+        desktopManager.gnome = enabled;
         excludePackages = [ pkgs.xterm ];
       };
     };
 
     snowfallorg.users.yash.home.config = {
-      dconf = {
-        enable = true;
+      dconf = enabled // {
         # Note: Use `dconf dump dir` to get the current settings
         settings = {
           "org/gnome/shell" = {
@@ -269,9 +271,7 @@ in
         };
       };
 
-      gtk = {
-        enable = true;
-
+      gtk = enabled // {
         theme = {
           name = "adw-gtk3-dark";
           package = pkgs.adw-gtk3;
@@ -292,8 +292,8 @@ in
     };
 
     stylix.targets = {
-      gnome.enable = true;
-      gtk.enable = true;
+      gnome = enabled;
+      gtk = enabled;
     };
 
     # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
