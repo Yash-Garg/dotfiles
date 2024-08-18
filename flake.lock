@@ -933,6 +933,22 @@
         "url": "https://git.lix.systems/lix-project/lix/archive/2.90.0.tar.gz"
       }
     },
+    "mkdocs-pkgs": {
+      "locked": {
+        "lastModified": 1704196875,
+        "narHash": "sha256-AhEXx3uu32cnIOjIR3B2NMzqzwXfJYNPgVNfHQGYKzs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0c6502e9830a7bf25258731316dd3c72fb08f94c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "staging-next",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nix-eval-jobs": {
       "inputs": {
         "flake-parts": "flake-parts_4",
@@ -1315,6 +1331,30 @@
         "type": "github"
       }
     },
+    "paisa": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "mkdocs-pkgs": "mkdocs-pkgs",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1717462968,
+        "narHash": "sha256-yTnVhpexVrE9msPpSwqKjn8L3PKHE13Fy3osXk2DvE8=",
+        "owner": "ananthakumaran",
+        "repo": "paisa",
+        "rev": "a3226ed998483846df8d9b2cef3a89e5332d5189",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ananthakumaran",
+        "repo": "paisa",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -1425,6 +1465,7 @@
         "nixpkgs-wayland": "nixpkgs-wayland",
         "nixvim": "nixvim",
         "nur": "nur",
+        "paisa": "paisa",
         "raspberry-pi-nix": "raspberry-pi-nix",
         "snowfall-lib": "snowfall-lib",
         "spicetify-nix": "spicetify-nix",

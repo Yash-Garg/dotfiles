@@ -1,4 +1,9 @@
-{ lib, namespace, ... }:
+{
+  lib,
+  namespace,
+  pkgs,
+  ...
+}:
 with lib.${namespace};
 {
   snowfallorg.user = enabled // {

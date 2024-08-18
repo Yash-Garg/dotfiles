@@ -189,6 +189,10 @@
 
     nur.url = "github:nix-community/NUR";
 
+    paisa.url = "github:ananthakumaran/paisa";
+    paisa.inputs.nixpkgs.follows = "nixpkgs";
+    paisa.inputs.flake-utils.follows = "flake-utils";
+
     raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
     raspberry-pi-nix.inputs.nixpkgs.follows = "nixpkgs";
 
