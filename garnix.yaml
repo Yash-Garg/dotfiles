@@ -4,3 +4,4 @@ builds:
     - nixosConfigurations.*
     - darwinConfigurations.*
     - packages.*.*
+    - checks.*.*

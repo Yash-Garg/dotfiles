@@ -32,10 +32,6 @@
         permittedInsecurePackages = [ "electron-27.3.11" ];
       };
 
-      checks = builtins.mapAttrs (
-        _system: deploy-lib: deploy-lib.deployChecks inputs.self.deploy
-      ) inputs.deploy-rs.lib;
-
       deploy = lib.mkDeploy { inherit (inputs) self; };
 
       systems.modules.darwin =
