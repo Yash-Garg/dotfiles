@@ -11,6 +11,7 @@ config.automatically_reload_config = true
 config.check_for_updates = false
 config.color_scheme = "Aura (Gogh)"
 config.default_cursor_style = "BlinkingBar"
+config.disable_default_key_bindings = true
 config.enable_scroll_bar = false
 config.enable_tab_bar = false
 config.font = wezterm.font({
