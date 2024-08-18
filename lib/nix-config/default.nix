@@ -33,7 +33,7 @@
         keep-going = true;
         log-lines = 20;
         max-jobs = "auto";
-        sandbox = true;
+        sandbox = lib.mkForce (!pkgs.stdenv.isDarwin);
         trusted-users = [
           "root"
           "yash"
