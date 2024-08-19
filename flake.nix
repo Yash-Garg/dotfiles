@@ -28,7 +28,7 @@
 
       channels-config = {
         allowUnfree = true;
-        cudaSupport = true;
+        cudaSupport = false;
         permittedInsecurePackages = [ "electron-27.3.11" ];
       };
 
