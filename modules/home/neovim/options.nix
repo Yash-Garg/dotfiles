@@ -51,5 +51,10 @@ _:
       "menuone"
       "noselect"
     ];
+
+    # Folds
+    foldmethod = "indent";
+    foldnestmax = 3;
+    foldenable = false;
   };
 }
