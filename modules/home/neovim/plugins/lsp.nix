@@ -6,6 +6,7 @@ with lib.${namespace};
     servers = {
       astro = enabled;
       biome = enabled;
+      ccls = enabled;
       cmake = enabled;
       cssls = enabled;
       dartls = enabled;

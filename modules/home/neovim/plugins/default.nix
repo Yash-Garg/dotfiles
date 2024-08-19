@@ -20,7 +20,6 @@ with lib.${namespace};
         current_line_blame = true;
       };
     };
-    lsp-lines = enabled;
     nix = enabled;
     nix-develop = enabled;
     nvim-autopairs = enabled;
