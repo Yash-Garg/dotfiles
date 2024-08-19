@@ -73,11 +73,11 @@
 
       homes.modules = with inputs; [
         nix-index-database.hmModules.nix-index
-        nixvim.homeManagerModules.nixvim
         spicetify-nix.homeManagerModules.default
       ];
 
       overlays = with inputs; [
+        neovim.overlays.default
         nix-topology.overlays.default
         nixpkgs-wayland.overlay
         nur.overlay
@@ -149,6 +149,10 @@
     lix.url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
     lix.inputs.nixpkgs.follows = "nixpkgs";
 
+    neovim.url = "github:yash-garg/neovim";
+    neovim.inputs.nixpkgs.follows = "nixpkgs";
+    neovim.inputs.snowfall-lib.follows = "snowfall-lib";
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -165,14 +169,6 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     nixpkgs-wayland.inputs.flake-compat.follows = "flake-compat";
-
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.inputs.nix-darwin.follows = "darwin";
-    nixvim.inputs.devshell.follows = "devshell";
-    nixvim.inputs.treefmt-nix.follows = "treefmt-nix";
-    nixvim.inputs.home-manager.follows = "home-manager";
-    nixvim.inputs.flake-compat.follows = "flake-compat";
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
