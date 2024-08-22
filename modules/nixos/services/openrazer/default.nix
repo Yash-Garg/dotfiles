@@ -28,7 +28,7 @@ in
 
     hardware.openrazer = enabled // {
       inherit (cfg) users;
-      batteryNotifier.enable = false;
+      batteryNotifier = disabled;
       devicesOffOnScreensaver = false;
       syncEffectsEnabled = false;
     };

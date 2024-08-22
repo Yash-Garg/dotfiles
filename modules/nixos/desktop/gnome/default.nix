@@ -226,7 +226,7 @@ in
 
           "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
             binding = "<Super>t";
-            command = "${lib.getExe pkgs.kitty}";
+            command = "${getExe pkgs.kitty}";
             name = "open-terminal";
           };
 
@@ -238,7 +238,7 @@ in
 
           "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
             binding = "<Super><Shift>s";
-            command = "${lib.getExe pkgs.gnome-screenshot} -a";
+            command = "${getExe pkgs.gnome-screenshot} -a";
             name = "open-screenshot-tool";
           };
 
@@ -297,8 +297,8 @@ in
     };
 
     # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-    systemd.services."getty@tty1".enable = false;
-    systemd.services."autovt@tty1".enable = false;
+    systemd.services."getty@tty1" = disabled;
+    systemd.services."autovt@tty1" = disabled;
 
     users.users.yash.packages =
       [
