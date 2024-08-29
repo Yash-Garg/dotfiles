@@ -1,39 +1,84 @@
-local wezterm = require("wezterm")
+local w = require("wezterm")
 local utils = require("utils")
-local config = wezterm.config_builder()
+
+local font_name
+if utils.is_windows() then
+    font_name = "CaskaydiaMono Nerd Font Mono"
+else
+    font_name = "CaskaydiaCove Nerd Font Mono"
+end
+
+local harfbuzz_features = { "ss02", "ss19", "ss20" }
+
+local config = {
+    adjust_window_size_when_changing_font_size = false,
+    automatically_reload_config = true,
+    bold_brightens_ansi_colors = true,
+    check_for_updates = false,
+    color_scheme = "Aura (Gogh)",
+    default_cursor_style = "SteadyBlock",
+    disable_default_key_bindings = false,
+    enable_scroll_bar = false,
+    enable_tab_bar = false,
+    font = w.font({
+        family = font_name,
+        weight = "DemiBold",
+        harfbuzz_features = harfbuzz_features,
+    }),
+    font_rules = {
+        {
+            intensity = "Bold",
+            italic = false,
+            font = w.font({
+                family = font_name,
+                weight = "Bold",
+                style = "Normal",
+                harfbuzz_features = harfbuzz_features,
+            }),
+        },
+        {
+            intensity = "Normal",
+            italic = true,
+            font = w.font({
+                family = font_name,
+                weight = "DemiBold",
+                style = "Italic",
+                harfbuzz_features = harfbuzz_features,
+            }),
+        },
+        {
+            intensity = "Bold",
+            italic = true,
+            font = w.font({
+                family = font_name,
+                weight = "Bold",
+                style = "Italic",
+                harfbuzz_features = harfbuzz_features,
+            }),
+        },
+    },
+    font_size = 17,
+    initial_cols = 130,
+    initial_rows = 35,
+    macos_window_background_blur = 10,
+    scrollback_lines = 5000,
+    use_fancy_tab_bar = true,
+    window_background_opacity = 0.9,
+    window_decorations = "RESIZE",
+    window_close_confirmation = "NeverPrompt",
+    window_padding = {
+        left = 10,
+        right = 10,
+        top = 15,
+        bottom = 0,
+    },
+    win32_system_backdrop = "Acrylic",
+}
 
 if utils.is_windows() then
     config.default_prog = { "pwsh" }
+    config.font_size = 14
+    config.window_background_opacity = 1
 end
-
-config.adjust_window_size_when_changing_font_size = false
-config.automatically_reload_config = true
-config.check_for_updates = false
-config.color_scheme = "Aura (Gogh)"
-config.default_cursor_style = "BlinkingBar"
-config.disable_default_key_bindings = false
-config.enable_scroll_bar = false
-config.enable_tab_bar = false
-config.font = wezterm.font({
-    family = "CaskaydiaCove Nerd Font Mono",
-    weight = "DemiBold",
-    harfbuzz_features = { "ss02", "ss19", "ss20" },
-})
-config.font_size = 17
-config.initial_cols = 130
-config.initial_rows = 35
-config.macos_window_background_blur = 10
-config.scrollback_lines = 5000
-config.use_fancy_tab_bar = true
-config.window_background_opacity = 0.9
-config.window_decorations = "RESIZE"
-config.window_close_confirmation = "NeverPrompt"
-config.window_padding = {
-    left = 10,
-    right = 10,
-    top = 15,
-    bottom = 0,
-}
-config.win32_system_backdrop = "Acrylic"
 
 return config
