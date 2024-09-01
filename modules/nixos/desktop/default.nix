@@ -75,7 +75,6 @@ in
         newsflash
         (prismlauncher.override {
           jdks = [ openjdk17 ];
-          withWaylandGLFW = config.${namespace}.desktop.gnome.enable;
         })
         slack
         spotify

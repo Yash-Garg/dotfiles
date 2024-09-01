@@ -12,7 +12,7 @@ with lib.${namespace};
 
   dots = {
     desktop = enabled // {
-      extraPackages = [ ];
+      extraPackages = [ pkgs.nh ];
       gnome = enabled;
     };
 
