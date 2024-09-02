@@ -36,6 +36,8 @@ in
         openFirewall = true;
       };
 
+      ollama = enabled;
+
       ssh = enabled // {
         addRootKeys = true;
         passwordAuth = false;
