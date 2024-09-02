@@ -62,7 +62,6 @@ in
         bat = enabled;
         btop = enabled;
         fzf = enabled;
-        kitty = enabled;
         vesktop = enabled;
         wezterm = enabled;
         yazi = enabled;

@@ -21,13 +21,9 @@ with lib.${namespace};
 
   snowfallorg.users.yash.home.config = {
     stylix.targets = {
-      alacritty = enabled;
       bat = enabled;
       btop = enabled;
       fzf = enabled;
-      kitty = enabled;
-      vesktop = enabled;
-      wezterm = enabled;
       yazi = enabled;
       zellij = enabled;
     };

@@ -12,7 +12,6 @@ with lib.${namespace};
     neovim = enabled;
     obs = enabled;
     oh-my-posh = enabled;
-    wezterm = enabled;
   };
 
   shells.${namespace}.zsh = enabled;
