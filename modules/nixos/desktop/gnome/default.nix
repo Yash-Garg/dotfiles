@@ -167,7 +167,7 @@ in
             dash-max-icon-size = 30;
             disable-overview-on-startup = false;
             dock-fixed = false;
-            dock-position = "RIGHT";
+            dock-position = "LEFT";
             extend-height = false;
             height-fraction = 0.8;
             hide-tooltip = true;
@@ -321,32 +321,33 @@ in
     environment = {
       gnome.excludePackages =
         with pkgs;
-        with pkgs.gnome;
         [
           atomix
-          pkgs.epiphany
-          pkgs.evince
-          pkgs.geary
-          pkgs.gnome-calendar
+          epiphany
+          evince
+          geary
+          gnome-calendar
           gnome-characters
           gnome-clocks
-          gnome-connections
-          gnome-console
           gnome-contacts
           gnome-initial-setup
           gnome-maps
           gnome-music
-          gnome-text-editor
-          gnome-tour
           gnome-weather
           hitori
           iagno
-          pkgs.simple-scan
-          snapshot
+          simple-scan
           tali
-          pkgs.totem
-          pkgs.yelp
-        ];
+          totem
+          yelp
+        ]
+        ++ (with pkgs.gnome; [
+          gnome-connections
+          gnome-console
+          gnome-text-editor
+          gnome-tour
+          snapshot
+        ]);
 
       # Enable Wayland compatibility workarounds within Nixpkgs
       variables = {
