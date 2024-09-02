@@ -9,7 +9,6 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.profiles.${namespace}.wezterm;
-  configs = builtins.readDir ./config;
 in
 {
   options.profiles.${namespace}.wezterm = {
@@ -19,7 +18,10 @@ in
   config = mkIf cfg.enable {
     programs.wezterm = enabled // {
       package = pkgs.wezterm;
-      extraConfig = map (name: builtins.readFile ./config/${name}) (attrNames configs);
+      extraConfig = mkMerge [
+        (builtins.readFile ./config/utils.lua)
+        (builtins.readFile ./config/wezterm.lua)
+      ];
     };
   };
 }
