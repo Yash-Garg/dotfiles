@@ -73,6 +73,7 @@ in
         handbrake
         jetbrains.idea-ultimate
         newsflash
+        obsidian
         (prismlauncher.override {
           jdks = [ openjdk17 ];
         })
