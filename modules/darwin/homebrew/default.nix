@@ -7,6 +7,7 @@ let
     "chatgpt"
     "discord"
     "flutter"
+    "google-chrome"
     "iina"
     "imageoptim"
     "jetbrains-toolbox"
