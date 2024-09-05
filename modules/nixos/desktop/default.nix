@@ -75,7 +75,10 @@ in
         newsflash
         obsidian
         (prismlauncher.override {
-          jdks = [ openjdk17 ];
+          jdks = [
+            openjdk17
+            openjdk21
+          ];
         })
         slack
         spotify
