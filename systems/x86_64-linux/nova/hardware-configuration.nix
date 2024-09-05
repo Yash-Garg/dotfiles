@@ -10,7 +10,7 @@
 }:
 with lib.${namespace};
 let
-  driverPkg = config.boot.kernelPackages.nvidiaPackages.production.bin;
+  driverPkg = config.boot.kernelPackages.nvidiaPackages.beta;
 in
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
@@ -31,6 +31,7 @@ in
       "kvm-intel"
       "i2c-dev"
     ];
+    kernelParams = [ "module_blacklist=i915" ];
   };
 
   hardware.i2c = enabled;
