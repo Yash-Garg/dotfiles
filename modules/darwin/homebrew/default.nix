@@ -14,7 +14,6 @@ let
     "linear-linear"
     "maccy"
     "obs"
-    "obsidian"
     "orbstack"
     "raycast"
     "rectangle"
