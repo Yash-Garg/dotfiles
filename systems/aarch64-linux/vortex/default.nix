@@ -31,13 +31,6 @@ in
 
   dots = {
     services = {
-      gitea = enabled // {
-        domain = "git.turtle-lake.ts.net";
-        openFirewall = true;
-      };
-
-      ollama = enabled;
-
       ssh = enabled // {
         addRootKeys = true;
         passwordAuth = false;
@@ -73,13 +66,6 @@ in
           bind tailscale/miniflux
           tailscale_auth
           reverse_proxy :8889
-        '';
-      };
-      "https://git.turtle-lake.ts.net" = {
-        extraConfig = ''
-          bind tailscale/git
-          tailscale_auth
-          reverse_proxy :${toString config.services.gitea.settings.server.HTTP_PORT}
         '';
       };
     };
