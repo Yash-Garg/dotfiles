@@ -25,7 +25,9 @@ buildGoModule {
     hash = "sha256-/UIQiT7IpPmD/7bzI8a50po9Y/IYV8W4Ycl3yqa5wj8=";
   };
 
-  vendorHash = "sha256-x6A59S6ySK5Ws+H45O6aO0VahQxy2mPt7cnEMtHTmQ8=";
+  patches = [ ./update-tailscale.patch ];
+
+  vendorHash = "sha256-06b+0FEk+WpfMMT+Qano+9VM8unXLcGowd8JVtd1K1k=";
 
   ldflags = [
     "-s"
