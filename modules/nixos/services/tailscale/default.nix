@@ -27,6 +27,8 @@ in
     };
 
     openFirewall = mkBoolOpt true "Open firewall for Tailscale";
+
+    tailnet = mkOpt types.str "turtle-lake.ts.net" "Tailscale network name";
   };
 
   config = mkIf cfg.enable {
@@ -38,7 +40,7 @@ in
         "8.8.8.8"
         "1.1.1.1"
       ];
-      search = [ "turtle-lake.ts.net" ];
+      search = [ cfg.tailnet ];
     };
 
     services.tailscale = enabled // {

@@ -53,22 +53,26 @@ in
 
   services.caddy = enabled // {
     package = pkgs.${namespace}.caddy-tailscale;
-    virtualHosts = {
-      "https://glance.turtle-lake.ts.net" = {
-        extraConfig = ''
-          bind tailscale/glance
-          tailscale_auth
-          reverse_proxy :90
-        '';
+    virtualHosts =
+      let
+        inherit (config.${namespace}.services.tailscale) tailnet;
+      in
+      {
+        "https://glance.${tailnet}" = {
+          extraConfig = ''
+            bind tailscale/glance
+            tailscale_auth
+            reverse_proxy :90
+          '';
+        };
+        "https://miniflux.${tailnet}" = {
+          extraConfig = ''
+            bind tailscale/miniflux
+            tailscale_auth
+            reverse_proxy :8889
+          '';
+        };
       };
-      "https://miniflux.turtle-lake.ts.net" = {
-        extraConfig = ''
-          bind tailscale/miniflux
-          tailscale_auth
-          reverse_proxy :8889
-        '';
-      };
-    };
   };
 
   services.miniflux = enabled // {
