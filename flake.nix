@@ -153,6 +153,10 @@
     neovim.inputs.nixpkgs.follows = "nixpkgs";
     neovim.inputs.snowfall-lib.follows = "snowfall-lib";
 
+    nh_darwin.url = "github:ToyVo/nh_darwin";
+    nh_darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nh_darwin.inputs.devshell.follows = "devshell";
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 

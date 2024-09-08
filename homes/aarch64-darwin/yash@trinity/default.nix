@@ -11,15 +11,14 @@ with lib.${namespace};
   };
 
   profiles.${namespace} = {
-    neovim = enabled;
     oh-my-posh = enabled;
-    zellij = enabled;
   };
 
   shells.${namespace}.zsh = enabled;
 
   home.packages = with pkgs; [
     apktool
+    nh-darwin
     nix-output-monitor
     scrcpy
   ];
