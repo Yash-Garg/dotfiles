@@ -41,11 +41,6 @@ in
     services.samba = enabled // {
       openFirewall = true;
 
-      extraConfig = ''
-        max log size = 50
-        browseable = ${bool-to-yes-no cfg.browseable}
-      '';
-
       shares = mapAttrs (
         name: value:
         {
