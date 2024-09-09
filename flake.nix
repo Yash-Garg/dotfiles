@@ -46,6 +46,7 @@
       systems.modules.nixos =
         with inputs;
         [
+          disko.nixosModules.disko
           impermanence.nixosModules.impermanence
           lanzaboote.nixosModules.lanzaboote
           nix-index-database.nixosModules.nix-index
@@ -129,6 +130,9 @@
 
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-compat.url = "github:nix-community/flake-compat";
     flake-compat.flake = false;
