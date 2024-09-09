@@ -16,6 +16,7 @@ if type fastfetch &>/dev/null; then
 fi
 
 if type git &>/dev/null; then
+    alias gcp='git cherry-pick'
     alias amend='git commit --amend'
     alias add='git add --all'
     alias st='git status'
