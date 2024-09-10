@@ -6,7 +6,5 @@ builds:
     - packages.*.*
     - checks.*.*
   exclude:
-    - packages.aarch64-linux.graphical-iso
-    - packages.aarch64-darwin.graphical-iso
     - packages.aarch64-linux.minimal-iso
     - packages.aarch64-darwin.minimal-iso
