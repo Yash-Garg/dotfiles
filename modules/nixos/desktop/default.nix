@@ -49,6 +49,8 @@ in
       };
     };
 
+    environment.systemPackages = with pkgs; [ inetutils ];
+
     # Enable the X11 windowing system.
     services.xserver = enabled;
 
@@ -57,8 +59,10 @@ in
       # CLI
       with pkgs;
       [
+        caligula
         ddcutil
         git-lfs
+        nh
         qemu_kvm
         sshfs
         xclip
