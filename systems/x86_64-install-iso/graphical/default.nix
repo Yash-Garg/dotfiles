@@ -29,5 +29,10 @@ with lib.${namespace};
     };
   };
 
+  users.users.yash = {
+    group = "users";
+    isNormalUser = true;
+  };
+
   system.stateVersion = "24.11";
 }
