@@ -27,8 +27,6 @@ with lib.${namespace};
     };
 
     services = {
-      adguard = enabled;
-
       avahi = enabled;
 
       qbittorrent = enabled;
