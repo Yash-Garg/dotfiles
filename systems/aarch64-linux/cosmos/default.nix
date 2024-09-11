@@ -43,6 +43,7 @@ with lib.${namespace};
       ssh = enabled // {
         package = pkgs.openssh_hpn;
         passwordAuth = true;
+        permitRootLogin = true;
       };
 
       tailscale = enabled // {
@@ -73,7 +74,7 @@ with lib.${namespace};
     mutableUsers = false;
     users.yash = {
       isNormalUser = true;
-      passwordFile = config.age.secrets.passwordfile-cosmos.path;
+      hashedPasswordFile = config.age.secrets.passwordfile-cosmos.path;
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
       extraGroups = [
