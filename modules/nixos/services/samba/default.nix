@@ -41,7 +41,7 @@ in
     services.samba = enabled // {
       openFirewall = true;
 
-      shares = mapAttrs (
+      settings = mapAttrs (
         name: value:
         {
           inherit (value) path comment;
