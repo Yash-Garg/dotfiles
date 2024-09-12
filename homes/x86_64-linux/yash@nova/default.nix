@@ -6,6 +6,7 @@ with lib.${namespace};
   };
 
   profiles.${namespace} = {
+    atuin = enabled;
     firefox = enabled;
     kitty = enabled;
     mpv = enabled;

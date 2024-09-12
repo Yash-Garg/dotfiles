@@ -6,6 +6,7 @@ with lib.${namespace};
   };
 
   profiles.${namespace} = {
+    atuin = enabled;
     keychain = enabled;
     oh-my-posh = enabled;
     zellij = enabled;

@@ -7,7 +7,7 @@ with lib.${namespace};
 
   profiles.${namespace}.starship = enabled;
 
-  shells.${namespace}.zsh = enabled;
+  shells.${namespace}.bash = enabled;
 
   home.stateVersion = "24.11";
 }
