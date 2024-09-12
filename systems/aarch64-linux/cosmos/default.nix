@@ -60,11 +60,14 @@ with lib.${namespace};
     virtualisation = enabled;
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    bluez
-    bluez-tools
-  ];
+  environment = {
+    pathsToLink = [ "/share/bash-completion" ];
+    systemPackages = with pkgs; [
+      git
+      bluez
+      bluez-tools
+    ];
+  };
 
   topology.self.name = "Raspberry Pi 5";
 
@@ -73,7 +76,6 @@ with lib.${namespace};
     users.yash = {
       isNormalUser = true;
       hashedPasswordFile = config.age.secrets.passwordfile-cosmos.path;
-      shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
       extraGroups = [
         "docker"
