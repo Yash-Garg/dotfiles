@@ -27,6 +27,7 @@ in
       desktop = {
         android-dev = enabled;
         earlyoom = enabled;
+        gaming = enabled;
         stylix = enabled;
       };
 
@@ -78,12 +79,6 @@ in
         jetbrains.idea-ultimate
         newsflash
         obsidian
-        (prismlauncher.override {
-          jdks = [
-            openjdk17
-            openjdk21
-          ];
-        })
         slack
         spotify
         telegram-desktop
