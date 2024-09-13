@@ -9,6 +9,9 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.desktop.gaming;
+  quantum = 64;
+  rate = 48000;
+  qr = "${toString quantum}/${toString rate}";
 in
 {
   options.${namespace}.desktop.gaming = {
