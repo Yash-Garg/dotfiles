@@ -614,11 +614,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726153585,
-        "narHash": "sha256-ShZ3YeEutJk+QoY/VrpujzZgocmyXYqhOC8I8pudO9U=",
+        "lastModified": 1726219040,
+        "narHash": "sha256-u/2xSCp/7sE7XViv6QR2jMw7Rrx/PXJtmeVLYv+Qbpo=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "59fb64b36b0a1961f6d4c6d5b8db45cc35d040f2",
+        "rev": "4ef99d8ec41369b6fbe83479b5566c2b8856972c",
         "type": "github"
       },
       "original": {
@@ -1477,11 +1477,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726209430,
-        "narHash": "sha256-ski2Is3VGChR1LR5U8qw8mqNfl5FDPCCAOsz2RrvJCE=",
+        "lastModified": 1726221057,
+        "narHash": "sha256-E0JYRNOcPNNVpgg/xrCyqH/Go2laDs6EOqxSieam9hI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c82fc8cf3f75e667ad9dd3e5df721119b63723b3",
+        "rev": "7923c691527d2ee85fe028c6e780ac3bf8606f06",
         "type": "github"
       },
       "original": {
@@ -2115,11 +2115,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1726208978,
-        "narHash": "sha256-ew7yo4I3WkkhAKy/Q5zN34fE3pnQsaP8u3gtDm7EptY=",
+        "lastModified": 1726216876,
+        "narHash": "sha256-wmsd/i1AMxk0eTwCZyWF+1lB8ArWDyCJod83tCchO1A=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "58f14e8ea7e355321ee826c17642ab9cdc859619",
+        "rev": "9543aa01a268d9d917b64cc22d16fb42f5a0d848",
         "type": "github"
       },
       "original": {
@@ -2263,11 +2263,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1726209174,
-        "narHash": "sha256-fh5gLCBoZIt63StdfXzpEKxpDR2e5Vv13+6oMVGbjnA=",
+        "lastModified": 1726218930,
+        "narHash": "sha256-zi+iz7bOmvbNnQphqVUjmJdNdWJAu5g17pPjGFYyu9g=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "6fcd9fa2be66c90aafb2b4acaca72c82a65866e3",
+        "rev": "7a5f7863d2f2587993c87a5a575cfc2c802defac",
         "type": "github"
       },
       "original": {
