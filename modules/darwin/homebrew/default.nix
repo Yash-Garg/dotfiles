@@ -13,7 +13,6 @@ let
     "linear-linear"
     "maccy"
     "raycast"
-    "rectangle"
     "spotify"
     "visual-studio-code"
     "wezterm"

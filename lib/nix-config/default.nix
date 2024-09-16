@@ -5,7 +5,6 @@
       package = pkgs.lix;
 
       generateNixPathFromInputs = true;
-      generateRegistryFromInputs = true;
       linkInputs = true;
       distributedBuilds = true;
 
