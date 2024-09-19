@@ -27,6 +27,12 @@ with lib.${namespace};
         };
       };
 
+      paisa = enabled // {
+        user = "yash";
+        group = "users";
+        openFirewall = true;
+      };
+
       samba = enabled // {
         shares = {
           downloads.path = "/mnt/sshd";
