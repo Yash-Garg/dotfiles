@@ -12,8 +12,14 @@ let
   vortex = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2aT32IeITZcrNPSbZnrtbRqRdekmVr42sLHw6IL/h1";
 in
 {
-  "cosmos/tailscale.age".publicKeys = users ++ [ cosmos vortex ];
-  "cosmos/user.age".publicKeys = users ++ [ cosmos vortex ];
+  "cosmos/tailscale.age".publicKeys = users ++ [
+    cosmos
+    vortex
+  ];
+  "cosmos/user.age".publicKeys = users ++ [
+    cosmos
+    vortex
+  ];
 
   "nebula/tailscale.age".publicKeys = users ++ [ nebula ];
 

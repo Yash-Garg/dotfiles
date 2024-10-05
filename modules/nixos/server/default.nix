@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   namespace,
   ...
@@ -20,5 +21,9 @@ in
     };
   };
 
-  config = mkIf cfg.enable { dots = { }; };
+  config = mkIf cfg.enable {
+    users.users.yash.packages = with pkgs; [
+      nh
+    ];
+  };
 }

@@ -8,6 +8,7 @@ with lib.${namespace};
   profiles.${namespace} = {
     atuin = enabled;
     keychain = enabled;
+    neovim = enabled;
     oh-my-posh = enabled;
     zellij = enabled;
   };
