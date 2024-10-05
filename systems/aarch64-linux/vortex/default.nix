@@ -30,6 +30,8 @@ in
   };
 
   dots = {
+    server = enabled;
+
     services = {
       ssh = enabled // {
         addRootKeys = true;

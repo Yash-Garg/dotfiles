@@ -11,6 +11,8 @@ with lib.${namespace};
   age.secrets.tsauthkey.file = snowfall.fs.get-file "secrets/nebula/tailscale.age";
 
   dots = {
+    server = enabled;
+
     system.wsl = enabled // {
       hostname = "nebula";
     };
