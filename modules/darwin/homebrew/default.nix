@@ -14,6 +14,7 @@ let
     "maccy"
     "raycast"
     "spotify"
+    "steam"
     "visual-studio-code"
     "wezterm"
     "zed"
