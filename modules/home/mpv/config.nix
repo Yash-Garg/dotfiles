@@ -83,5 +83,7 @@ _: {
     ytdl-format = "bestvideo[height<=?1440]+bestaudio/bestvideo+bestaudio/best";
     ytdl-raw-options = "ignore-errors=";
     load-unsafe-playlists = true;
+
+    glsl-shaders = "~~/shaders/FSRCNNX_x2_8-0-4-1.glsl:~~/shaders/FSRCNNX_x2_16-0-4-1.glsl:~~/shaders/SSimDownscaler.glsl:~~/shaders/KrigBilateral.glsl";
   };
 }
