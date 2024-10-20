@@ -18,7 +18,7 @@ in
     aggressiveResize = !pkgs.stdenv.isDarwin;
     shell = shellPath;
     shortcut = "b";
-    sensibleOnTop = true;
+    sensibleOnTop = false;
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       {
